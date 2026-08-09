@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pkl
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Large Files & Datasets
+*.zip
+Integration-20260706T062240Z-3-001.zip
+Integration-20260706T062240Z-3-001/Integration/WLASL_videos/
+
+# Webapp specific ignores (temp files & user uploads)
+webapp/uploads/
+webapp/static/output/
+webapp/static/temp/
+*.mp4
+
+# We want to KEEP our specific neural network files, so we make an exception for them
+!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/hamnosys_net_v2.pth
+!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/nn_class_mappings.json
+!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/dataset_landmarks.npz
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# AI Agent logs
+.agents/

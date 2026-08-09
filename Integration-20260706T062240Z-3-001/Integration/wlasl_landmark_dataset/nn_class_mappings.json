@@ -1,0 +1,50 @@
+{
+  "handshape": [
+    "hamcee12",
+    "hamceeopen",
+    "hamfinger2",
+    "hamfinger23",
+    "hamfinger2345",
+    "hamfingerstraightmod",
+    "hamfist",
+    "hamflathand",
+    "hampinch12",
+    "hampinch12open",
+    "hampinky"
+  ],
+  "ext_finger": [
+    "hamextfingerd",
+    "hamextfingerl",
+    "hamextfingeru"
+  ],
+  "palm_ori": [
+    "hampalmd",
+    "hampalml",
+    "hampalmu"
+  ],
+  "location": [
+    "hamcheek",
+    "hamchest",
+    "hamchin",
+    "hamear",
+    "hamforehead",
+    "hamheadtop",
+    "hamlips",
+    "hamneutralspace"
+  ],
+  "movement": [
+    "hamcircleo",
+    "hammoved",
+    "hammoveo",
+    "hammover",
+    "hammoveu",
+    "hamnodding",
+    "hamtwisting",
+    "none"
+  ],
+  "two_handed": [
+    "hamplus",
+    "hamsymmlr",
+    "none"
+  ]
+}

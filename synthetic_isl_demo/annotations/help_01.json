@@ -1,0 +1,2050 @@
+{
+  "sign_id": "help_01",
+  "sign_name": "help",
+  "description": "two-handed contact with a small inward movement",
+  "expected_hamnosys": "pinch palm_in neutral_space inward",
+  "fps": 24,
+  "frame_count": 120,
+  "frames": [
+    {
+      "frame": 1,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        258
+      ],
+      "left_hand_position": [
+        302,
+        258
+      ]
+    },
+    {
+      "frame": 2,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        258
+      ],
+      "left_hand_position": [
+        302,
+        258
+      ]
+    },
+    {
+      "frame": 3,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        257
+      ],
+      "left_hand_position": [
+        302,
+        257
+      ]
+    },
+    {
+      "frame": 4,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        256
+      ],
+      "left_hand_position": [
+        302,
+        256
+      ]
+    },
+    {
+      "frame": 5,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        255
+      ],
+      "left_hand_position": [
+        302,
+        255
+      ]
+    },
+    {
+      "frame": 6,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        402,
+        254
+      ],
+      "left_hand_position": [
+        302,
+        254
+      ]
+    },
+    {
+      "frame": 7,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        254
+      ],
+      "left_hand_position": [
+        303,
+        254
+      ]
+    },
+    {
+      "frame": 8,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        253
+      ],
+      "left_hand_position": [
+        303,
+        253
+      ]
+    },
+    {
+      "frame": 9,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        252
+      ],
+      "left_hand_position": [
+        303,
+        252
+      ]
+    },
+    {
+      "frame": 10,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        251
+      ],
+      "left_hand_position": [
+        303,
+        251
+      ]
+    },
+    {
+      "frame": 11,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        251
+      ],
+      "left_hand_position": [
+        303,
+        251
+      ]
+    },
+    {
+      "frame": 12,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        250
+      ],
+      "left_hand_position": [
+        303,
+        250
+      ]
+    },
+    {
+      "frame": 13,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        249
+      ],
+      "left_hand_position": [
+        303,
+        249
+      ]
+    },
+    {
+      "frame": 14,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        248
+      ],
+      "left_hand_position": [
+        303,
+        248
+      ]
+    },
+    {
+      "frame": 15,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        248
+      ],
+      "left_hand_position": [
+        303,
+        248
+      ]
+    },
+    {
+      "frame": 16,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        247
+      ],
+      "left_hand_position": [
+        303,
+        247
+      ]
+    },
+    {
+      "frame": 17,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        247
+      ],
+      "left_hand_position": [
+        303,
+        247
+      ]
+    },
+    {
+      "frame": 18,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        246
+      ],
+      "left_hand_position": [
+        303,
+        246
+      ]
+    },
+    {
+      "frame": 19,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        246
+      ],
+      "left_hand_position": [
+        303,
+        246
+      ]
+    },
+    {
+      "frame": 20,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        245
+      ],
+      "left_hand_position": [
+        303,
+        245
+      ]
+    },
+    {
+      "frame": 21,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        403,
+        245
+      ],
+      "left_hand_position": [
+        303,
+        245
+      ]
+    },
+    {
+      "frame": 22,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        244
+      ],
+      "left_hand_position": [
+        304,
+        244
+      ]
+    },
+    {
+      "frame": 23,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        244
+      ],
+      "left_hand_position": [
+        304,
+        244
+      ]
+    },
+    {
+      "frame": 24,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        244
+      ],
+      "left_hand_position": [
+        304,
+        244
+      ]
+    },
+    {
+      "frame": 25,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 26,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 27,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 28,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 29,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 30,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 31,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        242
+      ],
+      "left_hand_position": [
+        304,
+        242
+      ]
+    },
+    {
+      "frame": 32,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 33,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 34,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 35,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        404,
+        243
+      ],
+      "left_hand_position": [
+        304,
+        243
+      ]
+    },
+    {
+      "frame": 36,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        243
+      ],
+      "left_hand_position": [
+        305,
+        243
+      ]
+    },
+    {
+      "frame": 37,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        243
+      ],
+      "left_hand_position": [
+        305,
+        243
+      ]
+    },
+    {
+      "frame": 38,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        244
+      ],
+      "left_hand_position": [
+        305,
+        244
+      ]
+    },
+    {
+      "frame": 39,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        244
+      ],
+      "left_hand_position": [
+        305,
+        244
+      ]
+    },
+    {
+      "frame": 40,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        244
+      ],
+      "left_hand_position": [
+        305,
+        244
+      ]
+    },
+    {
+      "frame": 41,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        245
+      ],
+      "left_hand_position": [
+        305,
+        245
+      ]
+    },
+    {
+      "frame": 42,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        245
+      ],
+      "left_hand_position": [
+        305,
+        245
+      ]
+    },
+    {
+      "frame": 43,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        246
+      ],
+      "left_hand_position": [
+        305,
+        246
+      ]
+    },
+    {
+      "frame": 44,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        246
+      ],
+      "left_hand_position": [
+        305,
+        246
+      ]
+    },
+    {
+      "frame": 45,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        247
+      ],
+      "left_hand_position": [
+        305,
+        247
+      ]
+    },
+    {
+      "frame": 46,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        247
+      ],
+      "left_hand_position": [
+        305,
+        247
+      ]
+    },
+    {
+      "frame": 47,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        248
+      ],
+      "left_hand_position": [
+        305,
+        248
+      ]
+    },
+    {
+      "frame": 48,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        248
+      ],
+      "left_hand_position": [
+        305,
+        248
+      ]
+    },
+    {
+      "frame": 49,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        405,
+        249
+      ],
+      "left_hand_position": [
+        305,
+        249
+      ]
+    },
+    {
+      "frame": 50,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        250
+      ],
+      "left_hand_position": [
+        306,
+        250
+      ]
+    },
+    {
+      "frame": 51,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        251
+      ],
+      "left_hand_position": [
+        306,
+        251
+      ]
+    },
+    {
+      "frame": 52,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        251
+      ],
+      "left_hand_position": [
+        306,
+        251
+      ]
+    },
+    {
+      "frame": 53,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        252
+      ],
+      "left_hand_position": [
+        306,
+        252
+      ]
+    },
+    {
+      "frame": 54,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        253
+      ],
+      "left_hand_position": [
+        306,
+        253
+      ]
+    },
+    {
+      "frame": 55,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        254
+      ],
+      "left_hand_position": [
+        306,
+        254
+      ]
+    },
+    {
+      "frame": 56,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        254
+      ],
+      "left_hand_position": [
+        306,
+        254
+      ]
+    },
+    {
+      "frame": 57,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        255
+      ],
+      "left_hand_position": [
+        306,
+        255
+      ]
+    },
+    {
+      "frame": 58,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        256
+      ],
+      "left_hand_position": [
+        306,
+        256
+      ]
+    },
+    {
+      "frame": 59,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        257
+      ],
+      "left_hand_position": [
+        306,
+        257
+      ]
+    },
+    {
+      "frame": 60,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        258
+      ],
+      "left_hand_position": [
+        306,
+        258
+      ]
+    },
+    {
+      "frame": 61,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        258
+      ],
+      "left_hand_position": [
+        306,
+        258
+      ]
+    },
+    {
+      "frame": 62,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        258
+      ],
+      "left_hand_position": [
+        306,
+        258
+      ]
+    },
+    {
+      "frame": 63,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        406,
+        259
+      ],
+      "left_hand_position": [
+        306,
+        259
+      ]
+    },
+    {
+      "frame": 64,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        260
+      ],
+      "left_hand_position": [
+        307,
+        260
+      ]
+    },
+    {
+      "frame": 65,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        261
+      ],
+      "left_hand_position": [
+        307,
+        261
+      ]
+    },
+    {
+      "frame": 66,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        262
+      ],
+      "left_hand_position": [
+        307,
+        262
+      ]
+    },
+    {
+      "frame": 67,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        262
+      ],
+      "left_hand_position": [
+        307,
+        262
+      ]
+    },
+    {
+      "frame": 68,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        263
+      ],
+      "left_hand_position": [
+        307,
+        263
+      ]
+    },
+    {
+      "frame": 69,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        264
+      ],
+      "left_hand_position": [
+        307,
+        264
+      ]
+    },
+    {
+      "frame": 70,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        265
+      ],
+      "left_hand_position": [
+        307,
+        265
+      ]
+    },
+    {
+      "frame": 71,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        266
+      ],
+      "left_hand_position": [
+        307,
+        266
+      ]
+    },
+    {
+      "frame": 72,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        266
+      ],
+      "left_hand_position": [
+        307,
+        266
+      ]
+    },
+    {
+      "frame": 73,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        267
+      ],
+      "left_hand_position": [
+        307,
+        267
+      ]
+    },
+    {
+      "frame": 74,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        268
+      ],
+      "left_hand_position": [
+        307,
+        268
+      ]
+    },
+    {
+      "frame": 75,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        268
+      ],
+      "left_hand_position": [
+        307,
+        268
+      ]
+    },
+    {
+      "frame": 76,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        269
+      ],
+      "left_hand_position": [
+        307,
+        269
+      ]
+    },
+    {
+      "frame": 77,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        269
+      ],
+      "left_hand_position": [
+        307,
+        269
+      ]
+    },
+    {
+      "frame": 78,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        407,
+        270
+      ],
+      "left_hand_position": [
+        307,
+        270
+      ]
+    },
+    {
+      "frame": 79,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        270
+      ],
+      "left_hand_position": [
+        308,
+        270
+      ]
+    },
+    {
+      "frame": 80,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        271
+      ],
+      "left_hand_position": [
+        308,
+        271
+      ]
+    },
+    {
+      "frame": 81,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        271
+      ],
+      "left_hand_position": [
+        308,
+        271
+      ]
+    },
+    {
+      "frame": 82,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        272
+      ],
+      "left_hand_position": [
+        308,
+        272
+      ]
+    },
+    {
+      "frame": 83,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        272
+      ],
+      "left_hand_position": [
+        308,
+        272
+      ]
+    },
+    {
+      "frame": 84,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        272
+      ],
+      "left_hand_position": [
+        308,
+        272
+      ]
+    },
+    {
+      "frame": 85,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 86,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 87,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 88,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 89,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 90,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 91,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        274
+      ],
+      "left_hand_position": [
+        308,
+        274
+      ]
+    },
+    {
+      "frame": 92,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        408,
+        273
+      ],
+      "left_hand_position": [
+        308,
+        273
+      ]
+    },
+    {
+      "frame": 93,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        273
+      ],
+      "left_hand_position": [
+        309,
+        273
+      ]
+    },
+    {
+      "frame": 94,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        273
+      ],
+      "left_hand_position": [
+        309,
+        273
+      ]
+    },
+    {
+      "frame": 95,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        273
+      ],
+      "left_hand_position": [
+        309,
+        273
+      ]
+    },
+    {
+      "frame": 96,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        273
+      ],
+      "left_hand_position": [
+        309,
+        273
+      ]
+    },
+    {
+      "frame": 97,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        273
+      ],
+      "left_hand_position": [
+        309,
+        273
+      ]
+    },
+    {
+      "frame": 98,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        272
+      ],
+      "left_hand_position": [
+        309,
+        272
+      ]
+    },
+    {
+      "frame": 99,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        272
+      ],
+      "left_hand_position": [
+        309,
+        272
+      ]
+    },
+    {
+      "frame": 100,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        272
+      ],
+      "left_hand_position": [
+        309,
+        272
+      ]
+    },
+    {
+      "frame": 101,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        271
+      ],
+      "left_hand_position": [
+        309,
+        271
+      ]
+    },
+    {
+      "frame": 102,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        271
+      ],
+      "left_hand_position": [
+        309,
+        271
+      ]
+    },
+    {
+      "frame": 103,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        270
+      ],
+      "left_hand_position": [
+        309,
+        270
+      ]
+    },
+    {
+      "frame": 104,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        270
+      ],
+      "left_hand_position": [
+        309,
+        270
+      ]
+    },
+    {
+      "frame": 105,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        269
+      ],
+      "left_hand_position": [
+        309,
+        269
+      ]
+    },
+    {
+      "frame": 106,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        409,
+        269
+      ],
+      "left_hand_position": [
+        309,
+        269
+      ]
+    },
+    {
+      "frame": 107,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        268
+      ],
+      "left_hand_position": [
+        310,
+        268
+      ]
+    },
+    {
+      "frame": 108,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        268
+      ],
+      "left_hand_position": [
+        310,
+        268
+      ]
+    },
+    {
+      "frame": 109,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        267
+      ],
+      "left_hand_position": [
+        310,
+        267
+      ]
+    },
+    {
+      "frame": 110,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        266
+      ],
+      "left_hand_position": [
+        310,
+        266
+      ]
+    },
+    {
+      "frame": 111,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        266
+      ],
+      "left_hand_position": [
+        310,
+        266
+      ]
+    },
+    {
+      "frame": 112,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        265
+      ],
+      "left_hand_position": [
+        310,
+        265
+      ]
+    },
+    {
+      "frame": 113,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        264
+      ],
+      "left_hand_position": [
+        310,
+        264
+      ]
+    },
+    {
+      "frame": 114,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        263
+      ],
+      "left_hand_position": [
+        310,
+        263
+      ]
+    },
+    {
+      "frame": 115,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        262
+      ],
+      "left_hand_position": [
+        310,
+        262
+      ]
+    },
+    {
+      "frame": 116,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        262
+      ],
+      "left_hand_position": [
+        310,
+        262
+      ]
+    },
+    {
+      "frame": 117,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        261
+      ],
+      "left_hand_position": [
+        310,
+        261
+      ]
+    },
+    {
+      "frame": 118,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        260
+      ],
+      "left_hand_position": [
+        310,
+        260
+      ]
+    },
+    {
+      "frame": 119,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        259
+      ],
+      "left_hand_position": [
+        310,
+        259
+      ]
+    },
+    {
+      "frame": 120,
+      "handshape": "pinch",
+      "orientation": "palm_in",
+      "location": "neutral_space",
+      "movement": "inward",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        410,
+        258
+      ],
+      "left_hand_position": [
+        310,
+        258
+      ]
+    }
+  ]
+}

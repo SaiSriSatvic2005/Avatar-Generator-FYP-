@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Sign Language to 3D Avatar Synthesizer | HamNoSys Pipeline</title>
+    
+    <!-- Google Fonts: Outfit & Inter for high readability and bold catchiness -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JASigning CWASA -->
+    <link rel="stylesheet" href="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/cwasa.css" />
+    <script type="text/javascript" src="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/allcsa.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body onload="CWASA.init({
+    'cwaBase': 'https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/',
+    'avsbsl' : ['luna', 'siggi', 'anna', 'marc', 'francoise'],
+    'avSettings' : { 'avList': 'avsbsl', 'initAv': 'anna' }
+});">
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="badge">Sign Language Converter Project</div>
+            <h1>Universal Sign Language <span>Avatar Synthesizer</span></h1>
+            <p>Convert sign language videos into phonetic notation and render real-time 3D avatar animations.</p>
+        </header>
+
+        <!-- Simple Non-Technical Intro Section -->
+        <section class="card intro-card">
+            <div class="intro-header">
+                <h2>About This Project</h2>
+            </div>
+            <p>
+                Welcome! This web application converts sign language videos into phonetic sign notation (HamNoSys) and displays a 3D animated avatar performing the sign. It helps bridge the communication gap by showing how sign language videos can be converted into animated avatars for easy visual understanding.
+            </p>
+        </section>
+
+        <!-- Main Alignment Grid: Side-by-Side Video & Avatar -->
+        <main class="main-top-grid">
+            
+            <!-- Left Column: Input Video Selection & Preview -->
+            <div class="panel-column left-panel">
+                <div class="card video-card-aligned">
+                    <h3>1. Input Video & Preview</h3>
+                    
+                    <!-- Upload Area -->
+                    <div class="upload-area" id="drop-zone">
+                        <input type="file" id="video-input" accept="video/mp4,video/x-m4v,video/*" hidden>
+                        <div class="upload-content">
+                            <p class="upload-text">Drag & drop your sign language video here</p>
+                            <span class="upload-subtext">or click to browse from your computer</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Sample Buttons -->
+                    <div class="sample-selection">
+                        <span class="sample-label">Or click to test benchmark sign clips:</span>
+                        <div class="sample-buttons">
+                            <button class="sample-btn" data-sample="Prompt_1.mp4">Prompt_1.mp4</button>
+                            <button class="sample-btn" data-sample="sample_output.mp4">sample_output.mp4</button>
+                            <button class="sample-btn" data-sample="dont worry.mp4">dont_worry.mp4</button>
+                        </div>
+                    </div>
+
+                    <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Analyzing video gestures and building avatar motion...</p>
+                    </div>
+
+                    <!-- Video Preview Player (Hidden until loaded) -->
+                    <div class="video-preview-container hidden" id="preview-container">
+                        <video id="input-video-player" controls playsinline>
+                            Your browser does not support video playback.
+                        </video>
+                        <div class="video-filename" id="preview-filename">Input Video Preview</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Avatar Rendering & Directly Integrated Play Button -->
+            <div class="panel-column right-panel">
+                <div class="card avatar-card-aligned">
+                    <h3>2. 3D Avatar Render</h3>
+                    <div class="avatar-container">
+                        <!-- JASigning Avatar injected here -->
+                        <div class="CWASAAvatar av0"></div>
+                        
+                        <!-- Hidden controls required by JASigning -->
+                        <div style="display: none;">
+                            <span class="CWASAAvMenu av0"></span>
+                            <span class="CWASAAmbBox av0"></span>
+                            <input class="txtLogSpeed av0" value="+1.0" type="text" />
+                            <input type="button" value="-" class="bttnSpeedDown av0" />
+                            <input type="button" value="+" class="bttnSpeedUp av0" />
+                            <input type="button" value="Reset" class="bttnSpeedReset av0" />
+                            <input class="txtSiGMLURL av0" value="" type="text" />
+                            <textarea class="txtaSiGMLText av0" rows="10"></textarea>
+                            <input type="button" value="Play SiGML URL" class="bttnPlaySiGMLURL av0" />
+                            <input type="button" value="Play SiGML Text" class="bttnPlaySiGMLText av0" />
+                            <input type="button" value="Stop" class="bttnStop av0" />
+                            <input value="Suspend" class="bttnSuspend av0" type="button">
+                            <input value="Resume" class="bttnResume av0" type="button">
+                            <input value="+1" class="bttnNextF av0" type="button">
+                            <input value="-1" class="bttnPrevF av0" type="button">
+                            <input class="txtSF av0" value="0/0" type="text">
+                            <input class="txtGloss av0" value="[none]" type="text">
+                            <input class="txtFPS av0" value="00.00" type="text" />
+                            <input type="text" class="statusExtra av0" />
+                        </div>
+                    </div>
+
+                    <!-- Directly Integrated Play / Replay Avatar Button -->
+                    <button id="play-avatar-btn" class="btn-avatar-play">
+                        Replay 3D Avatar Animation
+                    </button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Detailed Results & Information Grid (Below the Fold) -->
+        <section class="results-detail-grid">
+            
+            <!-- Sign Meaning & Translation Box -->
+            <div class="card meaning-card hidden" id="meaning-card">
+                <h3>Sign Meaning & Translation</h3>
+                <div class="gloss-container">
+                    <div class="gloss-header-row">
+                        <div class="gloss-badge" id="sign-gloss">HELLO / HI</div>
+                        <div class="accuracy-pill" id="precision-pill">Accuracy: 85.7%</div>
+                    </div>
+                    <div class="gloss-meaning" id="sign-meaning">Sign language greeting gesture</div>
+                    <div class="gloss-note">
+                        This text translation explains what the sign means while the 3D avatar animation above is performed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- HamNoSys Notation & Symbol Keyboard Chips -->
+            <div class="card result-card hidden" id="result-card">
+                <h3>Generated Sign Notation (HamNoSys)</h3>
+                
+                <div class="result-group">
+                    <label>Phonetic Token Sequence</label>
+                    <div class="result-box" id="hamnosys-tags"></div>
+                </div>
+
+                <div class="result-group">
+                    <label>HamNoSys Font Glyphs</label>
+                    <div class="result-box hamnosys-font-display" id="hamnosys-chars"></div>
+                </div>
+                
+                <div class="result-group">
+                    <label>HamKeyboard Symbol Breakdown</label>
+                    <div class="symbol-chips-container" id="symbol-chips"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Simple Vague Future Development Roadmap Section -->
+        <section class="card roadmap-card">
+            <div class="roadmap-header">
+                <div class="roadmap-badge">Future Development</div>
+                <h2>Universal Any-to-Any Sign Language Converter</h2>
+            </div>
+            
+            <p class="roadmap-intro">
+                Our goal for future development is to build a universal sign-language-to-sign-language converter. In the future, this system will take a video in <strong>any sign language</strong> and automatically translate and convert it into <strong>any sign language requested</strong> by the user, making global communication barrier-free.
+            </p>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-card-item">
+                    <h4>Any Input Sign Language</h4>
+                    <p>Recognizing gestures from video clips in any regional or national sign language.</p>
+                </div>
+                <div class="roadmap-card-item">
+                    <h4>Universal Phonetic Translation</h4>
+                    <p>Translating signs into universal phonetic notation for cross-lingual conversion.</p>
+                </div>
+                <div class="roadmap-card-item">
+                    <h4>Requested Output Avatar</h4>
+                    <p>Rendering the translated signs using 3D animated avatars in whichever sign language the user requests.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hidden textarea to store SiGML temporarily -->
+    <textarea id="sigml-storage" hidden></textarea>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

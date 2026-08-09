@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "HamNoSys";
+  src: url("/HamNoSys.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+}
+
+.app {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 420px;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+input {
+  padding: 12px;
+  width: 260px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px 18px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e4fd6;
+}
+
+.output {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* HamNoSys symbol display */
+.symbol {
+  font-family: "HamNoSys", monospace !important;
+  font-size: 42px;
+  line-height: 1.4;       /* prevents glyph clipping */
+  padding-top: 6px;       /* extra space for top part */
+  padding-bottom: 6px;    /* extra space for bottom part */
+  display: inline-block;
+}
+
+/* Full HamNoSys sequence display */
+.hamnosys-line {
+  font-family: "HamNoSys", monospace;
+  font-size: 44px;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  margin: 15px 0;
+  padding: 8px 0;
+
+  overflow-x: auto;
+  white-space: nowrap;
+}

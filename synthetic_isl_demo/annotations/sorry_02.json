@@ -1,0 +1,1710 @@
+{
+  "sign_id": "sorry_02",
+  "sign_name": "sorry",
+  "description": "small circular motion with open hand near the face",
+  "expected_hamnosys": "index palm_out face circle",
+  "fps": 24,
+  "frame_count": 100,
+  "frames": [
+    {
+      "frame": 1,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 2,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 3,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 4,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 5,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 6,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        214
+      ],
+      "left_hand_position": [
+        323,
+        214
+      ]
+    },
+    {
+      "frame": 7,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        214
+      ],
+      "left_hand_position": [
+        323,
+        214
+      ]
+    },
+    {
+      "frame": 8,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        214
+      ],
+      "left_hand_position": [
+        323,
+        214
+      ]
+    },
+    {
+      "frame": 9,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        214
+      ],
+      "left_hand_position": [
+        323,
+        214
+      ]
+    },
+    {
+      "frame": 10,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        214
+      ],
+      "left_hand_position": [
+        323,
+        214
+      ]
+    },
+    {
+      "frame": 11,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        215
+      ],
+      "left_hand_position": [
+        323,
+        215
+      ]
+    },
+    {
+      "frame": 12,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        215
+      ],
+      "left_hand_position": [
+        323,
+        215
+      ]
+    },
+    {
+      "frame": 13,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        215
+      ],
+      "left_hand_position": [
+        323,
+        215
+      ]
+    },
+    {
+      "frame": 14,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        215
+      ],
+      "left_hand_position": [
+        322,
+        215
+      ]
+    },
+    {
+      "frame": 15,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        215
+      ],
+      "left_hand_position": [
+        322,
+        215
+      ]
+    },
+    {
+      "frame": 16,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        215
+      ],
+      "left_hand_position": [
+        322,
+        215
+      ]
+    },
+    {
+      "frame": 17,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        216
+      ],
+      "left_hand_position": [
+        322,
+        216
+      ]
+    },
+    {
+      "frame": 18,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        216
+      ],
+      "left_hand_position": [
+        322,
+        216
+      ]
+    },
+    {
+      "frame": 19,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        216
+      ],
+      "left_hand_position": [
+        321,
+        216
+      ]
+    },
+    {
+      "frame": 20,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        216
+      ],
+      "left_hand_position": [
+        321,
+        216
+      ]
+    },
+    {
+      "frame": 21,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        216
+      ],
+      "left_hand_position": [
+        321,
+        216
+      ]
+    },
+    {
+      "frame": 22,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        216
+      ],
+      "left_hand_position": [
+        321,
+        216
+      ]
+    },
+    {
+      "frame": 23,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 24,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 25,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 26,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 27,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 28,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 29,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        216
+      ],
+      "left_hand_position": [
+        320,
+        216
+      ]
+    },
+    {
+      "frame": 30,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        216
+      ],
+      "left_hand_position": [
+        319,
+        216
+      ]
+    },
+    {
+      "frame": 31,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        216
+      ],
+      "left_hand_position": [
+        319,
+        216
+      ]
+    },
+    {
+      "frame": 32,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        216
+      ],
+      "left_hand_position": [
+        319,
+        216
+      ]
+    },
+    {
+      "frame": 33,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        216
+      ],
+      "left_hand_position": [
+        319,
+        216
+      ]
+    },
+    {
+      "frame": 34,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        216
+      ],
+      "left_hand_position": [
+        318,
+        216
+      ]
+    },
+    {
+      "frame": 35,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        216
+      ],
+      "left_hand_position": [
+        318,
+        216
+      ]
+    },
+    {
+      "frame": 36,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        215
+      ],
+      "left_hand_position": [
+        318,
+        215
+      ]
+    },
+    {
+      "frame": 37,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        215
+      ],
+      "left_hand_position": [
+        318,
+        215
+      ]
+    },
+    {
+      "frame": 38,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        215
+      ],
+      "left_hand_position": [
+        318,
+        215
+      ]
+    },
+    {
+      "frame": 39,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        215
+      ],
+      "left_hand_position": [
+        317,
+        215
+      ]
+    },
+    {
+      "frame": 40,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        215
+      ],
+      "left_hand_position": [
+        317,
+        215
+      ]
+    },
+    {
+      "frame": 41,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        215
+      ],
+      "left_hand_position": [
+        317,
+        215
+      ]
+    },
+    {
+      "frame": 42,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        214
+      ],
+      "left_hand_position": [
+        317,
+        214
+      ]
+    },
+    {
+      "frame": 43,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        214
+      ],
+      "left_hand_position": [
+        317,
+        214
+      ]
+    },
+    {
+      "frame": 44,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        214
+      ],
+      "left_hand_position": [
+        317,
+        214
+      ]
+    },
+    {
+      "frame": 45,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        214
+      ],
+      "left_hand_position": [
+        317,
+        214
+      ]
+    },
+    {
+      "frame": 46,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        214
+      ],
+      "left_hand_position": [
+        317,
+        214
+      ]
+    },
+    {
+      "frame": 47,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 48,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 49,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 50,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 51,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 52,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 53,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 54,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 55,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        376,
+        213
+      ],
+      "left_hand_position": [
+        316,
+        213
+      ]
+    },
+    {
+      "frame": 56,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        212
+      ],
+      "left_hand_position": [
+        317,
+        212
+      ]
+    },
+    {
+      "frame": 57,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        212
+      ],
+      "left_hand_position": [
+        317,
+        212
+      ]
+    },
+    {
+      "frame": 58,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        212
+      ],
+      "left_hand_position": [
+        317,
+        212
+      ]
+    },
+    {
+      "frame": 59,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        212
+      ],
+      "left_hand_position": [
+        317,
+        212
+      ]
+    },
+    {
+      "frame": 60,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        212
+      ],
+      "left_hand_position": [
+        317,
+        212
+      ]
+    },
+    {
+      "frame": 61,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        211
+      ],
+      "left_hand_position": [
+        317,
+        211
+      ]
+    },
+    {
+      "frame": 62,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        211
+      ],
+      "left_hand_position": [
+        317,
+        211
+      ]
+    },
+    {
+      "frame": 63,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        377,
+        211
+      ],
+      "left_hand_position": [
+        317,
+        211
+      ]
+    },
+    {
+      "frame": 64,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        211
+      ],
+      "left_hand_position": [
+        318,
+        211
+      ]
+    },
+    {
+      "frame": 65,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        211
+      ],
+      "left_hand_position": [
+        318,
+        211
+      ]
+    },
+    {
+      "frame": 66,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        211
+      ],
+      "left_hand_position": [
+        318,
+        211
+      ]
+    },
+    {
+      "frame": 67,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        210
+      ],
+      "left_hand_position": [
+        318,
+        210
+      ]
+    },
+    {
+      "frame": 68,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        378,
+        210
+      ],
+      "left_hand_position": [
+        318,
+        210
+      ]
+    },
+    {
+      "frame": 69,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        210
+      ],
+      "left_hand_position": [
+        319,
+        210
+      ]
+    },
+    {
+      "frame": 70,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        210
+      ],
+      "left_hand_position": [
+        319,
+        210
+      ]
+    },
+    {
+      "frame": 71,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        210
+      ],
+      "left_hand_position": [
+        319,
+        210
+      ]
+    },
+    {
+      "frame": 72,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        379,
+        210
+      ],
+      "left_hand_position": [
+        319,
+        210
+      ]
+    },
+    {
+      "frame": 73,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 74,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 75,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 76,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 77,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 78,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 79,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        380,
+        210
+      ],
+      "left_hand_position": [
+        320,
+        210
+      ]
+    },
+    {
+      "frame": 80,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        210
+      ],
+      "left_hand_position": [
+        321,
+        210
+      ]
+    },
+    {
+      "frame": 81,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        210
+      ],
+      "left_hand_position": [
+        321,
+        210
+      ]
+    },
+    {
+      "frame": 82,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        210
+      ],
+      "left_hand_position": [
+        321,
+        210
+      ]
+    },
+    {
+      "frame": 83,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        381,
+        210
+      ],
+      "left_hand_position": [
+        321,
+        210
+      ]
+    },
+    {
+      "frame": 84,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        210
+      ],
+      "left_hand_position": [
+        322,
+        210
+      ]
+    },
+    {
+      "frame": 85,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        210
+      ],
+      "left_hand_position": [
+        322,
+        210
+      ]
+    },
+    {
+      "frame": 86,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        211
+      ],
+      "left_hand_position": [
+        322,
+        211
+      ]
+    },
+    {
+      "frame": 87,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        211
+      ],
+      "left_hand_position": [
+        322,
+        211
+      ]
+    },
+    {
+      "frame": 88,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        382,
+        211
+      ],
+      "left_hand_position": [
+        322,
+        211
+      ]
+    },
+    {
+      "frame": 89,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        211
+      ],
+      "left_hand_position": [
+        323,
+        211
+      ]
+    },
+    {
+      "frame": 90,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        211
+      ],
+      "left_hand_position": [
+        323,
+        211
+      ]
+    },
+    {
+      "frame": 91,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        211
+      ],
+      "left_hand_position": [
+        323,
+        211
+      ]
+    },
+    {
+      "frame": 92,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        212
+      ],
+      "left_hand_position": [
+        323,
+        212
+      ]
+    },
+    {
+      "frame": 93,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        212
+      ],
+      "left_hand_position": [
+        323,
+        212
+      ]
+    },
+    {
+      "frame": 94,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        212
+      ],
+      "left_hand_position": [
+        323,
+        212
+      ]
+    },
+    {
+      "frame": 95,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        212
+      ],
+      "left_hand_position": [
+        323,
+        212
+      ]
+    },
+    {
+      "frame": 96,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        383,
+        212
+      ],
+      "left_hand_position": [
+        323,
+        212
+      ]
+    },
+    {
+      "frame": 97,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 98,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 99,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    },
+    {
+      "frame": 100,
+      "handshape": "index",
+      "orientation": "palm_out",
+      "location": "face",
+      "movement": "circle",
+      "contact": false,
+      "dominant_hand": "right",
+      "right_hand_position": [
+        384,
+        213
+      ],
+      "left_hand_position": [
+        324,
+        213
+      ]
+    }
+  ]
+}

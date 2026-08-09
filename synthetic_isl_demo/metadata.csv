@@ -1,0 +1,9 @@
+sample_id,video,annotation,sign,handshape,orientation,location,movement,contact
+hello_01,hello_01.mp4,hello_01.json,hello,flat,palm_out,chest,outward,False
+hello_02,hello_02.mp4,hello_02.json,hello,flat,palm_out,chest,outward,False
+thank_you_01,thank_you_01.mp4,thank_you_01.json,thank_you,open,palm_up,chest,up_down,False
+thank_you_02,thank_you_02.mp4,thank_you_02.json,thank_you,open,palm_up,chest,up_down,False
+help_01,help_01.mp4,help_01.json,help,pinch,palm_in,neutral_space,inward,True
+help_02,help_02.mp4,help_02.json,help,pinch,palm_in,neutral_space,inward,True
+sorry_01,sorry_01.mp4,sorry_01.json,sorry,index,palm_out,face,circle,False
+sorry_02,sorry_02.mp4,sorry_02.json,sorry,index,palm_out,face,circle,False

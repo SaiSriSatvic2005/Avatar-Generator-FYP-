@@ -1,0 +1,47 @@
+HANDSHAPE
+│
+├── A. BASIC
+│     │
+│     ├── BASIC-1
+│     │      ├── hamfist
+│     │      ├── hamflathand
+│     │      ├── hamfinger2
+│     │      ├── hamfinger23
+│     │      ├── hamfinger23spread
+│     │      └── hamfinger2345
+│     │
+│     └── BASIC-2
+│            ├── hampinch12
+│            ├── hampinchall
+│            ├── hampinch12open
+│            ├── hamcee12
+│            ├── hamceeall
+│            └── hamceeopen
+│
+├── C. THUMB
+│     ├── hamthumboutmod
+│     ├── hamthumbacrossmod
+│     └── hamtthumbopenmod
+│
+├── D. FINGER-TYPE
+│     ├── hamdoublebent
+│     ├── hamfingerstraightmod
+│     ├── hamfingerbendmod
+│     ├── hamfingerhookmod
+│     └── hamfingerdoublehooked
+│
+├── E. FINGER STATES
+│     ├── hamthumb
+│     ├── hamindexfinger
+│     ├── hammiddlefinger
+│     ├── hamringfinger
+│     ├── hampinky
+│     └── hambetween
+│
+└── X. EXTRA (Attributes)
+      ├── hamfingertip
+      ├── hamfingernail
+      ├── hamfingerpad
+      ├── hamfingermidjoint
+      ├── hamfingerbase
+      └── hamfingerside
