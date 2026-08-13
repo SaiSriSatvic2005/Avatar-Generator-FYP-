@@ -272,6 +272,15 @@ def clean_json_serializable(obj):
     else:
         return obj
 
+SAMPLES_FOLDER = os.path.join(WEBAPP_DIR, 'static', 'samples')
+os.makedirs(SAMPLES_FOLDER, exist_ok=True)
+
+@app.route('/samples/<path:filename>')
+def serve_sample(filename):
+    if os.path.exists(os.path.join(SAMPLES_FOLDER, filename)):
+        return send_from_directory(SAMPLES_FOLDER, filename)
+    return send_from_directory(INTEGRATION_DIR, filename)
+
 @app.route('/upload', methods=['POST'])
 def upload_video():
     if 'video' not in request.files and 'sample_name' not in request.form:
@@ -282,18 +291,18 @@ def upload_video():
     
     if 'sample_name' in request.form:
         sample_name = request.form['sample_name']
-        video_path = os.path.join(INTEGRATION_DIR, sample_name)
+        video_path = os.path.join(SAMPLES_FOLDER, sample_name)
         display_filename = sample_name
         video_url = f"/samples/{sample_name}"
         
-        # If exact filename doesn't exist, search for matching video file
+        # Search across sample folders
         if not os.path.exists(video_path):
             found = False
-            base_search = sample_name.lower().replace('.mp4', '')
-            for folder, url_prefix in [(INTEGRATION_DIR, "/samples/"), (UPLOAD_FOLDER, "/uploads/")]:
+            base_search = sample_name.lower().replace('.mp4', '').replace('.mov', '')
+            for folder, url_prefix in [(SAMPLES_FOLDER, "/samples/"), (INTEGRATION_DIR, "/samples/"), (UPLOAD_FOLDER, "/uploads/")]:
                 if os.path.exists(folder):
                     for f in os.listdir(folder):
-                        if f.lower().endswith('.mp4') and base_search in f.lower():
+                        if f.lower().endswith(('.mp4', '.mov')) and (base_search in f.lower() or f.lower() == sample_name.lower()):
                             video_path = os.path.join(folder, f)
                             display_filename = f
                             video_url = f"{url_prefix}{f}"
@@ -301,6 +310,9 @@ def upload_video():
                             break
                 if found:
                     break
+
+        if not os.path.exists(video_path):
+            return jsonify({"error": f"Sample video clip '{sample_name}' was not found on the server."}), 404
     else:
         file = request.files['video']
         if file.filename == '':

@@ -152,11 +152,19 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => { throw new Error(err.error || 'Network error'); });
+        .then(async response => {
+            const contentType = response.headers.get('content-type') || '';
+            if (contentType.includes('application/json')) {
+                const data = await response.json();
+                if (!response.ok || data.error) {
+                    throw new Error(data.error || `Server error (${response.status})`);
+                }
+                return data;
+            } else {
+                const errorText = await response.text();
+                console.error('Server non-JSON response:', errorText);
+                throw new Error(`Server processing failed (${response.status}). Please try uploading a video directly.`);
             }
-            return response.json();
         })
         .then(data => {
             if (data.error) throw new Error(data.error);

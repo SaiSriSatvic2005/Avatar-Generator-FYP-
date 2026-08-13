@@ -21,10 +21,11 @@ webapp/static/output/
 webapp/static/temp/
 *.mp4
 
-# We want to KEEP our specific neural network files, so we make an exception for them
+# We want to KEEP our specific neural network files and sample videos, so we make an exception for them
 !Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/hamnosys_net_v2.pth
 !Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/nn_class_mappings.json
 !Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/dataset_landmarks.npz
+!webapp/static/samples/*.mp4
 
 # IDEs
 .idea/
