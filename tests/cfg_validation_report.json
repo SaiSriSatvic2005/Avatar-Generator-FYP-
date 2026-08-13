@@ -1,0 +1,1208 @@
+{
+  "test_name": "CFG Grammar Validation",
+  "total_glosses": 170,
+  "valid_sequences": 169,
+  "invalid_sequences": 1,
+  "validity_rate_pct": 99.41,
+  "grammar_rules": [
+    "Sign ::= [SymmetryOp] Handshape ExtFinger PalmOri Location [Contact] [Movement]",
+    "All tokens must be valid HamNoSys identifiers",
+    "Token order must follow grammatical category hierarchy",
+    "No consecutive duplicate tokens allowed"
+  ],
+  "results": [
+    {
+      "gloss": "book",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamchest hamtouch hammoveo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "drink",
+      "sequence": "hamcee12 hamextfingeru hampalml hamlips hamtouch hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "computer",
+      "sequence": "hamsymmlr hamcee12 hamextfingeru hampalml hamforehead hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "before",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamchest hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "chair",
+      "sequence": "hamsymmlr hamfinger23 hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "go",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmd hamneutralspace hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "clothes",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalmu hamchest hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "who",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamlips hamcircleo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "candy",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamcheek hamtouch hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "cousin",
+      "sequence": "hamcee12 hamextfingeru hampalml hamear hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "deaf",
+      "sequence": "hamfinger2 hamextfingeru hampalmd hamear hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "fine",
+      "sequence": "hamflathand hamextfingerl hampalml hamchest hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "help",
+      "sequence": "hamplus hamfist hamextfingeru hampalml hamchest hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "no",
+      "sequence": "hamfinger23 hamextfingeru hampalmd hamchest hamclose",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "thin",
+      "sequence": "hamsymmlr hampinky hamextfingeru hampalmd hamchest hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "walk",
+      "sequence": "hamsymmlr hamflathand hamextfingerd hampalmd hamneutralspace hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "year",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalmd hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "yes",
+      "sequence": "hamfist hamextfingeru hampalmd hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "all",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamchest hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "black",
+      "sequence": "hamfinger2 hamextfingerl hampalmd hamforehead hammover",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "cool",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmd hamchest hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "finish",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamchest hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "hot",
+      "sequence": "hamceeopen hamextfingeru hampalmu hamlips hammoved",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "like",
+      "sequence": "hampinch12open hamextfingeru hampalmu hamchest hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "many",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamneutralspace hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "mother",
+      "sequence": "hamflathand hamextfingeru hampalml hamchin hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "now",
+      "sequence": "hamsymmlr hamceeopen hamextfingerd hampalmu hamchest hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "orange",
+      "sequence": "hamfist hamextfingeru hampalmu hamchin hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "table",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalmd hamchest hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "thanksgiving",
+      "sequence": "hamflathand hamextfingeru hampalmu hamchin hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "apple",
+      "sequence": "hamfingerstraightmod hamextfingeru hampalml hamcheek hamtouch hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "bird",
+      "sequence": "hampinch12 hamextfingeru hampalml hamlips hamtouch hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "car",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalmd hamchest hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "cat",
+      "sequence": "hamsymmlr hampinch12open hamextfingeru hampalml hamcheek hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "dog",
+      "sequence": "hamfingerstraightmod hamextfingerd hampalmu hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "father",
+      "sequence": "hamflathand hamextfingeru hampalml hamforehead hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "happy",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamchest hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "house",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamheadtop hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "love",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalml hamchest hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "water",
+      "sequence": "hamfinger2345 hamextfingeru hampalml hamchin hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "again",
+      "sequence": "hamplus hamflathand hamextfingeru hampalmu hamchest hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "always",
+      "sequence": "hamfinger2 hamextfingeru hampalmu hamneutralspace hamcircleo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "angry",
+      "sequence": "hamceeopen hamextfingeru hampalml hamchest hammoveu",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "animal",
+      "sequence": "hamsymmlr hamceeopen hamextfingerl hampalmu hamchest hamtouch hamnodding",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "answer",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmd hamchin hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "baby",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamchest hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "bad",
+      "sequence": "hamflathand hamextfingeru hampalmd hamchin hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "bathroom",
+      "sequence": "hamfist hamextfingeru hampalml hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "because",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamforehead hamtouch hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "bed",
+      "sequence": "hamflathand hamextfingerl hampalml hamcheek hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "big",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalml hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "blue",
+      "sequence": "hamflathand hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "born",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamchest hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "boy",
+      "sequence": "hamflathand hamextfingeru hampalml hamforehead hamclose",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "brother",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalml hamforehead hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "buy",
+      "sequence": "hamplus hamflathand hamextfingeru hampalmu hamneutralspace hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "can",
+      "sequence": "hamsymmlr hamfist hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "change",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "city",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamtouch hamtouch",
+      "token_count": 7,
+      "valid": false,
+      "errors": [
+        "Consecutive duplicate: 'hamtouch' at position 6"
+      ]
+    },
+    {
+      "gloss": "close",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalml hamneutralspace hamclose hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "color",
+      "sequence": "hamflathand hamextfingeru hampalml hamchin hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "come",
+      "sequence": "hamfinger2 hamextfingeru hampalmu hamneutralspace hammover",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "cook",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamneutralspace hamtouch hamtwisting",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "cry",
+      "sequence": "hamsymmlr hamfinger2 hamextfingerd hampalml hamcheek hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "dance",
+      "sequence": "hamplus hamflathand hamextfingerd hampalmu hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "day",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "different",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmd hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "doctor",
+      "sequence": "hamplus hamflathand hamextfingerd hampalmd hamchest hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "door",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalml hamneutralspace hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "eat",
+      "sequence": "hampinch12 hamextfingeru hampalml hamlips hamtouch hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "enjoy",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmd hamchest hamtouch hamcircleo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "enough",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamneutralspace hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "every",
+      "sequence": "hamplus hamfist hamextfingeru hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "face",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamcheek hamcircleo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "family",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalml hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "feel",
+      "sequence": "hamflathand hamextfingeru hampalml hamchest hamtouch hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "find",
+      "sequence": "hampinch12open hamextfingeru hampalmd hamneutralspace hamclose hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "fish",
+      "sequence": "hamflathand hamextfingerl hampalml hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "food",
+      "sequence": "hampinch12 hamextfingeru hampalmd hamlips hamtouch hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "forget",
+      "sequence": "hamflathand hamextfingerl hampalml hamforehead hamtouch hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "friend",
+      "sequence": "hamplus hamfinger2 hamextfingerl hampalmu hamneutralspace hamtouch hamtwisting",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "full",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamchest hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "funny",
+      "sequence": "hamfinger23 hamextfingeru hampalml hamchin hamtouch hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "girl",
+      "sequence": "hamfist hamextfingeru hampalml hamchin hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "give",
+      "sequence": "hamflathand hamextfingeru hampalmu hamneutralspace hammoveo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "good",
+      "sequence": "hamplus hamflathand hamextfingeru hampalmu hamchin hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "green",
+      "sequence": "hamflathand hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "hair",
+      "sequence": "hampinch12open hamextfingeru hampalml hamheadtop hamtouch hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "have",
+      "sequence": "hamflathand hamextfingeru hampalml hamchest hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "hear",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamear hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "here",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "how",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalmu hamneutralspace hamtouch hamtwisting",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "hurt",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmd hamneutralspace hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "important",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmu hamneutralspace hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "know",
+      "sequence": "hamflathand hamextfingeru hampalml hamforehead hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "language",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalmd hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "last",
+      "sequence": "hamplus hampinky hamextfingerd hampalml hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "later",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalml hamneutralspace hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "learn",
+      "sequence": "hamplus hamflathand hamextfingeru hampalmu hamforehead hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "letter",
+      "sequence": "hamplus hamfist hamextfingeru hampalml hamlips hamtouch hammoveo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "live",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamchest hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "look",
+      "sequence": "hamfinger23 hamextfingeru hampalmd hamcheek hammoveo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "man",
+      "sequence": "hamflathand hamextfingeru hampalml hamforehead hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "medicine",
+      "sequence": "hamplus hamflathand hamextfingerd hampalmu hamneutralspace hamtouch hamcircleo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "meet",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalml hamneutralspace hamtouch hammoveo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "money",
+      "sequence": "hamplus hamflathand hamextfingeru hampalmu hamneutralspace hamtouch hamnodding",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "more",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "morning",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamneutralspace hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "movie",
+      "sequence": "hamplus hamflathand hamextfingeru hampalml hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "music",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "name",
+      "sequence": "hamplus hamfinger23 hamextfingerl hampalmd hamneutralspace hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "need",
+      "sequence": "hamfinger2 hamextfingerd hampalmd hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "new",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmu hamneutralspace hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "nice",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamneutralspace hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "night",
+      "sequence": "hamplus hamflathand hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "not",
+      "sequence": "hamfist hamextfingeru hampalml hamchin hamtouch hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "number",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamtouch hamtwisting",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "old",
+      "sequence": "hamceeopen hamextfingerd hampalml hamchin hammoved",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "open",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalmd hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "people",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalmd hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "play",
+      "sequence": "hamsymmlr hamfinger2345 hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "please",
+      "sequence": "hamflathand hamextfingeru hampalml hamchest hamtouch hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "practice",
+      "sequence": "hamplus hamfinger2 hamextfingerl hampalml hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "problem",
+      "sequence": "hamfinger23 hamextfingerd hampalmd hamforehead hamtwisting",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "rain",
+      "sequence": "hamsymmlr hamceeopen hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "read",
+      "sequence": "hamplus hamfinger23 hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "red",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamlips hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "remember",
+      "sequence": "hamfist hamextfingeru hampalml hamforehead hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "right",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalmd hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "run",
+      "sequence": "hamplus hamfinger2 hamextfingerl hampalmd hamneutralspace hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sad",
+      "sequence": "hamsymmlr hamflathand hamextfingerd hampalml hamcheek hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "same",
+      "sequence": "hamsymmlr hamfinger2 hamextfingerl hampalmd hamneutralspace hamtouch hammover",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "say",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamchin hamcircleo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "school",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalmd hamneutralspace hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "see",
+      "sequence": "hamfinger23 hamextfingeru hampalml hamcheek hammoveo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sick",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalmd hamforehead hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sign",
+      "sequence": "hamsymmlr hamfinger2 hamextfingeru hampalml hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sister",
+      "sequence": "hamplus hamfist hamextfingeru hampalml hamchin hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sleep",
+      "sequence": "hamflathand hamextfingeru hampalml hamcheek hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "slow",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamneutralspace hamtouch hammoveu",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "small",
+      "sequence": "hamsymmlr hamflathand hamextfingerl hampalml hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "snow",
+      "sequence": "hamsymmlr hamceeopen hamextfingerd hampalmd hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sometimes",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalml hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "sorry",
+      "sequence": "hamfist hamextfingeru hampalml hamchest hamtouch hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "start",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalml hamneutralspace hamtouch hamtwisting",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "stop",
+      "sequence": "hamplus hamflathand hamextfingerl hampalmd hamneutralspace hamtouch hammoved",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "story",
+      "sequence": "hamsymmlr hampinch12 hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "take",
+      "sequence": "hamceeopen hamextfingeru hampalmd hamneutralspace hamclose hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "talk",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamchin hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "teacher",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamforehead hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "tell",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamchin hammoveo",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "thank",
+      "sequence": "hamflathand hamextfingeru hampalml hamchin hamtouch hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "think",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamforehead hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "time",
+      "sequence": "hamplus hamfinger2 hamextfingerd hampalmd hamneutralspace hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "tree",
+      "sequence": "hamplus hamflathand hamextfingeru hampalml hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "try",
+      "sequence": "hamsymmlr hamfist hamextfingeru hampalml hamneutralspace hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "understand",
+      "sequence": "hamfinger2 hamextfingeru hampalml hamforehead hamtouch hammoveu",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "wait",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalmu hamneutralspace hamnodding",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "want",
+      "sequence": "hamceeopen hamextfingeru hampalmu hamneutralspace hamclose hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "what",
+      "sequence": "hamsymmlr hamfinger2 hamextfingerd hampalmu hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "when",
+      "sequence": "hamplus hamfinger2 hamextfingeru hampalml hamneutralspace hamtouch hamcircleo",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "where",
+      "sequence": "hamfinger2 hamextfingeru hampalmu hamneutralspace hamnodding",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "white",
+      "sequence": "hamceeopen hamextfingeru hampalml hamchest hamtouch hammoveo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "why",
+      "sequence": "hamfinger2345 hamextfingeru hampalml hamforehead hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "woman",
+      "sequence": "hamfist hamextfingeru hampalml hamchin hamtouch hammoved",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "work",
+      "sequence": "hamplus hamfist hamextfingerd hampalmd hamneutralspace hamtouch hamnodding",
+      "token_count": 7,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "world",
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamcircleo",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "write",
+      "sequence": "hamplus hampinch12 hamextfingerd hampalmd hamneutralspace hammover",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "wrong",
+      "sequence": "hamfinger2345 hamextfingerd hampalml hamchin hamtouch",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    },
+    {
+      "gloss": "yellow",
+      "sequence": "hamfinger2345 hamextfingeru hampalml hamneutralspace hamtwisting",
+      "token_count": 5,
+      "valid": true,
+      "errors": []
+    }
+  ],
+  "verdict": "PASS"
+}

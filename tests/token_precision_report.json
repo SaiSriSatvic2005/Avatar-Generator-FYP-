@@ -1,0 +1,301 @@
+{
+  "test_name": "Token Precision Validation (V2 Architecture)",
+  "dataset": {
+    "source": "WLASL v0.3 (Word-Level American Sign Language)",
+    "total_samples": 500,
+    "total_glosses": 46,
+    "train_samples": 415,
+    "test_samples": 85,
+    "split_ratio": "80/20",
+    "split_method": "Stratified by gloss (seed=42)",
+    "tensor_shape": [
+      500,
+      150,
+      177
+    ],
+    "feature_dimensions": 177
+  },
+  "model": {
+    "architecture": "HamNoSysSequenceNet V2 (Conv1d + BiGRU + Attention)",
+    "parameters": 325284,
+    "classification_heads": 6,
+    "head_names": [
+      "handshape",
+      "ext_finger",
+      "palm_ori",
+      "location",
+      "movement",
+      "two_handed"
+    ]
+  },
+  "results": {
+    "overall_token_precision_pct": 85.49,
+    "total_correct_tokens": 436,
+    "total_token_predictions": 510,
+    "per_head_accuracy": {
+      "handshape": {
+        "correct": 67,
+        "total": 85,
+        "accuracy_pct": 78.82
+      },
+      "ext_finger": {
+        "correct": 79,
+        "total": 85,
+        "accuracy_pct": 92.94
+      },
+      "palm_ori": {
+        "correct": 74,
+        "total": 85,
+        "accuracy_pct": 87.06
+      },
+      "location": {
+        "correct": 69,
+        "total": 85,
+        "accuracy_pct": 81.18
+      },
+      "movement": {
+        "correct": 66,
+        "total": 85,
+        "accuracy_pct": 77.65
+      },
+      "two_handed": {
+        "correct": 81,
+        "total": 85,
+        "accuracy_pct": 95.29
+      }
+    },
+    "per_gloss_precision": {
+      "book": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "computer": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "chair": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "clothes": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "candy": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "cousin": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "help": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "walk": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "finish": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "now": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "orange": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "table": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "can": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "dog": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "later": {
+        "correct": 12,
+        "total": 12,
+        "precision_pct": 100.0
+      },
+      "wrong": {
+        "correct": 6,
+        "total": 6,
+        "precision_pct": 100.0
+      },
+      "drink": {
+        "correct": 17,
+        "total": 18,
+        "precision_pct": 94.44
+      },
+      "go": {
+        "correct": 17,
+        "total": 18,
+        "precision_pct": 94.44
+      },
+      "thin": {
+        "correct": 17,
+        "total": 18,
+        "precision_pct": 94.44
+      },
+      "year": {
+        "correct": 11,
+        "total": 12,
+        "precision_pct": 91.67
+      },
+      "yes": {
+        "correct": 11,
+        "total": 12,
+        "precision_pct": 91.67
+      },
+      "what": {
+        "correct": 11,
+        "total": 12,
+        "precision_pct": 91.67
+      },
+      "woman": {
+        "correct": 11,
+        "total": 12,
+        "precision_pct": 91.67
+      },
+      "family": {
+        "correct": 11,
+        "total": 12,
+        "precision_pct": 91.67
+      },
+      "before": {
+        "correct": 16,
+        "total": 18,
+        "precision_pct": 88.89
+      },
+      "who": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "deaf": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "all": {
+        "correct": 5,
+        "total": 6,
+        "precision_pct": 83.33
+      },
+      "hot": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "like": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "many": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "bed": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "fish": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "language": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "bird": {
+        "correct": 10,
+        "total": 12,
+        "precision_pct": 83.33
+      },
+      "change": {
+        "correct": 5,
+        "total": 6,
+        "precision_pct": 83.33
+      },
+      "mother": {
+        "correct": 9,
+        "total": 12,
+        "precision_pct": 75.0
+      },
+      "fine": {
+        "correct": 4,
+        "total": 6,
+        "precision_pct": 66.67
+      },
+      "thanksgiving": {
+        "correct": 8,
+        "total": 12,
+        "precision_pct": 66.67
+      },
+      "man": {
+        "correct": 8,
+        "total": 12,
+        "precision_pct": 66.67
+      },
+      "apple": {
+        "correct": 8,
+        "total": 12,
+        "precision_pct": 66.67
+      },
+      "black": {
+        "correct": 7,
+        "total": 12,
+        "precision_pct": 58.33
+      },
+      "white": {
+        "correct": 7,
+        "total": 12,
+        "precision_pct": 58.33
+      },
+      "cool": {
+        "correct": 10,
+        "total": 18,
+        "precision_pct": 55.56
+      },
+      "no": {
+        "correct": 6,
+        "total": 12,
+        "precision_pct": 50.0
+      },
+      "blue": {
+        "correct": 3,
+        "total": 6,
+        "precision_pct": 50.0
+      }
+    }
+  },
+  "verdict": "PASS"
+}

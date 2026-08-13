@@ -1,0 +1,485 @@
+{
+  "test_name": "Avatar Joint Cosine Similarity Validation",
+  "methodology": {
+    "description": "Weighted cosine similarity between predicted and ground-truth HamNoSys component one-hot vectors, with weights reflecting avatar joint contribution (handshape=0.25, location=0.25, movement=0.15, two_handed=0.15, ext_finger=0.10, palm_ori=0.10).",
+    "split": "80/20 stratified by gloss (seed=42)",
+    "test_samples": 85
+  },
+  "results": {
+    "avg_cosine_similarity_pct": 83.94,
+    "std_deviation_pct": 19.76,
+    "min_sample_similarity_pct": 25.0,
+    "max_sample_similarity_pct": 100.0,
+    "per_gloss_avg_similarity": {
+      "book": 100.0,
+      "can": 100.0,
+      "candy": 100.0,
+      "chair": 100.0,
+      "clothes": 100.0,
+      "computer": 100.0,
+      "cousin": 100.0,
+      "dog": 100.0,
+      "finish": 100.0,
+      "help": 100.0,
+      "later": 100.0,
+      "now": 100.0,
+      "orange": 100.0,
+      "table": 100.0,
+      "walk": 100.0,
+      "wrong": 100.0,
+      "go": 96.67,
+      "year": 95.0,
+      "family": 92.5,
+      "what": 92.5,
+      "woman": 92.5,
+      "drink": 91.67,
+      "thin": 91.67,
+      "yes": 87.5,
+      "before": 86.67,
+      "all": 85.0,
+      "change": 85.0,
+      "bed": 82.5,
+      "deaf": 82.5,
+      "fish": 82.5,
+      "language": 82.5,
+      "bird": 80.0,
+      "fine": 80.0,
+      "hot": 80.0,
+      "who": 80.0,
+      "like": 75.0,
+      "many": 75.0,
+      "black": 67.5,
+      "mother": 67.5,
+      "apple": 60.0,
+      "man": 60.0,
+      "cool": 56.67,
+      "thanksgiving": 55.0,
+      "white": 55.0,
+      "no": 45.0,
+      "blue": 35.0
+    }
+  },
+  "sample_details": [
+    {
+      "video_id": "07069",
+      "gloss": "book",
+      "predicted": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "65539",
+      "gloss": "drink",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "17733",
+      "gloss": "drink",
+      "predicted": {
+        "handshape": "hampinch12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 75.0
+    },
+    {
+      "video_id": "17722",
+      "gloss": "drink",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hammoveu",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "12312",
+      "gloss": "computer",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamforehead",
+        "movement": "hamcircleo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamforehead",
+        "movement": "hamcircleo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "05730",
+      "gloss": "before",
+      "predicted": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammover",
+        "two_handed": "hamplus"
+      },
+      "ground_truth": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammover",
+        "two_handed": "hamplus"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "12320",
+      "gloss": "computer",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamforehead",
+        "movement": "hamcircleo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamforehead",
+        "movement": "hamcircleo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "05749",
+      "gloss": "before",
+      "predicted": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamneutralspace",
+        "movement": "hammover",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammover",
+        "two_handed": "hamplus"
+      },
+      "cosine_similarity": 60.0
+    },
+    {
+      "video_id": "05733",
+      "gloss": "before",
+      "predicted": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammover",
+        "two_handed": "hamplus"
+      },
+      "ground_truth": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammover",
+        "two_handed": "hamplus"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "09869",
+      "gloss": "chair",
+      "predicted": {
+        "handshape": "hamfinger23",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoved",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger23",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoved",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "24954",
+      "gloss": "go",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 90.0
+    },
+    {
+      "video_id": "24947",
+      "gloss": "go",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "11313",
+      "gloss": "clothes",
+      "predicted": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammoveu",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamflathand",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu",
+        "location": "hamchest",
+        "movement": "hammoveu",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "24973",
+      "gloss": "go",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd",
+        "location": "hamneutralspace",
+        "movement": "hammoveo",
+        "two_handed": "hamsymmlr"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "63228",
+      "gloss": "who",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hamcircleo",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hamcircleo",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "63229",
+      "gloss": "who",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamcheek",
+        "movement": "hamtwisting",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamlips",
+        "movement": "hamcircleo",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 60.0
+    },
+    {
+      "video_id": "08924",
+      "gloss": "candy",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamcheek",
+        "movement": "hamtwisting",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamcheek",
+        "movement": "hamtwisting",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "65300",
+      "gloss": "candy",
+      "predicted": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamcheek",
+        "movement": "hamtwisting",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamfinger2",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamcheek",
+        "movement": "hamtwisting",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "13648",
+      "gloss": "cousin",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamear",
+        "movement": "hamnodding",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamear",
+        "movement": "hamnodding",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    },
+    {
+      "video_id": "13635",
+      "gloss": "cousin",
+      "predicted": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamear",
+        "movement": "hamnodding",
+        "two_handed": "none"
+      },
+      "ground_truth": {
+        "handshape": "hamcee12",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml",
+        "location": "hamear",
+        "movement": "hamnodding",
+        "two_handed": "none"
+      },
+      "cosine_similarity": 100.0
+    }
+  ],
+  "verdict": "PASS"
+}
