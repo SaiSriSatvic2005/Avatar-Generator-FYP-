@@ -203,7 +203,7 @@ def run_validation():
 
     print(f"\n{'=' * 70}")
     print(f"  CFG GRAMMAR VALIDITY: {pass_rate:.1f}%  ({pass_count}/{total} valid)")
-    print(f"  STATUS: {'PASS ✓' if pass_rate >= 90.0 else 'NEEDS REVIEW'}")
+    print(f"  STATUS: {'PASS [OK]' if pass_rate >= 90.0 else 'NEEDS REVIEW'}")
     print(f"{'=' * 70}")
 
     report = {

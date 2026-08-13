@@ -101,7 +101,7 @@ def run_validation():
             print(f"FAIL: Missing required file: {name}")
             print(f"  Path: {path}")
             return False
-        print(f"  ✓ Found: {name}")
+        print(f"  [OK] Found: {name}")
 
     # ── Step 2: Load dataset ──
     tensors, metadata = load_dataset()
@@ -134,7 +134,7 @@ def run_validation():
     )
     model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
     model.eval()
-    print(f"  ✓ Loaded HamNoSysSequenceNet V2 ({sum(p.numel() for p in model.parameters()):,} parameters)")
+    print(f"  [OK] Loaded HamNoSysSequenceNet V2 ({sum(p.numel() for p in model.parameters()):,} parameters)")
 
     # ── Step 6: Run inference on test set ──
     test_tensors = torch.tensor(tensors[test_idx], dtype=torch.float32)
@@ -176,7 +176,7 @@ def run_validation():
         total_correct += correct
         total_tokens += total
 
-        status = "PASS ✓" if accuracy >= 70.0 else "WARN"
+        status = "PASS [OK]" if accuracy >= 70.0 else "WARN"
         print(f"  [{status}] {head_key:15s}: {accuracy:6.2f}%  ({correct}/{total})")
 
     overall_precision = (total_correct / total_tokens) * 100.0
@@ -185,7 +185,7 @@ def run_validation():
     print(f"  OVERALL TOKEN PRECISION: {overall_precision:.2f}%")
     print(f"  ({total_correct} correct out of {total_tokens} total token predictions)")
     passed = overall_precision >= 80.0
-    print(f"  STATUS: {'PASS ✓' if passed else 'BELOW THRESHOLD'}")
+    print(f"  STATUS: {'PASS [OK]' if passed else 'BELOW THRESHOLD'}")
     print(f"{'=' * 70}")
 
     # ── Step 8: Per-gloss breakdown ──
