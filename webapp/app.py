@@ -330,15 +330,16 @@ def upload_video():
         hamnosys_tags = result.get('hamnosys', '')
         details = result.get('details', {})
 
-    except (ImportError, ModuleNotFoundError, MemoryError) as import_err:
+    except Exception as pipeline_err:
         # Fallback: Use dictionary-based lookup for known sample glosses
-        # This runs on Render free tier (512MB) where mediapipe/torch can't load
+        # This runs on Render free tier (512MB) where mediapipe/torch/opencv
+        # may fail with ImportError, MemoryError, RuntimeError, OSError, etc.
         import traceback
         traceback.print_exc()
-        print(f"[Fallback] ML pipeline unavailable ({type(import_err).__name__}), using dictionary lookup...")
+        print(f"[Fallback] ML pipeline failed ({type(pipeline_err).__name__}: {pipeline_err}), using dictionary lookup...")
 
         gloss_dict_path = os.path.join(INTEGRATION_DIR, "gloss_to_hamnosys_dict.json")
-        if os.path.exists(gloss_dict_path):
+        try:
             with open(gloss_dict_path, "r", encoding="utf-8") as gf:
                 gloss_dict = json.load(gf)
 
@@ -377,13 +378,8 @@ def upload_video():
 
             hamnosys_tags = " ".join(tags)
             details = {"source": "dictionary_fallback", "matched_gloss": matched_gloss}
-        else:
-            return jsonify({"error": f"ML pipeline unavailable and dictionary not found: {import_err}"}), 500
-
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
+        except Exception as dict_err:
+            return jsonify({"error": f"Processing failed: {pipeline_err}. Dictionary fallback also failed: {dict_err}"}), 500
 
     # Load mapping and convert to unicode string + chips data
     mapping = load_reverse_mapping(SPREADSHEET_PATH)
