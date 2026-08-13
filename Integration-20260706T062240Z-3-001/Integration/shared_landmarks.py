@@ -62,8 +62,17 @@ class LandmarkList:
 
 class SharedLandmarkExtractor:
     def __init__(self):
-        self.mp_holistic = mp.solutions.holistic
-        self.mp_hands = mp.solutions.hands
+        try:
+            self.mp_holistic = mp.solutions.holistic
+            self.mp_hands = mp.solutions.hands
+        except (AttributeError, Exception):
+            try:
+                import mediapipe.python.solutions.holistic as mp_holistic
+                import mediapipe.python.solutions.hands as mp_hands
+                self.mp_holistic = mp_holistic
+                self.mp_hands = mp_hands
+            except Exception as e:
+                raise ImportError(f"MediaPipe solutions module initialization failed: {e}")
         self.clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
         self.filter_right = OneEuroFilter()
         self.filter_left = OneEuroFilter()
