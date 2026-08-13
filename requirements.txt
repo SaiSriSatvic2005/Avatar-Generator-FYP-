@@ -1,8 +1,8 @@
 Flask>=3.0.0
 gunicorn>=21.2.0
 torch
-mediapipe
+mediapipe>=0.10.9,<0.11.0
 opencv-python-headless
-numpy
+numpy<2.0.0
 scikit-learn
 joblib
