@@ -17,12 +17,7 @@ WEBAPP_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(WEBAPP_DIR)
 
 INTEGRATION_DIR = os.path.join(BASE_DIR, "Integration-20260706T062240Z-3-001", "Integration")
-if INTEGRATION_DIR not in sys.path:
-    sys.path.insert(0, INTEGRATION_DIR)
-
-from integration_pipeline import process_video
-
-
+# Setup app instance
 app = Flask(__name__)
 
 UPLOAD_FOLDER = os.path.join(WEBAPP_DIR, 'uploads')
@@ -318,6 +313,10 @@ def upload_video():
         video_url = f"/uploads/{filename}"
     
     try:
+        if INTEGRATION_DIR not in sys.path:
+            sys.path.insert(0, INTEGRATION_DIR)
+        from integration_pipeline import process_video
+
         # Run Pure Dynamic 3D Landmark HamNoSys Generation Engine (No Dictionary Lookup)
         result = process_video(video_path)
         hamnosys_tags = result.get('hamnosys', '')
