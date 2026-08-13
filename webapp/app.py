@@ -202,11 +202,6 @@ def index():
 def serve_upload(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
-@app.route('/samples/<filename>')
-def serve_sample(filename):
-    sample_dir = os.path.join(BASE_DIR, "Integration-20260706T062240Z-3-001", "Integration")
-    return send_from_directory(sample_dir, filename)
-
 def convert_nn_pred_to_hamnosys(pred):
     """Converts NN prediction dictionary into standard HamNoSys tag string."""
     tags = []
