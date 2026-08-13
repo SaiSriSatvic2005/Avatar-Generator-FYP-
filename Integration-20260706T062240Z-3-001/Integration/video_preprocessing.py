@@ -36,7 +36,8 @@ def smooth_trajectory(traj, window_size=5, polyorder=2):
 def detect_dominant_hand(video_path):
     """
     Analyzes the video to determine which hand moves more (variance).
-    Returns 'left' or 'right' (from the camera's perspective).
+    Returns 'left', 'right', or 'both' (from the camera's perspective).
+    Returns 'both' when both hands show significant movement (two-handed sign).
     """
     mp_pose = mp.solutions.pose
     pose = mp_pose.Pose(
@@ -54,8 +55,10 @@ def detect_dominant_hand(video_path):
     right_wrist_pts = []
 
     frame_count = 0
-    # Check first 30 frames to save time
-    while cap.isOpened() and frame_count < 30:
+    max_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 60)
+    sample_limit = min(max_frames, 60)  # Sample up to 60 frames for better coverage
+    
+    while cap.isOpened() and frame_count < sample_limit:
         ret, frame = cap.read()
         if not ret:
             break
@@ -81,6 +84,17 @@ def detect_dominant_hand(video_path):
 
     left_var = np.var(left_wrist_pts, axis=0).sum()
     right_var = np.var(right_wrist_pts, axis=0).sum()
+
+    # Minimum variance threshold: hand must actually be moving
+    min_var_threshold = 1e-4
+    left_active = left_var > min_var_threshold
+    right_active = right_var > min_var_threshold
+    
+    # Both hands active: if variance ratio is within 3:1, treat as two-handed
+    if left_active and right_active:
+        ratio = max(left_var, right_var) / max(min(left_var, right_var), 1e-8)
+        if ratio < 3.0:
+            return "both"
 
     return "left" if left_var > right_var else "right"
 

@@ -275,84 +275,46 @@ def combine_hamnosys(handshape, orientation, upper_body, head_face, hand_locatio
                 sequence.append(token)
                 break
 
-    # Phase-level Dual Hand Activity Detection
-    p1_dual_ratio = 0.0
-    p2_dual_ratio = 0.0
+    # Dual-Hand Structure Classification
     try:
         from shared_landmarks import get_video_landmarks
+        from dual_hand_classifier import classify_two_handed_structure
         frames = get_video_landmarks(video_path)
         if frames:
-            n = len(frames)
-            p1_frames = frames[:int(n * 0.5)]
-            p2_frames = frames[int(n * 0.5):]
-
-            import numpy as np
-            def is_dual_active(f):
-                l = f.get("left_hand")
-                r = f.get("right_hand")
-                if not l or not r:
-                    return False
-                lw = np.array([l.landmark[0].x, l.landmark[0].y, l.landmark[0].z])
-                rw = np.array([r.landmark[0].x, r.landmark[0].y, r.landmark[0].z])
-                if np.linalg.norm(lw - rw) < 0.08:
-                    return False
-                return l.landmark[0].y < 0.65
-
-            p1_active = sum(1 for f in p1_frames if is_dual_active(f))
-            p2_active = sum(1 for f in p2_frames if is_dual_active(f))
-
-            p1_dual_ratio = p1_active / max(1, len(p1_frames))
-            p2_dual_ratio = p2_active / max(1, len(p2_frames))
-
-    except Exception:
-        pass
-
-    # Dual Hand Asymmetrical (hamplus) vs Symmetrical (hamsymmlr) Detection
-    is_dual = (p1_dual_ratio >= 0.20 or p2_dual_ratio >= 0.20)
-    
-    if is_dual:
-        try:
-            from shared_landmarks import get_video_landmarks
-            from Handshape_Model import classify_handshape
-            from ori_model2 import calculate_orientation_from_landmarks
+            r_shapes = handshape.get("right_hand", {}).get("per_frame", []) if isinstance(handshape, dict) else []
+            l_shapes = handshape.get("left_hand", {}).get("per_frame", []) if isinstance(handshape, dict) else []
             
-            frames = get_video_landmarks(video_path)
-            lh_shapes, lh_fingers, lh_palms = [], [], []
-            for f in frames:
-                if f.get("left_hand"):
-                    lm = f["left_hand"].landmark
-                    lh_shapes.append(classify_handshape(lm))
-                    _, finger_l, palm_l = calculate_orientation_from_landmarks(lm, "Left")
-                    lh_fingers.append(finger_l)
-                    lh_palms.append(palm_l)
-                    
-
-            if lh_shapes:
-                lh_hs = Counter(lh_shapes).most_common(1)[0][0]
-                lh_ext = Counter(lh_fingers).most_common(1)[0][0]
-                lh_palm = Counter(lh_palms).most_common(1)[0][0]
+            dual_res = classify_two_handed_structure(frames, right_handshapes=r_shapes, left_handshapes=l_shapes)
+            dual_label = dual_res.get("label", "none")
+            
+            if dual_label == "hamsymmlr":
+                if "hamsymmlr" not in sequence:
+                    sequence.insert(0, "hamsymmlr")
+            elif dual_label == "hamplus":
+                # Build hamplus sequence with left hand details if available
+                l_hs = handshape.get("left_hand", {}).get("final", hs_token_p1) if isinstance(handshape, dict) else hs_token_p1
+                l_ext = orientation.get("left_hand", {}).get("final_finger", ext_finger_p1) if isinstance(orientation, dict) else ext_finger_p1
+                l_palm = orientation.get("left_hand", {}).get("final_palm", palm_ori_p1) if isinstance(orientation, dict) else palm_ori_p1
                 
-                # If Left hand posture/orientation differs from Right hand, build asymmetrical hamplus sequence
-                if (lh_hs != hs_token_p1) or (lh_palm != palm_ori_p1):
-                    sequence = [
-                        hs_token_p1, ext_finger_p1, palm_ori_p1,
-                        "hamplus",
-                        lh_hs, lh_ext, lh_palm,
-                        loc_token_p1
-                    ]
-                    if contact_p1 and str(contact_p1) in ["hamtouch", "hamclose", "hambrushing"] and loc_token_p1 != "hamneutralspace":
-                        sequence.append(str(contact_p1))
-                    if movement_token and movement_token != "none":
-                        for token in str(movement_token).split():
-                            if token.startswith("hammove") or token.startswith("hamcircle") or token.startswith("hamarc"):
-                                sequence.append(token)
-                                break
-                    return " ".join(sequence)
-        except Exception:
-            pass
-
-        if "hamsymmlr" not in sequence:
-            sequence.insert(0, "hamsymmlr")
+                sequence = [
+                    hs_token_p1, ext_finger_p1, palm_ori_p1,
+                    "hamplus",
+                    l_hs, l_ext, l_palm,
+                    loc_token_p1
+                ]
+                if contact_p1 and str(contact_p1) in ["hamtouch", "hamclose", "hambrushing"] and loc_token_p1 != "hamneutralspace":
+                    sequence.append(str(contact_p1))
+                if movement_token and movement_token != "none":
+                    for token in str(movement_token).split():
+                        if token.startswith("hammove") or token.startswith("hamcircle") or token.startswith("hamarc"):
+                            sequence.append(token)
+                            break
+                return " ".join(sequence)
+            elif dual_label == "hamnonipsi":
+                if "hamnonipsi" not in sequence:
+                    sequence.insert(0, "hamnonipsi")
+    except Exception as e:
+        print(f"[DualHand Integration Exception]: {e}")
 
     if is_multi_phase:
         sequence.append("hamreplace")
@@ -365,16 +327,6 @@ def combine_hamnosys(handshape, orientation, upper_body, head_face, hand_locatio
             sequence.append(str(contact_p2))
 
     return " ".join(sequence)
-
-
-
-    return " ".join(sequence)
-
-
-
-    return " ".join(sequence)
-
-
 
 
 
@@ -689,28 +641,45 @@ def process_video_neural(video_path):
 
 def process_video(video_path, output_video=None, mirror=False):
     """
-    Full pipeline: generate HamNoSys + annotated video.
+    Hybrid Pipeline: Video -> Landmark Extraction -> Dual-Hand Analysis & Heuristic Engine
+    with Neural Network Confidence Validation.
     """
     try:
         from video_preprocessing import get_mirrored_video, detect_dominant_hand
         
         dominant_hand = detect_dominant_hand(video_path)
-        print(f"\n[Preprocessing] Detected Dominant Hand: {dominant_hand.upper()} wrist")
+        print(f"\n[Preprocessing] Detected Hand Activity: {dominant_hand.upper()}")
         
-        if mirror or dominant_hand == "left":
-            if dominant_hand == "left" and not mirror:
-                print(f"[Preprocessing] Auto-mirroring video to standardize to right-handed signer...")
+        # Only mirror if single-hand left-dominant (do NOT mirror two-handed 'both')
+        if mirror or (dominant_hand == "left" and not mirror):
+            if dominant_hand == "left":
+                print(f"[Preprocessing] Auto-mirroring video to standardize left-handed signer...")
             else:
-                print(f"Mirroring video (forced by flag)...")
+                print(f"[Preprocessing] Mirroring video (forced by flag)...")
             video_path = get_mirrored_video(video_path)
             
-    except ImportError:
-        pass
+    except Exception as e:
+        print(f"[Preprocessing Exception]: {e}")
 
-    hamnosys_code = process_video_neural(video_path)
+    # Generate heuristic HamNoSys prediction with dual-hand analysis
+    heuristic_code, details = generate_hamnosys(video_path)
+
+    # Attempt neural prediction as hybrid validation
+    try:
+        neural_code = process_video_neural(video_path)
+        # Use neural prediction if heuristic returned fallback flat defaults
+        if heuristic_code.startswith("hamflathand hamextfingeru hampalmd hamchest") and neural_code:
+            print("[Hybrid Pipeline] Low-confidence heuristic, using Neural prediction...")
+            final_code = neural_code
+        else:
+            final_code = heuristic_code
+    except Exception:
+        final_code = heuristic_code
+
     return {
-        "hamnosys": hamnosys_code,
-        "output_video": output_video
+        "hamnosys": final_code,
+        "output_video": output_video,
+        "details": details
     }
 
 

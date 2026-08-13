@@ -527,10 +527,36 @@ def calculate_orientation_from_landmarks(h_landmarks, handedness="Right", pose_l
     return (view, finger_tag, palm_tag)
 
 
+def _classify_hand_orientation(frames, hand_key, handedness_label):
+    """Classify orientation for a specific hand across all frames."""
+    views, fingers, palms = [], [], []
+    for f in frames:
+        hand = f.get(hand_key)
+        pose = f.get("pose_landmarks")
+        if hand and hasattr(hand, "landmark"):
+            view, finger, palm = calculate_orientation_from_landmarks(
+                hand.landmark, handedness_label, pose_landmarks=pose
+            )
+            views.append(view)
+            fingers.append(finger)
+            palms.append(palm)
+        else:
+            views.append(None)
+            fingers.append(None)
+            palms.append(None)
+    return views, fingers, palms
+
+
 def run_orientation_module(video_path):
+    """
+    Run orientation classification.
+    Returns dual-hand output when both hands are consistently detected.
+    """
     try:
         from shared_landmarks import get_video_landmarks
         frames = get_video_landmarks(video_path)
+        
+        # Primary hand orientation (backward compatible)
         views, fingers, palms = [], [], []
         for f in frames:
             hand = f.get("right_hand") or f.get("left_hand")
@@ -542,14 +568,50 @@ def run_orientation_module(video_path):
                 views.append(view)
                 fingers.append(finger)
                 palms.append(palm)
-        if views:
-            final_view   = Counter(views).most_common(1)[0][0]
-            final_finger = Counter(fingers).most_common(1)[0][0]
-            final_palm   = Counter(palms).most_common(1)[0][0]
-            return {
-                "per_frame": list(zip(views, fingers, palms)),
-                "final": (final_view, final_finger, final_palm)
+        
+        if not views:
+            return {"per_frame": [], "final": None, "is_dual": False}
+        
+        final_view   = Counter(views).most_common(1)[0][0]
+        final_finger = Counter(fingers).most_common(1)[0][0]
+        final_palm   = Counter(palms).most_common(1)[0][0]
+        
+        result = {
+            "per_frame": list(zip(views, fingers, palms)),
+            "final": (final_view, final_finger, final_palm),
+        }
+        
+        # Check for dual-hand
+        right_count = sum(1 for f in frames if f.get("right_hand") is not None)
+        left_count = sum(1 for f in frames if f.get("left_hand") is not None)
+        total = max(len(frames), 1)
+        
+        is_dual = (right_count / total > 0.20) and (left_count / total > 0.20)
+        result["is_dual"] = is_dual
+        
+        if is_dual:
+            r_views, r_fingers, r_palms = _classify_hand_orientation(frames, "right_hand", "Right")
+            l_views, l_fingers, l_palms = _classify_hand_orientation(frames, "left_hand", "Left")
+            
+            # Filter valid entries for summary
+            r_fingers_valid = [x for x in r_fingers if x is not None]
+            r_palms_valid = [x for x in r_palms if x is not None]
+            l_fingers_valid = [x for x in l_fingers if x is not None]
+            l_palms_valid = [x for x in l_palms if x is not None]
+            
+            result["right_hand"] = {
+                "per_frame": list(zip(r_views, r_fingers, r_palms)),
+                "final_finger": Counter(r_fingers_valid).most_common(1)[0][0] if r_fingers_valid else "hamextfingeru",
+                "final_palm": Counter(r_palms_valid).most_common(1)[0][0] if r_palms_valid else "hampalmd",
             }
+            result["left_hand"] = {
+                "per_frame": list(zip(l_views, l_fingers, l_palms)),
+                "final_finger": Counter(l_fingers_valid).most_common(1)[0][0] if l_fingers_valid else "hamextfingeru",
+                "final_palm": Counter(l_palms_valid).most_common(1)[0][0] if l_palms_valid else "hampalmd",
+            }
+        
+        return result
+        
     except Exception as e:
         pass
 
@@ -557,7 +619,7 @@ def run_orientation_module(video_path):
 
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
-        return {"per_frame": [], "final": None}
+        return {"per_frame": [], "final": None, "is_dual": False}
 
     with mp_hands.Hands(static_image_mode=False, max_num_hands=1, min_detection_confidence=0.5) as hands:
         while cap.isOpened():
@@ -582,7 +644,7 @@ def run_orientation_module(video_path):
     cap.release()
 
     if not views:
-        return {"per_frame": [], "final": None}
+        return {"per_frame": [], "final": None, "is_dual": False}
 
     final_view   = Counter(views).most_common(1)[0][0]
     final_finger = Counter(fingers).most_common(1)[0][0]
@@ -590,10 +652,6 @@ def run_orientation_module(video_path):
 
     return {
         "per_frame": list(zip(views, fingers, palms)),
-        "final": (final_view, final_finger, final_palm)
+        "final": (final_view, final_finger, final_palm),
+        "is_dual": False,
     }
-
-
-# In[ ]:
-
-

@@ -358,5 +358,1175 @@
     "movement": "none",
     "contact": "hamtouch",
     "two_handed": "none"
+  },
+  "again": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamchest",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "always": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "angry": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hammoveu",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "animal": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamchest",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "answer": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "baby": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamchest",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "bad": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "bathroom": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "because": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "bed": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "big": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "blue": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "born": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamchest",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "boy": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "none",
+    "contact": "hamclose",
+    "two_handed": "none"
+  },
+  "brother": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "buy": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "can": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "change": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "city": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtouch",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "close": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamclose",
+    "two_handed": "hamsymmlr"
+  },
+  "color": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "come": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "cook": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "cry": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "dance": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "day": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "different": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "doctor": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamchest",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "door": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "eat": {
+    "handshape": "hampinch12",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamlips",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "enjoy": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamchest",
+    "movement": "hamcircleo",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "enough": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "every": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "face": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "family": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "feel": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "find": {
+    "handshape": "hampinch12open",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "hamclose",
+    "two_handed": "none"
+  },
+  "fish": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "food": {
+    "handshape": "hampinch12",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamlips",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "forget": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "friend": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "full": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamchest",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "funny": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "girl": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "give": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "good": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "green": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "hair": {
+    "handshape": "hampinch12open",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamheadtop",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "have": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "hear": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamear",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "here": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "how": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "hurt": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "important": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "know": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "language": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "last": {
+    "handshape": "hampinky",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "later": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "learn": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamforehead",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "letter": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamlips",
+    "movement": "hammoveo",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "live": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "look": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamcheek",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "man": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "medicine": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "meet": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammoveo",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "money": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "more": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "morning": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "movie": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "music": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "name": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "need": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "new": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "nice": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "night": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "not": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoveo",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "number": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "old": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "open": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "people": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "play": {
+    "handshape": "hamfinger2345",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "please": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hamcircleo",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "practice": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "problem": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamforehead",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "rain": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "read": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "red": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamlips",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "remember": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "right": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "run": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "sad": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "same": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "say": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "school": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamsymmlr"
+  },
+  "see": {
+    "handshape": "hamfinger23",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "sick": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamforehead",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "sign": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "sister": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "sleep": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamcheek",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "slow": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "small": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "snow": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "sometimes": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "sorry": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hamcircleo",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "start": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "stop": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingerl",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "story": {
+    "handshape": "hampinch12",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "take": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammoveu",
+    "contact": "hamclose",
+    "two_handed": "none"
+  },
+  "talk": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "teacher": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "tell": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoveo",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "thank": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoveo",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "think": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "time": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "tree": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "try": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hammoved",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "understand": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammoveu",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "wait": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "want": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "hamclose",
+    "two_handed": "none"
+  },
+  "what": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "when": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "where": {
+    "handshape": "hamfinger2",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalmu",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "none",
+    "two_handed": "none"
+  },
+  "white": {
+    "handshape": "hamceeopen",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchest",
+    "movement": "hammoveo",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "why": {
+    "handshape": "hamfinger2345",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamforehead",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "woman": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "hammoved",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "work": {
+    "handshape": "hamfist",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hamnodding",
+    "contact": "hamtouch",
+    "two_handed": "hamplus"
+  },
+  "world": {
+    "handshape": "hamflathand",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamcircleo",
+    "contact": "none",
+    "two_handed": "hamsymmlr"
+  },
+  "write": {
+    "handshape": "hampinch12",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalmd",
+    "location": "hamneutralspace",
+    "movement": "hammover",
+    "contact": "none",
+    "two_handed": "hamplus"
+  },
+  "wrong": {
+    "handshape": "hamfinger2345",
+    "ext_finger": "hamextfingerd",
+    "palm_ori": "hampalml",
+    "location": "hamchin",
+    "movement": "none",
+    "contact": "hamtouch",
+    "two_handed": "none"
+  },
+  "yellow": {
+    "handshape": "hamfinger2345",
+    "ext_finger": "hamextfingeru",
+    "palm_ori": "hampalml",
+    "location": "hamneutralspace",
+    "movement": "hamtwisting",
+    "contact": "none",
+    "two_handed": "none"
   }
 }

@@ -348,7 +348,7 @@ def hand_motion_point(lm, frame_shape):
     ])
 
 
-def _landmark_point(hand_landmarks, point_index=8):
+def _landmark_point(hand_landmarks, point_index=0):
     p = hand_landmarks.landmark[point_index]
     return np.array([p.x, p.y, p.z], dtype=float)
 
@@ -369,7 +369,7 @@ def _extract_motion_from_shared_landmarks(video_path):
         )
         if hand is None:
             continue
-        trajectory.append(_landmark_point(hand, 8))
+        trajectory.append(_landmark_point(hand, point_index=0))
 
     return trajectory
 

@@ -427,6 +427,7 @@ def detect_head_face_location(frame):
 
 
 def run_head_face_location_module(video_path):
+    from collections import Counter
     try:
         from shared_landmarks import get_video_landmarks
         frames = get_video_landmarks(video_path)
@@ -441,7 +442,6 @@ def run_head_face_location_module(video_path):
                 if dist < 0.22:
                     predictions.append("hamnose" if dist < 0.12 else "hamcheek")
         if predictions:
-            from collections import Counter
             return {"per_frame": predictions, "final": Counter(predictions).most_common(1)[0][0]}
     except Exception as e:
         pass

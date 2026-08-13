@@ -608,13 +608,68 @@ def classify_movement1(trajectory_log):
 
 
 def run_movement1_module(video_path):
-
     trajectory = deque(maxlen=60)
     label_log = []
     per_frame_labels = []
 
-    cap = cv2.VideoCapture(video_path)
+    try:
+        from shared_landmarks import get_video_landmarks
+        frames_info = get_video_landmarks(video_path)
+        if frames_info:
+            for frame_info in frames_info:
+                hand_lm = (
+                    frame_info.get("primary_hand")
+                    or frame_info.get("right_hand")
+                    or frame_info.get("left_hand")
+                )
+                if hand_lm and hasattr(hand_lm, "landmark"):
+                    center = hand_center(hand_lm)
+                    trajectory.append(center)
 
+                    if len(trajectory) > 10:
+                        traj = np.array(trajectory)
+                        try:
+                            from video_preprocessing import smooth_trajectory
+                            traj = smooth_trajectory(traj, window_size=5, polyorder=2)
+                        except ImportError:
+                            pass
+
+                        direction = classify_direction(traj)
+                        speed     = classify_speed(traj)
+                        force     = classify_force(traj)
+                        halt      = detect_halt(traj)
+                        size      = classify_size(traj)
+                        growth    = classify_growth(traj)
+                        path      = classify_path(traj)
+
+                        repeat_continue   = classify_repetition(traj)
+                        repeat_from_start = classify_repeat_from_start(traj)
+                        repeat = repeat_from_start if repeat_from_start else repeat_continue
+
+                        reverse = classify_reverse(traj)
+
+                        label_log.append({
+                            "Direction": direction,
+                            "Speed": speed,
+                            "Force": force,
+                            "Halt": halt,
+                            "Size": size,
+                            "Growth": growth,
+                            "Repeat": repeat,
+                            "Reverse": reverse,
+                            "Path": path
+                        })
+
+                        frame_tokens = [direction, speed, force, halt, size, growth, repeat, reverse, path]
+                        per_frame_labels.append(" ".join([token for token in frame_tokens if token]))
+
+            smoothed_labels = smooth_frame_sequence(per_frame_labels, window=3)
+            final_summary = classify_movement1(label_log)
+            return {"per_frame": smoothed_labels, "final": final_summary}
+    except Exception:
+        pass
+
+    cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         return {"per_frame": [], "final": "hamnomotion"}
 
@@ -627,13 +682,11 @@ def run_movement1_module(video_path):
         res = hands.process(rgb)
 
         if res.multi_hand_landmarks:
-
             lm = res.multi_hand_landmarks[0]
             center = hand_center(lm)
             trajectory.append(center)
 
             if len(trajectory) > 10:
-
                 traj = np.array(trajectory)
 
                 try:
