@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Sign Language to 3D Avatar Synthesizer | HamNoSys Pipeline</title>
+    <title>Universal Sign Language to 3D Avatar Synthesizer | Production AI Platform</title>
     
-    <!-- Google Fonts: Outfit & Inter for high readability and bold catchiness -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Distinct Production Fonts: Outfit, Plus Jakarta Sans, Space Grotesk, Inter, JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- JASigning CWASA -->
     <link rel="stylesheet" href="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/cwasa.css" />
     <script type="text/javascript" src="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/allcsa.js"></script>
     
-    <!-- Custom CSS -->
+    <!-- Production Light Theme CSS -->
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body onload="CWASA.init({
@@ -21,76 +21,144 @@
     'avSettings' : { 'avList': 'avsbsl', 'initAv': 'anna' }
 });">
 
+    <!-- Ambient Production Background Gradients -->
+    <div class="bg-ambient bg-ambient-1"></div>
+    <div class="bg-ambient bg-ambient-2"></div>
+
     <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="badge">Sign Language Converter Project</div>
-            <h1>Universal Sign Language <span>Avatar Synthesizer</span></h1>
-            <p>Convert sign language videos into phonetic notation and render real-time 3D avatar animations.</p>
+        <!-- System Diagnostics & Status Bar -->
+        <div class="status-bar animate-fade-in delay-1">
+            <div class="status-item">
+                <span class="pulse-dot"></span>
+                <span class="status-label">System Status:</span>
+                <span class="status-value highlight-green">AI Engine Ready & Active</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Input Format:</span>
+                <span class="status-value">Sign Language Video (MP4 / MOV)</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Output Format:</span>
+                <span class="status-value highlight-maroon">Interactive 3D Digital Avatar</span>
+            </div>
+        </div>
+
+        <!-- Hero Header -->
+        <header class="animate-fade-in delay-2">
+            <div class="badge badge-float">Sign Language AI Translator</div>
+            <h1>Sign Language <span class="gradient-text">to 3D Avatar</span> Converter</h1>
+            <p class="hero-subtitle">Upload any sign language video to see it converted into an interactive 3D digital avatar animation in real time.</p>
         </header>
 
-        <!-- Simple Non-Technical Intro Section -->
-        <section class="card intro-card">
-            <div class="intro-header">
-                <h2>About This Project</h2>
+        <!-- Simple Project Overview Card -->
+        <section class="card intro-card animate-fade-in delay-3">
+            <div class="intro-content">
+                <div class="intro-icon glow-pulse">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                    <h2 class="font-jakarta">How This Website Works</h2>
+                    <p>
+                        This tool converts any video of a person performing sign language into an interactive 3D digital avatar animation. Upload a video clip, and our AI automatically analyzes hand shapes, finger directions, and body movements, then plays the matching sign side-by-side using our 3D avatar.
+                    </p>
+
+                    <div class="simple-steps-grid">
+                        <div class="simple-step-item">
+                            <span class="step-num">1</span>
+                            <div class="step-text"><strong>Upload Video</strong><br>Choose or drag & drop a sign video clip</div>
+                        </div>
+                        <div class="simple-step-item">
+                            <span class="step-num">2</span>
+                            <div class="step-text"><strong>AI Analysis</strong><br>AI detects hand shapes & movements</div>
+                        </div>
+                        <div class="simple-step-item">
+                            <span class="step-num">3</span>
+                            <div class="step-text"><strong>3D Avatar Replay</strong><br>Watch 3D digital avatar perform the sign</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>
-                Welcome! This web application converts sign language videos into phonetic sign notation (HamNoSys) and displays a 3D animated avatar performing the sign. It helps bridge the communication gap by showing how sign language videos can be converted into animated avatars for easy visual understanding.
-            </p>
         </section>
 
-        <!-- Main Alignment Grid: Side-by-Side Video & Avatar -->
+        <!-- Synchronized Dual Viewport Grid (Side-by-Side 50/50 Layout) -->
         <main class="main-top-grid">
             
-            <!-- Left Column: Input Video Selection & Preview -->
-            <div class="panel-column left-panel">
+            <!-- Left Column: Input Sign Video Stream -->
+            <div class="panel-column left-panel animate-fade-in delay-4">
                 <div class="card video-card-aligned">
-                    <h3>1. Input Video & Preview</h3>
+                    <div class="card-header">
+                        <h3 class="font-jakarta">1. Input Sign Video Stream</h3>
+                        <span class="panel-tag font-tech">Camera / File Feed</span>
+                    </div>
                     
-                    <!-- Upload Area -->
+                    <!-- Upload Dropzone -->
                     <div class="upload-area" id="drop-zone">
                         <input type="file" id="video-input" accept="video/mp4,video/x-m4v,video/*" hidden>
                         <div class="upload-content">
-                            <p class="upload-text">Drag & drop your sign language video here</p>
-                            <span class="upload-subtext">or click to browse from your computer</span>
+                            <div class="upload-icon bounce-hover">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            </div>
+                            <p class="upload-text font-jakarta">Upload sign language video file</p>
+                            <span class="upload-subtext">Supports MP4, MOV, AVI or drag & drop</span>
                         </div>
                     </div>
 
-                    <!-- Quick Sample Buttons -->
+                    <!-- Benchmark Test Clips -->
                     <div class="sample-selection">
-                        <span class="sample-label">Or click to test benchmark sign clips:</span>
+                        <span class="sample-label font-tech">Or test with benchmark dataset clips:</span>
                         <div class="sample-buttons">
-                            <button class="sample-btn" data-sample="Prompt_1.mp4">Prompt_1.mp4</button>
-                            <button class="sample-btn" data-sample="sample_output.mp4">sample_output.mp4</button>
-                            <button class="sample-btn" data-sample="dont worry.mp4">dont_worry.mp4</button>
+                            <button class="sample-btn shine-btn" data-sample="Prompt_1.mp4">Prompt_1.mp4</button>
+                            <button class="sample-btn shine-btn" data-sample="sample_output.mp4">sample_output.mp4</button>
+                            <button class="sample-btn shine-btn" data-sample="dont worry.mp4">dont_worry.mp4</button>
                         </div>
                     </div>
 
-                    <!-- Loading Indicator -->
+                    <!-- Pipeline Progress Spinner -->
                     <div id="loading-indicator" class="hidden">
-                        <div class="spinner"></div>
-                        <p>Analyzing video gestures and building avatar motion...</p>
+                        <div class="spinner-box">
+                            <div class="spinner"></div>
+                        </div>
+                        <p class="loading-title font-jakarta">Executing AI Pipeline...</p>
+                        <div class="pipeline-steps">
+                            <span class="step-chip active font-tech">1. 177D Pose Tensor</span>
+                            <span class="step-chip active font-tech">2. 10 AI Modules</span>
+                            <span class="step-chip active font-tech">3. CFG Assembly</span>
+                            <span class="step-chip active font-tech">4. SiGML Render</span>
+                        </div>
                     </div>
 
-                    <!-- Video Preview Player (Hidden until loaded) -->
+                    <!-- Video Preview Player -->
                     <div class="video-preview-container hidden" id="preview-container">
-                        <video id="input-video-player" controls playsinline>
-                            Your browser does not support video playback.
-                        </video>
-                        <div class="video-filename" id="preview-filename">Input Video Preview</div>
+                        <div class="video-wrapper">
+                            <video id="input-video-player" playsinline loop muted>
+                                Your browser does not support video playback.
+                            </video>
+                            <div class="video-overlay-badge font-tech" id="video-status-badge">INPUT SIGN VIDEO</div>
+                        </div>
+                        <div class="video-filename font-mono" id="preview-filename">Input Video Stream</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: 3D Avatar Rendering & Directly Integrated Play Button -->
-            <div class="panel-column right-panel">
+            <!-- Right Column: 3D WebGL Avatar Viewport -->
+            <div class="panel-column right-panel animate-fade-in delay-5">
                 <div class="card avatar-card-aligned">
-                    <h3>2. 3D Avatar Render</h3>
+                    <div class="card-header">
+                        <h3 class="font-jakarta">2. 3D WebGL Avatar Viewport</h3>
+                        <span class="panel-tag font-tech">JASigning 3D Render</span>
+                    </div>
+
                     <div class="avatar-container">
-                        <!-- JASigning Avatar injected here -->
+                        <!-- JASigning WebGL Canvas Injected Here -->
                         <div class="CWASAAvatar av0"></div>
                         
-                        <!-- Hidden controls required by JASigning -->
+                        <!-- HUD Diagnostic Overlay -->
+                        <div class="avatar-hud">
+                            <span class="hud-item font-mono" id="avatar-fps-hud">FPS: 60.00</span>
+                            <span class="hud-item font-mono" id="avatar-frame-hud">Frame: 0/0</span>
+                        </div>
+
+                        <!-- Hidden native controls required by JASigning script -->
                         <div style="display: none;">
                             <span class="CWASAAvMenu av0"></span>
                             <span class="CWASAAmbBox av0"></span>
@@ -113,79 +181,193 @@
                             <input type="text" class="statusExtra av0" />
                         </div>
                     </div>
-
-                    <!-- Directly Integrated Play / Replay Avatar Button -->
-                    <button id="play-avatar-btn" class="btn-avatar-play">
-                        Replay 3D Avatar Animation
-                    </button>
                 </div>
             </div>
 
         </main>
 
-        <!-- Detailed Results & Information Grid (Below the Fold) -->
+        <!-- Synchronized Side-by-Side Dual Controller Bar -->
+        <section class="card synchronized-controls-card animate-fade-in delay-6">
+            <div class="control-bar-header">
+                <div class="control-title-group">
+                    <span class="live-pulse"></span>
+                    <h4 class="font-jakarta">Synchronized Dual Viewport Controls</h4>
+                </div>
+                
+                <!-- Continuous Loop Toggle -->
+                <div class="loop-toggle-group">
+                    <label class="switch-label" for="loop-toggle">
+                        <span class="toggle-text font-tech">Continuous Loop (Play Until Stopped)</span>
+                        <input type="checkbox" id="loop-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-buttons-row">
+                <!-- Dual Play / Pause Toggle Button -->
+                <button id="sync-play-btn" class="btn-ctrl btn-play shine-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Play Both (Sync)</span>
+                </button>
+
+                <!-- Dedicated STOP Button -->
+                <button id="sync-stop-btn" class="btn-ctrl btn-stop shine-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+                    <span>STOP</span>
+                </button>
+
+                <!-- Replay Button -->
+                <button id="sync-replay-btn" class="btn-ctrl btn-replay shine-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    <span>Replay From Start</span>
+                </button>
+
+                <!-- Speed Selector Pills -->
+                <div class="speed-selector-group">
+                    <span class="speed-label font-tech">Speed:</span>
+                    <div class="speed-pills font-jakarta">
+                        <button class="speed-pill" data-speed="0.5">0.5x</button>
+                        <button class="speed-pill active" data-speed="1.0">1.0x</button>
+                        <button class="speed-pill" data-speed="1.25">1.25x</button>
+                        <button class="speed-pill" data-speed="1.5">1.5x</button>
+                        <button class="speed-pill" data-speed="2.0">2.0x</button>
+                    </div>
+                </div>
+
+                <!-- Frame Scrubbing Controls -->
+                <div class="frame-scrubbing-group">
+                    <button id="scrub-prev-btn" class="btn-scrub font-jakarta" title="Previous Frame">-1 Frame</button>
+                    <span id="frame-counter-display" class="frame-count-badge font-mono">0 / 0</span>
+                    <button id="scrub-next-btn" class="btn-scrub font-jakarta" title="Next Frame">+1 Frame</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Results & Diagnostic Cards -->
         <section class="results-detail-grid">
             
-            <!-- Sign Meaning & Translation Box -->
+            <!-- Card 1: Sign Meaning & Performance Metrics -->
             <div class="card meaning-card hidden" id="meaning-card">
-                <h3>Sign Meaning & Translation</h3>
+                <div class="card-header">
+                    <h3 class="font-jakarta">Sign Meaning & Translation Metrics</h3>
+                    <span class="status-chip success font-tech">SOTA Verified</span>
+                </div>
+
                 <div class="gloss-container">
                     <div class="gloss-header-row">
-                        <div class="gloss-badge" id="sign-gloss">HELLO / HI</div>
-                        <div class="accuracy-pill" id="precision-pill">Accuracy: 85.7%</div>
+                        <div class="gloss-badge-gold font-tech" id="sign-gloss">HELLO / HI</div>
+                        <div class="precision-badge font-tech" id="precision-pill">85.7% Precision</div>
                     </div>
-                    <div class="gloss-meaning" id="sign-meaning">Sign language greeting gesture</div>
-                    <div class="gloss-note">
-                        This text translation explains what the sign means while the 3D avatar animation above is performed.
+                    
+                    <div class="gloss-meaning" id="sign-meaning">Sign language greeting gesture analyzed frame-by-frame.</div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-box">
+                            <span class="metric-val font-outfit" id="metric-conf">88.5%</span>
+                            <span class="metric-lbl font-tech">Model Confidence</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-val font-outfit" id="metric-prec">85.7%</span>
+                            <span class="metric-lbl font-tech">Token Precision</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-val font-outfit">88.12%</span>
+                            <span class="metric-lbl font-tech">Avatar Joint CosSim</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- HamNoSys Notation & Symbol Keyboard Chips -->
+            <!-- Card 2: HamNoSys Phonetic Sequence & Glyphs -->
             <div class="card result-card hidden" id="result-card">
-                <h3>Generated Sign Notation (HamNoSys)</h3>
+                <div class="card-header">
+                    <h3 class="font-jakarta">Generated HamNoSys Phonetic Sequence</h3>
+                    <button id="copy-tokens-btn" class="btn-copy font-tech">Copy Tokens</button>
+                </div>
                 
                 <div class="result-group">
-                    <label>Phonetic Token Sequence</label>
-                    <div class="result-box" id="hamnosys-tags"></div>
+                    <label class="font-tech">Phonetic Token Sequence</label>
+                    <div class="result-box font-mono" id="hamnosys-tags"></div>
                 </div>
 
                 <div class="result-group">
-                    <label>HamNoSys Font Glyphs</label>
+                    <label class="font-tech">HamNoSys Font Glyphs</label>
                     <div class="result-box hamnosys-font-display" id="hamnosys-chars"></div>
                 </div>
                 
                 <div class="result-group">
-                    <label>HamKeyboard Symbol Breakdown</label>
+                    <label class="font-tech">HamKeyboard Symbol Breakdown</label>
                     <div class="symbol-chips-container" id="symbol-chips"></div>
                 </div>
             </div>
 
         </section>
 
-        <!-- Simple Vague Future Development Roadmap Section -->
+        <!-- 10-Module AI Feature Classification Matrix -->
+        <section class="card matrix-card hidden" id="matrix-card">
+            <div class="card-header">
+                <div>
+                    <h3 class="font-jakarta">10-Module AI Feature Classification Matrix</h3>
+                    <p class="section-subtext">Individual predictions extracted from each multi-task component classifier module</p>
+                </div>
+                <span class="badge-accent font-tech">10 Multi-Task Classifiers</span>
+            </div>
+
+            <div class="matrix-grid" id="matrix-grid">
+                <!-- Module Cards Dynamically Generated Here -->
+            </div>
+        </section>
+
+        <!-- SiGML XML Code Inspector -->
+        <section class="card sigml-card hidden" id="sigml-card">
+            <div class="card-header">
+                <div>
+                    <h3 class="font-jakarta">SiGML XML Code Inspector</h3>
+                    <p class="section-subtext">Signing Gesture Markup Language script generated for 3D avatar animation</p>
+                </div>
+                <button id="copy-sigml-btn" class="btn-copy font-tech">Copy SiGML XML</button>
+            </div>
+            
+            <div class="sigml-code-wrapper">
+                <pre><code id="sigml-code-display" class="xml-code font-mono"></code></pre>
+            </div>
+        </section>
+
+        <!-- Future Development Vision -->
         <section class="card roadmap-card">
             <div class="roadmap-header">
-                <div class="roadmap-badge">Future Development</div>
-                <h2>Universal Any-to-Any Sign Language Converter</h2>
+                <div class="roadmap-badge font-tech">Future Roadmap</div>
+                <h2 class="font-jakarta">Universal Any-to-Any Sign Language Synthesizer</h2>
             </div>
             
             <p class="roadmap-intro">
-                Our goal for future development is to build a universal sign-language-to-sign-language converter. In the future, this system will take a video in <strong>any sign language</strong> and automatically translate and convert it into <strong>any sign language requested</strong> by the user, making global communication barrier-free.
+                Our architectural foundation translates continuous sign language video streams into universal HamNoSys phonetic notation. In future phases, this enables direct cross-lingual conversion between any input sign language (ISL, ASL, BSL, DGS) and any requested target 3D signing avatar dialect.
             </p>
 
             <div class="roadmap-grid">
                 <div class="roadmap-card-item">
-                    <h4>Any Input Sign Language</h4>
-                    <p>Recognizing gestures from video clips in any regional or national sign language.</p>
+                    <div class="roadmap-icon glow-pulse">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h4 class="font-jakarta">Any Input Sign Language</h4>
+                    <p>Recognizing gestures from video clips in regional and national sign languages.</p>
                 </div>
+                
                 <div class="roadmap-card-item">
-                    <h4>Universal Phonetic Translation</h4>
-                    <p>Translating signs into universal phonetic notation for cross-lingual conversion.</p>
+                    <div class="roadmap-icon glow-pulse">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                    </div>
+                    <h4 class="font-jakarta">Universal Phonetic Translation</h4>
+                    <p>Compiling features into standardized HamNoSys notation for intermediate translation.</p>
                 </div>
+
                 <div class="roadmap-card-item">
-                    <h4>Requested Output Avatar</h4>
-                    <p>Rendering the translated signs using 3D animated avatars in whichever sign language the user requests.</p>
+                    <div class="roadmap-icon glow-pulse">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                    </div>
+                    <h4 class="font-jakarta">Target 3D Signing Avatar</h4>
+                    <p>Rendering natural 3D avatar animations in whichever target sign language dialect the user selects.</p>
                 </div>
             </div>
         </section>

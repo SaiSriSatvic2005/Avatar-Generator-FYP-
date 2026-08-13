@@ -40,8 +40,15 @@ SIGN_GLOSS_MAP = {
 }
 
 SYMBOL_LABEL_MAP = {
+    # Structure & Symmetry
+    "hamsymmlr": "Symmetrical Both Hands",
+    "hamplus": "Parallel Dual Hands",
+    "hamnonipsi": "Non-Ipsilateral Hands",
+    
+    # Handshape
     "hamfist": "Fist Handshape",
     "hamflathand": "Flat Handshape",
+    "hamflatside": "Flat Side Handshape",
     "hamfinger2": "Index Finger",
     "hamfinger23": "Two Fingers / Victory",
     "hampinch12": "Pinch Handshape (Index & Thumb)",
@@ -52,28 +59,130 @@ SYMBOL_LABEL_MAP = {
     "hamthumboutmod": "Thumb Extended",
     "hamthumbacrossmod": "Thumb Across",
     "hamthumbopenmod": "Thumb Open",
+
+    # Extended Finger Direction
     "hamextfingeru": "Finger Upward",
     "hamextfingerd": "Finger Downward",
     "hamextfingerr": "Finger Rightward",
     "hamextfingerl": "Finger Leftward",
+    "hamextfingero": "Finger Outward",
+    "hamextfingeri": "Finger Inward",
+    "hamextfingerul": "Finger Up-Left",
+    "hamextfingerur": "Finger Up-Right",
+    "hamextfingerdl": "Finger Down-Left",
+    "hamextfingerdr": "Finger Down-Right",
+
+    # Palm Orientation
     "hampalmd": "Palm Down / Away",
     "hampalmu": "Palm Up / Towards",
     "hampalml": "Palm Leftward",
     "hampalmr": "Palm Rightward",
-    "hamcheek": "Cheek Contact",
+    "hampalmdl": "Palm Down-Left",
+    "hampalmdr": "Palm Down-Right",
+    "hampalmul": "Palm Up-Left",
+    "hampalmur": "Palm Up-Right",
+
+    # Location
+    "hamcheek": "Cheek Location",
     "hamchest": "Chest Location",
     "hamhead": "Head Location",
     "hamneutralspace": "Neutral Space Location",
     "hamshoulders": "Shoulder Level Location",
+    "hambelowstomach": "Below Stomach Location",
+    "hamstomach": "Stomach Location",
+
+    # Contact & Proximity
     "hamtouch": "Touch Contact",
+    "hamclose": "Close Proximity",
+    "hambetween": "Inter-digital Proximity",
+
+    # Movement
     "hammoveu": "Upward Movement",
     "hammoved": "Downward Movement",
     "hammovel": "Leftward Movement",
     "hammover": "Rightward Movement",
+    "hammoveright": "Rightward Motion",
     "hammoveo": "Outward Movement",
     "hammovei": "Inward Movement",
     "hamcircleo": "Circular Motion",
-    "hamreplace": "Rotation Transition"
+    "hamwaving": "Waving Motion",
+
+    # State Transition
+    "hamreplace": "Rotation Transition",
+    "hamrepeatfromstart": "Repeat Motion"
+}
+
+SYMBOL_CATEGORY_MAP = {
+    # Structure & Symmetry
+    "hamsymmlr": "Symmetry & Structure",
+    "hamplus": "Symmetry & Structure",
+    "hamnonipsi": "Symmetry & Structure",
+
+    # Handshape
+    "hamfist": "Handshape",
+    "hamflathand": "Handshape",
+    "hamflatside": "Handshape",
+    "hamfinger2": "Handshape",
+    "hamfinger23": "Handshape",
+    "hampinch12": "Handshape",
+    "hampinchall": "Handshape",
+    "hammiddlefinger": "Handshape",
+    "hamringfinger": "Handshape",
+    "hampinky": "Handshape",
+    "hamthumboutmod": "Handshape",
+    "hamthumbacrossmod": "Handshape",
+    "hamthumbopenmod": "Handshape",
+
+    # Extended Finger Direction
+    "hamextfingeru": "Extended Finger Direction",
+    "hamextfingerd": "Extended Finger Direction",
+    "hamextfingerr": "Extended Finger Direction",
+    "hamextfingerl": "Extended Finger Direction",
+    "hamextfingero": "Extended Finger Direction",
+    "hamextfingeri": "Extended Finger Direction",
+    "hamextfingerul": "Extended Finger Direction",
+    "hamextfingerur": "Extended Finger Direction",
+    "hamextfingerdl": "Extended Finger Direction",
+    "hamextfingerdr": "Extended Finger Direction",
+
+    # Palm Orientation
+    "hampalmd": "Palm Orientation",
+    "hampalmu": "Palm Orientation",
+    "hampalml": "Palm Orientation",
+    "hampalmr": "Palm Orientation",
+    "hampalmdl": "Palm Orientation",
+    "hampalmdr": "Palm Orientation",
+    "hampalmul": "Palm Orientation",
+    "hampalmur": "Palm Orientation",
+
+    # Location
+    "hamcheek": "Body & Spatial Location",
+    "hamchest": "Body & Spatial Location",
+    "hamhead": "Body & Spatial Location",
+    "hamneutralspace": "Body & Spatial Location",
+    "hamshoulders": "Body & Spatial Location",
+    "hambelowstomach": "Body & Spatial Location",
+    "hamstomach": "Body & Spatial Location",
+
+    # Contact & Proximity
+    "hamtouch": "Contact & Touch",
+    "hamclose": "Contact & Touch",
+    "hambetween": "Contact & Touch",
+
+    # Movement
+    "hammoveu": "Movement & Motion",
+    "hammoved": "Movement & Motion",
+    "hammovel": "Movement & Motion",
+    "hammover": "Movement & Motion",
+    "hammoveright": "Movement & Motion",
+    "hammoveo": "Movement & Motion",
+    "hammovei": "Movement & Motion",
+    "hamcircleo": "Movement & Motion",
+    "hamwaving": "Movement & Motion",
+
+    # State Transition
+    "hamreplace": "State Transition",
+    "hamrepeatfromstart": "State Transition"
 }
 
 
@@ -156,6 +265,18 @@ def convert_nn_pred_to_hamnosys(pred):
     return " ".join(tags)
 
 
+def clean_json_serializable(obj):
+    if isinstance(obj, dict):
+        return {k: clean_json_serializable(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [clean_json_serializable(v) for v in obj]
+    elif hasattr(obj, 'tolist'):
+        return obj.tolist()
+    elif hasattr(obj, 'item'):
+        return obj.item()
+    else:
+        return obj
+
 @app.route('/upload', methods=['POST'])
 def upload_video():
     if 'video' not in request.files and 'sample_name' not in request.form:
@@ -214,9 +335,11 @@ def upload_video():
                 unicode_chars.append(char_str)
 
             label_text = SYMBOL_LABEL_MAP.get(tag, tag)
+            category_text = SYMBOL_CATEGORY_MAP.get(tag, "General Phonetic Modifier")
             chips.append({
                 "tag": tag,
-                "label": label_text
+                "label": label_text,
+                "category": category_text
             })
 
         unicode_str = "".join(unicode_chars)
@@ -248,6 +371,8 @@ def upload_video():
             "precision": f"{calc_prec:.1f}%"
         }
 
+        clean_details = clean_json_serializable(details)
+
         return jsonify({
             "hamnosys_tags": hamnosys_tags,
             "hamnosys_unicode": unicode_str,
@@ -260,7 +385,8 @@ def upload_video():
             "gloss": matched_info["gloss"],
             "meaning": matched_info["meaning"],
             "confidence": matched_info["confidence"],
-            "precision": matched_info["precision"]
+            "precision": matched_info["precision"],
+            "details": clean_details
         })
         
     except Exception as e:
