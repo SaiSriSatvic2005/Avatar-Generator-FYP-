@@ -1,9 +1,9 @@
 {
   "test_name": "CFG Grammar Validation",
   "total_glosses": 170,
-  "valid_sequences": 169,
-  "invalid_sequences": 1,
-  "validity_rate_pct": 99.41,
+  "valid_sequences": 170,
+  "invalid_sequences": 0,
+  "validity_rate_pct": 100.0,
   "grammar_rules": [
     "Sign ::= [SymmetryOp] Handshape ExtFinger PalmOri Location [Contact] [Movement]",
     "All tokens must be valid HamNoSys identifiers",
@@ -419,12 +419,10 @@
     },
     {
       "gloss": "city",
-      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamtouch hamtouch",
-      "token_count": 7,
-      "valid": false,
-      "errors": [
-        "Consecutive duplicate: 'hamtouch' at position 6"
-      ]
+      "sequence": "hamsymmlr hamflathand hamextfingeru hampalml hamneutralspace hamtouch",
+      "token_count": 6,
+      "valid": true,
+      "errors": []
     },
     {
       "gloss": "close",

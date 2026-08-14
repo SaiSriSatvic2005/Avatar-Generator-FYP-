@@ -526,7 +526,7 @@
     "ext_finger": "hamextfingeru",
     "palm_ori": "hampalml",
     "location": "hamneutralspace",
-    "movement": "hamtouch",
+    "movement": "none",
     "contact": "hamtouch",
     "two_handed": "hamsymmlr"
   },

@@ -65,19 +65,19 @@
       "gloss": "book",
       "predicted": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmu"
       },
       "ground_truth": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmu"
       },
       "cosine_similarity": 100.0
     },
@@ -86,19 +86,19 @@
       "gloss": "drink",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -107,19 +107,19 @@
       "gloss": "drink",
       "predicted": {
         "handshape": "hampinch12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 75.0
     },
@@ -128,19 +128,19 @@
       "gloss": "drink",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hammoveu",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -149,19 +149,19 @@
       "gloss": "computer",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamforehead",
         "movement": "hamcircleo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamforehead",
         "movement": "hamcircleo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -170,19 +170,19 @@
       "gloss": "before",
       "predicted": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammover",
-        "two_handed": "hamplus"
+        "two_handed": "hamplus",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "ground_truth": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammover",
-        "two_handed": "hamplus"
+        "two_handed": "hamplus",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "cosine_similarity": 100.0
     },
@@ -191,19 +191,19 @@
       "gloss": "computer",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamforehead",
         "movement": "hamcircleo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamforehead",
         "movement": "hamcircleo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -212,19 +212,19 @@
       "gloss": "before",
       "predicted": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamneutralspace",
         "movement": "hammover",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "ground_truth": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammover",
-        "two_handed": "hamplus"
+        "two_handed": "hamplus",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "cosine_similarity": 60.0
     },
@@ -233,19 +233,19 @@
       "gloss": "before",
       "predicted": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammover",
-        "two_handed": "hamplus"
+        "two_handed": "hamplus",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "ground_truth": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammover",
-        "two_handed": "hamplus"
+        "two_handed": "hamplus",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "cosine_similarity": 100.0
     },
@@ -254,19 +254,19 @@
       "gloss": "chair",
       "predicted": {
         "handshape": "hamfinger23",
-        "ext_finger": "hamextfingerd",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoved",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd"
       },
       "ground_truth": {
         "handshape": "hamfinger23",
-        "ext_finger": "hamextfingerd",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoved",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd"
       },
       "cosine_similarity": 100.0
     },
@@ -275,19 +275,19 @@
       "gloss": "go",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingerd",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingerd",
+        "palm_ori": "hampalmd"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd"
       },
       "cosine_similarity": 90.0
     },
@@ -296,19 +296,19 @@
       "gloss": "go",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd"
       },
       "cosine_similarity": 100.0
     },
@@ -317,19 +317,19 @@
       "gloss": "clothes",
       "predicted": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammoveu",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "ground_truth": {
         "handshape": "hamflathand",
-        "ext_finger": "hamextfingerl",
-        "palm_ori": "hampalmu",
         "location": "hamchest",
         "movement": "hammoveu",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingerl",
+        "palm_ori": "hampalmu"
       },
       "cosine_similarity": 100.0
     },
@@ -338,19 +338,19 @@
       "gloss": "go",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalmd",
         "location": "hamneutralspace",
         "movement": "hammoveo",
-        "two_handed": "hamsymmlr"
+        "two_handed": "hamsymmlr",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalmd"
       },
       "cosine_similarity": 100.0
     },
@@ -359,19 +359,19 @@
       "gloss": "who",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hamcircleo",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hamcircleo",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -380,19 +380,19 @@
       "gloss": "who",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamcheek",
         "movement": "hamtwisting",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamlips",
         "movement": "hamcircleo",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 60.0
     },
@@ -401,19 +401,19 @@
       "gloss": "candy",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamcheek",
         "movement": "hamtwisting",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamcheek",
         "movement": "hamtwisting",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -422,19 +422,19 @@
       "gloss": "candy",
       "predicted": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamcheek",
         "movement": "hamtwisting",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamfinger2",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamcheek",
         "movement": "hamtwisting",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -443,19 +443,19 @@
       "gloss": "cousin",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamear",
         "movement": "hamnodding",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamear",
         "movement": "hamnodding",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     },
@@ -464,19 +464,19 @@
       "gloss": "cousin",
       "predicted": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamear",
         "movement": "hamnodding",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "ground_truth": {
         "handshape": "hamcee12",
-        "ext_finger": "hamextfingeru",
-        "palm_ori": "hampalml",
         "location": "hamear",
         "movement": "hamnodding",
-        "two_handed": "none"
+        "two_handed": "none",
+        "ext_finger": "hamextfingeru",
+        "palm_ori": "hampalml"
       },
       "cosine_similarity": 100.0
     }
