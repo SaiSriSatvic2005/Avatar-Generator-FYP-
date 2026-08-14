@@ -7,30 +7,29 @@ import tempfile
 try:
     from scipy.signal import savgol_filter
 except ImportError:
-    import subprocess
-    import sys
-    print("Installing scipy...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "scipy"])
-    from scipy.signal import savgol_filter
+    savgol_filter = None
 
 def smooth_trajectory(traj, window_size=5, polyorder=2):
     """
-    Applies Savitzky-Golay filter to smooth a 2D or 3D trajectory array.
+    Applies Savitzky-Golay filter (or moving average fallback) to smooth a 2D or 3D trajectory array.
     """
     if traj is None or len(traj) < window_size:
         return traj
 
-    traj = np.array(traj)
+    traj = np.array(traj, dtype=np.float32)
     smoothed = np.zeros_like(traj)
     for i in range(traj.shape[1]):
-        # Ensure window_size is odd and less than or equal to the sequence length
-        ws = window_size if window_size % 2 == 1 else window_size - 1
-        if ws > len(traj):
-            ws = len(traj) if len(traj) % 2 == 1 else len(traj) - 1
-            if ws < 3: # Cannot apply filter with window size < 3 for polyorder 2
-                return traj 
-        
-        smoothed[:, i] = savgol_filter(traj[:, i], ws, polyorder)
+        col = traj[:, i]
+        if savgol_filter is not None:
+            ws = window_size if window_size % 2 == 1 else window_size - 1
+            if ws > len(traj):
+                ws = len(traj) if len(traj) % 2 == 1 else len(traj) - 1
+            if ws >= 3:
+                smoothed[:, i] = savgol_filter(col, ws, min(polyorder, ws - 1))
+                continue
+        # Pure NumPy moving average fallback
+        kernel = np.ones(min(window_size, len(col))) / min(window_size, len(col))
+        smoothed[:, i] = np.convolve(col, kernel, mode='same')
     return smoothed
 
 def detect_dominant_hand(video_path):

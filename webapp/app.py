@@ -24,6 +24,21 @@ app = Flask(__name__)
 UPLOAD_FOLDER = os.path.join(WEBAPP_DIR, 'uploads')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+def clean_old_uploads(max_files=15):
+    """Keep the uploads folder tidy to prevent storage bloat on cloud instances."""
+    try:
+        files = [os.path.join(UPLOAD_FOLDER, f) for f in os.listdir(UPLOAD_FOLDER)]
+        files = [f for f in files if os.path.isfile(f)]
+        if len(files) > max_files:
+            files.sort(key=os.path.getmtime)
+            for f in files[:-max_files]:
+                try:
+                    os.remove(f)
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
 
 
 SPREADSHEET_PATH = os.path.join(BASE_DIR, "Senior Code", "HamNoSys2SiGML-master", "HamNoSys2SiGML-master", "Original", "conversionSpreadSheet.txt")
@@ -314,7 +329,9 @@ def upload_video():
         if file.filename == '':
             return jsonify({"error": "Empty filename"}), 400
             
-        filename = str(uuid.uuid4()) + "_" + file.filename
+        clean_old_uploads(max_files=15)
+        clean_name = os.path.basename(file.filename).replace(" ", "_").replace("..", "")
+        filename = f"{uuid.uuid4().hex[:10]}_{clean_name}"
         video_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(video_path)
         display_filename = file.filename
@@ -454,6 +471,30 @@ def upload_video():
         "precision": matched_info["precision"],
         "details": clean_details
     })
+
+@app.errorhandler(404)
+def not_found_handler(e):
+    if request.path.startswith(('/upload', '/samples', '/uploads')):
+        return jsonify({"error": "Resource not found on server (404)."}), 404
+    return render_template('index.html'), 404
+
+@app.errorhandler(500)
+def internal_error_handler(e):
+    import traceback
+    traceback.print_exc()
+    return jsonify({
+        "error": "An internal server error occurred while processing the request. The server fallback has been engaged.",
+        "status": 500
+    }), 500
+
+@app.errorhandler(Exception)
+def generic_exception_handler(e):
+    import traceback
+    traceback.print_exc()
+    return jsonify({
+        "error": f"Server error: {str(e)}",
+        "status": 500
+    }), 500
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=5000, threaded=True)

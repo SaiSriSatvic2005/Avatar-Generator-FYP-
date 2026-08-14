@@ -175,19 +175,19 @@ class SharedLandmarkExtractor:
             _LANDMARK_CACHE[video_path] = frames_data
             return frames_data
 
-        # Fallback to MediaPipe Holistic + Hands
+        # Fallback to MediaPipe Holistic + Hands (model_complexity=1 for low memory & CPU efficiency)
         with self.mp_holistic.Holistic(
             static_image_mode=False,
-            model_complexity=2,
+            model_complexity=1,
             smooth_landmarks=True,
-            min_detection_confidence=0.6,
-            min_tracking_confidence=0.6
+            min_detection_confidence=0.5,
+            min_tracking_confidence=0.5
         ) as holistic, self.mp_hands.Hands(
             static_image_mode=False,
             max_num_hands=2,
             model_complexity=1,
-            min_detection_confidence=0.6,
-            min_tracking_confidence=0.6
+            min_detection_confidence=0.5,
+            min_tracking_confidence=0.5
         ) as hands_detector:
 
             while cap.isOpened():
@@ -240,6 +240,8 @@ class SharedLandmarkExtractor:
                 frames_data.append(frame_info)
 
         cap.release()
+        if len(_LANDMARK_CACHE) > 5:
+            _LANDMARK_CACHE.clear()
         _LANDMARK_CACHE[video_path] = frames_data
         return frames_data
 

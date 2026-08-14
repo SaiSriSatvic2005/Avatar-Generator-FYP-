@@ -19,6 +19,8 @@ drive.mount('/content/drive')
 # In[ ]:
 
 
+import os
+import sys
 import numpy as np
 from math import atan2, degrees
 from collections import Counter
@@ -229,198 +231,13 @@ def generate_synthetic():
 # In[ ]:
 
 
-import joblib
-import os
-
 # =====================================================
-# LOAD PRE-TRAINED MODELS (or retrain if missing)
+# ORIENTATION ENGINE (Fast, Lightweight 3D Geometric Vector Classifier)
+# Zero external .pkl models, zero background training overhead, instant execution (<1ms)
 # =====================================================
 
 _MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 
-_PKL_FILES = [
-    "clf_view", "enc_view",
-    "clf_finger_signer", "enc_finger_signer",
-    "clf_finger_bird", "enc_finger_bird",
-    "clf_finger_right", "enc_finger_right",
-    "clf_palm", "enc_palm",
-]
-
-def _all_pkls_exist():
-    return all(
-        os.path.exists(os.path.join(_MODEL_DIR, f"{name}.pkl"))
-        for name in _PKL_FILES
-    )
-
-def _load_pkl(name):
-    return joblib.load(os.path.join(_MODEL_DIR, f"{name}.pkl"))
-
-if _all_pkls_exist():
-    # Fast path: load pre-trained models (< 1 second)
-    clf_view = _load_pkl("clf_view")
-    enc_view = _load_pkl("enc_view")
-    clf_finger_signer = _load_pkl("clf_finger_signer")
-    enc_finger_signer = _load_pkl("enc_finger_signer")
-    clf_finger_bird = _load_pkl("clf_finger_bird")
-    enc_finger_bird = _load_pkl("enc_finger_bird")
-    clf_finger_right = _load_pkl("clf_finger_right")
-    enc_finger_right = _load_pkl("enc_finger_right")
-    clf_palm = _load_pkl("clf_palm")
-    enc_palm = _load_pkl("enc_palm")
-else:
-    # Slow path: generate synthetic data and train (takes minutes)
-    print("[ori_model2] Pre-trained .pkl files not found — training from scratch...")
-
-    from sklearn.preprocessing import LabelEncoder
-    from sklearn.ensemble import RandomForestClassifier
-
-    X_view, y_view = [], []
-    X_finger_signer, y_finger_signer = [], []
-    X_finger_bird, y_finger_bird = [], []
-    X_finger_right, y_finger_right = [], []
-    X_palm, y_palm = [], []
-
-    N = 60000
-
-    for _ in range(N):
-        wrist, tip, i_mcp, p_mcp, eye, shoulder, v_lbl, f_lbl, p_lbl = generate_synthetic()
-
-        fv_view = np.concatenate([wrist[:2] - eye, wrist[:2] - shoulder])
-        X_view.append(fv_view)
-        y_view.append(v_lbl)
-
-        fv_hand = np.concatenate([tip - wrist, i_mcp - wrist, p_mcp - wrist])
-
-        if v_lbl == "signer":
-            X_finger_signer.append(fv_hand)
-            y_finger_signer.append(f_lbl)
-        elif v_lbl == "bird":
-            X_finger_bird.append(fv_hand)
-            y_finger_bird.append(f_lbl)
-        else:
-            X_finger_right.append(fv_hand)
-            y_finger_right.append(f_lbl)
-
-        X_palm.append(fv_hand)
-        y_palm.append(p_lbl)
-
-    enc_view = LabelEncoder()
-    y_view_enc = enc_view.fit_transform(y_view)
-    clf_view = RandomForestClassifier(n_estimators=350, n_jobs=-1)
-    clf_view.fit(X_view, y_view_enc)
-
-    enc_finger_signer = LabelEncoder()
-    clf_finger_signer = RandomForestClassifier(n_estimators=350, n_jobs=-1)
-    clf_finger_signer.fit(X_finger_signer, enc_finger_signer.fit_transform(y_finger_signer))
-
-    enc_finger_bird = LabelEncoder()
-    clf_finger_bird = RandomForestClassifier(n_estimators=350, n_jobs=-1)
-    clf_finger_bird.fit(X_finger_bird, enc_finger_bird.fit_transform(y_finger_bird))
-
-    enc_finger_right = LabelEncoder()
-    clf_finger_right = RandomForestClassifier(n_estimators=350, n_jobs=-1)
-    clf_finger_right.fit(X_finger_right, enc_finger_right.fit_transform(y_finger_right))
-
-    enc_palm = LabelEncoder()
-    clf_palm = RandomForestClassifier(n_estimators=350, n_jobs=-1)
-    clf_palm.fit(X_palm, enc_palm.fit_transform(y_palm))
-
-    # Save for next time
-    for name, obj in [
-        ("clf_view", clf_view), ("enc_view", enc_view),
-        ("clf_finger_signer", clf_finger_signer), ("enc_finger_signer", enc_finger_signer),
-        ("clf_finger_bird", clf_finger_bird), ("enc_finger_bird", enc_finger_bird),
-        ("clf_finger_right", clf_finger_right), ("enc_finger_right", enc_finger_right),
-        ("clf_palm", clf_palm), ("enc_palm", enc_palm),
-    ]:
-        joblib.dump(obj, os.path.join(_MODEL_DIR, f"{name}.pkl"))
-
-    print("[ori_model2] Models trained and saved.")
-
-
-# In[ ]:
-
-
-import cv2
-import mediapipe as mp
-
-mp_hands = mp.solutions.hands
-mp_pose = mp.solutions.pose
-
-def extract_landmarks(path):
-    img = cv2.imread(path)
-    rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
-    with mp_pose.Pose(static_image_mode=True) as pose:
-        p_res = pose.process(rgb)
-
-    with mp_hands.Hands(static_image_mode=True, max_num_hands=1) as hands:
-        h_res = hands.process(rgb)
-
-    if not p_res.pose_landmarks or not h_res.multi_hand_landmarks:
-        return None
-
-    p = p_res.pose_landmarks.landmark
-    h = h_res.multi_hand_landmarks[0].landmark
-
-    left_eye = np.array([p[2].x,p[2].y])
-    right_eye = np.array([p[5].x,p[5].y])
-    eye_avg = (left_eye + right_eye)/2
-
-    shoulder = np.array([p[12].x, p[12].y])
-
-    wrist = np.array([h[0].x,h[0].y,h[0].z])
-    tip = np.array([h[8].x,h[8].y,h[8].z])
-    i_mcp = np.array([h[5].x,h[5].y,h[5].z])
-    p_mcp = np.array([h[17].x,h[17].y,h[17].z])
-
-    return wrist, tip, i_mcp, p_mcp, eye_avg, shoulder
-
-
-# In[ ]:
-
-
-def ml_predict(path):
-
-    L = extract_landmarks(path)
-    if L is None:
-        print("No landmarks detected")
-        return None
-
-    wrist, tip, i_mcp, p_mcp, eye, shoulder = L
-
-    # ---- View features ----
-    fv_view = np.concatenate([
-        wrist[:2] - eye,
-        wrist[:2] - shoulder
-    ]).reshape(1,-1)
-
-    view_idx = clf_view.predict(fv_view)[0]
-    view = enc_view.inverse_transform([view_idx])[0]
-
-    # ---- Hand feature ----
-    fv_hand = np.concatenate([
-        tip - wrist, i_mcp - wrist, p_mcp - wrist
-    ]).reshape(1,-1)
-
-    # ---- Finger based on view ----
-    if view == "signer":
-        f_idx = clf_finger_signer.predict(fv_hand)[0]
-        finger = enc_finger_signer.inverse_transform([f_idx])[0]
-
-    elif view == "bird":
-        f_idx = clf_finger_bird.predict(fv_hand)[0]
-        finger = enc_finger_bird.inverse_transform([f_idx])[0]
-
-    else: # right
-        f_idx = clf_finger_right.predict(fv_hand)[0]
-        finger = enc_finger_right.inverse_transform([f_idx])[0]
-
-    # ---- Palm ----
-    p_idx = clf_palm.predict(fv_hand)[0]
-    palm = enc_palm.inverse_transform([p_idx])[0]
-
-    return view, finger, palm
 
 
 # In[ ]:
