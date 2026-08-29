@@ -1,0 +1,343 @@
+{
+  "metrics": {
+    "handshape": {
+      "correct": 6,
+      "total": 24
+    },
+    "movement": {
+      "correct": 6,
+      "total": 24
+    },
+    "symmetry": {
+      "correct": 13,
+      "total": 24
+    },
+    "ext_finger": {
+      "correct": 2,
+      "total": 24
+    },
+    "palm_ori": {
+      "correct": 8,
+      "total": 24
+    },
+    "location": {
+      "correct": 7,
+      "total": 24
+    }
+  },
+  "composite_acc": 29.16666666666666,
+  "samples": [
+    {
+      "sign": "wash",
+      "pred_hns": "hamsymmlr hamfist hamthumboutmod hamextfingerol hampalml hamneutralspace",
+      "gt_hs": "hamfist",
+      "pred_hs": "hamfist",
+      "hs_ok": true,
+      "gt_mv": "hamswinging",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "hamplus",
+      "pred_sym": "hamsymmlr",
+      "sym_ok": false
+    },
+    {
+      "sign": "blow",
+      "pred_hns": "hamfinger2345 hamthumboutmod hamextfingero hampalmd hamneutralspace",
+      "gt_hs": "hamflathand",
+      "pred_hs": "hamfinger2345",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hamnomotion",
+      "mv_ok": true,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "hungry",
+      "pred_hns": "hamflathand hamthumboutmod hamextfingerdl hampalmd hamstomach",
+      "gt_hs": "hamflathand",
+      "pred_hs": "hamflathand",
+      "hs_ok": true,
+      "gt_mv": "hammovei",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "engineer",
+      "pred_hns": "hamplus hamfist hamthumboutmod hamextfingerd hampalmd hamneutralspace hamrepeatfromstart",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammover",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "hamplus",
+      "pred_sym": "hamplus",
+      "sym_ok": true
+    },
+    {
+      "sign": "improve",
+      "pred_hns": "hamflathand hamthumboutmod hamextfingerdl hampalmd hamneutralspace",
+      "gt_hs": "hamflathand",
+      "pred_hs": "hamflathand",
+      "hs_ok": true,
+      "gt_mv": "hammoveu",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "town",
+      "pred_hns": "hamplus hamflathand hamthumboutmod hamextfingero hampalmd hamneutralspace hammoveo",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamflathand",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "hamsymmlr",
+      "pred_sym": "hamplus",
+      "sym_ok": false
+    },
+    {
+      "sign": "deaf",
+      "pred_hns": "hamceeall hamthumboutmod hamextfingerol hampalml hamneutralspace",
+      "gt_hs": "hamfinger23",
+      "pred_hs": "hamceeall",
+      "hs_ok": false,
+      "gt_mv": "hammoveu",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "bath",
+      "pred_hns": "hamceeall hamthumboutmod hamextfingerol hampalml hamneutralspace",
+      "gt_hs": "hamfist",
+      "pred_hs": "hamceeall",
+      "hs_ok": false,
+      "gt_mv": "hamwavy",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "hamsymmlr",
+      "pred_sym": "none",
+      "sym_ok": false
+    },
+    {
+      "sign": "officer",
+      "pred_hns": "hamfist hamthumboutmod hamextfingerol hampalml hamneutralspace hammoveo",
+      "gt_hs": "hampinch12",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammoved",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "actor",
+      "pred_hns": "hamplus hamflathand hamthumboutmod hamextfingerol hampalml hamneutralspace hammoveo",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamflathand",
+      "hs_ok": false,
+      "gt_mv": "hammovei",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "hamplus",
+      "sym_ok": false
+    },
+    {
+      "sign": "center",
+      "pred_hns": "hamsymmlr hamfinger23 hamextfingerol hampalmd hamneutralspace",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfinger23",
+      "hs_ok": false,
+      "gt_mv": "hammoved",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "hamplus",
+      "pred_sym": "hamsymmlr",
+      "sym_ok": false
+    },
+    {
+      "sign": "key",
+      "pred_hns": "hamfist hamthumboutmod hamextfingerol hampalmd hamneutralspace hammoved",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hammoved",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "quick",
+      "pred_hns": "hamflathand hamthumboutmod hamextfingero hampalml hamneutralspace hammovei",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamflathand",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hammovei",
+      "mv_ok": false,
+      "gt_sym": "hamplus",
+      "pred_sym": "none",
+      "sym_ok": false
+    },
+    {
+      "sign": "father",
+      "pred_hns": "hamfist hamthumboutmod hamextfingero hampalml hamneutralspace",
+      "gt_hs": "hamfinger23",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammoved",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "hamsymmlr",
+      "pred_sym": "none",
+      "sym_ok": false
+    },
+    {
+      "sign": "catch",
+      "pred_hns": "hamplus hamflathand hamthumboutmod hamextfingerol hampalmd hamneutralspace hammoveo",
+      "gt_hs": "hamflathand",
+      "pred_hs": "hamflathand",
+      "hs_ok": true,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "hamplus",
+      "pred_sym": "hamplus",
+      "sym_ok": true
+    },
+    {
+      "sign": "they",
+      "pred_hns": "hamflathand hamthumboutmod hamextfingero hampalmu hamneutralspace hammoveo",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamflathand",
+      "hs_ok": false,
+      "gt_mv": "hammoveo",
+      "pred_mv": "hammoveo",
+      "mv_ok": true,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "volleyball",
+      "pred_hns": "hamsymmlr hamflathand hamthumboutmod hamextfingero hampalml hamneutralspace hammoveo",
+      "gt_hs": "hamfinger2345",
+      "pred_hs": "hamflathand",
+      "hs_ok": false,
+      "gt_mv": "hammoveo",
+      "pred_mv": "hammoveo",
+      "mv_ok": true,
+      "gt_sym": "hamsymmlr",
+      "pred_sym": "hamsymmlr",
+      "sym_ok": true
+    },
+    {
+      "sign": "appear",
+      "pred_hns": "hamfist hamthumboutmod hamextfingero hampalml hamneutralspace hammoveo",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammovel",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "control",
+      "pred_hns": "hamsymmlr hamfist hamthumboutmod hamextfingerdl hampalmd hamstomach",
+      "gt_hs": "hamfinger2345",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hamnomotion",
+      "mv_ok": true,
+      "gt_sym": "none",
+      "pred_sym": "hamsymmlr",
+      "sym_ok": false
+    },
+    {
+      "sign": "x-ray",
+      "pred_hns": "hamplus hamfist hamextfingerol hampalml hamstomach",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammoveo",
+      "pred_mv": "hamnomotion",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "hamplus",
+      "sym_ok": false
+    },
+    {
+      "sign": "l",
+      "pred_hns": "hamfinger2 hamthumboutmod hamextfingero hampalml hamneutralspace",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfinger2",
+      "hs_ok": true,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hamnomotion",
+      "mv_ok": true,
+      "gt_sym": "hamplus",
+      "pred_sym": "none",
+      "sym_ok": false
+    },
+    {
+      "sign": "yesterday",
+      "pred_hns": "hamfist hamthumboutmod hamextfingerol hampalmd hamneutralspace hammoveu",
+      "gt_hs": "hamfinger2",
+      "pred_hs": "hamfist",
+      "hs_ok": false,
+      "gt_mv": "hammoveu",
+      "pred_mv": "hammoveu",
+      "mv_ok": true,
+      "gt_sym": "none",
+      "pred_sym": "none",
+      "sym_ok": true
+    },
+    {
+      "sign": "black board",
+      "pred_hns": "hamplus hamceeall hamthumboutmod hamextfingerol hampalml hamneutralspace hammoveo",
+      "gt_hs": "hamflathand",
+      "pred_hs": "hamceeall",
+      "hs_ok": false,
+      "gt_mv": "hamnomotion",
+      "pred_mv": "hammoveo",
+      "mv_ok": false,
+      "gt_sym": "none",
+      "pred_sym": "hamplus",
+      "sym_ok": false
+    },
+    {
+      "sign": "bench",
+      "pred_hns": "hamsymmlr hamfist hamthumboutmod hamextfingero hampalml hamneutralspace hamcirclei",
+      "gt_hs": "hamfist",
+      "pred_hs": "hamfist",
+      "hs_ok": true,
+      "gt_mv": "hammoved",
+      "pred_mv": "hamcirclei",
+      "mv_ok": false,
+      "gt_sym": "hamsymmlr",
+      "pred_sym": "hamsymmlr",
+      "sym_ok": true
+    }
+  ]
+}

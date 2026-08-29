@@ -1,0 +1,60 @@
+{
+  "handshape_classes": [
+    "hamcee12",
+    "hamceeall",
+    "hamfinger2",
+    "hamfinger23",
+    "hamfinger2345",
+    "hamfinger23spread",
+    "hamfist",
+    "hamflathand",
+    "hamindexfinger",
+    "hampinch12",
+    "hampinchall"
+  ],
+  "movement_classes": [
+    "hamcirclei",
+    "hamcircleo",
+    "hamcircleol",
+    "hammoved",
+    "hammovei",
+    "hammovel",
+    "hammoveo",
+    "hammover",
+    "hammoveu",
+    "hammoveuo",
+    "hamnomotion",
+    "hamstircw",
+    "hamswinging",
+    "hamwavy"
+  ],
+  "handshape_to_idx": {
+    "hamcee12": 0,
+    "hamceeall": 1,
+    "hamfinger2": 2,
+    "hamfinger23": 3,
+    "hamfinger2345": 4,
+    "hamfinger23spread": 5,
+    "hamfist": 6,
+    "hamflathand": 7,
+    "hamindexfinger": 8,
+    "hampinch12": 9,
+    "hampinchall": 10
+  },
+  "movement_to_idx": {
+    "hamcirclei": 0,
+    "hamcircleo": 1,
+    "hamcircleol": 2,
+    "hammoved": 3,
+    "hammovei": 4,
+    "hammovel": 5,
+    "hammoveo": 6,
+    "hammover": 7,
+    "hammoveu": 8,
+    "hammoveuo": 9,
+    "hamnomotion": 10,
+    "hamstircw": 11,
+    "hamswinging": 12,
+    "hamwavy": 13
+  }
+}

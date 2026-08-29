@@ -1,0 +1,16 @@
+{
+  "model_a": {
+    "name": "SkeletalHandResNet",
+    "in_features": 207,
+    "num_classes": 11,
+    "val_accuracy": 29.388888888888886
+  },
+  "model_b": {
+    "name": "AttentionBiGRU",
+    "in_channels": 3,
+    "hidden_size": 64,
+    "timesteps": 32,
+    "num_classes": 15,
+    "val_accuracy": 21.333333333333336
+  }
+}
