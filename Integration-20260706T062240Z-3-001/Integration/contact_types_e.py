@@ -43,25 +43,28 @@ def mean_motion(seq):
 # In[ ]:
 
 
-def is_hamtouch(p1, p2, ref_dist):
-    return dist(p1, p2) < 0.25 * ref_dist
+def is_hamtouch(p1, p2, eps=0.02):
+    return dist(p1, p2) < eps
 
 
 # In[ ]:
 
 
-def is_hamclose(p1, p2, ref_dist):
+def is_hamclose(p1, p2, close_eps=0.05, touch_eps=0.02):
     d = dist(p1, p2)
-    return 0.25 * ref_dist < d < 0.6 * ref_dist
+    return touch_eps < d < close_eps
 
 
 # In[ ]:
 
 
-def is_hambrushing(seq1, seq2, ref_dist):
+def is_hambrushing(seq1, seq2,
+                   touch_eps=0.02,
+                   motion_eps=0.01):
+
     distances = [dist(a, b) for a, b in zip(seq1, seq2)]
-    touching = all(d < 0.25 * ref_dist for d in distances)
-    motion = mean_motion(seq1) > 0.08 * ref_dist
+    touching = all(d < touch_eps for d in distances)
+    motion = mean_motion(seq1) > motion_eps
 
     return touching and motion
 
@@ -69,18 +72,19 @@ def is_hambrushing(seq1, seq2, ref_dist):
 # In[ ]:
 
 
-def is_hambehind(p1, p2, ref_dist):
-    return p1[2] - p2[2] > 0.3 * ref_dist
+def is_hambehind(p1, p2, z_eps=0.03):
+    return p1[2] - p2[2] > z_eps
 
 
 # In[ ]:
 
 
-def is_hamcross(left_seq, right_seq, ref_dist):
+def is_hamcross(left_seq, right_seq, z_eps=0.02):
+
     x_flip = (left_seq[0][0] < right_seq[0][0] and
               left_seq[-1][0] > right_seq[-1][0])
 
-    z_cross = abs(left_seq[-1][2] - right_seq[-1][2]) > 0.2 * ref_dist
+    z_cross = abs(left_seq[-1][2] - right_seq[-1][2]) > z_eps
 
     return x_flip and z_cross
 
@@ -88,48 +92,50 @@ def is_hamcross(left_seq, right_seq, ref_dist):
 # In[ ]:
 
 
-def is_haminterlock(fingers_A, fingers_B, ref_dist):
+def is_haminterlock(fingers_A, fingers_B,
+                    dist_eps=0.05, z_eps=0.01,
+                    min_pairs=1):
+
     close_pairs = 0
     depth_cross = False
 
     for fa in fingers_A:
         for fb in fingers_B:
-            if dist(fa, fb) < 0.6 * ref_dist:
+            if dist(fa, fb) < dist_eps:
                 close_pairs += 1
-                if abs(fa[2] - fb[2]) > 0.1 * ref_dist:
+                if abs(fa[2] - fb[2]) > z_eps:
                     depth_cross = True
 
-    return close_pairs >= 1 and depth_cross
+    return close_pairs >= min_pairs and depth_cross
 
 
 # In[ ]:
 
 
 def classify_contact(data):
-    ref_dist = data.get("ref_dist", 0.08)
 
     if "fingers_L" in data and "fingers_R" in data:
-        if is_haminterlock(data["fingers_L"], data["fingers_R"], ref_dist):
+        if is_haminterlock(data["fingers_L"], data["fingers_R"]):
             return "haminterlock"
 
     if "hand_L_seq" in data and "hand_R_seq" in data:
-        if is_hamcross(data["hand_L_seq"], data["hand_R_seq"], ref_dist):
+        if is_hamcross(data["hand_L_seq"], data["hand_R_seq"]):
             return "hamcross"
 
     if "hand_L_seq" in data and "hand_R_seq" in data:
-        if is_hambrushing(data["hand_L_seq"], data["hand_R_seq"], ref_dist):
+        if is_hambrushing(data["hand_L_seq"], data["hand_R_seq"]):
             return "hambrushing"
 
     if "hand_L" in data and "hand_R" in data:
-        if is_hamtouch(data["hand_L"], data["hand_R"], ref_dist):
+        if is_hamtouch(data["hand_L"], data["hand_R"]):
             return "hamtouch"
 
     if "hand_L" in data and "hand_R" in data:
-        if is_hamclose(data["hand_L"], data["hand_R"], ref_dist):
+        if is_hamclose(data["hand_L"], data["hand_R"]):
             return "hamclose"
 
     if "hand_L" in data and "hand_R" in data:
-        if is_hambehind(data["hand_L"], data["hand_R"], ref_dist):
+        if is_hambehind(data["hand_L"], data["hand_R"]):
             return "hambehind"
 
     return "no-contact"
@@ -190,8 +196,7 @@ if __name__ == "__main__":
             "hand_L": p1,
             "hand_R": p2,
             "hand_L_seq": hand_L_seq[-5:],
-            "hand_R_seq": hand_R_seq[-5:],
-            "ref_dist": dist((hL[0].x, hL[0].y, hL[0].z), (hL[9].x, hL[9].y, hL[9].z)) if "Left" in hands_detected else 0.08
+            "hand_R_seq": hand_R_seq[-5:]
         }
 
         label = classify_contact(data)
@@ -230,8 +235,6 @@ def detect_contact_type(frame):
         hands[label] = lm.landmark
 
     # ---- fingertip extraction (IDENTICAL to notebook) ----
-    ref_dist = 0.08 # default fallback
-    
     if "Left" in hands and "Right" in hands:
 
         hL = hands["Left"]
@@ -239,8 +242,6 @@ def detect_contact_type(frame):
 
         p1 = (hL[8].x, hL[8].y, hL[8].z)
         p2 = (hR[8].x, hR[8].y, hR[8].z)
-        
-        ref_dist = dist((hL[0].x, hL[0].y, hL[0].z), (hL[9].x, hL[9].y, hL[9].z))
 
     elif len(hands) == 1:
 
@@ -248,16 +249,13 @@ def detect_contact_type(frame):
 
         p1 = (h[8].x, h[8].y, h[8].z)
         p2 = p1   # single hand → self-contact
-        
-        ref_dist = dist((h[0].x, h[0].y, h[0].z), (h[9].x, h[9].y, h[9].z))
 
     else:
         return "no-contact"
 
     data = {
         "hand_L": p1,
-        "hand_R": p2,
-        "ref_dist": ref_dist
+        "hand_R": p2
     }
 
     return classify_contact(data)
@@ -268,57 +266,21 @@ def detect_contact_type(frame):
 
 def run_contact_type_module(video_path):
     """
-    Contact Type Inference Wrapper using shared MediaPipe landmarks
+    Contact Type Inference Wrapper
     """
-    try:
-        from shared_landmarks import get_video_landmarks
-        frames = get_video_landmarks(video_path)
-        predictions = []
-        for f in frames:
-            l = f.get("left_hand")
-            r = f.get("right_hand")
-            if l and r:
-                # Check if l and r are the same physical hand double detected
-                wrist_dist = dist(
-                    (l.landmark[0].x, l.landmark[0].y, l.landmark[0].z),
-                    (r.landmark[0].x, r.landmark[0].y, r.landmark[0].z)
-                )
-                if wrist_dist < 0.08:
-                    predictions.append("no-contact")
-                    continue
-
-                # Check distances between index tips (8), middle tips (12), and MCP (9)
-                pts_l = [(l.landmark[i].x, l.landmark[i].y, l.landmark[i].z) for i in [0, 8, 9, 12]]
-                pts_r = [(r.landmark[i].x, r.landmark[i].y, r.landmark[i].z) for i in [0, 8, 9, 12]]
-                min_d = min(dist(pl, pr) for pl in pts_l for pr in pts_r)
-                if min_d < 0.22:
-                    predictions.append("hamtouch")
-                elif min_d < 0.45:
-                    predictions.append("hamclose")
-                else:
-                    predictions.append("no-contact")
-            else:
-                predictions.append("no-contact")
-
-
-        if predictions:
-            from collections import Counter
-            valid = [p for p in predictions if p != "no-contact"]
-            final_c = Counter(valid).most_common(1)[0][0] if valid else "no-contact"
-            return {
-                "per_frame": predictions,
-                "final": final_c
-            }
-    except Exception as e:
-        pass
 
     predictions = []
+
     cap = cv2.VideoCapture(video_path)
+
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
             break
-        contact = detect_contact_type(frame)
+
+        # 👇 IMPORTANT: CALL YOUR EXISTING LOGIC HERE
+        contact = detect_contact_type(frame)   # ← CHANGE THIS if needed
+
         predictions.append(contact)
 
     cap.release()
@@ -329,7 +291,6 @@ def run_contact_type_module(video_path):
         "per_frame": predictions,
         "final": final_contact
     }
-
 
 
 # In[ ]:

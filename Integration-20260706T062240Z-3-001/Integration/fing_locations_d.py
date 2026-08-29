@@ -303,11 +303,14 @@ def run_finger_location_module(video_path):
         predictions.append(loc)
 
     cap.release()
-    valid = [p for p in predictions if p and p != "none"]
+    valid = [p for p in predictions if p]
+
     if valid:
-        final_location = Counter(valid).most_common(1)[0][0]
+      final_location = Counter(valid).most_common(1)[0][0]
     else:
-        final_location = "none"
+      final_location = None
+
+    final_location = max(set(predictions), key=predictions.count)
 
     return {
         "per_frame": predictions,

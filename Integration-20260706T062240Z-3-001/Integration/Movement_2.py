@@ -13,20 +13,8 @@
 import cv2
 import mediapipe as mp
 import numpy as np
+import matplotlib.pyplot as plt
 from collections import deque, Counter
-
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands(
-    static_image_mode=False,
-    max_num_hands=2,
-    min_detection_confidence=0.6,
-    min_tracking_confidence=0.6
-)
-
-try:
-    from shared_landmarks import get_video_landmarks
-except ImportError:
-    get_video_landmarks = None
 
 
 # In[ ]:
@@ -116,7 +104,7 @@ def norm_dist(p1, p2, scale):
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(
     static_image_mode=False,
-    max_num_hands=2,
+    max_num_hands=1,
     min_detection_confidence=0.6,
     min_tracking_confidence=0.6
 )
@@ -232,12 +220,6 @@ def classify_movement2(traj):
     traj = np.array(traj)
     traj = traj - traj[0]
 
-    normalized_coords = np.max(np.abs(traj)) <= 2.0
-    span = np.max(np.linalg.norm(traj, axis=1))
-
-    if span < (0.03 if normalized_coords else 25):
-        return "hamnomotion"
-
     disp = np.linalg.norm(traj[-1] - traj[0])
     plen = path_length(traj)
     turn = mean_turning_angle(traj)
@@ -283,28 +265,11 @@ def classify_movement2(traj):
         return None
 
     traj = np.array(traj)
-    
-    try:
-        from video_preprocessing import smooth_trajectory
-        traj = smooth_trajectory(traj, window_size=5, polyorder=2)
-    except ImportError:
-        pass
-
     traj = traj - traj[0]
-
-    normalized_coords = np.max(np.abs(traj)) <= 2.0
-    span = np.max(np.linalg.norm(traj, axis=1))
 
     disp = np.linalg.norm(traj[-1] - traj[0])
     plen = path_length(traj)
     turn = mean_turning_angle(traj)
-
-    if traj.shape[1] >= 3:
-        dx = traj[-1, 0] - traj[0, 0]
-        dy = traj[-1, 1] - traj[0, 1]
-        dz = traj[-1, 2] - traj[0, 2]
-        if abs(dz) > max(abs(dx), abs(dy)) * 1.2 and abs(dz) > 0.01:
-            return "hammovei" if dz < 0 else "hammoveo"
 
     # ✅ ROBUST LOOP DETECTION
     if plen > disp * 4 and turn > 0.05:
@@ -312,13 +277,10 @@ def classify_movement2(traj):
         plane = dominant_plane(traj)
         rot = rotation_dir(traj, plane)
 
-        tight_loop_disp = 0.05 if normalized_coords else 15
-        full_loop_path = 0.60 if normalized_coords else 6 * disp
-
-        if disp < tight_loop_disp:
+        if disp < 15:
             return "hamstircw" if rot == "cw" else "hamstirccw"
 
-        if plen > full_loop_path:
+        if plen > 6 * disp:
             return "hamclockfull"
 
         if rot == "cw":
@@ -331,10 +293,10 @@ def classify_movement2(traj):
     if len(vel) < 2:
         return None
 
-    if span > (0.06 if normalized_coords else 50) and np.sum(np.sign(vel[:,1][:-1]) != np.sign(vel[:,1][1:])) > 6:
+    if np.sum(np.sign(vel[:,1][:-1]) != np.sign(vel[:,1][1:])) > 6:
         return "hamnodding"
 
-    if span > (0.06 if normalized_coords else 50) and np.sum(np.sign(vel[:,0][:-1]) != np.sign(vel[:,0][1:])) > 6:
+    if np.sum(np.sign(vel[:,0][:-1]) != np.sign(vel[:,0][1:])) > 6:
         return "hamswinging"
 
     return "unknown_movement2"
@@ -351,72 +313,8 @@ def hand_motion_point(lm, frame_shape):
     return np.array([
         p.x * w,
         p.y * h,
-        p.z
+        p.z * w
     ])
-
-
-def _landmark_point(hand_landmarks, point_index=0):
-    p = hand_landmarks.landmark[point_index]
-    return np.array([p.x, p.y, p.z], dtype=float)
-
-
-def _extract_motion_from_shared_landmarks(video_path):
-    if get_video_landmarks is None:
-        return []
-
-    frames = get_video_landmarks(video_path)
-    trajectory = []
-
-    for frame_info in frames:
-        hand = (
-            frame_info.get("primary_hand")
-            or frame_info.get("secondary_hand")
-            or frame_info.get("right_hand")
-            or frame_info.get("left_hand")
-        )
-        if hand is None:
-            continue
-        trajectory.append(_landmark_point(hand, point_index=0))
-
-    return trajectory
-
-
-def _extract_motion_fallback(video_path):
-    trajectory = []
-    cap = cv2.VideoCapture(video_path)
-
-    if not cap.isOpened():
-        return trajectory
-
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = hands.process(rgb)
-
-        if not results.multi_hand_landmarks:
-            continue
-
-        if len(results.multi_hand_landmarks) > 1:
-            best_idx = 0
-            best_area = -1.0
-            for idx, lm in enumerate(results.multi_hand_landmarks):
-                xs = [pt.x for pt in lm.landmark]
-                ys = [pt.y for pt in lm.landmark]
-                area = (max(xs) - min(xs)) * (max(ys) - min(ys))
-                if area > best_area:
-                    best_area = area
-                    best_idx = idx
-            hand = results.multi_hand_landmarks[best_idx]
-        else:
-            hand = results.multi_hand_landmarks[0]
-
-        trajectory.append(_landmark_point(hand, 8))
-
-    cap.release()
-    return trajectory
 
 
 # In[ ]:
@@ -491,13 +389,27 @@ if __name__ == "__main__":
 
 def run_movement2_module(video_path):
 
-    trajectory = _extract_motion_from_shared_landmarks(video_path)
-    if not trajectory:
-        trajectory = _extract_motion_fallback(video_path)
+    trajectory = []
+
+    cap = cv2.VideoCapture(video_path)
+
+    if not cap.isOpened():
+        print("ERROR: Video could not be opened")
+        return {"trajectory": [], "final": None}
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        point = get_secondary_motion(frame)
+
+        if point is not None:
+            trajectory.append(point)
+
+    cap.release()
 
     movement_label = classify_movement2(trajectory)
-    if movement_label in [None, "unknown_movement2"]:
-        movement_label = "hamnomotion"
 
     return {
         "trajectory": trajectory,

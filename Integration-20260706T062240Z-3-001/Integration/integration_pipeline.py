@@ -7,14 +7,9 @@ Runs all 10 modules on a sign language video and produces a HamNoSys code string
 
 import os
 import sys
-import json
-from collections import Counter
 import numpy as np
 import cv2
 import mediapipe as mp
-
-
-from temporal_utils import smooth_frame_sequence, build_structured_sign_descriptor
 
 # Ensure the Integration directory is on the path for local imports
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -70,264 +65,181 @@ def extract_labels(module_output):
 
 
 def combine_hamnosys(handshape, orientation, upper_body, head_face, hand_location,
-                    finger_location, contact, arm_space, movement1, movement2, video_path=None):
-
+                    finger_location, contact, arm_space, movement1, movement2):
     """
-    Combine module outputs into a strict, grammatically valid SiGML HamNoSys sequence.
+    Combine module outputs into a strict, grammatically valid SiGML HamNoSys sequence (V3).
     
-    Formal HamNoSys CFG Rules:
-    Sign ::= HandshapeStructure InitialOrientation BodyLocation [Contact] [Movement] [StateTransition]
-    - InitialOrientation ::= ExtendedFinger PalmOrientation
-    - BodyLocation ::= [HandPart/FingerPart] BaseLocation
-    - StateTransition ::= hamreplace FinalExtendedFinger FinalPalmOrientation
+    Formal HamNoSys CFG Rules (11 Ordered Slots):
+    Sign ::= [Symmetry] Handshape [ThumbMod] [BendMod] [HandPart]
+             ExtendedFinger PalmOrientation [ArmPosition] BodyLocation 
+             [Contact] Movement [MovementModifiers] [Repetition]
+             [hamreplace FinalHandshape FinalOrientation FinalLocation]
     """
+    from collections import Counter
 
-    def pick_token(module_output):
+    def pick_token(module_output, exclude=None):
+        if exclude is None:
+            exclude = ["none", "no-contact", "hambelowstomach"]
         if isinstance(module_output, dict):
             final = module_output.get("final")
-            if final and final not in ["none", "no-contact"]:
-                if isinstance(final, (tuple, list)):
-                    return " ".join([str(x) for x in final if x and str(x) not in ["none", "no-contact"]])
-                return str(final)
+            if final and final not in exclude:
+                return final
             per = module_output.get("per_frame", [])
             flat = []
             for item in per:
+                if item is None: continue
                 if isinstance(item, tuple):
-                    flat.extend([str(x) for x in item if x and str(x) not in ["none", "no-contact"]])
-                elif item and str(item) not in ["none", "no-contact"]:
+                    flat.extend([str(x) for x in item if x and str(x) not in exclude])
+                elif str(item) not in exclude:
                     flat.append(str(item))
-            if not flat:
-                return None
-
-            most_common, _ = Counter(flat).most_common(1)[0]
-            return str(most_common)
-        if isinstance(module_output, (tuple, list)):
-            clean = [str(x) for x in module_output if x and str(x) not in ["none", "no-contact"]]
-            return " ".join(clean) if clean else None
-        if isinstance(module_output, str) and module_output not in ["none", "no-contact"]:
+            if flat:
+                return Counter(flat).most_common(1)[0][0]
+            # Fallback without exclusion if all were filtered
+            fallback_flat = []
+            for item in per:
+                if item is None: continue
+                if isinstance(item, tuple):
+                    fallback_flat.extend([str(x) for x in item if x and str(x) not in ["none", "no-contact"]])
+                elif str(item) not in ["none", "no-contact"]:
+                    fallback_flat.append(str(item))
+            return Counter(fallback_flat).most_common(1)[0][0] if fallback_flat else None
+        if isinstance(module_output, str) and module_output not in exclude:
             return module_output
+        if isinstance(module_output, list):
+            clean = [str(x) for x in module_output if x and str(x) not in exclude]
+            return Counter(clean).most_common(1)[0][0] if clean else None
         return None
-
-    def extract_state_transitions(module_output):
-        if not isinstance(module_output, dict) or "per_frame" not in module_output:
-            tok = pick_token(module_output)
-            return tok, tok
-            
-        frames = module_output["per_frame"]
-        valid_frames = []
-        for item in frames:
-            if isinstance(item, tuple):
-                valid_frames.append(tuple(x for x in item if x and x not in ["none", "no-contact"]))
-            elif item and item not in ["none", "no-contact"]:
-                valid_frames.append((item,))
-                
-        if len(valid_frames) < 5:
-            tok = pick_token(module_output)
-            return tok, tok
-            
-        chunk_size = max(1, int(len(valid_frames) * 0.3))
-        start_chunk = valid_frames[:chunk_size]
-        end_chunk = valid_frames[-chunk_size:]
-        
-
-        start_tok = Counter(start_chunk).most_common(1)[0][0] if start_chunk else None
-        end_tok = Counter(end_chunk).most_common(1)[0][0] if end_chunk else None
-        
-        if start_tok is None: start_tok = pick_token(module_output)
-        if end_tok is None: end_tok = pick_token(module_output)
-        
-        return start_tok, end_tok
-
-    def format_ori(ori_tuple):
-        seq = []
-        if isinstance(ori_tuple, tuple):
-            for part in ori_tuple:
-                if part and part not in ["none", "no-contact"] and (part.startswith("hamextfinger") or part.startswith("hampalm")):
-                    seq.append(part)
-        elif isinstance(ori_tuple, str) and (ori_tuple.startswith("hamextfinger") or ori_tuple.startswith("hampalm")):
-            seq.append(ori_tuple)
-        return seq
-
-    VALID_HANDSHAPES = {
-        "hamfist", "hamflathand", "hamfinger2", "hamfinger23", "hamfinger23spread",
-        "hamfinger2345", "hampinch12", "hampinchall", "hampinch12open", "hamcee12",
-        "hamceeall", "hamceeopen", "hamthumboutmod", "hamthumbacrossmod",
-        "hamthumbopenmod", "hamfingerstraightmod", "hamfingerbendmod",
-        "hamfingerhookmod", "hamdoublebent", "hamdoublehooked"
-    }
-
-    PRIMARY_BODY_LOCATIONS = {
-        "hamhead", "hamheadtop", "hamforehead", "hameyebrows", "hameyes",
-        "hamnose", "hamnostrils", "hamear", "hamearlobe", "hamcheek",
-        "hamlips", "hamtongue", "hamteeth", "hamchin", "hamunderchin",
-        "hamneck", "hamshouldertop", "hamshoulders", "hamchest", "hamstomach",
-        "hambelowstomach", "hamneutralspace", "hamupperarm", "hamelbow",
-        "hamlowerarm"
-    }
-
-    def pick_location_token(*module_outputs, default="hamchest"):
-        """Prefer valid HtoG primary body locations, mapping modifiers to standard locations."""
-        for module_output in module_outputs:
-            candidate = pick_token(module_output)
-            if not candidate:
-                continue
-
-            for token in str(candidate).split():
-                if token in PRIMARY_BODY_LOCATIONS:
-                    return token
-                elif token in ["hamarmextended", "hamlrbeside", "hamlrat"]:
-                    return "hamneutralspace"
-                elif token in ["hampalm", "hamhandback", "hamwristback"]:
-                    return "hamchest"
-
-        return default
-
-
-    def get_phase_token(module_output, start_pct=0.0, end_pct=0.5):
-        if not isinstance(module_output, dict) or "per_frame" not in module_output:
-            return pick_token(module_output)
-        frames = module_output["per_frame"]
-        if not frames:
-            return pick_token(module_output)
-        n = len(frames)
-        start_idx = int(n * start_pct)
-        end_idx = max(start_idx + 1, int(n * end_pct))
-        sub_frames = frames[start_idx:end_idx]
-
-        # Filter out 'none' and 'no-contact'
-        valid_items = [x for x in sub_frames if x and str(x) not in ["none", "no-contact"]]
-        if not valid_items:
-            return pick_token(module_output)
-        return Counter(valid_items).most_common(1)[0][0]
 
     sequence = []
 
-    # Phase 1 Extraction (15% to 50% of clip)
-    raw_hs_p1 = get_phase_token(handshape, 0.15, 0.50) or "hamfinger2"
-    hs_p1_tokens = [t for t in str(raw_hs_p1).split() if t in VALID_HANDSHAPES]
-    hs_token_p1 = hs_p1_tokens[0] if hs_p1_tokens else "hamfinger2"
+    # ─── SLOT 0: Symmetry Operator (hamsymmlr) ───
+    is_symm = False
+    if isinstance(arm_space, dict):
+        asp_per = arm_space.get("per_frame", [])
+        symm_cnt = sum(1 for p in asp_per if p in ("hamdoublebent", "hamsymmlr"))
+        hs_base_cand = handshape.get("base") if isinstance(handshape, dict) else pick_token(handshape)
+        if symm_cnt > 15 and hs_base_cand in ("hamfist", "hamfinger2", "hamfinger23"):
+            is_symm = True
+    if is_symm:
+        sequence.append("hamsymmlr")
 
-    ori_p1 = format_ori(get_phase_token(orientation, 0.15, 0.50))
-    ext_finger_p1 = next((x for x in ori_p1 if x.startswith("hamextfinger")), "hamextfingeru")
-    palm_ori_p1 = next((x for x in ori_p1 if x.startswith("hampalm")), "hampalml")
+    # ─── SLOT 1: Base Handshape (NODE_A) ───
+    base_hs = handshape.get("base") if isinstance(handshape, dict) else pick_token(handshape)
+    if not base_hs or base_hs in ("none", "no-contact"):
+        base_hs = "hamflathand"
+    sequence.append(base_hs)
 
+    # ─── SLOT 2: Thumb Modifier (NODE_C) ───
+    thumb_mod = handshape.get("thumb_mod") if isinstance(handshape, dict) else None
+    if thumb_mod and thumb_mod in ("hamthumboutmod", "hamthumbacrossmod", "hamthumbopenmod"):
+        sequence.append(thumb_mod)
 
-    # Phase 1 Location Selection (Prefer head/face if active)
-    head_loc_p1 = get_phase_token(head_face, 0.0, 0.45)
-    if head_loc_p1 and head_loc_p1 in PRIMARY_BODY_LOCATIONS and head_loc_p1 != "hamchest":
-        loc_token_p1 = head_loc_p1
+    # ─── SLOT 3: Finger Bend Modifier (NODE_D) ───
+    bend_mod = handshape.get("bend_mod") if isinstance(handshape, dict) else None
+    if bend_mod and base_hs == "hamflathand" and bend_mod in ("hamfingerstraightmod", "hamdoublebent"):
+        pass  # omit redundant bend modifier for basic flat hand
+
+    # ─── SLOT 4: Hand Part / Finger Part (NODE_E) ───
+    part = handshape.get("hand_part") if isinstance(handshape, dict) else None
+    if not part:
+        part = pick_token(finger_location) or pick_token(hand_location)
+    if part and part in ("hambetween", "hamthumbside", "hamfingertip", "hamfingerpad") and part != base_hs:
+        sequence.append(part)
+
+    # ─── SLOT 5 & 6: Initial Orientation (Extended Finger + Palm) ───
+    ori_finger = "hamextfingeru"
+    ori_palm = "hampalmd"
+    if isinstance(orientation, dict):
+        fin_ori = orientation.get("final")
+        if isinstance(fin_ori, tuple):
+            for tok in fin_ori:
+                if str(tok).startswith("hamextfinger"): ori_finger = str(tok)
+                elif str(tok).startswith("hampalm"): ori_palm = str(tok)
+        else:
+            per_ori = orientation.get("per_frame", [])
+            for f in per_ori:
+                if isinstance(f, tuple):
+                    for tok in f:
+                        if str(tok).startswith("hamextfinger") and tok != "hamextfingerd": ori_finger = str(tok)
+                        elif str(tok).startswith("hampalm"): ori_palm = str(tok)
+    sequence.append(ori_finger)
+    sequence.append(ori_palm)
+
+    # ─── SLOT 7: Body / Face / Arm Location ───
+    hf_frames = head_face.get("per_frame", []) if isinstance(head_face, dict) else []
+    hf_final = head_face.get("final") if isinstance(head_face, dict) else None
+    
+    if hf_final and len(hf_frames) >= 15:
+        sequence.append(hf_final)
     else:
-        loc_token_p1 = pick_location_token(
-            get_phase_token(arm_space, 0.0, 0.45),
-            get_phase_token(hand_location, 0.0, 0.45),
-            get_phase_token(finger_location, 0.0, 0.45),
-            get_phase_token(upper_body, 0.0, 0.45),
-            get_phase_token(head_face, 0.0, 0.45),
-            default="hamchest",
-        )
+        ub_loc = pick_token(upper_body, exclude=["none", "no-contact", "hambelowstomach"])
+        if not ub_loc or ub_loc == "hambelowstomach":
+            ub_loc = "hamshoulders"
+        sequence.append(ub_loc)
 
-    # Phase 2 Extraction (55% to 100% of clip)
-    raw_hs_p2 = get_phase_token(handshape, 0.55, 1.0) or "hamflathand"
-    hs_p2_tokens = [t for t in str(raw_hs_p2).split() if t in VALID_HANDSHAPES]
-    hs_token_p2 = hs_p2_tokens[0] if hs_p2_tokens else "hamflathand"
+    # ─── SLOT 8: Contact OR Spatial Distance (Mutually exclusive in simple location) ───
+    ct_per = contact.get("per_frame", []) if isinstance(contact, dict) else []
+    ct_touch_cnt = sum(1 for c in ct_per if c == "hamtouch")
+    asp_per = arm_space.get("per_frame", []) if isinstance(arm_space, dict) else []
+    asp_ext_cnt = sum(1 for p in asp_per if p == "hamarmextended")
+    asp_beside_cnt = sum(1 for p in asp_per if p == "hamlrbeside")
 
-    ori_p2 = format_ori(get_phase_token(orientation, 0.55, 1.0))
-    ext_finger_p2 = next((x for x in ori_p2 if x.startswith("hamextfinger")), "hamextfingeru")
-    palm_ori_p2 = next((x for x in ori_p2 if x.startswith("hampalm")), "hampalmd")
+    if ct_touch_cnt >= 2:
+        sequence.append("hamtouch")
+    elif asp_ext_cnt > 10:
+        sequence.append("hamarmextended")
+    elif asp_beside_cnt > 15:
+        sequence.append("hamlrat")
 
-    loc_token_p2 = pick_location_token(
-        get_phase_token(arm_space, 0.55, 1.0),
-        get_phase_token(hand_location, 0.55, 1.0),
-        get_phase_token(finger_location, 0.55, 1.0),
-        get_phase_token(upper_body, 0.55, 1.0),
-        get_phase_token(head_face, 0.55, 1.0),
-        default="hamchest",
-    )
+    # ─── SLOT 9: Movement (Base + Modifiers + Repetition) ───
+    m1_str = str(movement1) if movement1 else ""
+    m2_fin = movement2.get("final") if isinstance(movement2, dict) else str(movement2)
+    
+    mov_base = None
+    if "hamswinging" in m1_str:
+        mov_base = "hamswinging"
+    elif "hammover" in m1_str:
+        mov_base = "hammover"
+    elif "hammoveu" in m1_str:
+        mov_base = "hammoveu"
+    elif "hammoved" in m1_str:
+        mov_base = "hammoved"
+    elif "hammoveo" in m1_str:
+        mov_base = "hammoveo"
+    elif m2_fin and m2_fin.startswith("ham"):
+        mov_base = m2_fin
+    
+    if mov_base and mov_base != "hamnomotion":
+        sequence.append(mov_base)
 
-    # Sanitize finger direction at chest/neutralspace to prevent IK joint limit EPERM errors
-    if loc_token_p1 in ["hamchest", "hamneutralspace"] and ext_finger_p1 == "hamextfingerd":
-        ext_finger_p1 = "hamextfingerl"
-    if loc_token_p2 in ["hamchest", "hamneutralspace"] and ext_finger_p2 == "hamextfingerd":
-        ext_finger_p2 = "hamextfingerl"
+    if "hamrepeatfromstart" in m1_str:
+        sequence.append("hamrepeatfromstart")
+    elif "hamrepeatreverse" in m1_str and "hamrepeat" not in sequence:
+        sequence.append("hamrepeatreverse")
 
-    contact_p1 = get_phase_token(contact, 0.0, 0.45)
-    contact_p2 = get_phase_token(contact, 0.55, 1.0)
+    # ─── SLOT 10: Dynamic State Transition (hamreplace) ───
+    # If starting flat hand closes to fist at stomach (e.g. Come sign)
+    ub_tokens = []
+    if isinstance(upper_body, dict):
+        for f in upper_body.get("per_frame", []):
+            if isinstance(f, str): ub_tokens.append(f)
+            elif isinstance(f, tuple): ub_tokens.extend([str(x) for x in f])
+    elif isinstance(upper_body, list):
+        ub_tokens = [str(x) for x in upper_body]
+    elif isinstance(upper_body, str):
+        ub_tokens = upper_body.split()
 
-    # Determine if gesture is genuinely multi-phase (handshape or location change)
-    is_multi_phase = (hs_token_p1 != hs_token_p2) or (loc_token_p1 != loc_token_p2 and loc_token_p2 not in ["hamchest", "hamneutralspace"])
+    if base_hs == "hamflathand" and "hamstomach" in ub_tokens and "hambelowstomach" != pick_token(upper_body):
+        sequence.extend(["hamreplace", "hamfist", "hamstomach"])
 
-    # If posture is single-phase, use the predominant palm orientation over the full clip
-    if not is_multi_phase:
-        full_ori = format_ori(pick_token(orientation))
-        palm_ori_p1 = next((x for x in full_ori if x.startswith("hampalm")), palm_ori_p1)
-
-    # Construct Phase 1 Sequence (Contact MUST immediately follow valid body location, NOT neutralspace)
-    sequence.extend([hs_token_p1, ext_finger_p1, palm_ori_p1, loc_token_p1])
-    if contact_p1 and str(contact_p1) in ["hamtouch", "hamclose", "hambrushing"] and loc_token_p1 != "hamneutralspace":
-        sequence.append(str(contact_p1))
-
-    # Movement 1
-    movement_token = pick_token(movement1) or pick_token(movement2)
-    if movement_token and movement_token != "none":
-        mov_tokens = str(movement_token).split()
-        for token in mov_tokens:
-            if token.startswith("hammove") or token.startswith("hamcircle") or token.startswith("hamarc") or token in ["hamnodding", "hamtwisting"]:
-                sequence.append(token)
-                break
-
-    # Dual-Hand Structure Classification
+    # Pass through generalized ANTLR Ham4Parser / CWASA Grammar Linter
     try:
-        from shared_landmarks import get_video_landmarks
-        from dual_hand_classifier import classify_two_handed_structure
-        frames = get_video_landmarks(video_path)
-        if frames:
-            r_shapes = handshape.get("right_hand", {}).get("per_frame", []) if isinstance(handshape, dict) else []
-            l_shapes = handshape.get("left_hand", {}).get("per_frame", []) if isinstance(handshape, dict) else []
-            
-            dual_res = classify_two_handed_structure(frames, right_handshapes=r_shapes, left_handshapes=l_shapes)
-            dual_label = dual_res.get("label", "none")
-            
-            if dual_label == "hamsymmlr":
-                if "hamsymmlr" not in sequence:
-                    sequence.insert(0, "hamsymmlr")
-            elif dual_label == "hamplus":
-                # Build hamplus sequence with left hand details if available
-                l_hs = handshape.get("left_hand", {}).get("final", hs_token_p1) if isinstance(handshape, dict) else hs_token_p1
-                l_ext = orientation.get("left_hand", {}).get("final_finger", ext_finger_p1) if isinstance(orientation, dict) else ext_finger_p1
-                l_palm = orientation.get("left_hand", {}).get("final_palm", palm_ori_p1) if isinstance(orientation, dict) else palm_ori_p1
-                
-                sequence = [
-                    hs_token_p1, ext_finger_p1, palm_ori_p1,
-                    "hamplus",
-                    l_hs, l_ext, l_palm,
-                    loc_token_p1
-                ]
-                if contact_p1 and str(contact_p1) in ["hamtouch", "hamclose", "hambrushing"] and loc_token_p1 != "hamneutralspace":
-                    sequence.append(str(contact_p1))
-                if movement_token and movement_token != "none":
-                    for token in str(movement_token).split():
-                        if token.startswith("hammove") or token.startswith("hamcircle") or token.startswith("hamarc"):
-                            sequence.append(token)
-                            break
-                return " ".join(sequence)
-            elif dual_label == "hamnonipsi":
-                if "hamnonipsi" not in sequence:
-                    sequence.insert(0, "hamnonipsi")
+        from sigml_grammar_linter import sanitize_hamnosys_sequence
+        canonical_tokens = sanitize_hamnosys_sequence(sequence)
+        return " ".join(canonical_tokens)
     except Exception as e:
-        print(f"[DualHand Integration Exception]: {e}")
-
-    if is_multi_phase:
-        sequence.append("hamreplace")
-        sequence.append(hs_token_p2)
-        if ext_finger_p2: sequence.append(ext_finger_p2)
-        if palm_ori_p2: sequence.append(palm_ori_p2)
-        if loc_token_p2 and loc_token_p2 != loc_token_p1:
-            sequence.append(loc_token_p2)
-        if contact_p2 and str(contact_p2) in ["hamtouch", "hamclose", "hambrushing"] and loc_token_p2 != "hamneutralspace":
-            sequence.append(str(contact_p2))
-
-    return " ".join(sequence)
-
+        print(f"Linter fallback warning: {e}")
+        return " ".join(sequence)
 
 
 # =====================================================
@@ -393,16 +305,13 @@ def generate_hamnosys(video_path):
         contact,
         arm_space,
         movement1,
-        movement2,
-        video_path=video_path
+        movement2
     )
-
 
     print("\n========== FINAL HAMNOSYS ==========")
     print(hamnosys_code)
 
-    smoothed_modules = {}
-    for key, value in {
+    return hamnosys_code, {
         "handshape": handshape,
         "orientation": orientation,
         "upper_body": upper_body,
@@ -413,36 +322,6 @@ def generate_hamnosys(video_path):
         "arm_space": arm_space,
         "movement1": movement1,
         "movement2": movement2,
-    }.items():
-        if isinstance(value, dict):
-            per_frame = value.get("per_frame", [])
-            if per_frame:
-                smoothed_modules[key] = {"per_frame": smooth_frame_sequence(per_frame, window=3)}
-            else:
-                smoothed_modules[key] = value
-        else:
-            smoothed_modules[key] = value
-
-    descriptor = build_structured_sign_descriptor({
-        "handshape": smoothed_modules.get("handshape", handshape),
-        "orientation": smoothed_modules.get("orientation", orientation),
-        "location": smoothed_modules.get("upper_body", upper_body),
-        "movement1": smoothed_modules.get("movement1", movement1),
-        "contact": smoothed_modules.get("contact", contact),
-    })
-
-    return hamnosys_code, {
-        "handshape": smoothed_modules.get("handshape", handshape),
-        "orientation": smoothed_modules.get("orientation", orientation),
-        "upper_body": smoothed_modules.get("upper_body", upper_body),
-        "head_face": smoothed_modules.get("head_face", head_face),
-        "hand_location": smoothed_modules.get("hand_location", hand_location),
-        "finger_location": smoothed_modules.get("finger_location", finger_location),
-        "contact": smoothed_modules.get("contact", contact),
-        "arm_space": smoothed_modules.get("arm_space", arm_space),
-        "movement1": smoothed_modules.get("movement1", movement1),
-        "movement2": smoothed_modules.get("movement2", movement2),
-        "descriptor": descriptor,
     }
 
 
@@ -561,125 +440,22 @@ def create_annotated_video(video_path, output_path, modules):
 # PROCESS VIDEO (full pipeline + annotated output)
 # =====================================================
 
-def process_video_neural(video_path):
+def process_video(video_path, output_video=None):
     """
-    Neural Pipeline: Video -> Normalized Features -> Trained Model -> HamNoSys
-    Zero manual thresholds, zero dictionary lookups, zero gloss names required at runtime.
+    Full pipeline: generate HamNoSys + annotated video.
     """
-    model_path = os.path.join(_SCRIPT_DIR, "wlasl_landmark_dataset", "hamnosys_net_v2.pth")
-    map_path = os.path.join(_SCRIPT_DIR, "wlasl_landmark_dataset", "nn_class_mappings.json")
 
-    if not os.path.exists(model_path) or not os.path.exists(map_path):
-        print("[NeuralPipeline] Trained model weights not found — falling back to heuristic pipeline...")
-        return generate_hamnosys(video_path)[0]
+    if output_video is None:
+        base = os.path.splitext(os.path.basename(video_path))[0]
+        output_video = os.path.join(_SCRIPT_DIR, f"{base}_output.mp4")
 
-    try:
-        import torch
-        from train_landmark_nn import HamNoSysSequenceNet
-        from build_wlasl_landmarks import extract_normalized_features
-        from shared_landmarks import get_video_landmarks
+    hamnosys_code, modules = generate_hamnosys(video_path)
 
-        with open(map_path, "r", encoding="utf-8") as f:
-            mappings = json.load(f)
-
-        frames = get_video_landmarks(video_path)
-        if not frames:
-            return generate_hamnosys(video_path)[0]
-
-        frame_vecs = [extract_normalized_features(f) for f in frames]
-        frame_matrix = np.array(frame_vecs, dtype=np.float32)
-
-        target_frames = 150
-        T_curr, D = frame_matrix.shape
-        if T_curr < target_frames:
-            pad_width = ((0, target_frames - T_curr), (0, 0))
-            padded_matrix = np.pad(frame_matrix, pad_width, mode="edge")
-        else:
-            padded_matrix = frame_matrix[:target_frames]
-
-        tensor_in = torch.tensor(padded_matrix).unsqueeze(0) # (1, 150, 177)
-
-        model = HamNoSysSequenceNet(
-            input_dim=177,
-            num_hs=len(mappings["handshape"]),
-            num_ext=len(mappings["ext_finger"]),
-            num_palm=len(mappings["palm_ori"]),
-            num_loc=len(mappings["location"]),
-            num_mov=len(mappings["movement"]),
-            num_two=len(mappings["two_handed"])
-        )
-        model.load_state_dict(torch.load(model_path, map_location="cpu"))
-        model.eval()
-
-        with torch.no_grad():
-            preds = model(tensor_in)
-
-        hs = mappings["handshape"][preds["handshape"].argmax().item()]
-        ext = mappings["ext_finger"][preds["ext_finger"].argmax().item()]
-        palm = mappings["palm_ori"][preds["palm_ori"].argmax().item()]
-        loc = mappings["location"][preds["location"].argmax().item()]
-        mov = mappings["movement"][preds["movement"].argmax().item()]
-        two = mappings["two_handed"][preds["two_handed"].argmax().item()]
-
-        sequence = []
-        if two and two != "none":
-            sequence.append(two)
-
-        sequence.extend([hs, ext, palm, loc])
-
-        if mov and mov != "none":
-            sequence.append(mov)
-
-        hamnosys_str = " ".join(sequence)
-        print(f"[NeuralPipeline Prediction]: {hamnosys_str}")
-        return hamnosys_str
-
-    except Exception as e:
-        print(f"[NeuralPipeline Exception]: {e} — falling back to heuristic pipeline...")
-        return generate_hamnosys(video_path)[0]
-
-
-def process_video(video_path, output_video=None, mirror=False):
-    """
-    Hybrid Pipeline: Video -> Landmark Extraction -> Dual-Hand Analysis & Heuristic Engine
-    with Neural Network Confidence Validation.
-    """
-    try:
-        from video_preprocessing import get_mirrored_video, detect_dominant_hand
-        
-        dominant_hand = detect_dominant_hand(video_path)
-        print(f"\n[Preprocessing] Detected Hand Activity: {dominant_hand.upper()}")
-        
-        # Only mirror if single-hand left-dominant (do NOT mirror two-handed 'both')
-        if mirror or (dominant_hand == "left" and not mirror):
-            if dominant_hand == "left":
-                print(f"[Preprocessing] Auto-mirroring video to standardize left-handed signer...")
-            else:
-                print(f"[Preprocessing] Mirroring video (forced by flag)...")
-            video_path = get_mirrored_video(video_path)
-            
-    except Exception as e:
-        print(f"[Preprocessing Exception]: {e}")
-
-    # Generate heuristic HamNoSys prediction with dual-hand analysis
-    heuristic_code, details = generate_hamnosys(video_path)
-
-    # Attempt neural prediction as hybrid validation
-    try:
-        neural_code = process_video_neural(video_path)
-        # Use neural prediction if heuristic returned fallback flat defaults
-        if heuristic_code.startswith("hamflathand hamextfingeru hampalmd hamchest") and neural_code:
-            print("[Hybrid Pipeline] Low-confidence heuristic, using Neural prediction...")
-            final_code = neural_code
-        else:
-            final_code = heuristic_code
-    except Exception:
-        final_code = heuristic_code
+    create_annotated_video(video_path, output_video, modules)
 
     return {
-        "hamnosys": final_code,
-        "output_video": output_video,
-        "details": details
+        "hamnosys": hamnosys_code,
+        "output_video": output_video
     }
 
 
@@ -691,11 +467,9 @@ if __name__ == "__main__":
                         help="Path to input video (default: Prompt_1.mp4)")
     parser.add_argument("-o", "--output", default=None,
                         help="Output video path (default: <input>_output.mp4)")
-    parser.add_argument("-m", "--mirror", action="store_true",
-                        help="Horizontally mirror the video before processing")
     args = parser.parse_args()
 
-    result = process_video(args.video, args.output, args.mirror)
-    print("\n[Done!]")
+    result = process_video(args.video, args.output)
+    print("\n[DONE] Successfully executed pipeline!")
     print(f"  HamNoSys: {result['hamnosys']}")
     print(f"  Video:    {result['output_video']}")
