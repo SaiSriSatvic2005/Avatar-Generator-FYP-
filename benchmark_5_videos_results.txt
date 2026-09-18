@@ -1,0 +1,439 @@
+
+################################################################################
+      STARTING 5-VIDEO COMPREHENSIVE BENCHMARK: V1 BASELINE vs V2 EXTENDED
+################################################################################
+
+
+>>>> PROCESSING TEST VIDEO 1/5: Hello.mp4 <<<<
+
+
+================================================================================
+ [PIPELINE: VERSION 1 - SENIOR BASELINE]
+ Target Video: Hello.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & INGESTION]
+  - Input Video Feed:       Raw frames (No normalization, No CLAHE)
+  - Landmark Architecture:  10 Independent MediaPipe Invocations (No shared cache)
+  - Two-Handed Classifier:  Not Supported (Single-hand dominant assumption)
+  - Temporal Filtering:     None (Raw noisy frame-by-frame heuristics)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:              333 frame labels -> ['hamflathand', 'hamfinger23', 'hambetween', 'hamdoublebent', 'hamfinger23spread']
+  [Module 2]  Orientation Model:            270 frame labels -> ['hamextfingerr', 'hampalmd', 'signer', 'hamextfingerd', 'hampalmr']
+  [Module 3]  Upper Body Location:          12 frame labels -> ['hamshoulders', 'hamupperarm', 'hamwristback', 'hamshouldertop', 'hamstomach']
+  [Module 4]  Head & Face Location:         38 frame labels -> ['hamear', 'hamcheek', 'hamchin', 'hamnose', 'hamforehead']
+  [Module 5]  Hand Relative Location:       0 frame labels -> []
+  [Module 6]  Finger Placement:             89 frame labels -> ['hamfingertip']
+  [Module 7]  Contact Type Recognizer:      90 frame labels -> ['no-contact', 'hamtouch', 'hambehind']
+  [Module 8]  Arm & Space Position:         90 frame labels -> ['hamneutralspace', 'hamdoublebent', 'none', 'hamarmextended', 'hamlrbeside']
+  [Module 9]  Primary Movement:             9 frame labels -> ['hamincreasing', 'hammoveu', 'hamrepeatfromstartseveral', 'hamrepeatreverse', 'hamhalt']
+  [Module 10] Secondary Movement / Dyn:     1 frame labels -> ['hamnodding']
+
+[STAGE 3: FILTRATION & COMBINATION LOGIC]
+  - Assembly Method:        Flat Dump Accumulator + seen.add() Deduplication
+  - Context-Free Grammar:   NONE (Grammar Rules Bypassed)
+  - Temporal Majority Vote: NONE (Every transient frame noise token is kept)
+  - Total Extracted Tokens: 932 per-frame tokens
+  - Post-Deduplication:     50 tokens retained
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumbacrossmod hamfingerstraightmod hamfingertip hamfinger2 hamthumboutmod hamdoublebent hamcee12 hamfinger2345 hambetween hamfingerbendmod hamfinger23spread hamfinger23 hamfist hamdoublehooked signer hamextfingerd hampalmu hampalmd hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamwristback hamupperarm hamshouldertop hamshoulders hamnose hamear hamforehead hamcheek hamchin no-contact hamtouch hambehind hamneutralspace hamarmextended none hamlrbeside hammoveu hamslow hamtense hamhalt hamlargemod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamnodding"
+  - Token Count:        50 tokens (Excessive Token Bloat)
+  - SiGML Validation:   [REJECTED] SYNTAX ERROR (Multiple colliding locations & postures)
+  - 3D Avatar Status:   [FAILED] CANNOT RENDER (SiGML parser error / invalid gesture structure)
+  - Total Runtime:      34.49s
+================================================================================
+
+
+================================================================================
+ [PIPELINE: VERSION 2 - GROUP 14 EXTENDED ARCHITECTURE]
+ Target Video: Hello.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & SHARED LANDMARK PIPELINE]
+  - Video Normalization:    CLAHE Lighting & Adaptive Contrast Equalization
+  - Landmark Engine:        MediaPipe Holistic Singleton (Single-pass shared cache)
+  - Landmark Keypoints:     177 Dimensions (42 Hand + 468 Face Mesh + 33 Body Pose)
+  - Temporal Smoothing:     OneEuro Low-Pass Exponential Filter (Jitter Removal)
+  - Symmetry Head:          Dual-Hand Mirror Correlation Active (hamsymmlr enabled)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:               90 frames -> Mode: 'hamfingertip'
+  [Module 2]  Orientation Model (3D Math):   90 frames -> Vector: ('signer', 'hamextfingerr', 'hampalmd')
+  [Module 3]  Upper Body Location:           12 frames -> Mode: 'hambelowstomach'
+  [Module 4]  Head & Face Location:          38 frames -> Mode: 'hamforehead'
+  [Module 5]  Hand Relative Location:        90 frames -> Mode: 'none'
+  [Module 6]  Finger Placement:              90 frames -> Mode: 'hamfingertip'
+  [Module 7]  Contact Type Recognizer:       90 frames -> Mode: 'hamtouch'
+  [Module 8]  Arm & Space Position:          90 frames -> Mode: 'hamdoublebent'
+  [Module 9]  Primary Movement (Traj 1):      1 frames -> Mode: 'hammover hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag'
+  [Module 10] Secondary Movement / Dyn:       0 frames -> Mode: 'none'
+
+[STAGE 3: FILTRATION & CONTEXT-FREE GRAMMAR (CFG) ASSEMBLY]
+  - Assembly Engine:        Context-Free Grammar (CFG) Slot Compiler
+  - Formal Linguistic Rule: Sign ::= Handshape InitialOrientation BodyLocation [Contact] [Movement] [Transition]
+  - Slot 1 (Handshape):     hamflathand
+  - Slot 2 (Orientation):   ['hamextfingerr', 'hampalmd']
+  - Slot 3 (Body Location): ['hamforehead']
+  - Slot 4 (Contact Type):  ['hamtouch']
+  - Slot 5 (Movement/Dyn):  ['hammover']
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumboutmod hamfingertip hamextfingerr hampalmd hamforehead hamtouch hammover hamrepeatfromstart hamreplace hamfist hamstomach"
+  - Token Count:        12 grammatically validated tokens (Optimal Compactness)
+  - SiGML Validation:   [PASSED] COMPLIANT (Strict HamNoSys XML grammar satisfied)
+  - 3D Avatar Status:   [SUCCESS] RENDERS SMOOTHLY (CWASA WebGL Web Player Compatible)
+  - Total Runtime:      87.32s
+================================================================================
+
+
+>>>> PROCESSING TEST VIDEO 2/5: Good.mp4 <<<<
+
+
+================================================================================
+ [PIPELINE: VERSION 1 - SENIOR BASELINE]
+ Target Video: Good.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & INGESTION]
+  - Input Video Feed:       Raw frames (No normalization, No CLAHE)
+  - Landmark Architecture:  10 Independent MediaPipe Invocations (No shared cache)
+  - Two-Handed Classifier:  Not Supported (Single-hand dominant assumption)
+  - Temporal Filtering:     None (Raw noisy frame-by-frame heuristics)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:              323 frame labels -> ['hamflathand', 'hamdoublebent', 'hamthumbside', 'hamdoublehooked', 'hamfist']
+  [Module 2]  Orientation Model:            270 frame labels -> ['hamextfingerr', 'hamextfingerl', 'hampalmd', 'signer', 'hamextfingerd']
+  [Module 3]  Upper Body Location:          48 frame labels -> ['hamshoulders', 'hamupperarm', 'hamwristback', 'hamshouldertop', 'hamstomach']
+  [Module 4]  Head & Face Location:         6 frame labels -> ['hamchin']
+  [Module 5]  Hand Relative Location:       0 frame labels -> []
+  [Module 6]  Finger Placement:             90 frame labels -> ['hamfingertip']
+  [Module 7]  Contact Type Recognizer:      90 frame labels -> ['no-contact', 'hamtouch']
+  [Module 8]  Arm & Space Position:         90 frame labels -> ['hamneutralspace', 'hamdoublebent', 'none', 'hamarmextended', 'hamlrbeside']
+  [Module 9]  Primary Movement:             9 frame labels -> ['hamrest', 'hamincreasing', 'hamsmallmod', 'hamrepeatfromstartseveral', 'hammover']
+  [Module 10] Secondary Movement / Dyn:     1 frame labels -> ['hamstircw']
+
+[STAGE 3: FILTRATION & COMBINATION LOGIC]
+  - Assembly Method:        Flat Dump Accumulator + seen.add() Deduplication
+  - Context-Free Grammar:   NONE (Grammar Rules Bypassed)
+  - Temporal Majority Vote: NONE (Every transient frame noise token is kept)
+  - Total Extracted Tokens: 927 per-frame tokens
+  - Post-Deduplication:     41 tokens retained
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamfist hamthumboutmod hamdoublebent hamthumbside hamthumbacrossmod hamfingertip hamdoublehooked hamfinger2 hamfingerbendmod hamflathand signer hamextfingerd hampalmd hampalmu hamextfingerr hampalmr hamextfingeru hamextfingerl hambelowstomach hamstomach hamupperarm hamshoulders hamshouldertop hamwristback hamchin no-contact hamtouch none hamneutralspace hamlrbeside hamarmextended hammover hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw"
+  - Token Count:        41 tokens (Excessive Token Bloat)
+  - SiGML Validation:   [REJECTED] SYNTAX ERROR (Multiple colliding locations & postures)
+  - 3D Avatar Status:   [FAILED] CANNOT RENDER (SiGML parser error / invalid gesture structure)
+  - Total Runtime:      81.86s
+================================================================================
+
+
+================================================================================
+ [PIPELINE: VERSION 2 - GROUP 14 EXTENDED ARCHITECTURE]
+ Target Video: Good.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & SHARED LANDMARK PIPELINE]
+  - Video Normalization:    CLAHE Lighting & Adaptive Contrast Equalization
+  - Landmark Engine:        MediaPipe Holistic Singleton (Single-pass shared cache)
+  - Landmark Keypoints:     177 Dimensions (42 Hand + 468 Face Mesh + 33 Body Pose)
+  - Temporal Smoothing:     OneEuro Low-Pass Exponential Filter (Jitter Removal)
+  - Symmetry Head:          Dual-Hand Mirror Correlation Active (hamsymmlr enabled)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:               90 frames -> Mode: 'hamthumboutmod'
+  [Module 2]  Orientation Model (3D Math):   90 frames -> Vector: ('signer', 'hamextfingeru', 'hampalmd')
+  [Module 3]  Upper Body Location:           46 frames -> Mode: 'hamshoulders'
+  [Module 4]  Head & Face Location:           9 frames -> Mode: 'hamchin'
+  [Module 5]  Hand Relative Location:        90 frames -> Mode: 'none'
+  [Module 6]  Finger Placement:              90 frames -> Mode: 'hamfingertip'
+  [Module 7]  Contact Type Recognizer:       90 frames -> Mode: 'hamtouch'
+  [Module 8]  Arm & Space Position:          90 frames -> Mode: 'hamlrbeside'
+  [Module 9]  Primary Movement (Traj 1):      1 frames -> Mode: 'hammover hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag'
+  [Module 10] Secondary Movement / Dyn:       0 frames -> Mode: 'none'
+
+[STAGE 3: FILTRATION & CONTEXT-FREE GRAMMAR (CFG) ASSEMBLY]
+  - Assembly Engine:        Context-Free Grammar (CFG) Slot Compiler
+  - Formal Linguistic Rule: Sign ::= Handshape InitialOrientation BodyLocation [Contact] [Movement] [Transition]
+  - Slot 1 (Handshape):     hamsymmlr
+  - Slot 2 (Orientation):   ['hamextfingeru', 'hampalmd']
+  - Slot 3 (Body Location): ['hamshoulders']
+  - Slot 4 (Contact Type):  ['hamtouch']
+  - Slot 5 (Movement/Dyn):  ['hammover']
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamsymmlr hamfist hamthumboutmod hamthumbside hamextfingeru hampalmd hamarmextended hamshoulders hamtouch hammover hamrepeatfromstart"
+  - Token Count:        11 grammatically validated tokens (Optimal Compactness)
+  - SiGML Validation:   [PASSED] COMPLIANT (Strict HamNoSys XML grammar satisfied)
+  - 3D Avatar Status:   [SUCCESS] RENDERS SMOOTHLY (CWASA WebGL Web Player Compatible)
+  - Total Runtime:      65.19s
+================================================================================
+
+
+>>>> PROCESSING TEST VIDEO 3/5: Father.mp4 <<<<
+
+
+================================================================================
+ [PIPELINE: VERSION 1 - SENIOR BASELINE]
+ Target Video: Father.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & INGESTION]
+  - Input Video Feed:       Raw frames (No normalization, No CLAHE)
+  - Landmark Architecture:  10 Independent MediaPipe Invocations (No shared cache)
+  - Two-Handed Classifier:  Not Supported (Single-hand dominant assumption)
+  - Temporal Filtering:     None (Raw noisy frame-by-frame heuristics)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:              324 frame labels -> ['hambetween', 'hamdoublebent', 'hamthumbside', 'hamdoublehooked', 'hamfist']
+  [Module 2]  Orientation Model:            270 frame labels -> ['hamextfingerr', 'hampalmd', 'signer', 'hamextfingerd', 'hampalmr']
+  [Module 3]  Upper Body Location:          13 frame labels -> ['hamshoulders', 'hamupperarm', 'hamwristback', 'hamshouldertop', 'hamstomach']
+  [Module 4]  Head & Face Location:         39 frame labels -> ['hamear', 'hamcheek', 'hamlips', 'hamchin', 'hamnose']
+  [Module 5]  Hand Relative Location:       0 frame labels -> []
+  [Module 6]  Finger Placement:             90 frame labels -> ['hamfingertip']
+  [Module 7]  Contact Type Recognizer:      90 frame labels -> ['no-contact', 'hamtouch']
+  [Module 8]  Arm & Space Position:         90 frame labels -> ['hamneutralspace', 'hamdoublebent', 'none', 'hamarmextended', 'hamlrbeside']
+  [Module 9]  Primary Movement:             9 frame labels -> ['hamrest', 'hamincreasing', 'hamsmallmod', 'hamnomotion', 'hamrepeatfromstartseveral']
+  [Module 10] Secondary Movement / Dyn:     1 frame labels -> ['hamstircw']
+
+[STAGE 3: FILTRATION & COMBINATION LOGIC]
+  - Assembly Method:        Flat Dump Accumulator + seen.add() Deduplication
+  - Context-Free Grammar:   NONE (Grammar Rules Bypassed)
+  - Temporal Majority Vote: NONE (Every transient frame noise token is kept)
+  - Total Extracted Tokens: 926 per-frame tokens
+  - Post-Deduplication:     47 tokens retained
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamfinger2 hamthumboutmod hamdoublebent hamfingertip hamfist hamthumbacrossmod hamcee12 hamfingerbendmod hamdoublehooked hamthumbside hamfinger2345 hamfingerstraightmod hambetween signer hamextfingerd hampalmd hampalmu hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamwristback hamupperarm hamshoulders hamshouldertop hamchin hamcheek hamear hamnose hamlips no-contact hamtouch none hamneutralspace hamlrbeside hamarmextended hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw"
+  - Token Count:        47 tokens (Excessive Token Bloat)
+  - SiGML Validation:   [REJECTED] SYNTAX ERROR (Multiple colliding locations & postures)
+  - 3D Avatar Status:   [FAILED] CANNOT RENDER (SiGML parser error / invalid gesture structure)
+  - Total Runtime:      67.29s
+================================================================================
+
+
+================================================================================
+ [PIPELINE: VERSION 2 - GROUP 14 EXTENDED ARCHITECTURE]
+ Target Video: Father.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & SHARED LANDMARK PIPELINE]
+  - Video Normalization:    CLAHE Lighting & Adaptive Contrast Equalization
+  - Landmark Engine:        MediaPipe Holistic Singleton (Single-pass shared cache)
+  - Landmark Keypoints:     177 Dimensions (42 Hand + 468 Face Mesh + 33 Body Pose)
+  - Temporal Smoothing:     OneEuro Low-Pass Exponential Filter (Jitter Removal)
+  - Symmetry Head:          Dual-Hand Mirror Correlation Active (hamsymmlr enabled)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:               90 frames -> Mode: 'hamfingertip'
+  [Module 2]  Orientation Model (3D Math):   90 frames -> Vector: ('signer', 'hamextfingeru', 'hampalmd')
+  [Module 3]  Upper Body Location:           13 frames -> Mode: 'hambelowstomach'
+  [Module 4]  Head & Face Location:          39 frames -> Mode: 'hamcheek'
+  [Module 5]  Hand Relative Location:        90 frames -> Mode: 'none'
+  [Module 6]  Finger Placement:              90 frames -> Mode: 'hamfingertip'
+  [Module 7]  Contact Type Recognizer:       90 frames -> Mode: 'hamtouch'
+  [Module 8]  Arm & Space Position:          90 frames -> Mode: 'hamdoublebent'
+  [Module 9]  Primary Movement (Traj 1):      1 frames -> Mode: 'hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag'
+  [Module 10] Secondary Movement / Dyn:       0 frames -> Mode: 'none'
+
+[STAGE 3: FILTRATION & CONTEXT-FREE GRAMMAR (CFG) ASSEMBLY]
+  - Assembly Engine:        Context-Free Grammar (CFG) Slot Compiler
+  - Formal Linguistic Rule: Sign ::= Handshape InitialOrientation BodyLocation [Contact] [Movement] [Transition]
+  - Slot 1 (Handshape):     hamsymmlr
+  - Slot 2 (Orientation):   ['hamextfingeru', 'hampalmd']
+  - Slot 3 (Body Location): ['hamcheek']
+  - Slot 4 (Contact Type):  ['hamtouch']
+  - Slot 5 (Movement/Dyn):  []
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamsymmlr hamfinger2 hamthumboutmod hamfingertip hamextfingeru hampalmd hamcheek hamtouch hamstirccw hamrepeatfromstart"
+  - Token Count:        10 grammatically validated tokens (Optimal Compactness)
+  - SiGML Validation:   [PASSED] COMPLIANT (Strict HamNoSys XML grammar satisfied)
+  - 3D Avatar Status:   [SUCCESS] RENDERS SMOOTHLY (CWASA WebGL Web Player Compatible)
+  - Total Runtime:      98.85s
+================================================================================
+
+
+>>>> PROCESSING TEST VIDEO 4/5: Apple.mp4 <<<<
+
+
+================================================================================
+ [PIPELINE: VERSION 1 - SENIOR BASELINE]
+ Target Video: Apple.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & INGESTION]
+  - Input Video Feed:       Raw frames (No normalization, No CLAHE)
+  - Landmark Architecture:  10 Independent MediaPipe Invocations (No shared cache)
+  - Two-Handed Classifier:  Not Supported (Single-hand dominant assumption)
+  - Temporal Filtering:     None (Raw noisy frame-by-frame heuristics)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:              303 frame labels -> ['hamflathand', 'hambetween', 'hamdoublebent', 'hamdoublehooked', 'hamfingerstraightmod']
+  [Module 2]  Orientation Model:            270 frame labels -> ['hamextfingerr', 'hampalmd', 'signer', 'hamextfingerd', 'hampalmr']
+  [Module 3]  Upper Body Location:          20 frame labels -> ['hamshoulders', 'hamupperarm', 'hamwristback', 'hamshouldertop', 'hamstomach']
+  [Module 4]  Head & Face Location:         36 frame labels -> ['hamunderchin', 'hamchin']
+  [Module 5]  Hand Relative Location:       0 frame labels -> []
+  [Module 6]  Finger Placement:             90 frame labels -> ['hamfingertip']
+  [Module 7]  Contact Type Recognizer:      90 frame labels -> ['no-contact', 'hamtouch']
+  [Module 8]  Arm & Space Position:         90 frame labels -> ['none', 'hamlrbeside', 'hamdoublebent']
+  [Module 9]  Primary Movement:             9 frame labels -> ['hamrest', 'hamincreasing', 'hamsmallmod', 'hamnomotion', 'hamrepeatfromstartseveral']
+  [Module 10] Secondary Movement / Dyn:     1 frame labels -> ['hamstircw']
+
+[STAGE 3: FILTRATION & COMBINATION LOGIC]
+  - Assembly Method:        Flat Dump Accumulator + seen.add() Deduplication
+  - Context-Free Grammar:   NONE (Grammar Rules Bypassed)
+  - Temporal Majority Vote: NONE (Every transient frame noise token is kept)
+  - Total Extracted Tokens: 909 per-frame tokens
+  - Post-Deduplication:     40 tokens retained
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumbacrossmod hamfingerstraightmod hamfingertip hamthumboutmod hamfinger2345 hambetween hamfingerbendmod hamdoublehooked hamfinger23spread hamdoublebent signer hamextfingerd hampalmu hampalmd hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamupperarm hamshoulders hamshouldertop hamwristback hamchin hamunderchin no-contact hamtouch none hamlrbeside hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw"
+  - Token Count:        40 tokens (Excessive Token Bloat)
+  - SiGML Validation:   [REJECTED] SYNTAX ERROR (Multiple colliding locations & postures)
+  - 3D Avatar Status:   [FAILED] CANNOT RENDER (SiGML parser error / invalid gesture structure)
+  - Total Runtime:      102.09s
+================================================================================
+
+
+================================================================================
+ [PIPELINE: VERSION 2 - GROUP 14 EXTENDED ARCHITECTURE]
+ Target Video: Apple.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & SHARED LANDMARK PIPELINE]
+  - Video Normalization:    CLAHE Lighting & Adaptive Contrast Equalization
+  - Landmark Engine:        MediaPipe Holistic Singleton (Single-pass shared cache)
+  - Landmark Keypoints:     177 Dimensions (42 Hand + 468 Face Mesh + 33 Body Pose)
+  - Temporal Smoothing:     OneEuro Low-Pass Exponential Filter (Jitter Removal)
+  - Symmetry Head:          Dual-Hand Mirror Correlation Active (hamsymmlr enabled)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:               90 frames -> Mode: 'hamthumboutmod'
+  [Module 2]  Orientation Model (3D Math):   90 frames -> Vector: ('signer', 'hamextfingerr', 'hampalmu')
+  [Module 3]  Upper Body Location:           20 frames -> Mode: 'hamshouldertop'
+  [Module 4]  Head & Face Location:          36 frames -> Mode: 'hamchin'
+  [Module 5]  Hand Relative Location:        90 frames -> Mode: 'none'
+  [Module 6]  Finger Placement:              90 frames -> Mode: 'hamfingertip'
+  [Module 7]  Contact Type Recognizer:       90 frames -> Mode: 'hamtouch'
+  [Module 8]  Arm & Space Position:          90 frames -> Mode: 'hamlrbeside'
+  [Module 9]  Primary Movement (Traj 1):      1 frames -> Mode: 'hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag'
+  [Module 10] Secondary Movement / Dyn:       0 frames -> Mode: 'none'
+
+[STAGE 3: FILTRATION & CONTEXT-FREE GRAMMAR (CFG) ASSEMBLY]
+  - Assembly Engine:        Context-Free Grammar (CFG) Slot Compiler
+  - Formal Linguistic Rule: Sign ::= Handshape InitialOrientation BodyLocation [Contact] [Movement] [Transition]
+  - Slot 1 (Handshape):     hamflathand
+  - Slot 2 (Orientation):   ['hamextfingerr', 'hampalmu']
+  - Slot 3 (Body Location): ['hamchin']
+  - Slot 4 (Contact Type):  ['hamtouch']
+  - Slot 5 (Movement/Dyn):  []
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumboutmod hamfingertip hamextfingerr hampalmu hamlrat hamchin hamtouch hamstircw hamrepeatfromstart hamreplace hamfist hamstomach"
+  - Token Count:        13 grammatically validated tokens (Optimal Compactness)
+  - SiGML Validation:   [PASSED] COMPLIANT (Strict HamNoSys XML grammar satisfied)
+  - 3D Avatar Status:   [SUCCESS] RENDERS SMOOTHLY (CWASA WebGL Web Player Compatible)
+  - Total Runtime:      99.83s
+================================================================================
+
+
+>>>> PROCESSING TEST VIDEO 5/5: Come.mp4 <<<<
+
+
+================================================================================
+ [PIPELINE: VERSION 1 - SENIOR BASELINE]
+ Target Video: Come.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & INGESTION]
+  - Input Video Feed:       Raw frames (No normalization, No CLAHE)
+  - Landmark Architecture:  10 Independent MediaPipe Invocations (No shared cache)
+  - Two-Handed Classifier:  Not Supported (Single-hand dominant assumption)
+  - Temporal Filtering:     None (Raw noisy frame-by-frame heuristics)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:              342 frame labels -> ['hamflathand', 'hambetween', 'hamdoublebent', 'hamthumbside', 'hamdoublehooked']
+  [Module 2]  Orientation Model:            270 frame labels -> ['hamextfingerr', 'hampalmd', 'signer', 'hamextfingerd', 'hampalmu']
+  [Module 3]  Upper Body Location:          30 frame labels -> ['hamshoulders', 'hamupperarm', 'hamwristback', 'hamshouldertop', 'hamstomach']
+  [Module 4]  Head & Face Location:         12 frame labels -> ['hamear', 'hamcheek', 'hamchin', 'hamnose', 'hamforehead']
+  [Module 5]  Hand Relative Location:       0 frame labels -> []
+  [Module 6]  Finger Placement:             90 frame labels -> ['hamfingertip']
+  [Module 7]  Contact Type Recognizer:      90 frame labels -> ['no-contact', 'hamtouch', 'hambehind']
+  [Module 8]  Arm & Space Position:         90 frame labels -> ['hamneutralspace', 'hamdoublebent', 'none', 'hamarmextended', 'hamlrbeside']
+  [Module 9]  Primary Movement:             9 frame labels -> ['hamrest', 'hamincreasing', 'hamsmallmod', 'hamnomotion', 'hamrepeatfromstartseveral']
+  [Module 10] Secondary Movement / Dyn:     1 frame labels -> ['hamstircw']
+
+[STAGE 3: FILTRATION & COMBINATION LOGIC]
+  - Assembly Method:        Flat Dump Accumulator + seen.add() Deduplication
+  - Context-Free Grammar:   NONE (Grammar Rules Bypassed)
+  - Temporal Majority Vote: NONE (Every transient frame noise token is kept)
+  - Total Extracted Tokens: 934 per-frame tokens
+  - Post-Deduplication:     46 tokens retained
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumboutmod hamfingertip hamthumbacrossmod hamfingerstraightmod hamfinger2345 hambetween hamfinger2 hamdoublehooked hamfist hamthumbside hamdoublebent signer hamextfingerd hampalmd hampalmu hamextfingerr hamextfingeru hambelowstomach hamstomach hamupperarm hamshouldertop hamwristback hamshoulders hamnose hamcheek hamforehead hamear hamchin no-contact hamtouch hambehind none hamneutralspace hamarmextended hamlrbeside hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw"
+  - Token Count:        46 tokens (Excessive Token Bloat)
+  - SiGML Validation:   [REJECTED] SYNTAX ERROR (Multiple colliding locations & postures)
+  - 3D Avatar Status:   [FAILED] CANNOT RENDER (SiGML parser error / invalid gesture structure)
+  - Total Runtime:      74.39s
+================================================================================
+
+
+================================================================================
+ [PIPELINE: VERSION 2 - GROUP 14 EXTENDED ARCHITECTURE]
+ Target Video: Come.mp4
+================================================================================
+
+[STAGE 1: PREPROCESSING & SHARED LANDMARK PIPELINE]
+  - Video Normalization:    CLAHE Lighting & Adaptive Contrast Equalization
+  - Landmark Engine:        MediaPipe Holistic Singleton (Single-pass shared cache)
+  - Landmark Keypoints:     177 Dimensions (42 Hand + 468 Face Mesh + 33 Body Pose)
+  - Temporal Smoothing:     OneEuro Low-Pass Exponential Filter (Jitter Removal)
+  - Symmetry Head:          Dual-Hand Mirror Correlation Active (hamsymmlr enabled)
+
+[STAGE 2: 10-MODULE FEATURE EXTRACTION FLOW]
+  [Module 1]  Handshape Model:               90 frames -> Mode: 'hamthumbacrossmod'
+  [Module 2]  Orientation Model (3D Math):   90 frames -> Vector: ('signer', 'hamextfingeru', 'hampalmu')
+  [Module 3]  Upper Body Location:           29 frames -> Mode: 'hamshouldertop'
+  [Module 4]  Head & Face Location:          12 frames -> Mode: 'hamforehead'
+  [Module 5]  Hand Relative Location:        90 frames -> Mode: 'none'
+  [Module 6]  Finger Placement:              90 frames -> Mode: 'hamfingertip'
+  [Module 7]  Contact Type Recognizer:       90 frames -> Mode: 'hamtouch'
+  [Module 8]  Arm & Space Position:          90 frames -> Mode: 'hamneutralspace'
+  [Module 9]  Primary Movement (Traj 1):      1 frames -> Mode: 'hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag'
+  [Module 10] Secondary Movement / Dyn:       0 frames -> Mode: 'none'
+
+[STAGE 3: FILTRATION & CONTEXT-FREE GRAMMAR (CFG) ASSEMBLY]
+  - Assembly Engine:        Context-Free Grammar (CFG) Slot Compiler
+  - Formal Linguistic Rule: Sign ::= Handshape InitialOrientation BodyLocation [Contact] [Movement] [Transition]
+  - Slot 1 (Handshape):     hamflathand
+  - Slot 2 (Orientation):   ['hamextfingeru', 'hampalmu']
+  - Slot 3 (Body Location): []
+  - Slot 4 (Contact Type):  ['hamtouch']
+  - Slot 5 (Movement/Dyn):  []
+
+[STAGE 4: FINAL HAMNOSYS SEQUENCE & SIGML COMPATIBILITY]
+  - Generated String:   "hamflathand hamthumbacrossmod hamfingertip hamextfingeru hampalmu hamarmextended hamshouldertop hamtouch hamstircw hamrepeatfromstart hamreplace hamfist hamstomach"
+  - Token Count:        13 grammatically validated tokens (Optimal Compactness)
+  - SiGML Validation:   [PASSED] COMPLIANT (Strict HamNoSys XML grammar satisfied)
+  - 3D Avatar Status:   [SUCCESS] RENDERS SMOOTHLY (CWASA WebGL Web Player Compatible)
+  - Total Runtime:      21.04s
+================================================================================
+
+
+================================================================================
+                 BENCHMARK SUMMARY (5 VIDEOS EXECUTED)
+================================================================================
+Video        | V1 Tokens  | V1 Valid   | V2 Tokens  | V2 Valid   | Speedup   
+--------------------------------------------------------------------------------
+Hello.mp4    | 50         | No         | 12         | Yes        | 0.40x     
+Good.mp4     | 41         | No         | 11         | Yes        | 1.26x     
+Father.mp4   | 47         | No         | 10         | Yes        | 0.68x     
+Apple.mp4    | 40         | No         | 13         | Yes        | 1.02x     
+Come.mp4     | 46         | No         | 13         | Yes        | 3.54x     
+================================================================================
+Detailed logs written to: D:\academics\Hamnosys_versions\HamNoSys_Group14_V2\benchmark_5_videos_results.txt
+Metrics JSON written to: D:\academics\Hamnosys_versions\HamNoSys_Group14_V2\benchmark_5_videos_results.json
