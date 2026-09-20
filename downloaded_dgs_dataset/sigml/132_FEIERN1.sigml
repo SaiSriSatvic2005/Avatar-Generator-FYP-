@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="FEIERN1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfinger2/>
+      <hamthumboutmod/>
+      <hambetween/>
+      <hamfinger2/>
+      <hamfingerbendmod/>
+      <hamthumboutmod/>
+      <hamextfingerur/>
+      <hampalmul/>
+      <hamshoulders/>
+      <hamlrat/>
+      <hamseqbegin/>
+      <hammovedl/>
+      <hamsmallmod/>
+      <hammoveur/>
+      <hamsmallmod/>
+      <hamseqend/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
