@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="ÜBERTREIBEN1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfist/>
+      <hamindexfinger/>
+      <hamfingerhookmod/>
+      <hamextfingerul/>
+      <hampalmdl/>
+      <hamneck/>
+      <hns_E058/>
+      <hamcircleul/>
+      <hamsmallmod/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
