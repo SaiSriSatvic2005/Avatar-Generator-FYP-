@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="KRAFT2A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamparbegin/>
+      <hamfist/>
+      <hamextfingeruo/>
+      <hampalmu/>
+      <hamplus/>
+      <hamceeall/>
+      <hamextfingerr/>
+      <hampalmdr/>
+      <hamparend/>
+      <hamupperarm/>
+      <hamtouch/>
+      <hamparbegin/>
+      <hammoveui/>
+      <hamreplace/>
+      <hamextfingeru/>
+      <hamparend/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
