@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="DORTHINGEHEN1A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfinger2/>
+      <hamthumbacrossmod/>
+      <hamextfingerul/>
+      <hampalmdr/>
+      <hamlrat/>
+      <hamshoulders/>
+      <hamclose/>
+      <hamparbegin/>
+      <hammoveor/>
+      <hamlargemod/>
+      <hamarcu/>
+      <hamreplace/>
+      <hamextfingeror/>
+      <hampalml/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="TRAUBE1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hampinch12open/>
+      <hamfingerbendmod/>
+      <hamextfingeru/>
+      <hampalmdl/>
+      <hamparbegin/>
+      <hammoveo/>
+      <hamsmallmod/>
+      <hamrepeatfromstartseveral/>
+      <hamcirclei/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
