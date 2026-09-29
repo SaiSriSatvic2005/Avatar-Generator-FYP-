@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="PFARRER2">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamcee12/>
+      <hamextfingerui/>
+      <hamextfingeril/>
+      <hampalmdl/>
+      <hamtouch/>
+      <hamneck/>
+      <hamclose/>
+      <hammoveir/>
+      <hamarcr/>
+      <hamneck/>
+      <hns_E058/>
+      <hamclose/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

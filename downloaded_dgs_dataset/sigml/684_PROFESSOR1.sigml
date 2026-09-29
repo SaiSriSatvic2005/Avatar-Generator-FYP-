@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="PROFESSOR1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfinger23spread/>
+      <hamfingerbendmod/>
+      <hamextfingeru/>
+      <hampalmul/>
+      <hamforehead/>
+      <hamlrat/>
+      <hamclose/>
+      <hammoveil/>
+      <hamtouch/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
