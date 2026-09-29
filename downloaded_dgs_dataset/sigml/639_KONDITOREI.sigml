@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="KONDITOREI">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmpar/>
+      <hamfist/>
+      <hamextfingerol/>
+      <hampalml/>
+      <hamthumbside/>
+      <hamtouch/>
+      <hamcircleu/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
