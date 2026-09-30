@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="VOGEL1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamcee12/>
+      <hamfingerstraightmod/>
+      <hamextfingerul/>
+      <hampalmdr/>
+      <hamlips/>
+      <hamclose/>
+      <hamreplace/>
+      <hampinch12/>
+      <hamfingerstraightmod/>
+      <hamrepeatfromstartseveral/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
