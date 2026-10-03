@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="ZUG2A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamchest/>
+      <hns_E058/>
+      <hamcirclel/>
+      <hamsmallmod/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

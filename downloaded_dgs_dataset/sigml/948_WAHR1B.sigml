@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="WAHR1B">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamparbegin/>
+      <hamfinger23spread/>
+      <hamthumboutmod/>
+      <hamextfingerul/>
+      <hampalml/>
+      <hamplus/>
+      <hamfinger23spread/>
+      <hamthumboutmod/>
+      <hamextfingeru/>
+      <hampalmd/>
+      <hamparend/>
+      <hamparbegin/>
+      <hamlrat/>
+      <hamchest/>
+      <hamtouch/>
+      <hamplus/>
+      <hns_E058/>
+      <hamhead/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

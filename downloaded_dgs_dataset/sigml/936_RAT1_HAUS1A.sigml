@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="RAT1 HAUS1A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfinger2/>
+      <hamthumbacrossmod/>
+      <hamextfingerui/>
+      <hamextfingeril/>
+      <hampalmdr/>
+      <hamforehead/>
+      <hns_E058/>
+      <hamtouch/>
+      <hammoveuo/>
+      <hambetween/>
+      <hammoveor/>
+      <hamplus/>
+      <hamsymmlr/>
+      <hamflathand/>
+      <hamextfingeruo/>
+      <hampalmdl/>
+      <hamorirelative/>
+      <hamtouch/>
+      <hamshoulders/>
+      <hamparbegin/>
+      <hammovedr/>
+      <hamreplace/>
+      <hamextfingero/>
+      <hamparend/>
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
