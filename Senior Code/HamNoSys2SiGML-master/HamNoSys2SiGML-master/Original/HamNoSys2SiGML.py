@@ -11,11 +11,9 @@ FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TOR
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.'''
 
 
-import os
 import sys
 import xml.etree.ElementTree as ET
 import xml.dom.minidom 
-
 
 #
 #To run:
@@ -94,9 +92,8 @@ def hamnosysList(codes):
 
 #Provides de association for hamnosys unicode to its sigml code
 def readCode(gloss, hamnosys):
-	conversionTXT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "conversionSpreadSheet.txt")		#txt file with association between sigml and hamnosys unicode codes
+	conversionTXT = "conversionSpreadSheet.txt"		#txt file with association between sigml and hamnosys unicode codes
 	sigmlList = []
-
 
 	with open(conversionTXT, 'r') as f:
 		for code in hamnosys:

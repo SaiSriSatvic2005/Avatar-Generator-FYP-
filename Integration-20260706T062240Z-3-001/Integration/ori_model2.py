@@ -19,8 +19,6 @@ drive.mount('/content/drive')
 # In[ ]:
 
 
-import os
-import sys
 import numpy as np
 from math import atan2, degrees
 from collections import Counter
@@ -62,19 +60,14 @@ class ID3HandTree:
 
     # --------------------- ANGLE CLASSIFIER ----------------------
     def angle_to_dir(self, angle):
-        # Convert Viewer Screen direction to Signer Anatomical direction:
-        # Viewer Right (angle 0) = Signer Left ("l")
-        # Viewer Up (angle 90) = Signer Up ("u")
-        # Viewer Left (angle 180) = Signer Right ("r")
-        # Viewer Down (angle 270) = Signer Down ("d")
-        if 0 <= angle < 22 or 337 <= angle <= 360: return "l"
-        if 22 <= angle < 67: return "ul"
+        if 0 <= angle < 22 or 337 <= angle <= 360: return "r"
+        if 22 <= angle < 67: return "ur"
         if 67 <= angle < 112: return "u"
-        if 112 <= angle < 157: return "ur"
-        if 157 <= angle < 202: return "r"
-        if 202 <= angle < 247: return "dr"
+        if 112 <= angle < 157: return "ul"
+        if 157 <= angle < 202: return "l"
+        if 202 <= angle < 247: return "dl"
         if 247 <= angle < 292: return "d"
-        return "dl"
+        return "dr"
 
     # ---------------------- FINGER CLASSIFIER ----------------------
     def classify_finger(self, view, wrist, tip):
@@ -91,9 +84,9 @@ class ID3HandTree:
         angle = degrees(atan2(-vy, vx)) % 360
         base_dir = self.angle_to_dir(angle)
 
-        if vz > 0.08:
+        if vz > 0:
             tilt = "i"
-        elif vz < -0.08:
+        elif vz < 0:
             tilt = "o"
         else:
             tilt = ""
@@ -136,15 +129,15 @@ class ID3HandTree:
         # Compute angle in degrees
         angle = (degrees(atan2(ny, nx)) + 360) % 360
 
-        # Map angle to 8 palm orientations (Viewer to Signer frame)
-        if   337 <= angle or angle < 22:    return "hampalml"    # Viewer Right -> Signer Left
-        elif 22 <= angle < 67:              return "hampalmul"   # Viewer Up-Right -> Signer Up-Left
-        elif 67 <= angle < 112:             return "hampalmu"    # Viewer Up -> Signer Up
-        elif 112 <= angle < 157:            return "hampalmur"   # Viewer Up-Left -> Signer Up-Right
-        elif 157 <= angle < 202:            return "hampalmr"    # Viewer Left -> Signer Right
-        elif 202 <= angle < 247:            return "hampalmdr"   # Viewer Down-Left -> Signer Down-Right
-        elif 247 <= angle < 292:            return "hampalmd"    # Viewer Down -> Signer Down
-        else:                               return "hampalmdl"   # Viewer Down-Right -> Signer Down-Left
+        # Map angle to 8 palm orientations
+        if   337 <= angle or angle < 22:    return "hampalmr"    # right
+        elif 22 <= angle < 67:              return "hampalmur"   # up-right
+        elif 67 <= angle < 112:             return "hampalmu"    # up
+        elif 112 <= angle < 157:            return "hampalmul"   # up-left
+        elif 157 <= angle < 202:            return "hampalml"    # left
+        elif 202 <= angle < 247:            return "hampalmdl"   # down-left
+        elif 247 <= angle < 292:            return "hampalmd"    # down
+        else:                               return "hampalmdr"   # down-right
 
 
 # In[ ]:
@@ -231,13 +224,198 @@ def generate_synthetic():
 # In[ ]:
 
 
+import joblib
+import os
+
 # =====================================================
-# ORIENTATION ENGINE (Fast, Lightweight 3D Geometric Vector Classifier)
-# Zero external .pkl models, zero background training overhead, instant execution (<1ms)
+# LOAD PRE-TRAINED MODELS (or retrain if missing)
 # =====================================================
 
 _MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 
+_PKL_FILES = [
+    "clf_view", "enc_view",
+    "clf_finger_signer", "enc_finger_signer",
+    "clf_finger_bird", "enc_finger_bird",
+    "clf_finger_right", "enc_finger_right",
+    "clf_palm", "enc_palm",
+]
+
+def _all_pkls_exist():
+    return all(
+        os.path.exists(os.path.join(_MODEL_DIR, f"{name}.pkl"))
+        for name in _PKL_FILES
+    )
+
+def _load_pkl(name):
+    return joblib.load(os.path.join(_MODEL_DIR, f"{name}.pkl"))
+
+if _all_pkls_exist():
+    # Fast path: load pre-trained models (< 1 second)
+    clf_view = _load_pkl("clf_view")
+    enc_view = _load_pkl("enc_view")
+    clf_finger_signer = _load_pkl("clf_finger_signer")
+    enc_finger_signer = _load_pkl("enc_finger_signer")
+    clf_finger_bird = _load_pkl("clf_finger_bird")
+    enc_finger_bird = _load_pkl("enc_finger_bird")
+    clf_finger_right = _load_pkl("clf_finger_right")
+    enc_finger_right = _load_pkl("enc_finger_right")
+    clf_palm = _load_pkl("clf_palm")
+    enc_palm = _load_pkl("enc_palm")
+else:
+    # Slow path: generate synthetic data and train (takes minutes)
+    print("[ori_model2] Pre-trained .pkl files not found — training from scratch...")
+
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.ensemble import RandomForestClassifier
+
+    X_view, y_view = [], []
+    X_finger_signer, y_finger_signer = [], []
+    X_finger_bird, y_finger_bird = [], []
+    X_finger_right, y_finger_right = [], []
+    X_palm, y_palm = [], []
+
+    N = 60000
+
+    for _ in range(N):
+        wrist, tip, i_mcp, p_mcp, eye, shoulder, v_lbl, f_lbl, p_lbl = generate_synthetic()
+
+        fv_view = np.concatenate([wrist[:2] - eye, wrist[:2] - shoulder])
+        X_view.append(fv_view)
+        y_view.append(v_lbl)
+
+        fv_hand = np.concatenate([tip - wrist, i_mcp - wrist, p_mcp - wrist])
+
+        if v_lbl == "signer":
+            X_finger_signer.append(fv_hand)
+            y_finger_signer.append(f_lbl)
+        elif v_lbl == "bird":
+            X_finger_bird.append(fv_hand)
+            y_finger_bird.append(f_lbl)
+        else:
+            X_finger_right.append(fv_hand)
+            y_finger_right.append(f_lbl)
+
+        X_palm.append(fv_hand)
+        y_palm.append(p_lbl)
+
+    enc_view = LabelEncoder()
+    y_view_enc = enc_view.fit_transform(y_view)
+    clf_view = RandomForestClassifier(n_estimators=350, n_jobs=-1)
+    clf_view.fit(X_view, y_view_enc)
+
+    enc_finger_signer = LabelEncoder()
+    clf_finger_signer = RandomForestClassifier(n_estimators=350, n_jobs=-1)
+    clf_finger_signer.fit(X_finger_signer, enc_finger_signer.fit_transform(y_finger_signer))
+
+    enc_finger_bird = LabelEncoder()
+    clf_finger_bird = RandomForestClassifier(n_estimators=350, n_jobs=-1)
+    clf_finger_bird.fit(X_finger_bird, enc_finger_bird.fit_transform(y_finger_bird))
+
+    enc_finger_right = LabelEncoder()
+    clf_finger_right = RandomForestClassifier(n_estimators=350, n_jobs=-1)
+    clf_finger_right.fit(X_finger_right, enc_finger_right.fit_transform(y_finger_right))
+
+    enc_palm = LabelEncoder()
+    clf_palm = RandomForestClassifier(n_estimators=350, n_jobs=-1)
+    clf_palm.fit(X_palm, enc_palm.fit_transform(y_palm))
+
+    # Save for next time
+    for name, obj in [
+        ("clf_view", clf_view), ("enc_view", enc_view),
+        ("clf_finger_signer", clf_finger_signer), ("enc_finger_signer", enc_finger_signer),
+        ("clf_finger_bird", clf_finger_bird), ("enc_finger_bird", enc_finger_bird),
+        ("clf_finger_right", clf_finger_right), ("enc_finger_right", enc_finger_right),
+        ("clf_palm", clf_palm), ("enc_palm", enc_palm),
+    ]:
+        joblib.dump(obj, os.path.join(_MODEL_DIR, f"{name}.pkl"))
+
+    print("[ori_model2] Models trained and saved.")
+
+
+# In[ ]:
+
+
+import cv2
+import mediapipe as mp
+
+mp_hands = mp.solutions.hands
+mp_pose = mp.solutions.pose
+
+def extract_landmarks(path):
+    img = cv2.imread(path)
+    rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    with mp_pose.Pose(static_image_mode=True) as pose:
+        p_res = pose.process(rgb)
+
+    with mp_hands.Hands(static_image_mode=True, max_num_hands=1) as hands:
+        h_res = hands.process(rgb)
+
+    if not p_res.pose_landmarks or not h_res.multi_hand_landmarks:
+        return None
+
+    p = p_res.pose_landmarks.landmark
+    h = h_res.multi_hand_landmarks[0].landmark
+
+    left_eye = np.array([p[2].x,p[2].y])
+    right_eye = np.array([p[5].x,p[5].y])
+    eye_avg = (left_eye + right_eye)/2
+
+    shoulder = np.array([p[12].x, p[12].y])
+
+    wrist = np.array([h[0].x,h[0].y,h[0].z])
+    tip = np.array([h[8].x,h[8].y,h[8].z])
+    i_mcp = np.array([h[5].x,h[5].y,h[5].z])
+    p_mcp = np.array([h[17].x,h[17].y,h[17].z])
+
+    return wrist, tip, i_mcp, p_mcp, eye_avg, shoulder
+
+
+# In[ ]:
+
+
+def ml_predict(path):
+
+    L = extract_landmarks(path)
+    if L is None:
+        print("No landmarks detected")
+        return None
+
+    wrist, tip, i_mcp, p_mcp, eye, shoulder = L
+
+    # ---- View features ----
+    fv_view = np.concatenate([
+        wrist[:2] - eye,
+        wrist[:2] - shoulder
+    ]).reshape(1,-1)
+
+    view_idx = clf_view.predict(fv_view)[0]
+    view = enc_view.inverse_transform([view_idx])[0]
+
+    # ---- Hand feature ----
+    fv_hand = np.concatenate([
+        tip - wrist, i_mcp - wrist, p_mcp - wrist
+    ]).reshape(1,-1)
+
+    # ---- Finger based on view ----
+    if view == "signer":
+        f_idx = clf_finger_signer.predict(fv_hand)[0]
+        finger = enc_finger_signer.inverse_transform([f_idx])[0]
+
+    elif view == "bird":
+        f_idx = clf_finger_bird.predict(fv_hand)[0]
+        finger = enc_finger_bird.inverse_transform([f_idx])[0]
+
+    else: # right
+        f_idx = clf_finger_right.predict(fv_hand)[0]
+        finger = enc_finger_right.inverse_transform([f_idx])[0]
+
+    # ---- Palm ----
+    p_idx = clf_palm.predict(fv_hand)[0]
+    palm = enc_palm.inverse_transform([p_idx])[0]
+
+    return view, finger, palm
 
 
 # In[ ]:
@@ -247,198 +425,52 @@ import tempfile
 import os
 import cv2
 
-def calculate_orientation_from_landmarks(h_landmarks, handedness="Right", pose_landmarks=None):
+def calculate_orientation_from_landmarks(h_landmarks):
     wrist = np.array([h_landmarks[0].x, h_landmarks[0].y, h_landmarks[0].z])
     index_mcp = np.array([h_landmarks[5].x, h_landmarks[5].y, h_landmarks[5].z])
     middle_tip = np.array([h_landmarks[12].x, h_landmarks[12].y, h_landmarks[12].z])
     pinky_mcp = np.array([h_landmarks[17].x, h_landmarks[17].y, h_landmarks[17].z])
 
-    view = "signer"
-    if pose_landmarks is not None:
-        if isinstance(pose_landmarks, dict):
-            left_eye = np.array(pose_landmarks.get("left_eye", (0.46, 0.22)), dtype=float)
-            right_eye = np.array(pose_landmarks.get("right_eye", (0.54, 0.22)), dtype=float)
-            right_shoulder = np.array(pose_landmarks.get("right_shoulder", (0.62, 0.40)), dtype=float)
-            eye_avg = (left_eye + right_eye) / 2.0
-            if wrist[1] < eye_avg[1] - 0.12:
-                view = "bird"
-            elif wrist[0] < right_shoulder[0] - 0.03:
-                view = "right"
-            else:
-                view = "signer"
-
-    # 1. Extended Finger Direction (Use index tip landmark 8 if extended, or max-extended tip)
-    tips = [8, 12, 16, 20]
-    tip_dists = [np.linalg.norm(np.array([h_landmarks[t].x - wrist[0], h_landmarks[t].y - wrist[1], h_landmarks[t].z - wrist[2]])) for t in tips]
-    best_tip_idx = tips[np.argmax(tip_dists)]
-    best_tip = np.array([h_landmarks[best_tip_idx].x, h_landmarks[best_tip_idx].y, h_landmarks[best_tip_idx].z])
-
-    finger_vec = best_tip - wrist
-    fx, fy, fz = finger_vec[0], -finger_vec[1], finger_vec[2]
-
-    if view == "right":
-        fx = -fx
-    elif view == "bird":
-        fy = -fy
-
+    # 1. Extended Finger Direction (vector from wrist to middle finger tip)
+    finger_vec = middle_tip - wrist
+    fx, fy, fz = finger_vec[0], -finger_vec[1], finger_vec[2]  # Screen Y is inverted
+    
     if abs(fy) >= abs(fx):
         finger_tag = "hamextfingeru" if fy > 0 else "hamextfingerd"
     else:
         finger_tag = "hamextfingerr" if fx > 0 else "hamextfingerl"
 
-
-
-    # 2. Robust Palm Normal using properly scaled Z coordinates
-    # MediaPipe Z is roughly scaled to the hand's bounding box size, which is smaller than screen coords.
-    # We should normalize the 3D vectors first before cross product to ensure axes have equal weight.
+    # 2. Palm Normal Vector (Cross product of index_mcp and pinky_mcp vectors from wrist)
     v1 = index_mcp - wrist
     v2 = pinky_mcp - wrist
-
-    # Invert for Left hand so logic is consistent
-    if handedness == "Left":
-        v1, v2 = v2, v1
-
-    v1_norm = np.linalg.norm(v1)
-    v2_norm = np.linalg.norm(v2)
-
-    if v1_norm > 0 and v2_norm > 0:
-        v1 = v1 / v1_norm
-        v2 = v2 / v2_norm
-
-    nz = v1[0] * v2[1] - v1[1] * v2[0]
-    nx = v1[1] * v2[2] - v1[2] * v2[1]
-    ny = v1[2] * v2[0] - v1[0] * v2[2]
-
-    # Normalize the resulting normal
-    norm_val = np.linalg.norm([nx, ny, nz])
+    normal = np.cross(v1, v2)
+    norm_val = np.linalg.norm(normal)
     if norm_val > 0:
-        nx, ny, nz = nx / norm_val, ny / norm_val, nz / norm_val
+        normal = normal / norm_val
+        
+    nx, ny, nz = normal[0], -normal[1], normal[2]
 
-    # ny is inverted for screen coordinates
-    ny = -ny
-
-    # Strict mappings based on Finger Direction
-    # In HamNoSys & JASigning avatar notation:
-    # hampalmd = Palm facing OUTWARD towards camera / viewer
-    # hampalmu = Palm facing INWARD towards signer
-    # hampalmr = Palm facing RIGHT
-    # hampalml = Palm facing LEFT
-    if finger_tag in ["hamextfingeru", "hamextfingerd"]:
-        projs = {
-            'hampalmd': -nz,
-            'hampalmu': nz,
-            'hampalmr': nx,
-            'hampalml': -nx
-        }
+    # For Right Hand in MediaPipe:
+    # -nz points towards camera (forward/outward) -> hampalmd
+    # +nz points towards signer (inward) -> hampalmu
+    if abs(nz) >= max(abs(nx), abs(ny)) * 0.7:
+        palm_tag = "hampalmd" if nz < 0 else "hampalmu"
+    elif abs(nx) >= abs(ny):
+        palm_tag = "hampalmr" if nx > 0 else "hampalml"
     else:
-        projs = {
-            'hampalmd': -nz if abs(nz) > abs(ny) else -ny,
-            'hampalmu': nz if abs(nz) > abs(ny) else ny,
-            'hampalmr': nx,
-            'hampalml': -nx
-        }
+        palm_tag = "hampalmd"
 
-
-    palm_tag = max(projs, key=projs.get)
-
-    return (view, finger_tag, palm_tag)
-
-
-def _classify_hand_orientation(frames, hand_key, handedness_label):
-    """Classify orientation for a specific hand across all frames."""
-    views, fingers, palms = [], [], []
-    for f in frames:
-        hand = f.get(hand_key)
-        pose = f.get("pose_landmarks")
-        if hand and hasattr(hand, "landmark"):
-            view, finger, palm = calculate_orientation_from_landmarks(
-                hand.landmark, handedness_label, pose_landmarks=pose
-            )
-            views.append(view)
-            fingers.append(finger)
-            palms.append(palm)
-        else:
-            views.append(None)
-            fingers.append(None)
-            palms.append(None)
-    return views, fingers, palms
+    return ("signer", finger_tag, palm_tag)
 
 
 def run_orientation_module(video_path):
-    """
-    Run orientation classification.
-    Returns dual-hand output when both hands are consistently detected.
-    """
-    try:
-        from shared_landmarks import get_video_landmarks
-        frames = get_video_landmarks(video_path)
-        
-        # Primary hand orientation (backward compatible)
-        views, fingers, palms = [], [], []
-        for f in frames:
-            hand = f.get("right_hand") or f.get("left_hand")
-            pose = f.get("pose_landmarks")
-            if hand:
-                h_landmarks = hand.landmark
-                handedness = "Right" if f.get("right_hand") else "Left"
-                view, finger, palm = calculate_orientation_from_landmarks(h_landmarks, handedness, pose_landmarks=pose)
-                views.append(view)
-                fingers.append(finger)
-                palms.append(palm)
-        
-        if not views:
-            return {"per_frame": [], "final": None, "is_dual": False}
-        
-        final_view   = Counter(views).most_common(1)[0][0]
-        final_finger = Counter(fingers).most_common(1)[0][0]
-        final_palm   = Counter(palms).most_common(1)[0][0]
-        
-        result = {
-            "per_frame": list(zip(views, fingers, palms)),
-            "final": (final_view, final_finger, final_palm),
-        }
-        
-        # Check for dual-hand
-        right_count = sum(1 for f in frames if f.get("right_hand") is not None)
-        left_count = sum(1 for f in frames if f.get("left_hand") is not None)
-        total = max(len(frames), 1)
-        
-        is_dual = (right_count / total > 0.20) and (left_count / total > 0.20)
-        result["is_dual"] = is_dual
-        
-        if is_dual:
-            r_views, r_fingers, r_palms = _classify_hand_orientation(frames, "right_hand", "Right")
-            l_views, l_fingers, l_palms = _classify_hand_orientation(frames, "left_hand", "Left")
-            
-            # Filter valid entries for summary
-            r_fingers_valid = [x for x in r_fingers if x is not None]
-            r_palms_valid = [x for x in r_palms if x is not None]
-            l_fingers_valid = [x for x in l_fingers if x is not None]
-            l_palms_valid = [x for x in l_palms if x is not None]
-            
-            result["right_hand"] = {
-                "per_frame": list(zip(r_views, r_fingers, r_palms)),
-                "final_finger": Counter(r_fingers_valid).most_common(1)[0][0] if r_fingers_valid else "hamextfingeru",
-                "final_palm": Counter(r_palms_valid).most_common(1)[0][0] if r_palms_valid else "hampalmd",
-            }
-            result["left_hand"] = {
-                "per_frame": list(zip(l_views, l_fingers, l_palms)),
-                "final_finger": Counter(l_fingers_valid).most_common(1)[0][0] if l_fingers_valid else "hamextfingeru",
-                "final_palm": Counter(l_palms_valid).most_common(1)[0][0] if l_palms_valid else "hampalmd",
-            }
-        
-        return result
-        
-    except Exception as e:
-        pass
-
     views, fingers, palms = [], [], []
 
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
-        return {"per_frame": [], "final": None, "is_dual": False}
+        return {"per_frame": [], "final": None}
 
-    with mp_hands.Hands(static_image_mode=False, max_num_hands=1, min_detection_confidence=0.5) as hands:
+    with mp_hands.Hands(static_image_mode=False, max_num_hands=2, min_detection_confidence=0.5) as hands:
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
@@ -449,10 +481,11 @@ def run_orientation_module(video_path):
 
             if not res.multi_hand_landmarks:
                 continue
-                
-            handedness = res.multi_handedness[0].classification[0].label
-            h_landmarks = res.multi_hand_landmarks[0].landmark
-            view, finger, palm = calculate_orientation_from_landmarks(h_landmarks, handedness)
+
+            # Pick active signing hand with highest elevation (lowest wrist y)
+            active_hand = min(res.multi_hand_landmarks, key=lambda h: h.landmark[0].y)
+            h_landmarks = active_hand.landmark
+            view, finger, palm = calculate_orientation_from_landmarks(h_landmarks)
 
             views.append(view)
             fingers.append(finger)
@@ -461,14 +494,22 @@ def run_orientation_module(video_path):
     cap.release()
 
     if not views:
-        return {"per_frame": [], "final": None, "is_dual": False}
+        return {"per_frame": [], "final": None}
 
+    # Filter out downward-pointing frames occurring during idle pre/post-signing rest
+    active_fingers = [f for f in fingers if f != "hamextfingerd"]
+    final_finger = Counter(active_fingers).most_common(1)[0][0] if active_fingers else Counter(fingers).most_common(1)[0][0]
     final_view   = Counter(views).most_common(1)[0][0]
-    final_finger = Counter(fingers).most_common(1)[0][0]
     final_palm   = Counter(palms).most_common(1)[0][0]
 
     return {
         "per_frame": list(zip(views, fingers, palms)),
-        "final": (final_view, final_finger, final_palm),
-        "is_dual": False,
+        "final": (final_view, final_finger, final_palm)
     }
+
+
+# In[ ]:
+
+
+
+

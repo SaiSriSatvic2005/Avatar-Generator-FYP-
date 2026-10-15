@@ -293,17 +293,12 @@ for i, name in enumerate(
 
 import numpy as np
 
-from temporal_utils import smooth_frame_sequence, summarize_label_sequence
-
 # =====================================================
 # 1. DIRECTION (HamNoSys-correct: local dominance)
 # =====================================================
 
 def classify_direction(traj, eps=0.002):
     diffs = np.diff(traj, axis=0)
-    if diffs.size == 0:
-        return "hamnomotion"
-
     dx, dy, dz = diffs[:,0], diffs[:,1], diffs[:,2]
 
     counts = {
@@ -319,16 +314,6 @@ def classify_direction(traj, eps=0.002):
     vy = max(counts["u"], counts["d"])
     vx = max(counts["l"], counts["r"])
     vz = max(counts["i"], counts["o"])
-
-    if max(vx, vy, vz) < 5 and len(traj) >= 3:
-        # Fall back to the net displacement for short, monotonic motion.
-        net_dx = traj[-1, 0] - traj[0, 0]
-        net_dy = traj[-1, 1] - traj[0, 1]
-        if abs(net_dx) > abs(net_dy) and abs(net_dx) > 0.01:
-            return "hammover" if net_dx > 0 else "hammovel"
-        if abs(net_dy) > abs(net_dx) and abs(net_dy) > 0.01:
-            return "hammoveu" if net_dy < 0 else "hammoved"
-        return "hamnomotion"
 
     if max(vx, vy, vz) < 5:
         return "hamnomotion"
@@ -457,19 +442,9 @@ def classify_reverse(traj):
 # =====================================================
 
 def classify_path(traj):
-    if len(traj) < 4:
-        return None
-
     diffs = np.diff(traj[:,:2], axis=0)
-    if diffs.size == 0:
-        return None
-
     angles = np.arctan2(diffs[:,1], diffs[:,0])
     angle_var = np.std(np.diff(angles))
-
-    # Circle-like paths often have a consistent turning rate and low linear drift.
-    if angle_var > 1.0 and np.linalg.norm(np.mean(diffs, axis=0)) < 0.03:
-        return "hamcircle"
 
     # zigzag
     if angle_var > 1.2:
@@ -537,12 +512,6 @@ if __name__ == "__main__":
             if len(trajectory) > 10:
                 traj = np.array(trajectory)
 
-                try:
-                    from video_preprocessing import smooth_trajectory
-                    traj = smooth_trajectory(traj, window_size=5, polyorder=2)
-                except ImportError:
-                    pass
-
                 direction = classify_direction(traj)
                 speed     = classify_speed(traj)
                 force     = classify_force(traj)
@@ -608,70 +577,14 @@ def classify_movement1(trajectory_log):
 
 
 def run_movement1_module(video_path):
+
     trajectory = deque(maxlen=60)
     label_log = []
-    per_frame_labels = []
-
-    try:
-        from shared_landmarks import get_video_landmarks
-        frames_info = get_video_landmarks(video_path)
-        if frames_info:
-            for frame_info in frames_info:
-                hand_lm = (
-                    frame_info.get("primary_hand")
-                    or frame_info.get("right_hand")
-                    or frame_info.get("left_hand")
-                )
-                if hand_lm and hasattr(hand_lm, "landmark"):
-                    center = hand_center(hand_lm)
-                    trajectory.append(center)
-
-                    if len(trajectory) > 10:
-                        traj = np.array(trajectory)
-                        try:
-                            from video_preprocessing import smooth_trajectory
-                            traj = smooth_trajectory(traj, window_size=5, polyorder=2)
-                        except ImportError:
-                            pass
-
-                        direction = classify_direction(traj)
-                        speed     = classify_speed(traj)
-                        force     = classify_force(traj)
-                        halt      = detect_halt(traj)
-                        size      = classify_size(traj)
-                        growth    = classify_growth(traj)
-                        path      = classify_path(traj)
-
-                        repeat_continue   = classify_repetition(traj)
-                        repeat_from_start = classify_repeat_from_start(traj)
-                        repeat = repeat_from_start if repeat_from_start else repeat_continue
-
-                        reverse = classify_reverse(traj)
-
-                        label_log.append({
-                            "Direction": direction,
-                            "Speed": speed,
-                            "Force": force,
-                            "Halt": halt,
-                            "Size": size,
-                            "Growth": growth,
-                            "Repeat": repeat,
-                            "Reverse": reverse,
-                            "Path": path
-                        })
-
-                        frame_tokens = [direction, speed, force, halt, size, growth, repeat, reverse, path]
-                        per_frame_labels.append(" ".join([token for token in frame_tokens if token]))
-
-            smoothed_labels = smooth_frame_sequence(per_frame_labels, window=3)
-            final_summary = classify_movement1(label_log)
-            return {"per_frame": smoothed_labels, "final": final_summary}
-    except Exception:
-        pass
 
     cap = cv2.VideoCapture(video_path)
+
     if not cap.isOpened():
-        return {"per_frame": [], "final": "hamnomotion"}
+        return None
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -682,18 +595,14 @@ def run_movement1_module(video_path):
         res = hands.process(rgb)
 
         if res.multi_hand_landmarks:
+
             lm = res.multi_hand_landmarks[0]
             center = hand_center(lm)
             trajectory.append(center)
 
             if len(trajectory) > 10:
-                traj = np.array(trajectory)
 
-                try:
-                    from video_preprocessing import smooth_trajectory
-                    traj = smooth_trajectory(traj, window_size=5, polyorder=2)
-                except ImportError:
-                    pass
+                traj = np.array(trajectory)
 
                 direction = classify_direction(traj)
                 speed     = classify_speed(traj)
@@ -721,14 +630,9 @@ def run_movement1_module(video_path):
                     "Path": path
                 })
 
-                frame_tokens = [direction, speed, force, halt, size, growth, repeat, reverse, path]
-                per_frame_labels.append(" ".join([token for token in frame_tokens if token]))
-
     cap.release()
 
-    smoothed_labels = smooth_frame_sequence(per_frame_labels, window=3)
-    final_summary = classify_movement1(label_log)
-    return {"per_frame": smoothed_labels, "final": final_summary}
+    return classify_movement1(label_log)
 
 
 # In[ ]:

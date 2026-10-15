@@ -221,27 +221,42 @@ def compute_features(pts, side="L"):
 # In[ ]:
 
 
+MIDLINE_EPS = 0.04
+LATERAL_THRESH = 0.15
+Z_FRONT_THRESH = 0.05
+
+
+# In[ ]:
+
+
+def is_arm_extended(f):
+    return f["elbow_angle"] > 135 and f["extension_ratio"] > 1.8
+
+def is_midline(f):
+    return f["x_offset"] < MIDLINE_EPS
+
+def is_beside(f):
+    return f["x_offset"] > LATERAL_THRESH and \
+           f["shoulder_y"] < f["wrist_y"] < f["shoulder_y"] + 0.25
+
+def is_double_bent(fL, fR):
+    return fL["elbow_angle"] < 120 and fR["elbow_angle"] < 120
+
+def is_neutral_space(f, contact=False):
+    return (not contact) and \
+           f["z_offset"] > Z_FRONT_THRESH and \
+           f["shoulder_y"] < f["wrist_y"] < f["shoulder_y"] + 0.3
+
+def is_double_hooked(handshape_L, handshape_R):
+    return handshape_L == "hooked" and handshape_R == "hooked"
+
+
+# In[ ]:
+
+
 def classify_F_class(pts, contact=False):
     fL = compute_features(pts, "L")
     fR = compute_features(pts, "R")
-
-    shoulder_width = dist(pts["ls"], pts["rs"])
-    if shoulder_width < 0.05:
-        shoulder_width = 0.3  # fallback if shoulders not fully visible
-
-    def is_arm_extended(f):
-        return f["elbow_angle"] > 135 and f["extension_ratio"] > 1.8
-
-    def is_midline(f):
-        return f["x_offset"] < 0.15 * shoulder_width
-
-    def is_double_bent(fL, fR):
-        return fL["elbow_angle"] < 120 and fR["elbow_angle"] < 120
-
-    def is_neutral_space(f, contact=False):
-        return (not contact) and \
-               f["z_offset"] > 0.20 * shoulder_width and \
-               f["shoulder_y"] < f["wrist_y"] < f["shoulder_y"] + 1.0 * shoulder_width
 
     # 1️⃣ Double-arm first
     if is_double_bent(fL, fR):
@@ -258,9 +273,9 @@ def classify_F_class(pts, contact=False):
 
     # ✅ hamlrbeside (relaxed realistic version)
     if (
-        f["x_offset"] > 0.3 * shoulder_width and
-        f["z_offset"] < 0.3 * shoulder_width and
-        f["wrist_y"] < f["shoulder_y"] + 2.0 * shoulder_width
+        f["x_offset"] > 0.10 and
+        f["z_offset"] < 0.08 and
+        f["wrist_y"] < 0.85
     ):
         return "hamlrbeside"
 

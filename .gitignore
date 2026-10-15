@@ -2,35 +2,73 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pkl
 
 # Environments
 .env
 .venv
 env/
 venv/
+node_modules/
 
-# Large Files & Datasets
+# Models & Pickles (blocks large files like clf_palm.pkl 538MB and clf_finger_signer.pkl 110MB)
+*.pkl
+!Integration-20260706T062240Z-3-001/Integration/enc_*.pkl
+!Integration-20260706T062240Z-3-001/Integration/clf_view.pkl
+
+# Large Archives & Datasets
 *.zip
-Integration-20260706T062240Z-3-001.zip
-Integration-20260706T062240Z-3-001/Integration/WLASL_videos/
+*.tar
+*.tar.gz
+*.npz
 
-# Webapp specific ignores (temp files & user uploads)
+# Video files & Video directories
+*.mp4
+*.avi
+*.mov
+*.mkv
+ISL_videos/
+**/ISL_videos/
+**/WLASL_videos/
+**/European_sign_videos/
+**/videos/
+
+# Webapp specific temporary files
 webapp/uploads/
 webapp/static/output/
 webapp/static/temp/
-*.mp4
 
-# We want to KEEP our specific neural network files and sample videos, so we make an exception for them
-!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/hamnosys_net_v2.pth
-!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/nn_class_mappings.json
-!Integration-20260706T062240Z-3-001/Integration/wlasl_landmark_dataset/dataset_landmarks.npz
-!webapp/static/samples/*.mp4
+# HTML files (ignore root report HTMLs, keep webapp templates)
+*.html
+!webapp/templates/*.html
 
-# IDEs
+# All PDF files EXCEPT Comprehensive_V1_vs_Current_Pipeline_Comparison_V2.pdf
+*.pdf
+!Comprehensive_V1_vs_Current_Pipeline_Comparison_V2.pdf
+
+# All Markdown files EXCEPT HYBRID_NN_ARCHITECTURE_AND_TRAINING_SPECIFICATION.md
+*.md
+!HYBRID_NN_ARCHITECTURE_AND_TRAINING_SPECIFICATION.md
+
+# LaTeX temporary files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+
+# Images
+*.png
+*.jpg
+*.jpeg
+
+# IDEs & OS artifacts
 .idea/
 .vscode/
 *.swp
-
-# AI Agent logs
+.DS_Store
+Thumbs.db
+.gradio/
+**/.gradio/
 .agents/

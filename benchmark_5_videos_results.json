@@ -1,0 +1,97 @@
+[
+  {
+    "video": "Hello.mp4",
+    "v1": {
+      "version": "V1",
+      "video": "Hello.mp4",
+      "tokens": "hamflathand hamthumbacrossmod hamfingerstraightmod hamfingertip hamfinger2 hamthumboutmod hamdoublebent hamcee12 hamfinger2345 hambetween hamfingerbendmod hamfinger23spread hamfinger23 hamfist hamdoublehooked signer hamextfingerd hampalmu hampalmd hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamwristback hamupperarm hamshouldertop hamshoulders hamnose hamear hamforehead hamcheek hamchin no-contact hamtouch hambehind hamneutralspace hamarmextended none hamlrbeside hammoveu hamslow hamtense hamhalt hamlargemod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamnodding",
+      "token_count": 50,
+      "valid": false,
+      "elapsed": 34.49481248855591
+    },
+    "v2": {
+      "version": "V2",
+      "video": "Hello.mp4",
+      "tokens": "hamflathand hamthumboutmod hamfingertip hamextfingerr hampalmd hamforehead hamtouch hammover hamrepeatfromstart hamreplace hamfist hamstomach",
+      "token_count": 12,
+      "valid": true,
+      "elapsed": 87.31874132156372
+    }
+  },
+  {
+    "video": "Good.mp4",
+    "v1": {
+      "version": "V1",
+      "video": "Good.mp4",
+      "tokens": "hamfist hamthumboutmod hamdoublebent hamthumbside hamthumbacrossmod hamfingertip hamdoublehooked hamfinger2 hamfingerbendmod hamflathand signer hamextfingerd hampalmd hampalmu hamextfingerr hampalmr hamextfingeru hamextfingerl hambelowstomach hamstomach hamupperarm hamshoulders hamshouldertop hamwristback hamchin no-contact hamtouch none hamneutralspace hamlrbeside hamarmextended hammover hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw",
+      "token_count": 41,
+      "valid": false,
+      "elapsed": 81.85639548301697
+    },
+    "v2": {
+      "version": "V2",
+      "video": "Good.mp4",
+      "tokens": "hamsymmlr hamfist hamthumboutmod hamthumbside hamextfingeru hampalmd hamarmextended hamshoulders hamtouch hammover hamrepeatfromstart",
+      "token_count": 11,
+      "valid": true,
+      "elapsed": 65.1895580291748
+    }
+  },
+  {
+    "video": "Father.mp4",
+    "v1": {
+      "version": "V1",
+      "video": "Father.mp4",
+      "tokens": "hamfinger2 hamthumboutmod hamdoublebent hamfingertip hamfist hamthumbacrossmod hamcee12 hamfingerbendmod hamdoublehooked hamthumbside hamfinger2345 hamfingerstraightmod hambetween signer hamextfingerd hampalmd hampalmu hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamwristback hamupperarm hamshoulders hamshouldertop hamchin hamcheek hamear hamnose hamlips no-contact hamtouch none hamneutralspace hamlrbeside hamarmextended hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw",
+      "token_count": 47,
+      "valid": false,
+      "elapsed": 67.28937029838562
+    },
+    "v2": {
+      "version": "V2",
+      "video": "Father.mp4",
+      "tokens": "hamsymmlr hamfinger2 hamthumboutmod hamfingertip hamextfingeru hampalmd hamcheek hamtouch hamstirccw hamrepeatfromstart",
+      "token_count": 10,
+      "valid": true,
+      "elapsed": 98.85145664215088
+    }
+  },
+  {
+    "video": "Apple.mp4",
+    "v1": {
+      "version": "V1",
+      "video": "Apple.mp4",
+      "tokens": "hamflathand hamthumbacrossmod hamfingerstraightmod hamfingertip hamthumboutmod hamfinger2345 hambetween hamfingerbendmod hamdoublehooked hamfinger23spread hamdoublebent signer hamextfingerd hampalmu hampalmd hamextfingerr hamextfingeru hampalmr hambelowstomach hamstomach hamupperarm hamshoulders hamshouldertop hamwristback hamchin hamunderchin no-contact hamtouch none hamlrbeside hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw",
+      "token_count": 40,
+      "valid": false,
+      "elapsed": 102.09236264228821
+    },
+    "v2": {
+      "version": "V2",
+      "video": "Apple.mp4",
+      "tokens": "hamflathand hamthumboutmod hamfingertip hamextfingerr hampalmu hamlrat hamchin hamtouch hamstircw hamrepeatfromstart hamreplace hamfist hamstomach",
+      "token_count": 13,
+      "valid": true,
+      "elapsed": 99.82591390609741
+    }
+  },
+  {
+    "video": "Come.mp4",
+    "v1": {
+      "version": "V1",
+      "video": "Come.mp4",
+      "tokens": "hamflathand hamthumboutmod hamfingertip hamthumbacrossmod hamfingerstraightmod hamfinger2345 hambetween hamfinger2 hamdoublehooked hamfist hamthumbside hamdoublebent signer hamextfingerd hampalmd hampalmu hamextfingerr hamextfingeru hambelowstomach hamstomach hamupperarm hamshouldertop hamwristback hamshoulders hamnose hamcheek hamforehead hamear hamchin no-contact hamtouch hambehind none hamneutralspace hamarmextended hamlrbeside hamnomotion hamslow hamrest hamhalt hamsmallmod hamincreasing hamrepeatfromstartseveral hamrepeatreverse hamzigzag hamstircw",
+      "token_count": 46,
+      "valid": false,
+      "elapsed": 74.39421272277832
+    },
+    "v2": {
+      "version": "V2",
+      "video": "Come.mp4",
+      "tokens": "hamflathand hamthumbacrossmod hamfingertip hamextfingeru hampalmu hamarmextended hamshouldertop hamtouch hamstircw hamrepeatfromstart hamreplace hamfist hamstomach",
+      "token_count": 13,
+      "valid": true,
+      "elapsed": 21.04259443283081
+    }
+  }
+]
