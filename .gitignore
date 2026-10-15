@@ -22,15 +22,17 @@ node_modules/
 *.npz
 
 # Video files & Video directories
-*.mp4
 *.avi
 *.mov
 *.mkv
-ISL_videos/
-**/ISL_videos/
 **/WLASL_videos/
 **/European_sign_videos/
 **/videos/
+
+# General MP4 ignore except ISL_videos (training & testing)
+*.mp4
+!ISL_videos/
+!ISL_videos/**
 
 # Webapp specific temporary files
 webapp/uploads/
