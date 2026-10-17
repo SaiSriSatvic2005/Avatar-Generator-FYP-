@@ -32,6 +32,7 @@ testing_*_output.sigml
 benchmark_*_results.txt
 benchmark_*_results.json
 !v6_benchmark_results_30.json
+!v8_benchmark_results.json
 
 # ==============================================================================
 # Massive Legacy Machine Learning Models & Pickles (> 750 MB)

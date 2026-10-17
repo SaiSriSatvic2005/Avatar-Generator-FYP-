@@ -118,6 +118,33 @@ class SkeletalHandResNet_V6(nn.Module):
     def forward(self, x):
         return self.head(self.b2(self.b1(self.proj(x))))
 
+class ResidualBlock_V7(nn.Module):
+    def __init__(self, dim, dropout=0.2):
+        super().__init__()
+        self.fc1 = nn.Linear(dim, dim)
+        self.ln1 = nn.LayerNorm(dim)
+        self.fc2 = nn.Linear(dim, dim)
+        self.ln2 = nn.LayerNorm(dim)
+        self.drop = nn.Dropout(dropout)
+    def forward(self, x):
+        res = x
+        x = torch.nn.functional.mish(self.ln1(self.fc1(x)))
+        x = self.drop(x)
+        x = self.ln2(self.fc2(x))
+        return torch.nn.functional.mish(x + res)
+
+class SkeletalHandResNet_V7(nn.Module):
+    def __init__(self, in_features=128, hidden_dim=256, num_classes=12):
+        super().__init__()
+        self.proj = nn.Sequential(nn.Linear(in_features, hidden_dim), nn.LayerNorm(hidden_dim), nn.Mish())
+        self.b1 = ResidualBlock_V7(hidden_dim, 0.20)
+        self.b2 = ResidualBlock_V7(hidden_dim, 0.20)
+        self.b3 = ResidualBlock_V7(hidden_dim, 0.20)
+        self.head = nn.Sequential(nn.Linear(hidden_dim, 128), nn.LayerNorm(128), nn.Mish(), nn.Dropout(0.25), nn.Linear(128, num_classes))
+    def forward(self, x):
+        return self.head(self.b3(self.b2(self.b1(self.proj(x)))))
+
+
 # ==============================================================================
 # Model B Architecture: Attention-BiGRU (V5: 32x3, V6: 32x18)
 # ==============================================================================
@@ -219,12 +246,31 @@ class LocalHaMeRPipeline:
     def __init__(self):
         print(f"[HaMeRPipeline] Initializing Complete Hybrid Engine on device: {DEVICE}")
         
-        # 1. Load Encoders & Neural Models (Auto-detect V6 vs V5)
+        # 1. Load Encoders & Neural Models (Auto-detect V7 vs V6 vs V5)
+        v7_enc_file = os.path.join(INTEGRATION_DIR, "v7_encoders.json")
+        v7_model_a_path = os.path.join(INTEGRATION_DIR, "v7_dgs_handshape_resnet.pth")
+        v7_model_b_path = os.path.join(INTEGRATION_DIR, "v7_dgs_movement_attention_bigru.pth")
+
         v6_enc_file = os.path.join(INTEGRATION_DIR, "v6_encoders.json")
         v6_model_a_path = os.path.join(INTEGRATION_DIR, "v6_dgs_handshape_resnet.pth")
         v6_model_b_path = os.path.join(INTEGRATION_DIR, "v6_dgs_movement_attention_bigru.pth")
 
-        if os.path.exists(v6_enc_file) and os.path.exists(v6_model_a_path) and os.path.exists(v6_model_b_path):
+        if os.path.exists(v7_enc_file) and os.path.exists(v7_model_a_path) and os.path.exists(v7_model_b_path):
+            self.version = "v8"
+            with open(v7_enc_file, "r", encoding="utf-8") as f:
+                self.encoders = json.load(f)
+            self.hs_classes = self.encoders["handshape_classes"]
+            self.mv_classes = self.encoders["movement_classes"]
+
+            self.model_a = SkeletalHandResNet_V7(in_features=128, hidden_dim=256, num_classes=len(self.hs_classes)).to(DEVICE)
+            self.model_a.load_state_dict(torch.load(v7_model_a_path, map_location=DEVICE))
+            self.model_a.eval()
+
+            self.model_b = AttentionBiGRU_V6(in_channels=18, hidden_dim=128, num_classes=len(self.mv_classes)).to(DEVICE)
+            self.model_b.load_state_dict(torch.load(v7_model_b_path, map_location=DEVICE))
+            self.model_b.eval()
+            print(f"[HaMeRPipeline] Loaded V8 Complete Hybrid Engine (128-D Invariant Handshape, 18-D Kinematics, Collision-Free Body Clearance, {len(self.hs_classes)} HS / {len(self.mv_classes)} MV classes).")
+        elif os.path.exists(v6_enc_file) and os.path.exists(v6_model_a_path) and os.path.exists(v6_model_b_path):
             self.version = "v6"
             with open(v6_enc_file, "r", encoding="utf-8") as f:
                 self.encoders = json.load(f)
@@ -294,6 +340,67 @@ class LocalHaMeRPipeline:
                 best_name = name
         return best_name, float(best_sim)
 
+    def extract_128d_features(self, kps_3d, hand_pose):
+        """
+        Computes 128-D rotation-invariant, local-coordinate hand features (V7).
+        Aligned to the local hand orthonormal basis R_local.
+        """
+        p0 = kps_3d[0].copy()
+        y_axis = kps_3d[9] - p0
+        y_axis = y_axis / (np.linalg.norm(y_axis) + 1e-8)
+        
+        trans = kps_3d[5] - kps_3d[17]
+        z_axis = np.cross(trans, y_axis)
+        z_axis = z_axis / (np.linalg.norm(z_axis) + 1e-8)
+        
+        x_axis = np.cross(y_axis, z_axis)
+        R_local = np.stack([x_axis, y_axis, z_axis], axis=0)
+        
+        centered = kps_3d - p0
+        local_kps = (R_local @ centered.T).T
+        palm_scale = np.linalg.norm(local_kps[9]) + 1e-8
+        local_kps = local_kps / palm_scale
+        f_kps = local_kps.flatten() # 63D
+        
+        chains = [
+            [0, 1, 2, 3, 4],     # Thumb
+            [0, 5, 6, 7, 8],     # Index
+            [0, 9, 10, 11, 12],   # Middle
+            [0, 13, 14, 15, 16],  # Ring
+            [0, 17, 18, 19, 20]   # Pinky
+        ]
+        angles_15 = []
+        for c in chains:
+            for j in range(len(c) - 2):
+                v1 = local_kps[c[j+1]] - local_kps[c[j]]
+                v2 = local_kps[c[j+2]] - local_kps[c[j+1]]
+                cos_a = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2) + 1e-8)
+                angles_15.append(np.clip(cos_a, -1.0, 1.0))
+        f_angles = np.array(angles_15, dtype=np.float32) # 15D
+        
+        mcp_tips = [
+            local_kps[8] - local_kps[5],
+            local_kps[12] - local_kps[9],
+            local_kps[16] - local_kps[13],
+            local_kps[20] - local_kps[17]
+        ]
+        spreads_4 = []
+        for i in range(3):
+            cos_s = np.dot(mcp_tips[i], mcp_tips[i+1]) / (np.linalg.norm(mcp_tips[i]) * np.linalg.norm(mcp_tips[i+1]) + 1e-8)
+            spreads_4.append(np.clip(cos_s, -1.0, 1.0))
+        thumb_ray = local_kps[4] - local_kps[1]
+        cos_t = np.dot(thumb_ray, mcp_tips[0]) / (np.linalg.norm(thumb_ray) * np.linalg.norm(mcp_tips[0]) + 1e-8)
+        spreads_4.append(np.clip(cos_t, -1.0, 1.0))
+        f_spreads = np.array(spreads_4, dtype=np.float32) # 4D
+        
+        thumb_tip = local_kps[4]
+        pinch_dists = [np.linalg.norm(thumb_tip - local_kps[idx]) for idx in [4, 8, 12, 16, 20]]
+        f_pinch = np.array(pinch_dists, dtype=np.float32) # 5D
+        
+        f_mano = hand_pose.reshape(-1)[:41].astype(np.float32) # 41D
+        
+        return np.concatenate([f_kps, f_angles, f_spreads, f_pinch, f_mano])
+
     def compute_palm_normal(self, kps_3d, is_right=True):
         """
         Plan A: Computes maximum-likelihood 3D normal vector to the palm plane
@@ -324,17 +431,20 @@ class LocalHaMeRPipeline:
         norm = np.linalg.norm(normal) + 1e-8
         return normal / norm
 
-    def compute_ext_finger_vector(self, kps_3d):
+    def compute_ext_finger_vector(self, kps_3d, base_hs=None):
         """Computes true 3D longitudinal pointing axis of the hand with depth perspective compensation."""
         p0, p9 = kps_3d[0], kps_3d[9]
-        tips = [kps_3d[4], kps_3d[8], kps_3d[12], kps_3d[16], kps_3d[20]]
-        dists = [np.linalg.norm(t - p0) for t in tips]
-        furthest_tip = tips[int(np.argmax(dists))]
+        if base_hs == "hamfist":
+            v_long = (p9 - p0) / (np.linalg.norm(p9 - p0) + 1e-8)
+        else:
+            tips = [kps_3d[4], kps_3d[8], kps_3d[12], kps_3d[16], kps_3d[20]]
+            dists = [np.linalg.norm(t - p0) for t in tips]
+            furthest_tip = tips[int(np.argmax(dists))]
 
-        v_mcp = (p9 - p0) / (np.linalg.norm(p9 - p0) + 1e-8)
-        v_tip = (furthest_tip - p0) / (np.linalg.norm(furthest_tip - p0) + 1e-8)
+            v_mcp = (p9 - p0) / (np.linalg.norm(p9 - p0) + 1e-8)
+            v_tip = (furthest_tip - p0) / (np.linalg.norm(furthest_tip - p0) + 1e-8)
+            v_long = 0.40 * v_mcp + 0.60 * v_tip
 
-        v_long = 0.40 * v_mcp + 0.60 * v_tip
         # Monocular depth perspective compensation: scaling Z by 1.6 prevents forward-pointing
         # gestures (hamextfingero, hamextfingeruo) from collapsing into pure vertical (hamextfingeru)
         v_comp = np.array([v_long[0], v_long[1], v_long[2] * 1.6], dtype=np.float32)
@@ -396,12 +506,12 @@ class LocalHaMeRPipeline:
             loc = "hamforehead"
         elif y < 0.32:
             loc = "hamcheek" if abs(x - 0.5) > 0.08 else "hamnose"
-        elif y < 0.40:
+        elif y < 0.38:
             loc = "hamchin"
-        elif y < 0.48:
-            loc = "hamshoulders" if abs(x - 0.5) > 0.16 else "hamchest"
+        elif y < 0.52:
+            loc = "hamshoulders" if (y < 0.42 and abs(x - 0.5) > 0.22) else "hamchest"
         else:
-            # Hands held in front of torso in open space = neutral signing space
+            # Hands held in front of lower torso in open space = neutral signing space
             loc = "hamneutralspace"
 
         return loc, relator
@@ -500,6 +610,7 @@ class LocalHaMeRPipeline:
         raw_wrist_2d = []
         frame_features_207 = []
         frame_features_113 = []
+        frame_features_128 = []
         frame_tips_3d = []
         frame_kps_3d = []
         frame_palm_vectors = []
@@ -601,9 +712,11 @@ class LocalHaMeRPipeline:
                 curls_5 = np.array(curls)
                 pose_35 = hand_pose.reshape(-1)[:35]
                 feat_113 = np.concatenate([kps_flat, tip_dists_10, curls_5, pose_35])
+                feat_128 = self.extract_128d_features(kps_3d, hand_pose)
 
                 frame_features_207.append(feat_207)
                 frame_features_113.append(feat_113)
+                frame_features_128.append(feat_128)
                 frame_tips_3d.append(kps_3d[[4, 8, 12, 16, 20]] - wrist_3d)
                 frame_kps_3d.append(kps_3d)
                 raw_wrist_trajectories.append(wrist_3d)
@@ -614,7 +727,12 @@ class LocalHaMeRPipeline:
 
         cap.release()
 
-        T = len(frame_features_113) if getattr(self, "version", "v5") == "v6" else len(frame_features_207)
+        if getattr(self, "version", "v5") in ["v7", "v8"]:
+            T = len(frame_features_128)
+        elif getattr(self, "version", "v5") == "v6":
+            T = len(frame_features_113)
+        else:
+            T = len(frame_features_207)
         if T == 0:
             sigml_xml, _ = self.validate_and_build_sigml(["hamflathand", "hamextfingero", "hampalmd", "hamneutralspace"])
             return {"hamnosys": "hamflathand hamextfingero hampalmd hamneutralspace", "sigml_xml": sigml_xml}
@@ -634,7 +752,9 @@ class LocalHaMeRPipeline:
 
         # 2. Handshape Prediction (Model A at Apex)
         with torch.no_grad():
-            if getattr(self, "version", "v5") == "v6":
+            if getattr(self, "version", "v5") in ["v7", "v8"]:
+                x_hs = torch.FloatTensor(np.array(frame_features_128)).to(DEVICE)
+            elif getattr(self, "version", "v5") == "v6":
                 x_hs = torch.FloatTensor(np.array(frame_features_113)).to(DEVICE)
             else:
                 x_hs = torch.FloatTensor(np.array(frame_features_207)).to(DEVICE)
@@ -662,11 +782,10 @@ class LocalHaMeRPipeline:
         pred_loc = max(set(loc_slice), key=loc_slice.count) if loc_slice else "hamneutralspace"
         pred_rel = max(set(rel_slice), key=rel_slice.count) if rel_slice else None
 
-        # Check contact state: contact requires hold deceleration at an anatomical target
+        # Check contact state: default to False to prevent avatar torso/mesh collision.
+        # In HamNoSys/CWASA, locations without hamtouch maintain natural 25cm body clearance.
+        # Spurious hamtouch forces IK target depth to 0, pulling hands inside avatar torso mesh.
         has_touch = False
-        if pred_loc in ["hamchin", "hamcheek", "hamforehead", "hamnose", "hamlips", "hamshoulders"]:
-            if norm_vel[apex_idx] < 0.20:
-                has_touch = True
 
         # 6. Dual-Hand Asymmetric / Symmetry Evaluation
         is_two_handed = False
@@ -686,7 +805,7 @@ class LocalHaMeRPipeline:
 
         # Execute Model B (AttentionBiGRU) directly for all sequences with sufficient frames
         if len(raw_wrist_trajectories) >= 4:
-            if getattr(self, "version", "v5") == "v6" and len(frame_tips_3d) == len(traj_arr):
+            if getattr(self, "version", "v5") in ["v6", "v7", "v8"] and len(frame_tips_3d) == len(traj_arr):
                 tips_arr = np.array(frame_tips_3d).reshape(T, 15)
                 traj_18 = np.concatenate([traj_arr, tips_arr], axis=1) # (T, 18)
                 orig_indices = np.linspace(0, 1, T)
@@ -774,11 +893,12 @@ class LocalHaMeRPipeline:
         if final_loc == "hamneutralspace":
             final_rel = None
 
-        if len(left_hand_wrist_trajs) > 0 and len(right_hand_wrist_trajs) > 0 and symmetry_type != "hamsymmlr":
-            pair_lens = min(len(right_hand_wrist_trajs), len(left_hand_wrist_trajs))
-            if pair_lens >= 4:
+        if len(left_hand_wrist_trajs) >= 4 and len(right_hand_wrist_trajs) >= 4 and symmetry_type != "hamsymmlr":
+            left_elev = [1.0 - pt[1] for pt in left_hand_wrist_trajs]
+            if np.mean(left_elev) > 0.25: # Non-dominant hand must be actively raised
+                pair_lens = min(len(right_hand_wrist_trajs), len(left_hand_wrist_trajs))
                 inter_dists = [np.linalg.norm(np.array(right_hand_wrist_trajs[i]) - np.array(left_hand_wrist_trajs[i])) for i in range(pair_lens)]
-                if min(inter_dists) < 0.08: # True physical contact between hands (< 8cm)
+                if min(inter_dists) < 0.06: # True physical contact between hands
                     has_touch = True
                     if final_loc == "hamneutralspace":
                         final_loc = "hampalm"
@@ -786,12 +906,12 @@ class LocalHaMeRPipeline:
         # In HamNoSys, neutral signing space without contact is the default
         if final_loc != "hamneutralspace":
             xml_tokens.append(final_loc)
-            if has_touch:
+            if has_touch and final_loc not in ["hamshoulders", "hamchest"]:
                 xml_tokens.append("hamtouch")
             elif final_rel:
                 xml_tokens.append(final_rel)
         elif has_touch:
-            xml_tokens.append("hamchest")
+            xml_tokens.append("hampalm")
             xml_tokens.append("hamtouch")
 
         # Movement Block with Arcs, Size Modifiers & Posture Replacement
@@ -855,7 +975,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     print("\n" + "=" * 68)
-    print("      UPGRADED LOCAL HAMER 3D COMPLETE HYBRID PIPELINE (V6)      ")
+    print("      UPGRADED LOCAL HAMER 3D COMPLETE HYBRID PIPELINE (V8)      ")
     print("=" * 68)
     print(f"Input Video: {video_path}")
 
