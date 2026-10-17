@@ -114,35 +114,35 @@ In Version 8, we:
 | :---: | :--- | :--- | :--- | :--- | :---: | :--- | :--- | :---: | :---: | :---: |
 | 1 | `1000_WAAGE1A.mp4` | **WAAGE** (Scales) | `hamflathand` | `hamflathand` | **[MATCH]** | `hammoveu` | `hammoveu` | **[MATCH]** | **YES** | Valid |
 | 2 | `1001_GEWICHT1.mp4` | **GEWICHT** (Weight) | `hamfist` | `hamfist` | **[MATCH]** | `hammoveu` | `hammoveu` | **[MATCH]** | **YES** | Valid |
-| 3 | `1002__SPEZIAL-MERKW_RDIG1.mp4` | **MERKWÜRDIG** (Strange) | `hamfinger2` | `hamflathand` | **[MISMATCH]** | `hammoveu` | `hammoveu` | **[MATCH]** | **YES** | Valid |
+| 3 | `1002__SPEZIAL-MERKW_RDIG1.mp4` | **MERKWÜRDIG** (Strange) | `hamfinger2` | `hampinchall` | **[MISMATCH]** | `hammoveu` | `hammoveu` | **[MATCH]** | **YES** | Valid |
 | 4 | `1003_BEGR_SSEN1.mp4` | **BEGRÜSSEN** (Greet) | `hamceeall` | `hamceeall` | **[MATCH]** | `hammoved` | `hammoved` | **[MATCH]** | **YES** | Valid |
 | 5 | `1004_WESTEN1.mp4` | **WESTEN** (West) | `hamflathand` | `hamflathand` | **[MATCH]** | `hammovel` | `hammovel` | **[MATCH]** | **YES** | Valid |
 | 6 | `1005_NASS1A.mp4` | **NASS** (Wet) | `hamceeall` | `hamceeall` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
-| 7 | `1006_WAS2.mp4` | **WAS** (What) | `hamflathand` | `hamflathand` | **[MATCH]** | `hammoved` | `hammoved` | **[MATCH]** | **YES** | Valid |
+| 7 | `1006_WAS2.mp4` | **WAS** (What) | `hamflathand` | `hamfinger2345` | **[MISMATCH]** | `hammoved` | `hammoved` | **[MATCH]** | **YES** | Valid |
 | 8 | `1007_RAD1B.mp4` | **RAD** (Wheel) | `hamfinger2` | `hamfinger2` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
-| 9 | `1008_WANN1.mp4` | **WANN** (When) | `hamflathand` | `hamflathand` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
-| 10 | `1009_WO1A.mp4` | **WO** (Where) | `hamfinger2345` | `hamfinger23spread` | **[MISMATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
-| 11 | `100_JUNGE2.mp4` | **JUNGE** (Boy) | `hamceeall` | `hamceeall` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
+| 9 | `1008_WANN1.mp4` | **WANN** (When) | `hamflathand` | `hamceeall` | **[MISMATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
+| 10 | `1009_WO1A.mp4` | **WO** (Where) | `hamfinger2345` | `hamfinger2345` | **[MATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
+| 11 | `100_JUNGE2.mp4` | **JUNGE** (Boy) | `hamceeall` | `hampinchall` | **[MISMATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
 | 12 | `1010_OB1.mp4` | **OB** (Whether) | `hamfinger2` | `hamfinger2` | **[MATCH]** | `hammovedl` | `hammovedl` | **[MATCH]** | **YES** | Valid |
-| 13 | `1011_PARALLEL1A.mp4` | **PARALLEL** | `hamfinger2` | `hamfinger2` | **[MATCH]** | `hammoveo` | `hammoveo` | **[MATCH]** | **YES** | Valid |
+| 13 | `1011_PARALLEL1A.mp4` | **PARALLEL** | `hamfinger2` | `hampinchall` | **[MISMATCH]** | `hammoveo` | `hammoveo` | **[MATCH]** | **YES** | Valid |
 | 14 | `1012_WEISS1A.mp4` | **WEISS** (White) | `hamfinger2` | `hamfinger2` | **[MATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
 | 15 | `1013_WER1.mp4` | **WER** (Who) | `hamfinger23` | `hamfinger23` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
 | 16 | `1014_GANZ1.mp4` | **GANZ** (Whole) | `hamfinger2345` | `hamfinger2345` | **[MATCH]** | `hammoved` | `hammoved` | **[MATCH]** | **YES** | Valid |
 | 17 | `1015_WARUM1.mp4` | **WARUM** (Why) | `hamfist` | `hamfist` | **[MATCH]** | `hammovel` | `hammovel` | **[MATCH]** | **YES** | Valid |
 | 18 | `1016_BREIT1.mp4` | **BREIT** (Broad) | `hamflathand` | `hamflathand` | **[MATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
 | 19 | `1017_WILD1.mp4` | **WILD** (Wild) | `hamfist` | `hamfist` | **[MATCH]** | `hamnomotion` | `hamnomotion` | **[MATCH]** | **YES** | Valid |
-| 20 | `1018_BEREIT1.mp4` | **BEREIT** (Ready) | `hamflathand` | `hamflathand` | **[MATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
+| 20 | `1018_BEREIT1.mp4` | **BEREIT** (Ready) | `hamflathand` | `hampinchall` | **[MISMATCH]** | `hammover` | `hammover` | **[MATCH]** | **YES** | Valid |
 
 ---
 
 ## 5. Summary Statistics & Accuracy Gains
 
-| Metric | Baseline V6 | Version 8 (Current Engine) | Absolute Improvement |
+| Metric | Baseline V6 (Same 20 Videos) | Version 8 (Empirical Live Run) | Absolute Improvement |
 | :--- | :---: | :---: | :---: |
-| **Handshape Accuracy (Top-1)** | 56.7% (17/30) | **85.0%** (17/20) | **+28.3% Absolute Gain** |
+| **Handshape Accuracy (Top-1)** | 50.0% (10/20) | **70.0%** (14/20) | **+20.0% Absolute Gain** |
 | **Movement Direction Accuracy** | 20.0% (Pre-fix) | **100.0%** (20/20) | **+80.0% Absolute Gain** |
-| **Full Sign Compound Match (HS + MV)** | 10.0% | **85.0%** (17/20) | **+75.0% Absolute Gain** |
-| **Collision-Free Animation Rate** | 33.3% | **100.0%** (20/20) | **+66.7% Absolute Gain** |
+| **Full Sign Compound Match (HS + MV)** | 10.0% (2/20) | **70.0%** (14/20) | **+60.0% Absolute Gain** |
+| **Collision-Free Animation Rate** | 33.3% | **95.0% - 100.0%** | **+61.7% Absolute Gain** |
 | **CWASA SiGML XML Validity** | 100.0% | **100.0%** (20/20) | **100.0% Maintained** |
 
 ---
