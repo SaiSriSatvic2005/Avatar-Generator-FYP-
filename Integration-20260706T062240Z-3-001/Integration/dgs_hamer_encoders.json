@@ -1,0 +1,40 @@
+{
+  "handshape_classes": [
+    "hamcee12",
+    "hamceeall",
+    "hamceeopen",
+    "hamfinger2",
+    "hamfinger23",
+    "hamfinger2345",
+    "hamfinger23spread",
+    "hamfist",
+    "hamflathand",
+    "hampinch12",
+    "hampinch12open",
+    "hampinchall"
+  ],
+  "movement_classes": [
+    "hamcircleil",
+    "hamcircleir",
+    "hamcircleol",
+    "hammoved",
+    "hammovedi",
+    "hammovedl",
+    "hammovedo",
+    "hammovedr",
+    "hammovei",
+    "hammovel",
+    "hammoveo",
+    "hammover",
+    "hammoveu",
+    "hammoveui",
+    "hammoveul",
+    "hammoveuo",
+    "hammoveur",
+    "hamnomotion",
+    "hamwavy"
+  ],
+  "input_hand_features": 207,
+  "trajectory_timesteps": 32,
+  "trajectory_channels": 3
+}

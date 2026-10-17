@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="TRETEN2">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamparbegin/>
+      <hamfinger2/>
+      <hamextfingerdi/>
+      <hampalml/>
+      <hamplus/>
+      <hamfinger2/>
+      <hamextfingeruo/>
+      <hampalmdr/>
+      <hamparend/>
+      <hamparbegin/>
+      <hamstomach/>
+      <hns_E058/>
+      <hambehind/>
+      <hamplus/>
+      <hamlrat/>
+      <hamshoulders/>
+      <hamparend/>
+      <hamparbegin/>
+      <hamparbegin/>
+      <hammoveuo/>
+      <hamhalt/>
+      <hamreplace/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamparend/>
+      <hamplus/>
+      <hammoved/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

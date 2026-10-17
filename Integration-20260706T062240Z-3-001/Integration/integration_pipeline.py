@@ -470,6 +470,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     result = process_video(args.video, args.output)
-    print("\n✓ Done!")
+    print("\n[DONE] Successfully executed pipeline!")
     print(f"  HamNoSys: {result['hamnosys']}")
     print(f"  Video:    {result['output_video']}")

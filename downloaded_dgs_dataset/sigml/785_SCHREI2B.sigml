@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="SCHREI2B">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfinger2/>
+      <hamthumbacrossmod/>
+      <hamextfingeru/>
+      <hampalmdl/>
+      <hamlips/>
+      <hns_E058/>
+      <hammoveuo/>
+      <hambetween/>
+      <hammoveor/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="FÄHIGKEIT1">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hampinch12open/>
+      <hamextfingeru/>
+      <hampalmdl/>
+      <hamparbegin/>
+      <hammovedl/>
+      <hamarcd/>
+      <hamreplace/>
+      <hamextfingerol/>
+      <hampalmul/>
+      <hamparend/>
+      <hamparbegin/>
+      <hammovedr/>
+      <hamsmallmod/>
+      <hamreplace/>
+      <hamextfingero/>
+      <hampalmdl/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

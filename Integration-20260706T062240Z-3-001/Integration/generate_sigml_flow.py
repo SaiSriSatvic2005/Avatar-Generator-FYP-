@@ -7,8 +7,14 @@ _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if _SCRIPT_DIR not in sys.path:
     sys.path.insert(0, _SCRIPT_DIR)
 
-SPREADSHEET_PATH = r"d:\academics\HamNoSys_Group14\Senior Code\HamNoSys2SiGML-master\HamNoSys2SiGML-master\Original\conversionSpreadSheet.txt"
-HAM2SIGML_SCRIPT = r"d:\academics\HamNoSys_Group14\Senior Code\HamNoSys2SiGML-master\HamNoSys2SiGML-master\Original\HamNoSys2SiGML.py"
+_REPO_ROOT = os.path.dirname(os.path.dirname(_SCRIPT_DIR))
+
+SPREADSHEET_PATH = os.path.join(
+    _REPO_ROOT, "Senior Code", "HamNoSys2SiGML-master", "HamNoSys2SiGML-master", "Original", "conversionSpreadSheet.txt"
+)
+HAM2SIGML_SCRIPT = os.path.join(
+    _REPO_ROOT, "Senior Code", "HamNoSys2SiGML-master", "HamNoSys2SiGML-master", "Original", "HamNoSys2SiGML.py"
+)
 
 from integration_pipeline import process_video
 

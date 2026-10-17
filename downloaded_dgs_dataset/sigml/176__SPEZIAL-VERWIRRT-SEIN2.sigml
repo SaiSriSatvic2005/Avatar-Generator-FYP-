@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="$SPEZIAL-VERWIRRT-SEIN2">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hampinch12open/>
+      <hamextfingerul/>
+      <hampalmd/>
+      <hamhead/>
+      <hns_E058/>
+      <hamclose/>
+      <hamparbegin/>
+      <hammovedl/>
+      <hamlargemod/>
+      <hamarcu/>
+      <hamreplace/>
+      <hamextfingerol/>
+      <hamparend/>
+      <hamwristback/>
+      <hamcross/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

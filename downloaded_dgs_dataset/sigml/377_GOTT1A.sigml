@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="GOTT1A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfinger23spread/>
+      <hamthumboutmod/>
+      <hamextfingeru/>
+      <hampalmd/>
+      <hamhead/>
+      <hns_E058/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

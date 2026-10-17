@@ -1,57 +1,88 @@
-# Python
+# ==============================================================================
+# Python & Bytecode
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Environments
+# ==============================================================================
+# Virtual Environments & Package Managers
+# ==============================================================================
 .env
 .venv
 env/
 venv/
+ENV/
 node_modules/
 
-# Models & Pickles (blocks large files like clf_palm.pkl 538MB and clf_finger_signer.pkl 110MB)
-*.pkl
-!Integration-20260706T062240Z-3-001/Integration/enc_*.pkl
-!Integration-20260706T062240Z-3-001/Integration/clf_view.pkl
+# ==============================================================================
+# Generated Test Dumps & Temporary Pipeline Outputs
+# ==============================================================================
+*_hamer_output.sigml
+*_output.sigml
+*_hamnosys.txt
+test_output.sigml
+hamnosys.txt
+output.sigml
+testing_*_output.sigml
+benchmark_*_results.txt
+benchmark_*_results.json
+!v6_benchmark_results_30.json
 
-# Large Archives & Datasets
+# ==============================================================================
+# Massive Legacy Machine Learning Models & Pickles (> 750 MB)
+# ==============================================================================
+*.pkl
+*.pickle
+*.joblib
+# Keep lightweight encoders if needed:
+!v6_encoders.json
+!v7_encoders.json
+
+# ==============================================================================
+# Large Archives, Datasets & Checkpoint Tarballs
+# ==============================================================================
 *.zip
 *.tar
 *.tar.gz
 *.npz
+*.7z
+*.rar
+# Exclude packaged model tarballs from git tracking
+*_artifacts.tar.gz
 
-# Video files & Video directories
+# ==============================================================================
+# Video & Media Outputs (Prevents multi-gigabyte git bloat)
+# ==============================================================================
+*.mp4
 *.avi
 *.mov
 *.mkv
+*.webm
+# Retain directory structure but do not track raw gigabyte video payloads
+ISL_videos/
+downloaded_dgs_dataset/videos/
 **/WLASL_videos/
 **/European_sign_videos/
-**/videos/
 
-# General MP4 ignore except ISL_videos (training & testing)
-*.mp4
-!ISL_videos/
-!ISL_videos/**
+# ==============================================================================
+# Webapp Temporary Uploads & Cache
+# ==============================================================================
+webapp/uploads/*
+!webapp/uploads/.gitkeep
+webapp/static/output/*
+!webapp/static/output/.gitkeep
+webapp/static/temp/*
+!webapp/static/temp/.gitkeep
 
-# Webapp specific temporary files
-webapp/uploads/
-webapp/static/output/
-webapp/static/temp/
-
-# HTML files (ignore root report HTMLs, keep webapp templates)
-*.html
-!webapp/templates/*.html
-
-# All PDF files EXCEPT Comprehensive_V1_vs_Current_Pipeline_Comparison_V2.pdf
-*.pdf
-!Comprehensive_V1_vs_Current_Pipeline_Comparison_V2.pdf
-
-# All Markdown files EXCEPT HYBRID_NN_ARCHITECTURE_AND_TRAINING_SPECIFICATION.md
-*.md
-!HYBRID_NN_ARCHITECTURE_AND_TRAINING_SPECIFICATION.md
-
-# LaTeX temporary files
+# ==============================================================================
+# Presentation Slides, Academic Reports & LaTeX Temp Files
+# ==============================================================================
+*.pptx
 *.aux
 *.log
 *.nav
@@ -59,18 +90,43 @@ webapp/static/temp/
 *.snm
 *.toc
 *.vrb
+*.synctex.gz
+*.fls
+*.fdb_latexmk
 
-# Images
-*.png
-*.jpg
-*.jpeg
+# ==============================================================================
+# Jupyter Notebook Checkpoints
+# ==============================================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
 
-# IDEs & OS artifacts
+# ==============================================================================
+# Credentials, Personal Notes & Temporary Files
+# ==============================================================================
+Drive login.txt
+Links.txt
+temp_gui*.html
+
+# ==============================================================================
+# Operating System & IDE Artifacts
+# ==============================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
 .idea/
 .vscode/
 *.swp
-.DS_Store
-Thumbs.db
+*.swo
 .gradio/
 **/.gradio/
 .agents/
+
+# ==============================================================================
+# Model Checkpoints & Submodules (> 2.5 GB)
+# ==============================================================================
+*.ckpt
+*.ckpt.tmp
+_DATA
+_DATA/
+hamer/
+

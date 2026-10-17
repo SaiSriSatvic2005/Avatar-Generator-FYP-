@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="DEZEMBER2">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfingerstraightmod/>
+      <hamlargemod/>
+      <hamalternatingmotion/>
+      <hamfinger2/>
+      <hamthumbacrossmod/>
+      <hamextfingeruo/>
+      <hamextfingeror/>
+      <hampalmdl/>
+      <hamseqbegin/>
+      <hammoveuo/>
+      <hambetween/>
+      <hammoveor/>
+      <hammovedi/>
+      <hambetween/>
+      <hammoveil/>
+      <hamseqend/>
+      <hamrepeatfromstart/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

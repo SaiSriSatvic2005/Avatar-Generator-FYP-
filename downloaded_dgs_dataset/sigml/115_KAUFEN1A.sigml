@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="KAUFEN1A">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamparbegin/>
+      <hamfist/>
+      <hamindexfinger/>
+      <hamfingerhookmod/>
+      <hamextfingeruo/>
+      <hamextfingerol/>
+      <hampalml/>
+      <hamplus/>
+      <hamflathand/>
+      <hamextfingeror/>
+      <hampalmr/>
+      <hamparend/>
+      <hamthumbside/>
+      <hamclose/>
+      <hamparbegin/>
+      <hammoved/>
+      <hamseqbegin/>
+      <hambrushing/>
+      <hampalm/>
+      <hamtouch/>
+      <hamseqend/>
+      <hamreplace/>
+      <hamextfingerdo/>
+      <hamextfingerol/>
+      <hamparend/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

@@ -202,6 +202,14 @@ def sanitize_hamnosys_sequence(tokens) -> list:
     elif has_armext:
         contact_or_dist = "hamarmextended"
 
+    # In Ham4Parser grammar, neutralspace CANNOT take side relators (hamlrat/hamlrbeside)
+    if loc == "hamneutralspace" and contact_or_dist in ["hamlrbeside", "hamlrat", "hamtouch", "hamclose"]:
+        contact_or_dist = None
+
+    # In symmetric signs, unilateral side relators are phonetically invalid
+    if symm in ["hamsymmlr", "hamsymmpar"] and contact_or_dist in ["hamlrbeside", "hamlrat"]:
+        contact_or_dist = None
+
     # Default fallbacks if core components are missing
     if not base_hs:
         base_hs = "hamflathand"
