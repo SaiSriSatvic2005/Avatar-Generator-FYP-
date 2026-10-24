@@ -157,10 +157,12 @@ python webapp/app.py
 ```
 Open your browser and navigate to **`http://localhost:5000`** to access the interactive translation dashboard and 3D avatar viewport.
 
-### 6. Run CLI Video Translation
+### 6. Run Individual Video Translation (Core HaMeR 3D Pipeline)
+To process an individual video through the complete HaMeR 3D mesh recovery and hybrid phonetic pipeline:
 ```bash
-python translate_video_to_sigml.py --input ISL_videos/sample_sign.mp4 --output sample_output.sigml
+python local_hamer_pipeline.py "ISL_videos/1 or One.mp4" --output "output.sigml"
 ```
+*(You can run `python local_hamer_pipeline.py <path_to_video>` on any `.mp4` / `.mov` file, or use `python translate_video_to_sigml.py --input <path> --output <sigml>` for CLI batch processing).*
 
 ### 7. Run Benchmark & Accuracy Evaluation Suite
 ```bash

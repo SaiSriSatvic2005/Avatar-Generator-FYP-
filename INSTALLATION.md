@@ -102,11 +102,16 @@ python webapp/app.py
   2. 10-Module Phonetic Diagnostic Matrix
   3. Interactive CWASA 3D WebGL Avatar performing the sign
 
-### Mode 2: Command-Line Interface (CLI Video Translation)
-To translate a video directly to SiGML XML via the command line:
+### Mode 2: Run Individual Video Translation (Core HaMeR 3D Pipeline)
+To translate an individual sign video directly through the full 3D mesh estimation and neural phonetic pipeline:
 ```bash
-python translate_video_to_sigml.py --input "ISL_videos/sample.mp4" --output "output_sign.sigml"
+python local_hamer_pipeline.py "ISL_videos/1 or One.mp4" --output "output.sigml"
 ```
+Or simply pass the video path:
+```bash
+python local_hamer_pipeline.py "tested_dgs_videos/1000_WAAGE1A.mp4"
+```
+*(Alternatively, for batch command-line translation: `python translate_video_to_sigml.py --input <video_path> --output <sigml_path>`)*
 
 ### Mode 3: Automated Benchmark & Accuracy Evaluation
 To evaluate system accuracy across the full 30-video validation benchmark:
