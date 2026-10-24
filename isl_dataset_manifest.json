@@ -1,0 +1,3716 @@
+[
+  {
+    "word_title": "Boy",
+    "video_file": "Boy.mp4",
+    "sigml_file": "boy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\boy.sigml"
+  },
+  {
+    "word_title": "Children",
+    "video_file": "Children.mp4",
+    "sigml_file": "children.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\children.sigml"
+  },
+  {
+    "word_title": "Father",
+    "video_file": "Father.mp4",
+    "sigml_file": "father.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\father.sigml"
+  },
+  {
+    "word_title": "Girl",
+    "video_file": "Girl.mp4",
+    "sigml_file": "girl.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\girl.sigml"
+  },
+  {
+    "word_title": "Man",
+    "video_file": "Man.mp4",
+    "sigml_file": "man.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\man.sigml"
+  },
+  {
+    "word_title": "Mother",
+    "video_file": "Mother.mp4",
+    "sigml_file": "mother.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\mother.sigml"
+  },
+  {
+    "word_title": "Name",
+    "video_file": "Name.mp4",
+    "sigml_file": "name.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\name.sigml"
+  },
+  {
+    "word_title": "Person",
+    "video_file": "Person.mp4",
+    "sigml_file": "person.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\person.sigml"
+  },
+  {
+    "word_title": "Woman",
+    "video_file": "Woman.mp4",
+    "sigml_file": "woman.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\woman.sigml"
+  },
+  {
+    "word_title": "Word",
+    "video_file": "Word.mp4",
+    "sigml_file": "word.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\word.sigml"
+  },
+  {
+    "word_title": "Angry",
+    "video_file": "Angry.mp4",
+    "sigml_file": "angry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\angry.sigml"
+  },
+  {
+    "word_title": "Bad",
+    "video_file": "Bad.mp4",
+    "sigml_file": "bad.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bad.sigml"
+  },
+  {
+    "word_title": "Good",
+    "video_file": "Good.mp4",
+    "sigml_file": "good.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\good.sigml"
+  },
+  {
+    "word_title": "Responsibility",
+    "video_file": "Responsibility.mp4",
+    "sigml_file": "responsibility.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\responsibility.sigml"
+  },
+  {
+    "word_title": "Thank You",
+    "video_file": "Thank You.mp4",
+    "sigml_file": "thankyou.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thankyou.sigml"
+  },
+  {
+    "word_title": "Wrong",
+    "video_file": "Wrong.mp4",
+    "sigml_file": "wrong.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wrong.sigml"
+  },
+  {
+    "word_title": "Body",
+    "video_file": "Body.mp4",
+    "sigml_file": "body.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\body.sigml"
+  },
+  {
+    "word_title": "Concentrate [VEB]",
+    "video_file": "Concentrate [VEB].mp4",
+    "sigml_file": "concentrate.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\concentrate.sigml"
+  },
+  {
+    "word_title": "See [VEB]",
+    "video_file": "See [VEB].mp4",
+    "sigml_file": "see.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\see.sigml"
+  },
+  {
+    "word_title": "Talk/Speak [VEB]",
+    "video_file": "Talk or Speak [VEB].mp4",
+    "sigml_file": "talk.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\talk.sigml"
+  },
+  {
+    "word_title": "Work [VEB]",
+    "video_file": "Work [VEB].mp4",
+    "sigml_file": "work.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\work.sigml"
+  },
+  {
+    "word_title": "Bowl",
+    "video_file": "Bowl.mp4",
+    "sigml_file": "bowl.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bowl.sigml"
+  },
+  {
+    "word_title": "Bulb",
+    "video_file": "Bulb.mp4",
+    "sigml_file": "bulb.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bulb.sigml"
+  },
+  {
+    "word_title": "Cup",
+    "video_file": "Cup.mp4",
+    "sigml_file": "cup.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cup.sigml"
+  },
+  {
+    "word_title": "Key",
+    "video_file": "Key.mp4",
+    "sigml_file": "key.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\key.sigml"
+  },
+  {
+    "word_title": "Lock",
+    "video_file": "Lock.mp4",
+    "sigml_file": "lock.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lock.sigml"
+  },
+  {
+    "word_title": "Roof",
+    "video_file": "Roof.mp4",
+    "sigml_file": "roof.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\roof.sigml"
+  },
+  {
+    "word_title": "Umbrella",
+    "video_file": "Umbrella.mp4",
+    "sigml_file": "umbrella.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\umbrella.sigml"
+  },
+  {
+    "word_title": "Health",
+    "video_file": "Health.mp4",
+    "sigml_file": "health.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\health.sigml"
+  },
+  {
+    "word_title": "Water",
+    "video_file": "Water.mp4",
+    "sigml_file": "water.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\water.sigml"
+  },
+  {
+    "word_title": "Well",
+    "video_file": "Well.mp4",
+    "sigml_file": "well.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\well.sigml"
+  },
+  {
+    "word_title": "New Moon Day",
+    "video_file": "New Moon Day.mp4",
+    "sigml_file": "new.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\new.sigml"
+  },
+  {
+    "word_title": "Rain",
+    "video_file": "Rain.mp4",
+    "sigml_file": "Rain.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\Rain.sigml"
+  },
+  {
+    "word_title": "Bird",
+    "video_file": "Bird.mp4",
+    "sigml_file": "bird.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bird.sigml"
+  },
+  {
+    "word_title": "Crow",
+    "video_file": "Crow.mp4",
+    "sigml_file": "crow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\crow.sigml"
+  },
+  {
+    "word_title": "Fly [VEB]",
+    "video_file": "Fly [VEB].mp4",
+    "sigml_file": "fly.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fly.sigml"
+  },
+  {
+    "word_title": "Lotus",
+    "video_file": "Lotus.mp4",
+    "sigml_file": "lotus.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lotus.sigml"
+  },
+  {
+    "word_title": "Thorn",
+    "video_file": "Thorn.mp4",
+    "sigml_file": "thorn.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thorn.sigml"
+  },
+  {
+    "word_title": "Tree",
+    "video_file": "Tree.mp4",
+    "sigml_file": "tree.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tree.sigml"
+  },
+  {
+    "word_title": "Gold",
+    "video_file": "Gold.mp4",
+    "sigml_file": "gold.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\gold.sigml"
+  },
+  {
+    "word_title": "Silver",
+    "video_file": "Silver.mp4",
+    "sigml_file": "silver.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\silver.sigml"
+  },
+  {
+    "word_title": "Day",
+    "video_file": "Day.mp4",
+    "sigml_file": "day.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\day.sigml"
+  },
+  {
+    "word_title": "Date",
+    "video_file": "Date.mp4",
+    "sigml_file": "date.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\date.sigml"
+  },
+  {
+    "word_title": "Sunday",
+    "video_file": "Sunday.mp4",
+    "sigml_file": "sunday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sunday.sigml"
+  },
+  {
+    "word_title": "Monday",
+    "video_file": "Monday.mp4",
+    "sigml_file": "monday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\monday.sigml"
+  },
+  {
+    "word_title": "Tuesday",
+    "video_file": "Tuesday.mp4",
+    "sigml_file": "tuesday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tuesday.sigml"
+  },
+  {
+    "word_title": "Thursday",
+    "video_file": "Thursday.mp4",
+    "sigml_file": "thursday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thursday.sigml"
+  },
+  {
+    "word_title": "Friday",
+    "video_file": "Friday.mp4",
+    "sigml_file": "friday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\friday.sigml"
+  },
+  {
+    "word_title": "January",
+    "video_file": "January.mp4",
+    "sigml_file": "january.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\january.sigml"
+  },
+  {
+    "word_title": "February",
+    "video_file": "February.mp4",
+    "sigml_file": "february.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\february.sigml"
+  },
+  {
+    "word_title": "March",
+    "video_file": "March.mp4",
+    "sigml_file": "march.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\march.sigml"
+  },
+  {
+    "word_title": "April",
+    "video_file": "April.mp4",
+    "sigml_file": "april.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\april.sigml"
+  },
+  {
+    "word_title": "May",
+    "video_file": "May.mp4",
+    "sigml_file": "may.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\may.sigml"
+  },
+  {
+    "word_title": "June",
+    "video_file": "June.mp4",
+    "sigml_file": "june.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\june.sigml"
+  },
+  {
+    "word_title": "New Year",
+    "video_file": "New Year.mp4",
+    "sigml_file": "new.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\new.sigml"
+  },
+  {
+    "word_title": "Afternoon",
+    "video_file": "Afternoon.mp4",
+    "sigml_file": "afternoon.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\afternoon.sigml"
+  },
+  {
+    "word_title": "Age",
+    "video_file": "Age.mp4",
+    "sigml_file": "age.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\age.sigml"
+  },
+  {
+    "word_title": "Evening",
+    "video_file": "Evening.mp4",
+    "sigml_file": "evening.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\evening.sigml"
+  },
+  {
+    "word_title": "Late",
+    "video_file": "Late.mp4",
+    "sigml_file": "late.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\late.sigml"
+  },
+  {
+    "word_title": "Later",
+    "video_file": "Later.mp4",
+    "sigml_file": "later.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\later.sigml"
+  },
+  {
+    "word_title": "Morning",
+    "video_file": "Morning.mp4",
+    "sigml_file": "morning.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\morning.sigml"
+  },
+  {
+    "word_title": "Never",
+    "video_file": "Never.mp4",
+    "sigml_file": "never.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\never.sigml"
+  },
+  {
+    "word_title": "Next (Time)",
+    "video_file": "Next (Time).mp4",
+    "sigml_file": "next.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\next.sigml"
+  },
+  {
+    "word_title": "Night",
+    "video_file": "Night.mp4",
+    "sigml_file": "night.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\night.sigml"
+  },
+  {
+    "word_title": "Often",
+    "video_file": "Often.mp4",
+    "sigml_file": "often.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\often.sigml"
+  },
+  {
+    "word_title": "Time",
+    "video_file": "Time.mp4",
+    "sigml_file": "time.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\time.sigml"
+  },
+  {
+    "word_title": "Today",
+    "video_file": "Today.mp4",
+    "sigml_file": "today.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\today.sigml"
+  },
+  {
+    "word_title": "Tomorrow",
+    "video_file": "Tomorrow.mp4",
+    "sigml_file": "tomorrow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tomorrow.sigml"
+  },
+  {
+    "word_title": "Until",
+    "video_file": "Until.mp4",
+    "sigml_file": "until.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\until.sigml"
+  },
+  {
+    "word_title": "Yesterday",
+    "video_file": "Yesterday.mp4",
+    "sigml_file": "yesterday.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\yesterday.sigml"
+  },
+  {
+    "word_title": "Area",
+    "video_file": "Area.mp4",
+    "sigml_file": "area.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\area.sigml"
+  },
+  {
+    "word_title": "Count [VEB]",
+    "video_file": "Count [VEB].mp4",
+    "sigml_file": "count.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\count.sigml"
+  },
+  {
+    "word_title": "Temperature",
+    "video_file": "Temperature.mp4",
+    "sigml_file": "temperature.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\temperature.sigml"
+  },
+  {
+    "word_title": "Cheque",
+    "video_file": "Cheque.mp4",
+    "sigml_file": "cheque.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cheque.sigml"
+  },
+  {
+    "word_title": "Coin",
+    "video_file": "Coin.mp4",
+    "sigml_file": "coin.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\coin.sigml"
+  },
+  {
+    "word_title": "Money",
+    "video_file": "Money.mp4",
+    "sigml_file": "money.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\money.sigml"
+  },
+  {
+    "word_title": "West (Side)",
+    "video_file": "West (Side).mp4",
+    "sigml_file": "west.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\west.sigml"
+  },
+  {
+    "word_title": "Certificate",
+    "video_file": "Certificate.mp4",
+    "sigml_file": "certificate.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\certificate.sigml"
+  },
+  {
+    "word_title": "College",
+    "video_file": "College.mp4",
+    "sigml_file": "college.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\college.sigml"
+  },
+  {
+    "word_title": "Copy [VEB]",
+    "video_file": "Copy [VEB].mp4",
+    "sigml_file": "copy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\copy.sigml"
+  },
+  {
+    "word_title": "Discuss [VEB]",
+    "video_file": "Discuss [VEB].mp4",
+    "sigml_file": "discuss.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\discuss.sigml"
+  },
+  {
+    "word_title": "Education",
+    "video_file": "Education.mp4",
+    "sigml_file": "education.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\education.sigml"
+  },
+  {
+    "word_title": "Exam Question",
+    "video_file": "Exam Question.mp4",
+    "sigml_file": "exam.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\exam.sigml"
+  },
+  {
+    "word_title": "Intelligent",
+    "video_file": "Intelligent.mp4",
+    "sigml_file": "intelligent.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\intelligent.sigml"
+  },
+  {
+    "word_title": "Laboratory",
+    "video_file": "Laboratory.mp4",
+    "sigml_file": "laboratory.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\laboratory.sigml"
+  },
+  {
+    "word_title": "Learn [VEB]",
+    "video_file": "Learn [VEB].mp4",
+    "sigml_file": "learn.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\learn.sigml"
+  },
+  {
+    "word_title": "Library",
+    "video_file": "Library.mp4",
+    "sigml_file": "library.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\library.sigml"
+  },
+  {
+    "word_title": "Read [VEB]",
+    "video_file": "Read [VEB].mp4",
+    "sigml_file": "read.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\read.sigml"
+  },
+  {
+    "word_title": "Answer [VEB]",
+    "video_file": "Answer [VEB].mp4",
+    "sigml_file": "answer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\answer.sigml"
+  },
+  {
+    "word_title": "Result",
+    "video_file": "Result.mp4",
+    "sigml_file": "result.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\result.sigml"
+  },
+  {
+    "word_title": "Understand [VEB]",
+    "video_file": "Understand [VEB].mp4",
+    "sigml_file": "understand.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\understand.sigml"
+  },
+  {
+    "word_title": "Uniform",
+    "video_file": "Uniform.mp4",
+    "sigml_file": "uniform.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\uniform.sigml"
+  },
+  {
+    "word_title": "University",
+    "video_file": "University.mp4",
+    "sigml_file": "university.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\university.sigml"
+  },
+  {
+    "word_title": "Write [VEB]",
+    "video_file": "Write [VEB].mp4",
+    "sigml_file": "write.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\write.sigml"
+  },
+  {
+    "word_title": "Bench",
+    "video_file": "Bench.mp4",
+    "sigml_file": "bench.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bench.sigml"
+  },
+  {
+    "word_title": "Black Board",
+    "video_file": "Black Board.mp4",
+    "sigml_file": "blackboard.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\blackboard.sigml"
+  },
+  {
+    "word_title": "Book",
+    "video_file": "Book.mp4",
+    "sigml_file": "book.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\book.sigml"
+  },
+  {
+    "word_title": "Chalk",
+    "video_file": "Chalk.mp4",
+    "sigml_file": "chalk.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\chalk.sigml"
+  },
+  {
+    "word_title": "Class",
+    "video_file": "Class.mp4",
+    "sigml_file": "class.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\class.sigml"
+  },
+  {
+    "word_title": "Desk",
+    "video_file": "Desk.mp4",
+    "sigml_file": "desk.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\desk.sigml"
+  },
+  {
+    "word_title": "Pen",
+    "video_file": "Pen.mp4",
+    "sigml_file": "pen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\pen.sigml"
+  },
+  {
+    "word_title": "Tiffin Box",
+    "video_file": "Tiffin Box.mp4",
+    "sigml_file": "tiffinbox.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tiffinbox.sigml"
+  },
+  {
+    "word_title": "Water Bottle",
+    "video_file": "Water Bottle.mp4",
+    "sigml_file": "water.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\water.sigml"
+  },
+  {
+    "word_title": "Add [VEB]",
+    "video_file": "Add [VEB].mp4",
+    "sigml_file": "add.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\add.sigml"
+  },
+  {
+    "word_title": "Center",
+    "video_file": "Center.mp4",
+    "sigml_file": "center.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\center.sigml"
+  },
+  {
+    "word_title": "Chemistry",
+    "video_file": "Chemistry.mp4",
+    "sigml_file": "chemistry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\chemistry.sigml"
+  },
+  {
+    "word_title": "Divide [VEB]",
+    "video_file": "Divide [VEB].mp4",
+    "sigml_file": "divide.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\divide.sigml"
+  },
+  {
+    "word_title": "Equator",
+    "video_file": "Equator.mp4",
+    "sigml_file": "equator.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\equator.sigml"
+  },
+  {
+    "word_title": "Essay",
+    "video_file": "Essay.mp4",
+    "sigml_file": "essay.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\essay.sigml"
+  },
+  {
+    "word_title": "List",
+    "video_file": "List.mp4",
+    "sigml_file": "list.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\list.sigml"
+  },
+  {
+    "word_title": "Science",
+    "video_file": "Science.mp4",
+    "sigml_file": "science.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\science.sigml"
+  },
+  {
+    "word_title": "Asia",
+    "video_file": "Asia.mp4",
+    "sigml_file": "asia.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\asia.sigml"
+  },
+  {
+    "word_title": "Australia",
+    "video_file": "Australia.mp4",
+    "sigml_file": "australia.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\australia.sigml"
+  },
+  {
+    "word_title": "England",
+    "video_file": "England.mp4",
+    "sigml_file": "england.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\england.sigml"
+  },
+  {
+    "word_title": "France",
+    "video_file": "France.mp4",
+    "sigml_file": "france.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\france.sigml"
+  },
+  {
+    "word_title": "West Indies",
+    "video_file": "West Indies.mp4",
+    "sigml_file": "west.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\west.sigml"
+  },
+  {
+    "word_title": "Tamil Nadu",
+    "video_file": "Tamil Nadu.mp4",
+    "sigml_file": "tamil.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tamil.sigml"
+  },
+  {
+    "word_title": "Kanpur",
+    "video_file": "Kanpur.mp4",
+    "sigml_file": "kanpur.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\kanpur.sigml"
+  },
+  {
+    "word_title": "Vadodara",
+    "video_file": "Vadodara.mp4",
+    "sigml_file": "vadodara.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\vadodara.sigml"
+  },
+  {
+    "word_title": "English",
+    "video_file": "English.mp4",
+    "sigml_file": "english.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\english.sigml"
+  },
+  {
+    "word_title": "Hindi",
+    "video_file": "Hindi.mp4",
+    "sigml_file": "hindi.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hindi.sigml"
+  },
+  {
+    "word_title": "Kannada",
+    "video_file": "Kannada.mp4",
+    "sigml_file": "kannada.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\kannada.sigml"
+  },
+  {
+    "word_title": "Oriya",
+    "video_file": "Oriya.mp4",
+    "sigml_file": "oriya.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\oriya.sigml"
+  },
+  {
+    "word_title": "Tamil",
+    "video_file": "Tamil.mp4",
+    "sigml_file": "tamil.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tamil.sigml"
+  },
+  {
+    "word_title": "Urdu",
+    "video_file": "Urdu.mp4",
+    "sigml_file": "urdu.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\urdu.sigml"
+  },
+  {
+    "word_title": "Computer",
+    "video_file": "Computer.mp4",
+    "sigml_file": "Computer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\Computer.sigml"
+  },
+  {
+    "word_title": "Hearing Aid",
+    "video_file": "Hearing Aid.mp4",
+    "sigml_file": "hearing.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hearing.sigml"
+  },
+  {
+    "word_title": "Television/T.V.",
+    "video_file": "Television or T.V..mp4",
+    "sigml_file": "tv.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tv.sigml"
+  },
+  {
+    "word_title": "Video Camera",
+    "video_file": "Video Camera.mp4",
+    "sigml_file": "video.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\video.sigml"
+  },
+  {
+    "word_title": "Axe",
+    "video_file": "Axe.mp4",
+    "sigml_file": "axe.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\axe.sigml"
+  },
+  {
+    "word_title": "Carpenter",
+    "video_file": "Carpenter.mp4",
+    "sigml_file": "carpenter.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\carpenter.sigml"
+  },
+  {
+    "word_title": "Cement",
+    "video_file": "Cement.mp4",
+    "sigml_file": "cement.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cement.sigml"
+  },
+  {
+    "word_title": "Cobbler",
+    "video_file": "Cobbler.mp4",
+    "sigml_file": "cobbler.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cobbler.sigml"
+  },
+  {
+    "word_title": "Electrician",
+    "video_file": "Electrician.mp4",
+    "sigml_file": "electrician.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\electrician.sigml"
+  },
+  {
+    "word_title": "Farmer",
+    "video_file": "Farmer.mp4",
+    "sigml_file": "farmer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\farmer.sigml"
+  },
+  {
+    "word_title": "Ladder",
+    "video_file": "Ladder.mp4",
+    "sigml_file": "ladder.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ladder.sigml"
+  },
+  {
+    "word_title": "Needle",
+    "video_file": "Needle.mp4",
+    "sigml_file": "needle.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\needle.sigml"
+  },
+  {
+    "word_title": "Tools",
+    "video_file": "Tools.mp4",
+    "sigml_file": "tools.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tools.sigml"
+  },
+  {
+    "word_title": "Weaver",
+    "video_file": "Weaver.mp4",
+    "sigml_file": "weaver.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\weaver.sigml"
+  },
+  {
+    "word_title": "Wire",
+    "video_file": "Wire.mp4",
+    "sigml_file": "wire.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wire.sigml"
+  },
+  {
+    "word_title": "Act [VEB]",
+    "video_file": "Act [VEB].mp4",
+    "sigml_file": "act.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\act.sigml"
+  },
+  {
+    "word_title": "Actor",
+    "video_file": "Actor.mp4",
+    "sigml_file": "actor.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\actor.sigml"
+  },
+  {
+    "word_title": "Actress",
+    "video_file": "Actress.mp4",
+    "sigml_file": "actress.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\actress.sigml"
+  },
+  {
+    "word_title": "Ambulance",
+    "video_file": "Ambulance.mp4",
+    "sigml_file": "ambulance.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ambulance.sigml"
+  },
+  {
+    "word_title": "Audiologist",
+    "video_file": "Audiologist.mp4",
+    "sigml_file": "audiologist.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\audiologist.sigml"
+  },
+  {
+    "word_title": "Bandage",
+    "video_file": "Bandage.mp4",
+    "sigml_file": "bandage.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bandage.sigml"
+  },
+  {
+    "word_title": "Calculator",
+    "video_file": "Calculator.mp4",
+    "sigml_file": "calculator.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\calculator.sigml"
+  },
+  {
+    "word_title": "Clerk",
+    "video_file": "Clerk.mp4",
+    "sigml_file": "clerk.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\clerk.sigml"
+  },
+  {
+    "word_title": "Compass (For Direction)",
+    "video_file": "Compass (For Direction).mp4",
+    "sigml_file": "compass.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\compass.sigml"
+  },
+  {
+    "word_title": "Coolie",
+    "video_file": "Coolie.mp4",
+    "sigml_file": "coolie.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\coolie.sigml"
+  },
+  {
+    "word_title": "Doctor",
+    "video_file": "Doctor.mp4",
+    "sigml_file": "doctor.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\doctor.sigml"
+  },
+  {
+    "word_title": "Engineer",
+    "video_file": "Engineer.mp4",
+    "sigml_file": "engineer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\engineer.sigml"
+  },
+  {
+    "word_title": "Injection",
+    "video_file": "Injection.mp4",
+    "sigml_file": "injection.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\injection.sigml"
+  },
+  {
+    "word_title": "Lecturer",
+    "video_file": "Lecturer.mp4",
+    "sigml_file": "lecturer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lecturer.sigml"
+  },
+  {
+    "word_title": "Nurse",
+    "video_file": "Nurse.mp4",
+    "sigml_file": "nurse.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\nurse.sigml"
+  },
+  {
+    "word_title": "Officer",
+    "video_file": "Officer.mp4",
+    "sigml_file": "officer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\officer.sigml"
+  },
+  {
+    "word_title": "Operation",
+    "video_file": "Operation.mp4",
+    "sigml_file": "operation.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\operation.sigml"
+  },
+  {
+    "word_title": "Profit",
+    "video_file": "Profit.mp4",
+    "sigml_file": "profit.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\profit.sigml"
+  },
+  {
+    "word_title": "Tablet",
+    "video_file": "Tablet.mp4",
+    "sigml_file": "tablet.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tablet.sigml"
+  },
+  {
+    "word_title": "Teacher",
+    "video_file": "Teacher.mp4",
+    "sigml_file": "teacher.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\teacher.sigml"
+  },
+  {
+    "word_title": "Thermometer",
+    "video_file": "Thermometer.mp4",
+    "sigml_file": "thermometer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thermometer.sigml"
+  },
+  {
+    "word_title": "Typewriter",
+    "video_file": "Typewriter.mp4",
+    "sigml_file": "typewriter.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\typewriter.sigml"
+  },
+  {
+    "word_title": "Typist",
+    "video_file": "Typist.mp4",
+    "sigml_file": "typist.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\typist.sigml"
+  },
+  {
+    "word_title": "X-Ray",
+    "video_file": "X-Ray.mp4",
+    "sigml_file": "x-ray.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\x-ray.sigml"
+  },
+  {
+    "word_title": "Auditorium/Hall",
+    "video_file": "Auditorium or Hall.mp4",
+    "sigml_file": "auditorium.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\auditorium.sigml"
+  },
+  {
+    "word_title": "Bridge",
+    "video_file": "Bridge.mp4",
+    "sigml_file": "bridge.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bridge.sigml"
+  },
+  {
+    "word_title": "Cinema House",
+    "video_file": "Cinema House.mp4",
+    "sigml_file": "cinema.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cinema.sigml"
+  },
+  {
+    "word_title": "Factory",
+    "video_file": "Factory.mp4",
+    "sigml_file": "factory.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\factory.sigml"
+  },
+  {
+    "word_title": "Office",
+    "video_file": "Office.mp4",
+    "sigml_file": "office.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\office.sigml"
+  },
+  {
+    "word_title": "Zoo",
+    "video_file": "Zoo.mp4",
+    "sigml_file": "zoo.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\zoo.sigml"
+  },
+  {
+    "word_title": "Email",
+    "video_file": "Email.mp4",
+    "sigml_file": "email.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\email.sigml"
+  },
+  {
+    "word_title": "Interpreter",
+    "video_file": "Interpreter.mp4",
+    "sigml_file": "interpreter.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\interpreter.sigml"
+  },
+  {
+    "word_title": "Letter",
+    "video_file": "Letter.mp4",
+    "sigml_file": "letter.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\letter.sigml"
+  },
+  {
+    "word_title": "Money Order",
+    "video_file": "Money Order.mp4",
+    "sigml_file": "money.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\money.sigml"
+  },
+  {
+    "word_title": "Accident",
+    "video_file": "Accident.mp4",
+    "sigml_file": "accident.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\accident.sigml"
+  },
+  {
+    "word_title": "Autorickshaw",
+    "video_file": "Autorickshaw.mp4",
+    "sigml_file": "autorickshaw.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\autorickshaw.sigml"
+  },
+  {
+    "word_title": "Car",
+    "video_file": "Car.mp4",
+    "sigml_file": "car.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\car.sigml"
+  },
+  {
+    "word_title": "Cycle",
+    "video_file": "Cycle.mp4",
+    "sigml_file": "cycle.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cycle.sigml"
+  },
+  {
+    "word_title": "Jeep",
+    "video_file": "Jeep.mp4",
+    "sigml_file": "jeep.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\jeep.sigml"
+  },
+  {
+    "word_title": "Slow [ADE]",
+    "video_file": "Slow [ADE].mp4",
+    "sigml_file": "slow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\slow.sigml"
+  },
+  {
+    "word_title": "Taxi",
+    "video_file": "Taxi.mp4",
+    "sigml_file": "taxi.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\taxi.sigml"
+  },
+  {
+    "word_title": "Van",
+    "video_file": "Van.mp4",
+    "sigml_file": "van.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\van.sigml"
+  },
+  {
+    "word_title": "Aeroplane",
+    "video_file": "Aeroplane.mp4",
+    "sigml_file": "aeroplane.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\aeroplane.sigml"
+  },
+  {
+    "word_title": "Berth",
+    "video_file": "Berth.mp4",
+    "sigml_file": "berth.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\berth.sigml"
+  },
+  {
+    "word_title": "Boat",
+    "video_file": "Boat.mp4",
+    "sigml_file": "boat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\boat.sigml"
+  },
+  {
+    "word_title": "Engine",
+    "video_file": "Engine.mp4",
+    "sigml_file": "engine.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\engine.sigml"
+  },
+  {
+    "word_title": "T. C. (Ticket Collector)",
+    "video_file": "T. C. (Ticket Collector).mp4",
+    "sigml_file": "T.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\T.sigml"
+  },
+  {
+    "word_title": "Ticket",
+    "video_file": "Ticket.mp4",
+    "sigml_file": "ticket.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ticket.sigml"
+  },
+  {
+    "word_title": "Track",
+    "video_file": "Track.mp4",
+    "sigml_file": "track.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\track.sigml"
+  },
+  {
+    "word_title": "Train (Railway)",
+    "video_file": "Train (Railway).mp4",
+    "sigml_file": "train.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\train.sigml"
+  },
+  {
+    "word_title": "Apple",
+    "video_file": "Apple.mp4",
+    "sigml_file": "apple.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\apple.sigml"
+  },
+  {
+    "word_title": "Fruit",
+    "video_file": "Fruit.mp4",
+    "sigml_file": "fruit.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fruit.sigml"
+  },
+  {
+    "word_title": "Mango",
+    "video_file": "Mango.mp4",
+    "sigml_file": "mango.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\mango.sigml"
+  },
+  {
+    "word_title": "Orange (Fruit)",
+    "video_file": "Orange (Fruit).mp4",
+    "sigml_file": "orange.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\orange.sigml"
+  },
+  {
+    "word_title": "Cabbage",
+    "video_file": "Cabbage.mp4",
+    "sigml_file": "cabbage.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cabbage.sigml"
+  },
+  {
+    "word_title": "Carrot",
+    "video_file": "Carrot.mp4",
+    "sigml_file": "carrot.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\carrot.sigml"
+  },
+  {
+    "word_title": "Cauliflower",
+    "video_file": "Cauliflower.mp4",
+    "sigml_file": "cauliflower.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cauliflower.sigml"
+  },
+  {
+    "word_title": "Cucumber",
+    "video_file": "Cucumber.mp4",
+    "sigml_file": "cucumber.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cucumber.sigml"
+  },
+  {
+    "word_title": "Onion",
+    "video_file": "Onion.mp4",
+    "sigml_file": "onion.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\onion.sigml"
+  },
+  {
+    "word_title": "Tomato",
+    "video_file": "Tomato.mp4",
+    "sigml_file": "tomato.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tomato.sigml"
+  },
+  {
+    "word_title": "Vegetable",
+    "video_file": "Vegetable.mp4",
+    "sigml_file": "vegetable.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\vegetable.sigml"
+  },
+  {
+    "word_title": "White Gourd",
+    "video_file": "White Gourd.mp4",
+    "sigml_file": "white.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\white.sigml"
+  },
+  {
+    "word_title": "Wheat",
+    "video_file": "Wheat.mp4",
+    "sigml_file": "wheat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wheat.sigml"
+  },
+  {
+    "word_title": "Art",
+    "video_file": "Art.mp4",
+    "sigml_file": "art.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\art.sigml"
+  },
+  {
+    "word_title": "Bhangra",
+    "video_file": "Bhangra.mp4",
+    "sigml_file": "bhangra.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bhangra.sigml"
+  },
+  {
+    "word_title": "Cinema",
+    "video_file": "Cinema.mp4",
+    "sigml_file": "cinema.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cinema.sigml"
+  },
+  {
+    "word_title": "Circus",
+    "video_file": "Circus.mp4",
+    "sigml_file": "circus.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\circus.sigml"
+  },
+  {
+    "word_title": "Clown",
+    "video_file": "Clown.mp4",
+    "sigml_file": "clown.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\clown.sigml"
+  },
+  {
+    "word_title": "Dance",
+    "video_file": "Dance.mp4",
+    "sigml_file": "dance.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\dance.sigml"
+  },
+  {
+    "word_title": "Tabla",
+    "video_file": "Tabla.mp4",
+    "sigml_file": "tabla.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tabla.sigml"
+  },
+  {
+    "word_title": "Whistle",
+    "video_file": "Whistle.mp4",
+    "sigml_file": "whistle.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\whistle.sigml"
+  },
+  {
+    "word_title": "Christmas",
+    "video_file": "Christmas.mp4",
+    "sigml_file": "christmas.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\christmas.sigml"
+  },
+  {
+    "word_title": "Eid",
+    "video_file": "Eid.mp4",
+    "sigml_file": "eid.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\eid.sigml"
+  },
+  {
+    "word_title": "Cream",
+    "video_file": "Cream.mp4",
+    "sigml_file": "cream.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cream.sigml"
+  },
+  {
+    "word_title": "Tie (Dressware)",
+    "video_file": "Tie (Dressware).mp4",
+    "sigml_file": "tie.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tie.sigml"
+  },
+  {
+    "word_title": "Allah",
+    "video_file": "Allah.mp4",
+    "sigml_file": "allah.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\allah.sigml"
+  },
+  {
+    "word_title": "Angel",
+    "video_file": "Angel.mp4",
+    "sigml_file": "angel.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\angel.sigml"
+  },
+  {
+    "word_title": "Bell",
+    "video_file": "Bell.mp4",
+    "sigml_file": "bell.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bell.sigml"
+  },
+  {
+    "word_title": "Bible",
+    "video_file": "Bible.mp4",
+    "sigml_file": "bible.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bible.sigml"
+  },
+  {
+    "word_title": "Buddha",
+    "video_file": "Buddha.mp4",
+    "sigml_file": "buddha.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\buddha.sigml"
+  },
+  {
+    "word_title": "Christian",
+    "video_file": "Christian.mp4",
+    "sigml_file": "christian.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\christian.sigml"
+  },
+  {
+    "word_title": "Church",
+    "video_file": "Church.mp4",
+    "sigml_file": "church.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\church.sigml"
+  },
+  {
+    "word_title": "Hindu",
+    "video_file": "Hindu.mp4",
+    "sigml_file": "hindu.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hindu.sigml"
+  },
+  {
+    "word_title": "Jain",
+    "video_file": "Jain.mp4",
+    "sigml_file": "jain.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\jain.sigml"
+  },
+  {
+    "word_title": "Jesus",
+    "video_file": "Jesus.mp4",
+    "sigml_file": "jesus.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\jesus.sigml"
+  },
+  {
+    "word_title": "Temple",
+    "video_file": "Temple.mp4",
+    "sigml_file": "temple.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\temple.sigml"
+  },
+  {
+    "word_title": "Badminton",
+    "video_file": "Badminton.mp4",
+    "sigml_file": "badminton.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\badminton.sigml"
+  },
+  {
+    "word_title": "Ball",
+    "video_file": "Ball.mp4",
+    "sigml_file": "ball.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ball.sigml"
+  },
+  {
+    "word_title": "Basketball",
+    "video_file": "Basketball.mp4",
+    "sigml_file": "basketball.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\basketball.sigml"
+  },
+  {
+    "word_title": "Boxing",
+    "video_file": "Boxing.mp4",
+    "sigml_file": "boxing.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\boxing.sigml"
+  },
+  {
+    "word_title": "Chess",
+    "video_file": "Chess.mp4",
+    "sigml_file": "chess.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\chess.sigml"
+  },
+  {
+    "word_title": "Cricket",
+    "video_file": "Cricket.mp4",
+    "sigml_file": "cricket.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cricket.sigml"
+  },
+  {
+    "word_title": "Hockey",
+    "video_file": "Hockey.mp4",
+    "sigml_file": "hockey.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hockey.sigml"
+  },
+  {
+    "word_title": "Karate",
+    "video_file": "Karate.mp4",
+    "sigml_file": "karate.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\karate.sigml"
+  },
+  {
+    "word_title": "Kite",
+    "video_file": "Kite.mp4",
+    "sigml_file": "kite.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\kite.sigml"
+  },
+  {
+    "word_title": "Lose [VEB]",
+    "video_file": "Lose [VEB].mp4",
+    "sigml_file": "lose.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lose.sigml"
+  },
+  {
+    "word_title": "Olympics",
+    "video_file": "Olympics.mp4",
+    "sigml_file": "olympics.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\olympics.sigml"
+  },
+  {
+    "word_title": "Tennis",
+    "video_file": "Tennis.mp4",
+    "sigml_file": "tennis.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tennis.sigml"
+  },
+  {
+    "word_title": "Tie (Game-Draw/Both Win)",
+    "video_file": "Tie (Game-Draw or Both Win).mp4",
+    "sigml_file": "tie.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tie.sigml"
+  },
+  {
+    "word_title": "Trophy",
+    "video_file": "Trophy.mp4",
+    "sigml_file": "trophy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\trophy.sigml"
+  },
+  {
+    "word_title": "Volleyball",
+    "video_file": "Volleyball.mp4",
+    "sigml_file": "volleyball.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\volleyball.sigml"
+  },
+  {
+    "word_title": "Win [VEB]",
+    "video_file": "Win [VEB].mp4",
+    "sigml_file": "win.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\win.sigml"
+  },
+  {
+    "word_title": "Wrestling",
+    "video_file": "Wrestling.mp4",
+    "sigml_file": "wrestling.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wrestling.sigml"
+  },
+  {
+    "word_title": "Black",
+    "video_file": "Black.mp4",
+    "sigml_file": "black.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\black.sigml"
+  },
+  {
+    "word_title": "Blue",
+    "video_file": "Blue.mp4",
+    "sigml_file": "blue.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\blue.sigml"
+  },
+  {
+    "word_title": "Brown",
+    "video_file": "Brown.mp4",
+    "sigml_file": "brown.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\brown.sigml"
+  },
+  {
+    "word_title": "Circle",
+    "video_file": "Circle.mp4",
+    "sigml_file": "circle.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\circle.sigml"
+  },
+  {
+    "word_title": "Green",
+    "video_file": "Green.mp4",
+    "sigml_file": "green.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\green.sigml"
+  },
+  {
+    "word_title": "Grey",
+    "video_file": "Grey.mp4",
+    "sigml_file": "grey.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\grey.sigml"
+  },
+  {
+    "word_title": "Orange (Color)",
+    "video_file": "Orange (Color).mp4",
+    "sigml_file": "orange.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\orange.sigml"
+  },
+  {
+    "word_title": "Pink",
+    "video_file": "Pink.mp4",
+    "sigml_file": "pink.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\pink.sigml"
+  },
+  {
+    "word_title": "Purple",
+    "video_file": "Purple.mp4",
+    "sigml_file": "purple.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\purple.sigml"
+  },
+  {
+    "word_title": "Rectangle",
+    "video_file": "Rectangle.mp4",
+    "sigml_file": "rectangle.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\rectangle.sigml"
+  },
+  {
+    "word_title": "Red",
+    "video_file": "Red.mp4",
+    "sigml_file": "red.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\red.sigml"
+  },
+  {
+    "word_title": "Yellow",
+    "video_file": "Yellow.mp4",
+    "sigml_file": "yellow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\yellow.sigml"
+  },
+  {
+    "word_title": "Four Times",
+    "video_file": "Four Times.mp4",
+    "sigml_file": "four.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\four.sigml"
+  },
+  {
+    "word_title": "Ten Times",
+    "video_file": "Ten Times.mp4",
+    "sigml_file": "ten.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ten.sigml"
+  },
+  {
+    "word_title": "Twenty Times",
+    "video_file": "Twenty Times.mp4",
+    "sigml_file": "twenty.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\twenty.sigml"
+  },
+  {
+    "word_title": "Power",
+    "video_file": "Power.mp4",
+    "sigml_file": "power.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\power.sigml"
+  },
+  {
+    "word_title": "Vote",
+    "video_file": "Vote.mp4",
+    "sigml_file": "vote.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\vote.sigml"
+  },
+  {
+    "word_title": "About",
+    "video_file": "About.mp4",
+    "sigml_file": "about.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\about.sigml"
+  },
+  {
+    "word_title": "Above",
+    "video_file": "Above.mp4",
+    "sigml_file": "above.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\above.sigml"
+  },
+  {
+    "word_title": "Across",
+    "video_file": "Across.mp4",
+    "sigml_file": "across.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\across.sigml"
+  },
+  {
+    "word_title": "Always",
+    "video_file": "Always.mp4",
+    "sigml_file": "always.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\always.sigml"
+  },
+  {
+    "word_title": "Among",
+    "video_file": "Among.mp4",
+    "sigml_file": "among.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\among.sigml"
+  },
+  {
+    "word_title": "Around",
+    "video_file": "Around.mp4",
+    "sigml_file": "around.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\around.sigml"
+  },
+  {
+    "word_title": "At",
+    "video_file": "At.mp4",
+    "sigml_file": "at.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\at.sigml"
+  },
+  {
+    "word_title": "Behind",
+    "video_file": "Behind.mp4",
+    "sigml_file": "behind.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\behind.sigml"
+  },
+  {
+    "word_title": "Below",
+    "video_file": "Below.mp4",
+    "sigml_file": "below.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\below.sigml"
+  },
+  {
+    "word_title": "Between",
+    "video_file": "Between.mp4",
+    "sigml_file": "between.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\between.sigml"
+  },
+  {
+    "word_title": "Down",
+    "video_file": "Down.mp4",
+    "sigml_file": "down.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\down.sigml"
+  },
+  {
+    "word_title": "Far",
+    "video_file": "Far.mp4",
+    "sigml_file": "far.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\far.sigml"
+  },
+  {
+    "word_title": "In",
+    "video_file": "In.mp4",
+    "sigml_file": "in.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\in.sigml"
+  },
+  {
+    "word_title": "In Front Of",
+    "video_file": "In Front Of.mp4",
+    "sigml_file": "infrontof.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\infrontof.sigml"
+  },
+  {
+    "word_title": "Near",
+    "video_file": "Near.mp4",
+    "sigml_file": "near.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\near.sigml"
+  },
+  {
+    "word_title": "Out",
+    "video_file": "Out.mp4",
+    "sigml_file": "out.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\out.sigml"
+  },
+  {
+    "word_title": "Over",
+    "video_file": "Over.mp4",
+    "sigml_file": "over.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\over.sigml"
+  },
+  {
+    "word_title": "There",
+    "video_file": "There.mp4",
+    "sigml_file": "there.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\there.sigml"
+  },
+  {
+    "word_title": "Together",
+    "video_file": "Together.mp4",
+    "sigml_file": "together.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\together.sigml"
+  },
+  {
+    "word_title": "Under",
+    "video_file": "Under.mp4",
+    "sigml_file": "under.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\under.sigml"
+  },
+  {
+    "word_title": "Up",
+    "video_file": "Up.mp4",
+    "sigml_file": "up.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\up.sigml"
+  },
+  {
+    "word_title": "How",
+    "video_file": "How.mp4",
+    "sigml_file": "how.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\how.sigml"
+  },
+  {
+    "word_title": "How Many",
+    "video_file": "How Many.mp4",
+    "sigml_file": "howmany.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\howmany.sigml"
+  },
+  {
+    "word_title": "What",
+    "video_file": "What.mp4",
+    "sigml_file": "what.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\what.sigml"
+  },
+  {
+    "word_title": "What Time",
+    "video_file": "What Time.mp4",
+    "sigml_file": "what.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\what.sigml"
+  },
+  {
+    "word_title": "When",
+    "video_file": "When.mp4",
+    "sigml_file": "when.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\when.sigml"
+  },
+  {
+    "word_title": "Where",
+    "video_file": "Where.mp4",
+    "sigml_file": "where.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\where.sigml"
+  },
+  {
+    "word_title": "Which",
+    "video_file": "Which.mp4",
+    "sigml_file": "which.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\which.sigml"
+  },
+  {
+    "word_title": "Who",
+    "video_file": "Who.mp4",
+    "sigml_file": "who.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\who.sigml"
+  },
+  {
+    "word_title": "Hers",
+    "video_file": "Hers.mp4",
+    "sigml_file": "hers.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hers.sigml"
+  },
+  {
+    "word_title": "Himself",
+    "video_file": "Himself.mp4",
+    "sigml_file": "himself.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\himself.sigml"
+  },
+  {
+    "word_title": "His",
+    "video_file": "His.mp4",
+    "sigml_file": "his.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\his.sigml"
+  },
+  {
+    "word_title": "I (Person)",
+    "video_file": "I (Person).mp4",
+    "sigml_file": "I.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\I.sigml"
+  },
+  {
+    "word_title": "Me",
+    "video_file": "Me.mp4",
+    "sigml_file": "me.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\me.sigml"
+  },
+  {
+    "word_title": "My",
+    "video_file": "My.mp4",
+    "sigml_file": "my.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\my.sigml"
+  },
+  {
+    "word_title": "Our",
+    "video_file": "Our.mp4",
+    "sigml_file": "our.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\our.sigml"
+  },
+  {
+    "word_title": "That",
+    "video_file": "That.mp4",
+    "sigml_file": "that.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\that.sigml"
+  },
+  {
+    "word_title": "Their",
+    "video_file": "Their.mp4",
+    "sigml_file": "their.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\their.sigml"
+  },
+  {
+    "word_title": "Them",
+    "video_file": "Them.mp4",
+    "sigml_file": "them.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\them.sigml"
+  },
+  {
+    "word_title": "Themselves",
+    "video_file": "Themselves.mp4",
+    "sigml_file": "themselves.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\themselves.sigml"
+  },
+  {
+    "word_title": "These",
+    "video_file": "These.mp4",
+    "sigml_file": "these.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\these.sigml"
+  },
+  {
+    "word_title": "They",
+    "video_file": "They.mp4",
+    "sigml_file": "they.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\they.sigml"
+  },
+  {
+    "word_title": "This",
+    "video_file": "This.mp4",
+    "sigml_file": "this.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\this.sigml"
+  },
+  {
+    "word_title": "Those",
+    "video_file": "Those.mp4",
+    "sigml_file": "those.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\those.sigml"
+  },
+  {
+    "word_title": "Us",
+    "video_file": "Us.mp4",
+    "sigml_file": "us.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\us.sigml"
+  },
+  {
+    "word_title": "We",
+    "video_file": "We.mp4",
+    "sigml_file": "we.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\we.sigml"
+  },
+  {
+    "word_title": "You",
+    "video_file": "You.mp4",
+    "sigml_file": "you.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\you.sigml"
+  },
+  {
+    "word_title": "You (Plural)",
+    "video_file": "You (Plural).mp4",
+    "sigml_file": "you.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\you.sigml"
+  },
+  {
+    "word_title": "Your",
+    "video_file": "Your.mp4",
+    "sigml_file": "your.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\your.sigml"
+  },
+  {
+    "word_title": "Your (Plural)",
+    "video_file": "Your (Plural).mp4",
+    "sigml_file": "your.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\your.sigml"
+  },
+  {
+    "word_title": "Yourself",
+    "video_file": "Yourself.mp4",
+    "sigml_file": "yourself.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\yourself.sigml"
+  },
+  {
+    "word_title": "Number",
+    "video_file": "Number.mp4",
+    "sigml_file": "number.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\number.sigml"
+  },
+  {
+    "word_title": "Past Tense",
+    "video_file": "Past Tense.mp4",
+    "sigml_file": "past.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\past.sigml"
+  },
+  {
+    "word_title": "Absorb",
+    "video_file": "Absorb.mp4",
+    "sigml_file": "absorb.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\absorb.sigml"
+  },
+  {
+    "word_title": "Accept",
+    "video_file": "Accept.mp4",
+    "sigml_file": "accept.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\accept.sigml"
+  },
+  {
+    "word_title": "Accuse",
+    "video_file": "Accuse.mp4",
+    "sigml_file": "accuse.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\accuse.sigml"
+  },
+  {
+    "word_title": "Advise",
+    "video_file": "Advise.mp4",
+    "sigml_file": "advise.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\advise.sigml"
+  },
+  {
+    "word_title": "Agree",
+    "video_file": "Agree.mp4",
+    "sigml_file": "agree.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\agree.sigml"
+  },
+  {
+    "word_title": "Allow",
+    "video_file": "Allow.mp4",
+    "sigml_file": "allow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\allow.sigml"
+  },
+  {
+    "word_title": "Announce",
+    "video_file": "Announce.mp4",
+    "sigml_file": "announce.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\announce.sigml"
+  },
+  {
+    "word_title": "Appear",
+    "video_file": "Appear.mp4",
+    "sigml_file": "appear.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\appear.sigml"
+  },
+  {
+    "word_title": "Arrange",
+    "video_file": "Arrange.mp4",
+    "sigml_file": "arrange.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\arrange.sigml"
+  },
+  {
+    "word_title": "Arrest",
+    "video_file": "Arrest.mp4",
+    "sigml_file": "arrest.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\arrest.sigml"
+  },
+  {
+    "word_title": "Bake",
+    "video_file": "Bake.mp4",
+    "sigml_file": "bake.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bake.sigml"
+  },
+  {
+    "word_title": "Beat",
+    "video_file": "Beat.mp4",
+    "sigml_file": "beat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\beat.sigml"
+  },
+  {
+    "word_title": "Become",
+    "video_file": "Become.mp4",
+    "sigml_file": "become.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\become.sigml"
+  },
+  {
+    "word_title": "Bend",
+    "video_file": "Bend.mp4",
+    "sigml_file": "bend.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bend.sigml"
+  },
+  {
+    "word_title": "Blow",
+    "video_file": "Blow.mp4",
+    "sigml_file": "blow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\blow.sigml"
+  },
+  {
+    "word_title": "Boil",
+    "video_file": "Boil.mp4",
+    "sigml_file": "boil.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\boil.sigml"
+  },
+  {
+    "word_title": "Borrow",
+    "video_file": "Borrow.mp4",
+    "sigml_file": "borrow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\borrow.sigml"
+  },
+  {
+    "word_title": "Break",
+    "video_file": "Break.mp4",
+    "sigml_file": "break.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\break.sigml"
+  },
+  {
+    "word_title": "Brush",
+    "video_file": "Brush.mp4",
+    "sigml_file": "brush.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\brush.sigml"
+  },
+  {
+    "word_title": "Build",
+    "video_file": "Build.mp4",
+    "sigml_file": "build.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\build.sigml"
+  },
+  {
+    "word_title": "Call",
+    "video_file": "Call.mp4",
+    "sigml_file": "call.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\call.sigml"
+  },
+  {
+    "word_title": "Can",
+    "video_file": "Can.mp4",
+    "sigml_file": "can.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\can.sigml"
+  },
+  {
+    "word_title": "Carry",
+    "video_file": "Carry.mp4",
+    "sigml_file": "carry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\carry.sigml"
+  },
+  {
+    "word_title": "Catch",
+    "video_file": "Catch.mp4",
+    "sigml_file": "catch.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\catch.sigml"
+  },
+  {
+    "word_title": "Chase",
+    "video_file": "Chase.mp4",
+    "sigml_file": "chase.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\chase.sigml"
+  },
+  {
+    "word_title": "Clap",
+    "video_file": "Clap.mp4",
+    "sigml_file": "clap.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\clap.sigml"
+  },
+  {
+    "word_title": "Climb Down",
+    "video_file": "Climb Down.mp4",
+    "sigml_file": "climbdown.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\climbdown.sigml"
+  },
+  {
+    "word_title": "Climb Up",
+    "video_file": "Climb Up.mp4",
+    "sigml_file": "climbup.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\climbup.sigml"
+  },
+  {
+    "word_title": "Close",
+    "video_file": "Close.mp4",
+    "sigml_file": "close.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\close.sigml"
+  },
+  {
+    "word_title": "Collect",
+    "video_file": "Collect.mp4",
+    "sigml_file": "collect.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\collect.sigml"
+  },
+  {
+    "word_title": "Come",
+    "video_file": "Come.mp4",
+    "sigml_file": "come.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\come.sigml"
+  },
+  {
+    "word_title": "Communicate",
+    "video_file": "Communicate.mp4",
+    "sigml_file": "communicate.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\communicate.sigml"
+  },
+  {
+    "word_title": "Compare",
+    "video_file": "Compare.mp4",
+    "sigml_file": "compare.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\compare.sigml"
+  },
+  {
+    "word_title": "Confuse",
+    "video_file": "Confuse.mp4",
+    "sigml_file": "confuse.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\confuse.sigml"
+  },
+  {
+    "word_title": "Continue",
+    "video_file": "Continue.mp4",
+    "sigml_file": "continue.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\continue.sigml"
+  },
+  {
+    "word_title": "Control",
+    "video_file": "Control.mp4",
+    "sigml_file": "control.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\control.sigml"
+  },
+  {
+    "word_title": "Cover",
+    "video_file": "Cover.mp4",
+    "sigml_file": "cover.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cover.sigml"
+  },
+  {
+    "word_title": "Criticize",
+    "video_file": "Criticize.mp4",
+    "sigml_file": "criticize.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\criticize.sigml"
+  },
+  {
+    "word_title": "Cry",
+    "video_file": "Cry.mp4",
+    "sigml_file": "cry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cry.sigml"
+  },
+  {
+    "word_title": "Cut",
+    "video_file": "Cut.mp4",
+    "sigml_file": "cut.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cut.sigml"
+  },
+  {
+    "word_title": "Decrease",
+    "video_file": "Decrease.mp4",
+    "sigml_file": "decrease.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\decrease.sigml"
+  },
+  {
+    "word_title": "Develop",
+    "video_file": "Develop.mp4",
+    "sigml_file": "develop.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\develop.sigml"
+  },
+  {
+    "word_title": "Draw",
+    "video_file": "Draw.mp4",
+    "sigml_file": "draw.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\draw.sigml"
+  },
+  {
+    "word_title": "Dream",
+    "video_file": "Dream.mp4",
+    "sigml_file": "dream.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\dream.sigml"
+  },
+  {
+    "word_title": "Encourage",
+    "video_file": "Encourage.mp4",
+    "sigml_file": "encourage.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\encourage.sigml"
+  },
+  {
+    "word_title": "Escape",
+    "video_file": "Escape.mp4",
+    "sigml_file": "escape.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\escape.sigml"
+  },
+  {
+    "word_title": "Examine",
+    "video_file": "Examine.mp4",
+    "sigml_file": "examine.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\examine.sigml"
+  },
+  {
+    "word_title": "Experience",
+    "video_file": "Experience.mp4",
+    "sigml_file": "experience.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\experience.sigml"
+  },
+  {
+    "word_title": "Fall",
+    "video_file": "Fall.mp4",
+    "sigml_file": "fall.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fall.sigml"
+  },
+  {
+    "word_title": "Feed",
+    "video_file": "Feed.mp4",
+    "sigml_file": "feed.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\feed.sigml"
+  },
+  {
+    "word_title": "Feel",
+    "video_file": "Feel.mp4",
+    "sigml_file": "feel.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\feel.sigml"
+  },
+  {
+    "word_title": "Fight",
+    "video_file": "Fight.mp4",
+    "sigml_file": "fight.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fight.sigml"
+  },
+  {
+    "word_title": "Fill",
+    "video_file": "Fill.mp4",
+    "sigml_file": "fill.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fill.sigml"
+  },
+  {
+    "word_title": "Finish",
+    "video_file": "Finish.mp4",
+    "sigml_file": "finish.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\finish.sigml"
+  },
+  {
+    "word_title": "Get",
+    "video_file": "Get.mp4",
+    "sigml_file": "get.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\get.sigml"
+  },
+  {
+    "word_title": "Go",
+    "video_file": "Go.mp4",
+    "sigml_file": "go.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\go.sigml"
+  },
+  {
+    "word_title": "Hang",
+    "video_file": "Hang.mp4",
+    "sigml_file": "hang.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hang.sigml"
+  },
+  {
+    "word_title": "Hold",
+    "video_file": "Hold.mp4",
+    "sigml_file": "hold.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hold.sigml"
+  },
+  {
+    "word_title": "Ignore",
+    "video_file": "Ignore.mp4",
+    "sigml_file": "ignore.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ignore.sigml"
+  },
+  {
+    "word_title": "Improve",
+    "video_file": "Improve.mp4",
+    "sigml_file": "improve.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\improve.sigml"
+  },
+  {
+    "word_title": "Join",
+    "video_file": "Join.mp4",
+    "sigml_file": "join.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\join.sigml"
+  },
+  {
+    "word_title": "Jump",
+    "video_file": "Jump.mp4",
+    "sigml_file": "jump.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\jump.sigml"
+  },
+  {
+    "word_title": "Keep",
+    "video_file": "Keep.mp4",
+    "sigml_file": "keep.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\keep.sigml"
+  },
+  {
+    "word_title": "Laugh",
+    "video_file": "Laugh.mp4",
+    "sigml_file": "laugh.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\laugh.sigml"
+  },
+  {
+    "word_title": "Leak",
+    "video_file": "Leak.mp4",
+    "sigml_file": "leak.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\leak.sigml"
+  },
+  {
+    "word_title": "Leave",
+    "video_file": "Leave.mp4",
+    "sigml_file": "leave.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\leave.sigml"
+  },
+  {
+    "word_title": "Lend",
+    "video_file": "Lend.mp4",
+    "sigml_file": "lend.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lend.sigml"
+  },
+  {
+    "word_title": "Lick",
+    "video_file": "Lick.mp4",
+    "sigml_file": "lick.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lick.sigml"
+  },
+  {
+    "word_title": "Like",
+    "video_file": "Like.mp4",
+    "sigml_file": "like.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\like.sigml"
+  },
+  {
+    "word_title": "Lose",
+    "video_file": "Lose.mp4",
+    "sigml_file": "lose.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\lose.sigml"
+  },
+  {
+    "word_title": "Love",
+    "video_file": "Love.mp4",
+    "sigml_file": "love.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\love.sigml"
+  },
+  {
+    "word_title": "Meet",
+    "video_file": "Meet.mp4",
+    "sigml_file": "meet.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\meet.sigml"
+  },
+  {
+    "word_title": "Open",
+    "video_file": "Open.mp4",
+    "sigml_file": "open.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\open.sigml"
+  },
+  {
+    "word_title": "Order",
+    "video_file": "Order.mp4",
+    "sigml_file": "order.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\order.sigml"
+  },
+  {
+    "word_title": "Pay",
+    "video_file": "Pay.mp4",
+    "sigml_file": "pay.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\pay.sigml"
+  },
+  {
+    "word_title": "Pick",
+    "video_file": "Pick.mp4",
+    "sigml_file": "pick.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\pick.sigml"
+  },
+  {
+    "word_title": "Plan",
+    "video_file": "Plan.mp4",
+    "sigml_file": "plan.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\plan.sigml"
+  },
+  {
+    "word_title": "Practice",
+    "video_file": "Practice.mp4",
+    "sigml_file": "practice.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\practice.sigml"
+  },
+  {
+    "word_title": "Pretend",
+    "video_file": "Pretend.mp4",
+    "sigml_file": "pretend.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\pretend.sigml"
+  },
+  {
+    "word_title": "Reach",
+    "video_file": "Reach.mp4",
+    "sigml_file": "reach.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\reach.sigml"
+  },
+  {
+    "word_title": "Remove",
+    "video_file": "Remove.mp4",
+    "sigml_file": "remove.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\remove.sigml"
+  },
+  {
+    "word_title": "Save",
+    "video_file": "Save.mp4",
+    "sigml_file": "save.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\save.sigml"
+  },
+  {
+    "word_title": "Search",
+    "video_file": "Search.mp4",
+    "sigml_file": "search.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\search.sigml"
+  },
+  {
+    "word_title": "Send",
+    "video_file": "Send.mp4",
+    "sigml_file": "send.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\send.sigml"
+  },
+  {
+    "word_title": "Shake",
+    "video_file": "Shake.mp4",
+    "sigml_file": "shake.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\shake.sigml"
+  },
+  {
+    "word_title": "Stay/Live",
+    "video_file": "Stay or Live.mp4",
+    "sigml_file": "stay.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\stay.sigml"
+  },
+  {
+    "word_title": "Take Revenge",
+    "video_file": "Take Revenge.mp4",
+    "sigml_file": "take.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\take.sigml"
+  },
+  {
+    "word_title": "Tear",
+    "video_file": "Tear.mp4",
+    "sigml_file": "tear.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tear.sigml"
+  },
+  {
+    "word_title": "Tease",
+    "video_file": "Tease.mp4",
+    "sigml_file": "tease.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tease.sigml"
+  },
+  {
+    "word_title": "Throw",
+    "video_file": "Throw.mp4",
+    "sigml_file": "throw.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\throw.sigml"
+  },
+  {
+    "word_title": "Touch",
+    "video_file": "Touch.mp4",
+    "sigml_file": "touch.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\touch.sigml"
+  },
+  {
+    "word_title": "Try",
+    "video_file": "Try.mp4",
+    "sigml_file": "try.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\try.sigml"
+  },
+  {
+    "word_title": "Turn",
+    "video_file": "Turn.mp4",
+    "sigml_file": "turn.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\turn.sigml"
+  },
+  {
+    "word_title": "Visit",
+    "video_file": "Visit.mp4",
+    "sigml_file": "visit.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\visit.sigml"
+  },
+  {
+    "word_title": "Vomit",
+    "video_file": "Vomit.mp4",
+    "sigml_file": "vomit.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\vomit.sigml"
+  },
+  {
+    "word_title": "Wait",
+    "video_file": "Wait.mp4",
+    "sigml_file": "wait.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wait.sigml"
+  },
+  {
+    "word_title": "Want",
+    "video_file": "Want.mp4",
+    "sigml_file": "want.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\want.sigml"
+  },
+  {
+    "word_title": "Wash",
+    "video_file": "Wash.mp4",
+    "sigml_file": "wash.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wash.sigml"
+  },
+  {
+    "word_title": "Waste",
+    "video_file": "Waste.mp4",
+    "sigml_file": "waste.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\waste.sigml"
+  },
+  {
+    "word_title": "Weigh",
+    "video_file": "Weigh.mp4",
+    "sigml_file": "weigh.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\weigh.sigml"
+  },
+  {
+    "word_title": "Welcome",
+    "video_file": "Welcome.mp4",
+    "sigml_file": "welcome.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\welcome.sigml"
+  },
+  {
+    "word_title": "Wipe",
+    "video_file": "Wipe.mp4",
+    "sigml_file": "wipe.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wipe.sigml"
+  },
+  {
+    "word_title": "Wish",
+    "video_file": "Wish.mp4",
+    "sigml_file": "wish.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wish.sigml"
+  },
+  {
+    "word_title": "Worry",
+    "video_file": "Worry.mp4",
+    "sigml_file": "worry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\worry.sigml"
+  },
+  {
+    "word_title": "Tie [VEB]",
+    "video_file": "Tie [VEB].mp4",
+    "sigml_file": "tie.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tie.sigml"
+  },
+  {
+    "word_title": "Active",
+    "video_file": "Active.mp4",
+    "sigml_file": "active.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\active.sigml"
+  },
+  {
+    "word_title": "Alone",
+    "video_file": "Alone.mp4",
+    "sigml_file": "alone.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\alone.sigml"
+  },
+  {
+    "word_title": "Any",
+    "video_file": "Any.mp4",
+    "sigml_file": "any.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\any.sigml"
+  },
+  {
+    "word_title": "Beautiful",
+    "video_file": "Beautiful.mp4",
+    "sigml_file": "beautiful.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\beautiful.sigml"
+  },
+  {
+    "word_title": "Busy",
+    "video_file": "Busy.mp4",
+    "sigml_file": "busy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\busy.sigml"
+  },
+  {
+    "word_title": "Correct",
+    "video_file": "Correct.mp4",
+    "sigml_file": "correct.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\correct.sigml"
+  },
+  {
+    "word_title": "Deaf",
+    "video_file": "Deaf.mp4",
+    "sigml_file": "deaf.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\deaf.sigml"
+  },
+  {
+    "word_title": "Different",
+    "video_file": "Different.mp4",
+    "sigml_file": "different.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\different.sigml"
+  },
+  {
+    "word_title": "Difficult",
+    "video_file": "Difficult.mp4",
+    "sigml_file": "difficult.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\difficult.sigml"
+  },
+  {
+    "word_title": "Easy",
+    "video_file": "Easy.mp4",
+    "sigml_file": "easy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\easy.sigml"
+  },
+  {
+    "word_title": "Empty",
+    "video_file": "Empty.mp4",
+    "sigml_file": "empty.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\empty.sigml"
+  },
+  {
+    "word_title": "Equal",
+    "video_file": "Equal.mp4",
+    "sigml_file": "equal.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\equal.sigml"
+  },
+  {
+    "word_title": "Expensive",
+    "video_file": "Expensive.mp4",
+    "sigml_file": "expensive.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\expensive.sigml"
+  },
+  {
+    "word_title": "Fat",
+    "video_file": "Fat.mp4",
+    "sigml_file": "fat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fat.sigml"
+  },
+  {
+    "word_title": "Few",
+    "video_file": "Few.mp4",
+    "sigml_file": "few.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\few.sigml"
+  },
+  {
+    "word_title": "Hearing",
+    "video_file": "Hearing.mp4",
+    "sigml_file": "hearing.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hearing.sigml"
+  },
+  {
+    "word_title": "Hungry",
+    "video_file": "Hungry.mp4",
+    "sigml_file": "hungry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hungry.sigml"
+  },
+  {
+    "word_title": "Important",
+    "video_file": "Important.mp4",
+    "sigml_file": "important.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\important.sigml"
+  },
+  {
+    "word_title": "Interesting",
+    "video_file": "Interesting.mp4",
+    "sigml_file": "interesting.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\interesting.sigml"
+  },
+  {
+    "word_title": "Jealous",
+    "video_file": "Jealous.mp4",
+    "sigml_file": "jealous.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\jealous.sigml"
+  },
+  {
+    "word_title": "Less",
+    "video_file": "Less.mp4",
+    "sigml_file": "less.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\less.sigml"
+  },
+  {
+    "word_title": "Long",
+    "video_file": "Long.mp4",
+    "sigml_file": "long.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\long.sigml"
+  },
+  {
+    "word_title": "New",
+    "video_file": "New.mp4",
+    "sigml_file": "new.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\new.sigml"
+  },
+  {
+    "word_title": "Old",
+    "video_file": "Old.mp4",
+    "sigml_file": "old.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\old.sigml"
+  },
+  {
+    "word_title": "Quick",
+    "video_file": "Quick.mp4",
+    "sigml_file": "quick.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\quick.sigml"
+  },
+  {
+    "word_title": "Responsible",
+    "video_file": "Responsible.mp4",
+    "sigml_file": "responsible.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\responsible.sigml"
+  },
+  {
+    "word_title": "Sad",
+    "video_file": "Sad.mp4",
+    "sigml_file": "sad.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sad.sigml"
+  },
+  {
+    "word_title": "Same",
+    "video_file": "Same.mp4",
+    "sigml_file": "same.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\same.sigml"
+  },
+  {
+    "word_title": "Slow",
+    "video_file": "Slow.mp4",
+    "sigml_file": "slow.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\slow.sigml"
+  },
+  {
+    "word_title": "Soft",
+    "video_file": "Soft.mp4",
+    "sigml_file": "soft.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\soft.sigml"
+  },
+  {
+    "word_title": "Sorry",
+    "video_file": "Sorry.mp4",
+    "sigml_file": "sorry.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sorry.sigml"
+  },
+  {
+    "word_title": "Stupid",
+    "video_file": "Stupid.mp4",
+    "sigml_file": "stupid.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\stupid.sigml"
+  },
+  {
+    "word_title": "Tall",
+    "video_file": "Tall.mp4",
+    "sigml_file": "tall.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tall.sigml"
+  },
+  {
+    "word_title": "Thirsty",
+    "video_file": "Thirsty.mp4",
+    "sigml_file": "thirsty.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thirsty.sigml"
+  },
+  {
+    "word_title": "Tight",
+    "video_file": "Tight.mp4",
+    "sigml_file": "tight.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tight.sigml"
+  },
+  {
+    "word_title": "Ugly",
+    "video_file": "Ugly.mp4",
+    "sigml_file": "ugly.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ugly.sigml"
+  },
+  {
+    "word_title": "Wide",
+    "video_file": "Wide.mp4",
+    "sigml_file": "wide.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\wide.sigml"
+  },
+  {
+    "word_title": "Video Call",
+    "video_file": "Video Call.mp4",
+    "sigml_file": "video.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\video.sigml"
+  },
+  {
+    "word_title": "Idea",
+    "video_file": "Idea.mp4",
+    "sigml_file": "idea.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\idea.sigml"
+  },
+  {
+    "word_title": "National",
+    "video_file": "National.mp4",
+    "sigml_file": "national.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\national.sigml"
+  },
+  {
+    "word_title": "Please",
+    "video_file": "Please.mp4",
+    "sigml_file": "please.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\please.sigml"
+  },
+  {
+    "word_title": "Sign",
+    "video_file": "Sign.mp4",
+    "sigml_file": "sign.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sign.sigml"
+  },
+  {
+    "word_title": "Very",
+    "video_file": "Very.mp4",
+    "sigml_file": "very.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\very.sigml"
+  },
+  {
+    "word_title": "Electricity",
+    "video_file": "Electricity.mp4",
+    "sigml_file": "electricity.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\electricity.sigml"
+  },
+  {
+    "word_title": "Better",
+    "video_file": "Better.mp4",
+    "sigml_file": "better.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\better.sigml"
+  },
+  {
+    "word_title": "Train Ticket",
+    "video_file": "Train Ticket.mp4",
+    "sigml_file": "train.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\train.sigml"
+  },
+  {
+    "word_title": "Arrive",
+    "video_file": "Arrive.mp4",
+    "sigml_file": "arrive.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\arrive.sigml"
+  },
+  {
+    "word_title": "Connect/Link/Relate",
+    "video_file": "Connect or Link or Relate.mp4",
+    "sigml_file": "link.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\link.sigml"
+  },
+  {
+    "word_title": "Impossible",
+    "video_file": "Impossible.mp4",
+    "sigml_file": "impossible.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\impossible.sigml"
+  },
+  {
+    "word_title": "Bag",
+    "video_file": "Bag.mp4",
+    "sigml_file": "bag.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bag.sigml"
+  },
+  {
+    "word_title": "Video",
+    "video_file": "Video.mp4",
+    "sigml_file": "video.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\video.sigml"
+  },
+  {
+    "word_title": "No",
+    "video_file": "No.mp4",
+    "sigml_file": "no.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\no.sigml"
+  },
+  {
+    "word_title": "Yes",
+    "video_file": "Yes.mp4",
+    "sigml_file": "yes.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\yes.sigml"
+  },
+  {
+    "word_title": "Hello",
+    "video_file": "Hello.mp4",
+    "sigml_file": "hello.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hello.sigml"
+  },
+  {
+    "word_title": "A",
+    "video_file": "A.mp4",
+    "sigml_file": "A.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\A.sigml"
+  },
+  {
+    "word_title": "B",
+    "video_file": "B.mp4",
+    "sigml_file": "B.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\B.sigml"
+  },
+  {
+    "word_title": "C",
+    "video_file": "C.mp4",
+    "sigml_file": "C.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\C.sigml"
+  },
+  {
+    "word_title": "D",
+    "video_file": "D.mp4",
+    "sigml_file": "D.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\D.sigml"
+  },
+  {
+    "word_title": "E",
+    "video_file": "E.mp4",
+    "sigml_file": "E.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\E.sigml"
+  },
+  {
+    "word_title": "F",
+    "video_file": "F.mp4",
+    "sigml_file": "F.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\F.sigml"
+  },
+  {
+    "word_title": "G",
+    "video_file": "G.mp4",
+    "sigml_file": "G.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\G.sigml"
+  },
+  {
+    "word_title": "H",
+    "video_file": "H.mp4",
+    "sigml_file": "H.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\H.sigml"
+  },
+  {
+    "word_title": "I",
+    "video_file": "I.mp4",
+    "sigml_file": "I.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\I.sigml"
+  },
+  {
+    "word_title": "J",
+    "video_file": "J.mp4",
+    "sigml_file": "J.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\J.sigml"
+  },
+  {
+    "word_title": "K",
+    "video_file": "K.mp4",
+    "sigml_file": "K.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\K.sigml"
+  },
+  {
+    "word_title": "L",
+    "video_file": "L.mp4",
+    "sigml_file": "L.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\L.sigml"
+  },
+  {
+    "word_title": "M",
+    "video_file": "M.mp4",
+    "sigml_file": "M.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\M.sigml"
+  },
+  {
+    "word_title": "N",
+    "video_file": "N.mp4",
+    "sigml_file": "N.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\N.sigml"
+  },
+  {
+    "word_title": "O",
+    "video_file": "O.mp4",
+    "sigml_file": "O.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\O.sigml"
+  },
+  {
+    "word_title": "P",
+    "video_file": "P.mp4",
+    "sigml_file": "P.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\P.sigml"
+  },
+  {
+    "word_title": "Q",
+    "video_file": "Q.mp4",
+    "sigml_file": "Q.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\Q.sigml"
+  },
+  {
+    "word_title": "R",
+    "video_file": "R.mp4",
+    "sigml_file": "R.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\R.sigml"
+  },
+  {
+    "word_title": "S",
+    "video_file": "S.mp4",
+    "sigml_file": "S.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\S.sigml"
+  },
+  {
+    "word_title": "T",
+    "video_file": "T.mp4",
+    "sigml_file": "T.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\T.sigml"
+  },
+  {
+    "word_title": "U",
+    "video_file": "U.mp4",
+    "sigml_file": "U.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\U.sigml"
+  },
+  {
+    "word_title": "V",
+    "video_file": "V.mp4",
+    "sigml_file": "V.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\V.sigml"
+  },
+  {
+    "word_title": "W",
+    "video_file": "W.mp4",
+    "sigml_file": "W.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\W.sigml"
+  },
+  {
+    "word_title": "X",
+    "video_file": "X.mp4",
+    "sigml_file": "X.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\X.sigml"
+  },
+  {
+    "word_title": "Y",
+    "video_file": "Y.mp4",
+    "sigml_file": "Y.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\Y.sigml"
+  },
+  {
+    "word_title": "Z",
+    "video_file": "Z.mp4",
+    "sigml_file": "Z.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\Z.sigml"
+  },
+  {
+    "word_title": "Eat [VEB]/Food",
+    "video_file": "Eat [VEB] or Food.mp4",
+    "sigml_file": "eat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\eat.sigml"
+  },
+  {
+    "word_title": "Say [VEB]/Tell [VEB]",
+    "video_file": "Say [VEB] or Tell [VEB].mp4",
+    "sigml_file": "say.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\say.sigml"
+  },
+  {
+    "word_title": "Sit [VEB]/Chair",
+    "video_file": "Sit [VEB] or Chair.mp4",
+    "sigml_file": "chair.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\chair.sigml"
+  },
+  {
+    "word_title": "Home/House",
+    "video_file": "Home or House.mp4",
+    "sigml_file": "home.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\home.sigml"
+  },
+  {
+    "word_title": "Rubber/Eraser",
+    "video_file": "Rubber or Eraser.mp4",
+    "sigml_file": "eraser.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\eraser.sigml"
+  },
+  {
+    "word_title": "Then/After",
+    "video_file": "Then or After.mp4",
+    "sigml_file": "then.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\then.sigml"
+  },
+  {
+    "word_title": "Clinic",
+    "video_file": "Clinic.mp4",
+    "sigml_file": "clinic.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\clinic.sigml"
+  },
+  {
+    "word_title": "Train Station",
+    "video_file": "Train Station.mp4",
+    "sigml_file": "train.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\train.sigml"
+  },
+  {
+    "word_title": "He/Him",
+    "video_file": "He or Him.mp4",
+    "sigml_file": "he.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\he.sigml"
+  },
+  {
+    "word_title": "Her/She",
+    "video_file": "Her or She.mp4",
+    "sigml_file": "her.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\her.sigml"
+  },
+  {
+    "word_title": "Argue/Quarrel",
+    "video_file": "Argue or Quarrel.mp4",
+    "sigml_file": "argue.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\argue.sigml"
+  },
+  {
+    "word_title": "Begin/Start",
+    "video_file": "Begin or Start.mp4",
+    "sigml_file": "begin.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\begin.sigml"
+  },
+  {
+    "word_title": "Bring/Guide/Lead",
+    "video_file": "Bring or Guide or Lead.mp4",
+    "sigml_file": "bring.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bring.sigml"
+  },
+  {
+    "word_title": "Omit/Refuse/Reject/Avoid",
+    "video_file": "Omit or Refuse or Reject or Avoid.mp4",
+    "sigml_file": "avoid.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\avoid.sigml"
+  },
+  {
+    "word_title": "Teach/Train [VEB]",
+    "video_file": "Teach or Train [VEB].mp4",
+    "sigml_file": "teach.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\teach.sigml"
+  },
+  {
+    "word_title": "Big/Large",
+    "video_file": "Big or Large.mp4",
+    "sigml_file": "big.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\big.sigml"
+  },
+  {
+    "word_title": "Loud (Noise Sound)",
+    "video_file": "Loud (Noise Sound).mp4",
+    "sigml_file": "loud.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\loud.sigml"
+  },
+  {
+    "word_title": "Possible/Available",
+    "video_file": "Possible or Available.mp4",
+    "sigml_file": "possible.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\possible.sigml"
+  },
+  {
+    "word_title": "Short/Young",
+    "video_file": "Short or Young.mp4",
+    "sigml_file": "short.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\short.sigml"
+  },
+  {
+    "word_title": "Stubborn",
+    "video_file": "Stubborn.mp4",
+    "sigml_file": "stubborn.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\stubborn.sigml"
+  },
+  {
+    "word_title": "Truck",
+    "video_file": "Truck.mp4",
+    "sigml_file": "truck.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\truck.sigml"
+  },
+  {
+    "word_title": "0/Zero",
+    "video_file": "0 or Zero.mp4",
+    "sigml_file": "0.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\0.sigml"
+  },
+  {
+    "word_title": "1/One",
+    "video_file": "1 or One.mp4",
+    "sigml_file": "1.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\1.sigml"
+  },
+  {
+    "word_title": "2/Two",
+    "video_file": "2 or Two.mp4",
+    "sigml_file": "2.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\2.sigml"
+  },
+  {
+    "word_title": "3/Three",
+    "video_file": "3 or Three.mp4",
+    "sigml_file": "3.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\3.sigml"
+  },
+  {
+    "word_title": "4/Four",
+    "video_file": "4 or Four.mp4",
+    "sigml_file": "4.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\4.sigml"
+  },
+  {
+    "word_title": "5/Five",
+    "video_file": "5 or Five.mp4",
+    "sigml_file": "5.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\5.sigml"
+  },
+  {
+    "word_title": "6/Six",
+    "video_file": "6 or Six.mp4",
+    "sigml_file": "6.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\6.sigml"
+  },
+  {
+    "word_title": "7/Seven",
+    "video_file": "7 or Seven.mp4",
+    "sigml_file": "7.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\7.sigml"
+  },
+  {
+    "word_title": "8/Eight",
+    "video_file": "8 or Eight.mp4",
+    "sigml_file": "8.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\8.sigml"
+  },
+  {
+    "word_title": "9/Nine",
+    "video_file": "9 or Nine.mp4",
+    "sigml_file": "9.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\9.sigml"
+  },
+  {
+    "word_title": "10/Ten",
+    "video_file": "10 or Ten.mp4",
+    "sigml_file": "10.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\10.sigml"
+  },
+  {
+    "word_title": "11/Eleven",
+    "video_file": "11 or Eleven.mp4",
+    "sigml_file": "11.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\11.sigml"
+  },
+  {
+    "word_title": "12/Twelve",
+    "video_file": "12 or Twelve.mp4",
+    "sigml_file": "12.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\12.sigml"
+  },
+  {
+    "word_title": "13/Thirteen",
+    "video_file": "13 or Thirteen.mp4",
+    "sigml_file": "13.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\13.sigml"
+  },
+  {
+    "word_title": "14/Fourteen",
+    "video_file": "14 or Fourteen.mp4",
+    "sigml_file": "fourteen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fourteen.sigml"
+  },
+  {
+    "word_title": "15/Fifteen",
+    "video_file": "15 or Fifteen.mp4",
+    "sigml_file": "fifteen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fifteen.sigml"
+  },
+  {
+    "word_title": "16/Sixteen",
+    "video_file": "16 or Sixteen.mp4",
+    "sigml_file": "sixteen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sixteen.sigml"
+  },
+  {
+    "word_title": "17/Seventeen",
+    "video_file": "17 or Seventeen.mp4",
+    "sigml_file": "seventeen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\seventeen.sigml"
+  },
+  {
+    "word_title": "18/Eighteen",
+    "video_file": "18 or Eighteen.mp4",
+    "sigml_file": "eighteen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\eighteen.sigml"
+  },
+  {
+    "word_title": "19/Nineteen",
+    "video_file": "19 or Nineteen.mp4",
+    "sigml_file": "nineteen.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\nineteen.sigml"
+  },
+  {
+    "word_title": "20/Twenty",
+    "video_file": "20 or Twenty.mp4",
+    "sigml_file": "twenty.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\twenty.sigml"
+  },
+  {
+    "word_title": "100/One Hundred",
+    "video_file": "100 or One Hundred.mp4",
+    "sigml_file": "100.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\100.sigml"
+  },
+  {
+    "word_title": "200/Two Hundred",
+    "video_file": "200 or Two Hundred.mp4",
+    "sigml_file": "twohundred.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\twohundred.sigml"
+  },
+  {
+    "word_title": "700/Seven Hundred",
+    "video_file": "700 or Seven Hundred.mp4",
+    "sigml_file": "sevenhundred.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sevenhundred.sigml"
+  },
+  {
+    "word_title": "1,001/Thousand & One",
+    "video_file": "1,001 or Thousand & One.mp4",
+    "sigml_file": "1.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\1.sigml"
+  },
+  {
+    "word_title": "100,000/One Lac",
+    "video_file": "100,000 or One Lac.mp4",
+    "sigml_file": "100.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\100.sigml"
+  },
+  {
+    "word_title": "5,000,000/Five Million",
+    "video_file": "5,000,000 or Five Million.mp4",
+    "sigml_file": "5.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\5.sigml"
+  },
+  {
+    "word_title": "10,000,000/One Crore",
+    "video_file": "10,000,000 or One Crore.mp4",
+    "sigml_file": "10.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\10.sigml"
+  },
+  {
+    "word_title": "Word Class",
+    "video_file": "Word Class.mp4",
+    "sigml_file": "word.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\word.sigml"
+  },
+  {
+    "word_title": "Internet",
+    "video_file": "Internet.mp4",
+    "sigml_file": "internet.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\internet.sigml"
+  },
+  {
+    "word_title": "Loss",
+    "video_file": "Loss.mp4",
+    "sigml_file": "loss.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\loss.sigml"
+  },
+  {
+    "word_title": "Mind",
+    "video_file": "Mind.mp4",
+    "sigml_file": "mind.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\mind.sigml"
+  },
+  {
+    "word_title": "Next",
+    "video_file": "Next.mp4",
+    "sigml_file": "next.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\next.sigml"
+  },
+  {
+    "word_title": "Nice",
+    "video_file": "Nice.mp4",
+    "sigml_file": "nice.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\nice.sigml"
+  },
+  {
+    "word_title": "Enter [VEB]",
+    "video_file": "Enter [VEB].mp4",
+    "sigml_file": "enter.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\enter.sigml"
+  },
+  {
+    "word_title": "Fear",
+    "video_file": "Fear.mp4",
+    "sigml_file": "fear.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\fear.sigml"
+  },
+  {
+    "word_title": "Run [VEB]",
+    "video_file": "Run [VEB].mp4",
+    "sigml_file": "run.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\run.sigml"
+  },
+  {
+    "word_title": "Teeth/White (Color)",
+    "video_file": "Teeth or White (Color).mp4",
+    "sigml_file": "teeth.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\teeth.sigml"
+  },
+  {
+    "word_title": "Think [VEB]",
+    "video_file": "Think [VEB].mp4",
+    "sigml_file": "think.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\think.sigml"
+  },
+  {
+    "word_title": "Floor",
+    "video_file": "Floor.mp4",
+    "sigml_file": "floor.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\floor.sigml"
+  },
+  {
+    "word_title": "Flood",
+    "video_file": "Flood.mp4",
+    "sigml_file": "flood.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\flood.sigml"
+  },
+  {
+    "word_title": "Hill",
+    "video_file": "Hill.mp4",
+    "sigml_file": "hill.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\hill.sigml"
+  },
+  {
+    "word_title": "Loud (Sound In Thunder)",
+    "video_file": "Loud (Sound In Thunder).mp4",
+    "sigml_file": "loud.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\loud.sigml"
+  },
+  {
+    "word_title": "Day After",
+    "video_file": "Day After.mp4",
+    "sigml_file": "day.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\day.sigml"
+  },
+  {
+    "word_title": "Day Before",
+    "video_file": "Day Before.mp4",
+    "sigml_file": "day.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\day.sigml"
+  },
+  {
+    "word_title": "Now",
+    "video_file": "Now.mp4",
+    "sigml_file": "now.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\now.sigml"
+  },
+  {
+    "word_title": "Weight",
+    "video_file": "Weight.mp4",
+    "sigml_file": "weight.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\weight.sigml"
+  },
+  {
+    "word_title": "Knowledge",
+    "video_file": "Knowledge.mp4",
+    "sigml_file": "knowledge.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\knowledge.sigml"
+  },
+  {
+    "word_title": "Compass (In Geometry Box)",
+    "video_file": "Compass (In Geometry Box).mp4",
+    "sigml_file": "compass.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\compass.sigml"
+  },
+  {
+    "word_title": "Quote",
+    "video_file": "Quote.mp4",
+    "sigml_file": "quote.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\quote.sigml"
+  },
+  {
+    "word_title": "Africa",
+    "video_file": "Africa.mp4",
+    "sigml_file": "africa.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\africa.sigml"
+  },
+  {
+    "word_title": "Germany",
+    "video_file": "Germany.mp4",
+    "sigml_file": "germany.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\germany.sigml"
+  },
+  {
+    "word_title": "Andhra Pradesh",
+    "video_file": "Andhra Pradesh.mp4",
+    "sigml_file": "andhrapradesh.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\andhrapradesh.sigml"
+  },
+  {
+    "word_title": "Assam",
+    "video_file": "Assam.mp4",
+    "sigml_file": "assam.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\assam.sigml"
+  },
+  {
+    "word_title": "Kerala",
+    "video_file": "Kerala.mp4",
+    "sigml_file": "kerala.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\kerala.sigml"
+  },
+  {
+    "word_title": "West Bengal",
+    "video_file": "West Bengal.mp4",
+    "sigml_file": "west.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\west.sigml"
+  },
+  {
+    "word_title": "Nagpur",
+    "video_file": "Nagpur.mp4",
+    "sigml_file": "nagpur.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\nagpur.sigml"
+  },
+  {
+    "word_title": "Ooty",
+    "video_file": "Ooty.mp4",
+    "sigml_file": "ooty.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\ooty.sigml"
+  },
+  {
+    "word_title": "Town",
+    "video_file": "Town.mp4",
+    "sigml_file": "town.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\town.sigml"
+  },
+  {
+    "word_title": "Sewing Machine",
+    "video_file": "Sewing Machine.mp4",
+    "sigml_file": "sewingmachine.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\sewingmachine.sigml"
+  },
+  {
+    "word_title": "Tailor",
+    "video_file": "Tailor.mp4",
+    "sigml_file": "tailor.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tailor.sigml"
+  },
+  {
+    "word_title": "Thread",
+    "video_file": "Thread.mp4",
+    "sigml_file": "thread.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\thread.sigml"
+  },
+  {
+    "word_title": "Building",
+    "video_file": "Building.mp4",
+    "sigml_file": "building.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\building.sigml"
+  },
+  {
+    "word_title": "Transport",
+    "video_file": "Transport.mp4",
+    "sigml_file": "transport.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\transport.sigml"
+  },
+  {
+    "word_title": "Enjoy [VEB]",
+    "video_file": "Enjoy [VEB].mp4",
+    "sigml_file": "enjoy.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\enjoy.sigml"
+  },
+  {
+    "word_title": "Buddha Purnima",
+    "video_file": "Buddha Purnima.mp4",
+    "sigml_file": "buddha.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\buddha.sigml"
+  },
+  {
+    "word_title": "Quran",
+    "video_file": "Quran.mp4",
+    "sigml_file": "quran.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\quran.sigml"
+  },
+  {
+    "word_title": "Bat",
+    "video_file": "Bat.mp4",
+    "sigml_file": "bat.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bat.sigml"
+  },
+  {
+    "word_title": "National Anthem",
+    "video_file": "National Anthem.mp4",
+    "sigml_file": "national.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\national.sigml"
+  },
+  {
+    "word_title": "Before",
+    "video_file": "Before.mp4",
+    "sigml_file": "before.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\before.sigml"
+  },
+  {
+    "word_title": "On",
+    "video_file": "On.mp4",
+    "sigml_file": "on.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\on.sigml"
+  },
+  {
+    "word_title": "With",
+    "video_file": "With.mp4",
+    "sigml_file": "with.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\with.sigml"
+  },
+  {
+    "word_title": "Without",
+    "video_file": "Without.mp4",
+    "sigml_file": "without.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\without.sigml"
+  },
+  {
+    "word_title": "How Big",
+    "video_file": "How Big.mp4",
+    "sigml_file": "how.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\how.sigml"
+  },
+  {
+    "word_title": "How Much",
+    "video_file": "How Much.mp4",
+    "sigml_file": "howmuch.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\howmuch.sigml"
+  },
+  {
+    "word_title": "Question",
+    "video_file": "Question.mp4",
+    "sigml_file": "question.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\question.sigml"
+  },
+  {
+    "word_title": "Why",
+    "video_file": "Why.mp4",
+    "sigml_file": "why.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\why.sigml"
+  },
+  {
+    "word_title": "Or",
+    "video_file": "Or.mp4",
+    "sigml_file": "or.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\or.sigml"
+  },
+  {
+    "word_title": "Bath",
+    "video_file": "Bath.mp4",
+    "sigml_file": "bath.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\bath.sigml"
+  },
+  {
+    "word_title": "Complain",
+    "video_file": "Complain.mp4",
+    "sigml_file": "complain.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\complain.sigml"
+  },
+  {
+    "word_title": "Cook",
+    "video_file": "Cook.mp4",
+    "sigml_file": "cook.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\cook.sigml"
+  },
+  {
+    "word_title": "Increase",
+    "video_file": "Increase.mp4",
+    "sigml_file": "increase.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\increase.sigml"
+  },
+  {
+    "word_title": "Know",
+    "video_file": "Know.mp4",
+    "sigml_file": "know.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\know.sigml"
+  },
+  {
+    "word_title": "Need",
+    "video_file": "Need.mp4",
+    "sigml_file": "need.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\need.sigml"
+  },
+  {
+    "word_title": "Offer",
+    "video_file": "Offer.mp4",
+    "sigml_file": "offer.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\offer.sigml"
+  },
+  {
+    "word_title": "Remind",
+    "video_file": "Remind.mp4",
+    "sigml_file": "remind.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\remind.sigml"
+  },
+  {
+    "word_title": "Take",
+    "video_file": "Take.mp4",
+    "sigml_file": "take.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\take.sigml"
+  },
+  {
+    "word_title": "Take Care",
+    "video_file": "Take Care.mp4",
+    "sigml_file": "take.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\take.sigml"
+  },
+  {
+    "word_title": "Taste",
+    "video_file": "Taste.mp4",
+    "sigml_file": "taste.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\taste.sigml"
+  },
+  {
+    "word_title": "Tie (Collaboration)",
+    "video_file": "Tie (Collaboration).mp4",
+    "sigml_file": "tie.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\tie.sigml"
+  },
+  {
+    "word_title": "Travel",
+    "video_file": "Travel.mp4",
+    "sigml_file": "travel.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\travel.sigml"
+  },
+  {
+    "word_title": "Alive",
+    "video_file": "Alive.mp4",
+    "sigml_file": "alive.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\alive.sigml"
+  },
+  {
+    "word_title": "All",
+    "video_file": "All.mp4",
+    "sigml_file": "all.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\all.sigml"
+  },
+  {
+    "word_title": "Many",
+    "video_file": "Many.mp4",
+    "sigml_file": "many.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\many.sigml"
+  },
+  {
+    "word_title": "More",
+    "video_file": "More.mp4",
+    "sigml_file": "more.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\more.sigml"
+  },
+  {
+    "word_title": "Keyboard",
+    "video_file": "Keyboard.mp4",
+    "sigml_file": "keyboard.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\keyboard.sigml"
+  },
+  {
+    "word_title": "All The Best/Good Luck",
+    "video_file": "All The Best or Good Luck.mp4",
+    "sigml_file": "all.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\all.sigml"
+  },
+  {
+    "word_title": "Check In",
+    "video_file": "Check In.mp4",
+    "sigml_file": "check.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\check.sigml"
+  },
+  {
+    "word_title": "Check Out",
+    "video_file": "Check Out.mp4",
+    "sigml_file": "check.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\check.sigml"
+  },
+  {
+    "word_title": "Regular",
+    "video_file": "Regular.mp4",
+    "sigml_file": "regular.sigml",
+    "sigml_path": "D:\\academics\\Hamnosys_versions\\HamNoSys_Group14_V2\\SignFiles\\regular.sigml"
+  }
+]

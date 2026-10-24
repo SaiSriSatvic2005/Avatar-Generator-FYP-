@@ -1,0 +1,519 @@
+/* HamNoSys Font Face */
+@font-face {
+    font-family: "HamNoSys";
+    src: url("/static/fonts/HamNoSys.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bg-color: #FAF7F2;          /* Cream White Background (Easy on the eyes) */
+    --card-bg: #FFFFFF;           /* Off-White Card Container */
+    --card-border: #E5E0D8;       /* Warm subtle card border */
+    --text-main: #111827;         /* Deep dark charcoal / black text */
+    --text-muted: #4B5563;        /* Dark slate muted text */
+    --primary: #991B1B;           /* Rich Maroon accent */
+    --primary-btn: #1D4ED8;       /* Primary button blue */
+    --primary-hover: #1E40AF;     /* Primary button hover blue */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;            /* Increased overall base font size */
+}
+
+/* Container & Layout */
+.container {
+    max-width: 1320px;            /* Wider spacious container */
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.45rem 1.25rem;
+    background: rgba(153, 27, 27, 0.08);
+    border: 1px solid rgba(153, 27, 27, 0.25);
+    color: var(--primary);
+    border-radius: 9999px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.4rem;            /* Prominent catchy header */
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
+}
+
+header h1 span {
+    color: var(--primary);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.25rem;           /* Increased readability size */
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Card Styling */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.04);
+    margin-bottom: 2rem;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;            /* Larger card titles */
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* Simple Intro Card */
+.intro-card {
+    border-left: 5px solid var(--primary);
+}
+
+.intro-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+}
+
+.intro-card p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Main Top Grid (Side-by-Side Video & Avatar Alignment) */
+.main-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 2.5rem;
+}
+
+.panel-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card-aligned, .avatar-card-aligned {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed #9CA3AF;
+    border-radius: 14px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #FAFAFA;
+}
+
+.upload-area:hover, .upload-area.dragover {
+    border-color: var(--primary-btn);
+    background: #EFF6FF;
+}
+
+.upload-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.35rem;
+}
+
+.upload-subtext {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Sample Buttons */
+.sample-selection {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--card-border);
+}
+
+.sample-label {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+    font-weight: 600;
+}
+
+.sample-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.sample-btn {
+    background: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    color: var(--text-main);
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sample-btn:hover {
+    background: var(--primary-btn);
+    border-color: var(--primary-btn);
+    color: white;
+}
+
+/* Video Preview Container */
+.video-preview-container {
+    margin-top: 1.25rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--card-border);
+}
+
+#input-video-player {
+    width: 100%;
+    max-height: 320px;
+    display: block;
+}
+
+.video-filename {
+    padding: 0.65rem 1rem;
+    background: #111827;
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    font-family: monospace;
+    text-align: center;
+}
+
+/* Avatar Container & Integrated Play Button */
+.avatar-container {
+    width: 100%;
+    height: 420px;
+    background: #EBF3FA;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #D1E5F7;
+    flex-grow: 1;
+}
+
+.CWASAAvatar {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    display: block !important;
+}
+
+.CWASAAvatar canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}
+
+/* Integrated Avatar Play Button */
+.btn-avatar-play {
+    width: 100%;
+    margin-top: 1.25rem;
+    background: var(--primary-btn);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+}
+
+.btn-avatar-play:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Results Details Grid */
+.results-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Sign Meaning Card */
+.gloss-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gloss-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gloss-badge {
+    padding: 0.45rem 1.1rem;
+    background: var(--primary);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+}
+
+.accuracy-pill {
+    padding: 0.4rem 1rem;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #047857;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-radius: 9999px;
+}
+
+.gloss-meaning {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.gloss-note {
+    padding: 0.85rem 1rem;
+    background: #FEF3C7;
+    border: 1px solid #FDE68A;
+    border-radius: 10px;
+    color: #92400E;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Results Box & Font Display */
+.result-group {
+    margin-bottom: 1.25rem;
+}
+
+.result-group label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.result-box {
+    background: #F9FAFB;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: monospace;
+    word-break: break-all;
+    font-size: 1.15rem;            /* Increased result font size */
+    color: #111827;
+    font-weight: 600;
+}
+
+/* HamNoSys Font Display */
+.hamnosys-font-display {
+    font-family: "HamNoSys", monospace !important;
+    font-size: 2.5rem;             /* Large HamNoSys glyph display */
+    letter-spacing: 6px;
+    color: var(--primary);
+    line-height: 1.4;
+    min-height: 60px;
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+/* Clean HamKeyboard Symbol Breakdown Chips (No Emoji Icons) */
+.symbol-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.ham-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.ham-chip-tag {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-btn);
+}
+
+.ham-chip-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Roadmap Section */
+.roadmap-card {
+    margin-top: 2.5rem;
+}
+
+.roadmap-header {
+    margin-bottom: 1rem;
+}
+
+.roadmap-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(153, 27, 27, 0.08);
+    color: var(--primary);
+    border-radius: 9999px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.roadmap-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.roadmap-intro {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.roadmap-card-item {
+    background: #F9FAFB;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.roadmap-card-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.roadmap-card-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Loading & Helpers */
+.hidden {
+    display: none !important;
+}
+
+#loading-indicator {
+    text-align: center;
+    padding: 1.75rem 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #E5E7EB;
+    border-left-color: var(--primary-btn);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 0.85rem auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .main-top-grid, .results-detail-grid, .roadmap-grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+}

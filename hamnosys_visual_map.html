@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HamNoSys Generation — Visual Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#F1F4F7;
+    --canvas-alt:#E4E9EF;
+    --card:#FFFFFF;
+    --ink:#101826;
+    --ink-soft:#4A5568;
+    --line:#B8C2CC;
+    --teal:#167D6F;
+    --teal-fill:#DCEFEC;
+    --violet:#5B3E9E;
+    --violet-fill:#ECE7F7;
+    --amber:#C1440E;
+    --amber-fill:#FBE9E1;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--canvas),var(--canvas)),
+      repeating-linear-gradient(0deg, rgba(16,24,38,0.045) 0px, rgba(16,24,38,0.045) 1px, transparent 1px, transparent 28px),
+      repeating-linear-gradient(90deg, rgba(16,24,38,0.045) 0px, rgba(16,24,38,0.045) 1px, transparent 1px, transparent 28px);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
+
+  /* --- landmark crosshair signature mark --- */
+  .lm{display:inline-block; position:relative; width:12px; height:12px; margin-right:6px; vertical-align:middle;}
+  .lm::before,.lm::after{content:"";position:absolute;background:var(--teal);}
+  .lm::before{left:5px; top:0; width:2px; height:12px;}
+  .lm::after{top:5px; left:0; width:12px; height:2px;}
+  .lm-dot{position:relative;}
+  .lm-dot::before{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;background:var(--teal);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--teal-fill);}
+
+  /* --- nav --- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,244,247,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .navrow{display:flex; gap:2px; overflow-x:auto; padding:10px 24px; max-width:1040px; margin:0 auto;}
+  nav a{
+    white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.03em;
+    text-transform:uppercase; color:var(--ink-soft); text-decoration:none; padding:6px 10px; border-radius:3px;
+  }
+  nav a:hover{color:var(--teal); background:var(--teal-fill);}
+
+  /* --- hero --- */
+  header.hero{padding:64px 0 40px; border-bottom:1px solid var(--line);}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--teal); margin:0 0 14px;
+  }
+  h1{
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:clamp(28px,4.2vw,44px);
+    line-height:1.12; margin:0 0 18px; letter-spacing:-0.01em;
+  }
+  .thesis{font-size:16.5px; color:var(--ink-soft); max-width:640px; margin:0 0 26px;}
+  .hero-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; padding:5px 10px; border-radius:3px;
+    background:var(--card); border:1px solid var(--line); color:var(--ink-soft);
+  }
+  .hand-motif{width:180px; height:180px; position:relative; float:right; margin:-30px -8px 0 20px;}
+  .hand-motif svg{width:100%;height:100%;}
+  .hand-motif circle.pt{animation:pulse 2.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.55;}50%{opacity:1;}}
+
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:8px;}
+  .num{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--teal); font-weight:600;}
+  h2{font-family:'IBM Plex Mono',monospace; font-size:24px; margin:0; letter-spacing:-0.01em;}
+  .section-sub{color:var(--ink-soft); font-size:14.5px; max-width:680px; margin:6px 0 32px;}
+
+  /* --- pipeline diagram --- */
+  .pipe-box{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:14px 18px;
+    text-align:center; font-family:'IBM Plex Mono',monospace; font-size:13px; max-width:420px; margin:0 auto;
+  }
+  .pipe-arrow{display:flex; justify-content:center; padding:6px 0;}
+  .pipe-arrow svg{display:block;}
+  .branch-wrap{position:relative; padding-top:26px;}
+  .branch-svg{position:absolute; top:0; left:0; width:100%; height:26px;}
+  .branch-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .mod-card{
+    background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px 14px;
+    text-decoration:none; color:var(--ink); display:block; transition:border-color .15s, transform .15s;
+  }
+  .mod-card:hover{border-color:var(--teal); transform:translateY(-2px);}
+  .mod-card .mnum{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--teal); font-weight:600;}
+  .mod-card h3{font-size:14.5px; margin:6px 0 8px; font-family:'IBM Plex Mono',monospace;}
+  .mod-card p{font-size:12.5px; color:var(--ink-soft); margin:0;}
+  .converge{padding-top:22px;}
+  .converge-svg{display:block; margin:0 auto;}
+
+  .loop-note{
+    margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);
+    text-align:center;
+  }
+
+  /* --- generic formula / threshold callouts --- */
+  .formula{
+    background:var(--violet-fill); border-left:3px solid var(--violet); border-radius:0 4px 4px 0;
+    padding:10px 14px; font-family:'IBM Plex Mono',monospace; font-size:13px; margin:10px 0; overflow-x:auto;
+  }
+  .threshold{
+    display:inline-block; background:var(--amber-fill); border:1px solid #eecdbc; color:var(--amber);
+    font-family:'IBM Plex Mono',monospace; font-size:12px; padding:2px 7px; border-radius:3px;
+  }
+  .callout-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:720px){.callout-grid,.branch-cards{grid-template-columns:1fr;}}
+
+  .card-block{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:20px 22px; margin-bottom:18px;}
+  .card-block h4{font-family:'IBM Plex Mono',monospace; font-size:14px; margin:0 0 10px; color:var(--teal);}
+  .card-block ul{margin:8px 0 0; padding-left:18px; font-size:13.5px; color:var(--ink-soft);}
+  .card-block li{margin-bottom:4px;}
+
+  /* --- handshape tree --- */
+  .tree{display:flex; flex-direction:column; align-items:center; gap:0; margin:30px 0;}
+  .tree-node{
+    background:var(--teal-fill); border:1px solid var(--teal); border-radius:6px; padding:8px 16px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-align:center; color:#0d564c;
+  }
+  .tree-line{width:1px; height:18px; background:var(--line);}
+  .paths{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:18px;}
+  .path-chip{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; background:var(--card); border:1px dashed var(--line);
+    padding:4px 9px; border-radius:20px; color:var(--ink-soft);
+  }
+
+  /* --- orientation compass --- */
+  .compass-wrap{display:flex; gap:34px; align-items:center; flex-wrap:wrap; justify-content:center; margin:20px 0;}
+  .compass{
+    width:280px; height:280px; border-radius:50%; position:relative; flex:none;
+    background:repeating-conic-gradient(from -22.5deg, var(--teal-fill) 0deg 45deg, #ffffff 45deg 90deg);
+    border:1px solid var(--line);
+  }
+  .compass .center-dot{position:absolute; left:50%; top:50%; width:8px; height:8px; background:var(--ink); border-radius:50%; transform:translate(-50%,-50%);}
+  .compass .arrow{
+    position:absolute; left:50%; top:50%; width:44%; height:2px; background:var(--amber);
+    transform-origin:left center; transform:rotate(-45deg);
+  }
+  .compass .arrow::after{
+    content:""; position:absolute; right:-1px; top:-4px; border:5px solid transparent; border-left-color:var(--amber);
+  }
+  .compass .lbl{position:absolute; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); transform:translate(-50%,-50%); white-space:nowrap;}
+  .compass-legend{max-width:320px; font-size:13.5px; color:var(--ink-soft);}
+
+  /* --- face strip --- */
+  .face-strip-wrap{display:flex; gap:28px; align-items:stretch; flex-wrap:wrap;}
+  .face-strip{width:140px; border:1px solid var(--line); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; flex:none;}
+  .face-strip .band{display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#0d564c; border-bottom:1px solid rgba(255,255,255,.6);}
+  .face-key{flex:1; min-width:260px;}
+  .face-key table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  .face-key td{padding:4px 8px; border-bottom:1px solid var(--canvas-alt);}
+  .face-key td.range{font-family:'IBM Plex Mono',monospace; color:var(--amber); white-space:nowrap;}
+
+  /* --- body skeleton --- */
+  .skeleton-wrap{display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;}
+  .skeleton-svg{flex:none;}
+  .zone-list{flex:1; min-width:260px; font-size:13px;}
+  .zone-list .z{display:flex; gap:10px; padding:8px 0; border-bottom:1px solid var(--canvas-alt);}
+  .zone-list .z b{font-family:'IBM Plex Mono',monospace; color:var(--teal); min-width:120px; display:inline-block;}
+
+  /* --- movement paths --- */
+  .move-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .move-panel{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px;}
+  .move-panel h4{margin:0 0 4px; font-family:'IBM Plex Mono',monospace; font-size:13.5px;}
+  .move-panel p{font-size:12.5px; color:var(--ink-soft); margin:6px 0 0;}
+  @media (max-width:720px){.move-grid{grid-template-columns:1fr;}}
+
+  /* --- cheat sheet table --- */
+  table.cheat{width:100%; border-collapse:collapse; font-size:12.8px; background:var(--card); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+  table.cheat th{
+    text-align:left; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em;
+    background:var(--canvas-alt); padding:9px 12px; border-bottom:1px solid var(--line);
+  }
+  table.cheat td{padding:8px 12px; border-bottom:1px solid var(--canvas-alt); vertical-align:top;}
+  table.cheat tr:last-child td{border-bottom:none;}
+  table.cheat td.val{font-family:'IBM Plex Mono',monospace; color:var(--amber); white-space:nowrap;}
+
+  /* --- viva accordion --- */
+  details{background:var(--card); border:1px solid var(--line); border-radius:6px; margin-bottom:10px; padding:0;}
+  details summary{
+    cursor:pointer; padding:14px 16px; font-family:'IBM Plex Mono',monospace; font-size:13.5px;
+    list-style:none; display:flex; gap:10px; align-items:center;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{content:"+"; color:var(--teal); font-weight:700; width:14px;}
+  details[open] summary::before{content:"–";}
+  details .a{padding:0 16px 16px 40px; font-size:13.5px; color:var(--ink-soft);}
+
+  footer{padding:40px 24px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <a href="#pipeline">Pipeline</a>
+    <a href="#handshape">01 Handshape</a>
+    <a href="#orientation">02 Orientation</a>
+    <a href="#location">03 Location</a>
+    <a href="#movement">04 Movement</a>
+    <a href="#verify">Validation + Avatar</a>
+    <a href="#cheatsheet">Cheat Sheet</a>
+    <a href="#viva">Viva Prep</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hand-motif" aria-hidden="true">
+      <svg viewBox="0 0 180 180">
+        <g stroke="#167D6F" stroke-width="1.4" opacity="0.55">
+          <line x1="90" y1="150" x2="70" y2="80"/>
+          <line x1="90" y1="150" x2="85" y2="60"/>
+          <line x1="90" y1="150" x2="100" y2="58"/>
+          <line x1="90" y1="150" x2="115" y2="65"/>
+          <line x1="90" y1="150" x2="130" y2="90"/>
+        </g>
+        <g fill="#167D6F">
+          <circle class="pt" cx="90" cy="150" r="5"/>
+          <circle class="pt" cx="70" cy="80" r="4" style="animation-delay:.2s"/>
+          <circle class="pt" cx="85" cy="60" r="4" style="animation-delay:.4s"/>
+          <circle class="pt" cx="100" cy="58" r="4" style="animation-delay:.6s"/>
+          <circle class="pt" cx="115" cy="65" r="4" style="animation-delay:.8s"/>
+          <circle class="pt" cx="130" cy="90" r="4" style="animation-delay:1s"/>
+        </g>
+      </svg>
+    </div>
+    <p class="eyebrow">&lt;lm/&gt; project visual map — study reference</p>
+    <h1>Automatic HamNoSys<br>Generation from<br>Sign&nbsp;Language Images</h1>
+    <p class="thesis">Four independent modules read coordinates off a MediaPipe skeleton and turn them into HamNoSys symbols — one module trained with machine learning, three built from pure geometry. An animated avatar then checks the system's own work.</p>
+    <div class="hero-tags">
+      <span class="tag">21 landmarks / hand</span>
+      <span class="tag">149 handshape classes</span>
+      <span class="tag">cosine similarity 0.88</span>
+      <span class="tag">Google Colab Pro</span>
+    </div>
+    <div style="clear:both;"></div>
+  </header>
+
+  <!-- PIPELINE -->
+  <section id="pipeline">
+    <div class="section-head"><span class="num">FIG.1</span><h2>The full pipeline</h2></div>
+    <p class="section-sub">One input, four parallel readings, one merge, one legality check, one animated cross-check. Click a module below to jump to its detail section.</p>
+
+    <div class="pipe-box"><span class="lm"></span>Sign language image / video</div>
+    <div class="pipe-arrow"><svg width="16" height="22"><path d="M8 0 V16 M2 12 L8 18 L14 12" stroke="#4A5568" stroke-width="1.6" fill="none"/></svg></div>
+    <div class="pipe-box"><span class="lm"></span>MediaPipe landmark extraction<br><span style="color:var(--ink-soft); font-size:11px;">21 pts/hand · face box · pose skeleton</span></div>
+
+    <div class="branch-wrap">
+      <svg class="branch-svg" viewBox="0 0 400 26" preserveAspectRatio="none">
+        <path d="M200 0 V10" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+        <path d="M50 10 H350" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+        <path d="M50 10 V26 M150 10 V26 M250 10 V26 M350 10 V26" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+      </svg>
+      <div class="branch-cards">
+        <a class="mod-card" href="#handshape"><span class="mnum">01 · ML</span><h3>Handshape</h3><p>Hierarchical classifiers (A–C–D–E–X). 5 nodes, conditional prediction.</p></a>
+        <a class="mod-card" href="#orientation"><span class="mnum">02 · geometry</span><h3>Orientation</h3><p>Palm-axis vector mapped to 1 of 8 compass directions, 45° each.</p></a>
+        <a class="mod-card" href="#location"><span class="mnum">03 · geometry</span><h3>Location</h3><p>6 sub-modules: face, contact, finger, hand, upper body, arm/space.</p></a>
+        <a class="mod-card" href="#movement"><span class="mnum">04 · geometry</span><h3>Movement</h3><p>Movement-1: direction/speed/repeat. Movement-2: path shape.</p></a>
+      </div>
+    </div>
+
+    <div class="converge">
+      <svg class="converge-svg" width="400" height="30" viewBox="0 0 400 30" preserveAspectRatio="none">
+        <path d="M50 0 V14 M150 0 V14 M250 0 V14 M350 0 V14" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+        <path d="M50 14 H350" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+        <path d="M200 14 V30" stroke="#4A5568" stroke-width="1.6" fill="none"/>
+      </svg>
+    </div>
+    <div class="pipe-box">Combine → validate against CSV lexicon</div>
+    <div class="pipe-arrow"><svg width="16" height="22"><path d="M8 0 V16 M2 12 L8 18 L14 12" stroke="#4A5568" stroke-width="1.6" fill="none"/></svg></div>
+    <div class="pipe-box">SiGML conversion → JASigning avatar</div>
+    <div class="pipe-arrow"><svg width="16" height="22"><path d="M8 0 V16 M2 12 L8 18 L14 12" stroke="#4A5568" stroke-width="1.6" fill="none"/></svg></div>
+    <div class="pipe-box" style="border-color:var(--amber); color:var(--amber);">Avatar similarity check — cosine similarity</div>
+    <p class="loop-note">↳ low similarity loops back to "refine models" · high similarity → HamNoSys system output finalized</p>
+  </section>
+
+  <!-- HANDSHAPE -->
+  <section id="handshape">
+    <div class="section-head"><span class="num">01</span><h2>Handshape Detection</h2></div>
+    <p class="section-sub">The only module trained with machine learning. HamNoSys handshape isn't one label — it's a small compositional tree, so the model predicts it node by node.</p>
+
+    <div class="tree">
+      <div class="tree-node">A — Basic Handshape<br><span style="opacity:.7">fist / flat / spread / pinch / curved</span></div>
+      <div class="tree-line"></div>
+      <div class="tree-node">C — Thumb Configuration</div>
+      <div class="tree-line"></div>
+      <div class="tree-node">D — Finger-Type <span style="opacity:.7">(straight / bent / hooked)</span></div>
+      <div class="tree-line"></div>
+      <div class="tree-node">E — Finger States <span style="opacity:.7">(which finger is active)</span></div>
+      <div class="tree-line"></div>
+      <div class="tree-node">X — Extra <span style="opacity:.7">(tip / nail / pad contact)</span></div>
+    </div>
+    <p style="text-align:center; font-size:12.5px; color:var(--ink-soft);">prediction is <b>progressive</b> — node A fires first, then conditionally activates C → D → E → X, so only legal tree paths can ever be produced</p>
+    <div class="paths">
+      <span class="path-chip">A→C→D→E</span>
+      <span class="path-chip">A→D→E</span>
+      <span class="path-chip">A→C→D</span>
+      <span class="path-chip">A→C</span>
+      <span class="path-chip">A→D</span>
+      <span class="path-chip">A→E (1..n)</span>
+    </div>
+
+    <div class="card-block" style="margin-top:26px;">
+      <h4>Why hierarchical, not one flat classifier?</h4>
+      <ul>
+        <li>Smaller, easier-to-separate classes per node → less confusion between visually similar handshapes</li>
+        <li>Mirrors HamNoSys's own compositional structure</li>
+        <li>Conditional prediction path makes invalid combinations structurally impossible</li>
+        <li>Trained with <span class="threshold">XGBoost</span> (primary + fallback) and <span class="threshold">Random Forest</span> on 63 features (21 landmarks × x,y,z) per hand image</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ORIENTATION -->
+  <section id="orientation">
+    <div class="section-head"><span class="num">02</span><h2>Orientation Detection</h2></div>
+    <p class="section-sub">Pure geometry — the palm/finger direction is computed from a vector, then rounded to the nearest of 8 evenly-spaced compass directions.</p>
+
+    <div class="formula">vec(p) = L_middle_base − L_wrist &nbsp;&nbsp;|&nbsp;&nbsp; n̂ = (−p_y, p_x) &nbsp;&nbsp;|&nbsp;&nbsp; 360° / 8 = 45° per direction</div>
+
+    <div class="compass-wrap">
+      <div class="compass">
+        <div class="center-dot"></div>
+        <div class="arrow"></div>
+        <span class="lbl" style="left:93%; top:50%;">right · 0°</span>
+        <span class="lbl" style="left:85%; top:16%;">up-right · 45°</span>
+        <span class="lbl" style="left:50%; top:4%;">up · 90°</span>
+        <span class="lbl" style="left:15%; top:16%;">up-left · 135°</span>
+        <span class="lbl" style="left:4%; top:50%;">left · 180°</span>
+        <span class="lbl" style="left:15%; top:84%;">down-left · 225°</span>
+        <span class="lbl" style="left:50%; top:97%;">down · 270°</span>
+        <span class="lbl" style="left:87%; top:84%;">down-right · 315°</span>
+      </div>
+      <div class="compass-legend">
+        <p><b>Why 45° wedges?</b> 360° split evenly across 8 directions is the only partition where no direction gets a bigger slice — each spans ±22.5° around its canonical angle (boundaries ≈ 22°, 67°, 112°, 157°...).</p>
+        <p>The amber arrow marks one worked example: a computed palm-axis angle that lands inside the <b>up-right</b> wedge.</p>
+        <p><b>View selection</b> (which reference frame): wrist above eye-level → <span class="threshold">bird view</span>; wrist right of right shoulder → <span class="threshold">right view</span>; otherwise → <span class="threshold">signer view</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="section-head"><span class="num">03</span><h2>Location Detection</h2></div>
+    <p class="section-sub">The biggest module — six sub-parts, all sharing one trick: normalize every distance against a body-scale reference so thresholds work for any signer, any camera distance.</p>
+
+    <div class="card-block">
+      <h4>3.1 — Head &amp; Face Location</h4>
+      <div class="face-strip-wrap">
+        <div class="face-strip">
+          <div class="band" style="height:10%; background:#DCEFEC;">headtop</div>
+          <div class="band" style="height:8%; background:#CDE7E3;">head</div>
+          <div class="band" style="height:10%; background:#BFE0DA;">forehead</div>
+          <div class="band" style="height:8%; background:#AEDAD2;">eyebrow</div>
+          <div class="band" style="height:8%; background:#9ED3C9;">eyes</div>
+          <div class="band" style="height:11%; background:#8ECDC1;">nose</div>
+          <div class="band" style="height:10%; background:#7EC6B9;color:#fff;">nostrils</div>
+          <div class="band" style="height:13%; background:#5FB6A6;color:#fff;">lips</div>
+          <div class="band" style="height:11%; background:#409C8C;color:#fff;">teeth</div>
+          <div class="band" style="height:11%; background:#167D6F;color:#fff;">chin</div>
+        </div>
+        <div class="face-key">
+          <table>
+            <tr><td class="range">rel_y &lt; 0.10</td><td>hamheadtop</td></tr>
+            <tr><td class="range">0.10 – 0.18</td><td>hamhead</td></tr>
+            <tr><td class="range">0.18 – 0.28</td><td>forehead</td></tr>
+            <tr><td class="range">0.28 – 0.36</td><td>eyebrow</td></tr>
+            <tr><td class="range">0.36 – 0.44</td><td>hameyes</td></tr>
+            <tr><td class="range">0.44 – 0.55</td><td>hamnose</td></tr>
+            <tr><td class="range">0.55 – 0.65</td><td>hamnostrils</td></tr>
+            <tr><td class="range">0.65 – 0.777</td><td>lips</td></tr>
+            <tr><td class="range">0.777 – 0.888</td><td>teeth</td></tr>
+            <tr><td class="range">0.888 – 1.00</td><td>chin</td></tr>
+          </table>
+          <p style="font-size:12px;color:var(--ink-soft); margin-top:8px;">rel_y = (y − face_top) / face_height — zone widths come from real anthropometric facial-proportion studies, not tuning.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-block">
+      <h4>3.2 — Contact Types</h4>
+      <p style="font-size:13px;color:var(--ink-soft); margin-top:0;">All distances are fractions of normalized body height:</p>
+      <table class="cheat">
+        <tr><th>Label</th><th>Rule</th><th>Real-world sense</th></tr>
+        <tr><td>hamtouch</td><td class="val">d ≤ 0.02</td><td>~finger width / height</td></tr>
+        <tr><td>hamclose</td><td class="val">0.02 &lt; d ≤ 0.05</td><td>≈ 8.5 cm</td></tr>
+        <tr><td>hambrushing</td><td class="val">close + Δp &gt; 0.01</td><td>~1–2 cm real motion</td></tr>
+        <tr><td>hambehind</td><td class="val">|Δz| &gt; 0.03</td><td>≈ 1 cm depth gap</td></tr>
+        <tr><td>hamcross</td><td class="val">L/R order flips + depth confirms</td><td>true 3D crossing, not 2D overlap</td></tr>
+        <tr><td>haminterlock</td><td class="val">multiple close pairs, varied depth</td><td>fingers laced together</td></tr>
+      </table>
+    </div>
+
+    <div class="callout-grid">
+      <div class="card-block">
+        <h4>3.3–3.4 — Finger &amp; Hand Location</h4>
+        <ul>
+          <li>Active finger = largest extension from palm centroid, d_i = ‖ptip_i − ppalm‖</li>
+          <li>MediaPipe finger index ranges: thumb 1–4, index 5–8, middle 9–12, ring 13–16, pinky 17–20</li>
+          <li>Hand-in-frame zones use centroid C=(Cx,Cy) vs thirds: <span class="threshold">0.33 / 0.66</span></li>
+          <li>Majority voting across frames smooths jitter (e.g. 3-to-1 vote → final label)</li>
+        </ul>
+      </div>
+      <div class="card-block">
+        <h4>3.5 — Upper Body Location</h4>
+        <ul>
+          <li>d_norm = distance / (shoulder width, arm length, or torso height)</li>
+          <li>Shoulder: d_norm &lt; <span class="threshold">0.25</span> · Elbow: d_norm &lt; <span class="threshold">0.20</span> · Wrist: d_norm &lt; <span class="threshold">0.10</span></li>
+          <li>Torso: rel=(Cy−shoulder_y)/torso_height → chest &lt;0.35, stomach 0.35–0.70, below ≥0.70</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-block">
+      <h4>3.6 — Arm &amp; Space Location</h4>
+      <div class="skeleton-wrap">
+        <svg class="skeleton-svg" width="200" height="220" viewBox="0 0 200 220">
+          <circle cx="100" cy="24" r="16" fill="none" stroke="#101826" stroke-width="1.6"/>
+          <line x1="60" y1="55" x2="140" y2="55" stroke="#101826" stroke-width="1.6"/>
+          <line x1="100" y1="55" x2="100" y2="130" stroke="#101826" stroke-width="1.6"/>
+          <line x1="60" y1="130" x2="140" y2="130" stroke="#101826" stroke-width="1.6"/>
+          <!-- left arm bent -->
+          <line x1="60" y1="55" x2="40" y2="95" stroke="#167D6F" stroke-width="2"/>
+          <line x1="40" y1="95" x2="60" y2="125" stroke="#167D6F" stroke-width="2"/>
+          <!-- right arm extended -->
+          <line x1="140" y1="55" x2="175" y2="75" stroke="#C1440E" stroke-width="2"/>
+          <line x1="175" y1="75" x2="195" y2="95" stroke="#C1440E" stroke-width="2"/>
+          <circle cx="60" cy="55" r="3.5" fill="#101826"/>
+          <circle cx="140" cy="55" r="3.5" fill="#101826"/>
+          <circle cx="40" cy="95" r="3.5" fill="#167D6F"/>
+          <circle cx="175" cy="75" r="3.5" fill="#C1440E"/>
+          <circle cx="60" cy="125" r="3.5" fill="#167D6F"/>
+          <circle cx="195" cy="95" r="3.5" fill="#C1440E"/>
+          <circle cx="60" cy="130" r="3.5" fill="#101826"/>
+          <circle cx="140" cy="130" r="3.5" fill="#101826"/>
+          <text x="8" y="112" font-family="IBM Plex Mono" font-size="9" fill="#167D6F">θ&lt;120°</text>
+          <text x="150" y="68" font-family="IBM Plex Mono" font-size="9" fill="#C1440E">θ&gt;160°, R&gt;0.95</text>
+        </svg>
+        <div class="zone-list">
+          <div class="z"><b>θ (elbow angle)</b> cos⁻¹[(S−E)·(W−E) / (‖S−E‖‖W−E‖)]</div>
+          <div class="z"><b>R (extension)</b> ‖S−W‖ / (‖S−E‖+‖E−W‖) → 1 = straight</div>
+          <div class="z"><b>hamdoublebent</b> both θ &lt; 120°</div>
+          <div class="z"><b>hamarmextended</b> θ &gt; 160° and R &gt; 0.95</div>
+          <div class="z"><b>hamlrat (midline)</b> xoffset &lt; 0.04</div>
+          <div class="z"><b>hamneutralspace</b> zoffset &gt; 0.05</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVEMENT -->
+  <section id="movement">
+    <div class="section-head"><span class="num">04</span><h2>Movement Detection</h2></div>
+    <p class="section-sub">Two layers: instantaneous frame-to-frame stats, then the shape of the whole path.</p>
+
+    <div class="move-grid">
+      <div class="move-panel">
+        <h4>Movement-1 — direction / speed / repeat</h4>
+        <svg width="100%" height="90" viewBox="0 0 260 90">
+          <polyline points="10,70 90,20 170,70 250,20" fill="none" stroke="#167D6F" stroke-width="2"/>
+          <circle cx="10" cy="70" r="3" fill="#167D6F"/><circle cx="90" cy="20" r="3" fill="#167D6F"/>
+          <circle cx="170" cy="70" r="3" fill="#167D6F"/><circle cx="250" cy="20" r="3" fill="#167D6F"/>
+        </svg>
+        <p>Δp_t = p_{t+1} − p_t · ε = <span class="threshold">0.02</span> dead-zone · v̄&lt;0.01 slow, v̄&gt;0.03 fast · reversals count repetition</p>
+      </div>
+      <div class="move-panel">
+        <h4>Movement-2 — path shape / circularity</h4>
+        <svg width="100%" height="90" viewBox="0 0 260 90">
+          <circle cx="130" cy="45" r="32" fill="none" stroke="#C1440E" stroke-width="2" stroke-dasharray="4 3"/>
+          <circle cx="130" cy="13" r="3" fill="#C1440E"/>
+        </svg>
+        <p>D = ‖p_N−p_1‖ (net) vs L = Σ‖p_{i+1}−p_i‖ (path length) → <b>D≪L</b> means circular/looped motion</p>
+      </div>
+    </div>
+    <div class="formula" style="margin-top:18px;">turning angle θ_i = cos⁻¹( v_i·v_{i+1} / (‖v_i‖‖v_{i+1}‖) ) &nbsp;·&nbsp; rotation direction from dα/dt (clockwise if decreasing)</div>
+  </section>
+
+  <!-- VALIDATION + AVATAR -->
+  <section id="verify">
+    <div class="section-head"><span class="num">FIG.6</span><h2>Validation &amp; Avatar Verification</h2></div>
+    <p class="section-sub">The project's only quantitative grading step, since no labeled test set exists for orientation/location/movement.</p>
+    <div class="callout-grid">
+      <div class="card-block">
+        <h4>CSV Lexicon Validation</h4>
+        <p style="font-size:13.5px; color:var(--ink-soft);">Every predicted combination is checked against a reference CSV of legal HamNoSys symbol strings + hex codes. Anything not on the list gets flagged and corrected — this is what makes "grammatically impossible" notation impossible to output.</p>
+      </div>
+      <div class="card-block">
+        <h4>Cosine Similarity</h4>
+        <div class="formula" style="margin-top:0;">cos_sim(A,B) = (A·B) / (‖A‖‖B‖)</div>
+        <p style="font-size:13.5px; color:var(--ink-soft);">Compares the <i>direction/pattern</i> of the avatar's feature vector vs. the original — not raw magnitude, so mismatched avatar/human proportions don't distort the score. Worked example: <span class="threshold">0.8812</span> similarity, RMSE/RMSD <span class="threshold">0.2781</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEAT SHEET -->
+  <section id="cheatsheet">
+    <div class="section-head"><span class="num">REF</span><h2>Threshold Cheat-Sheet</h2></div>
+    <p class="section-sub">Every number in the report, in one place — this is what gets drilled in a viva.</p>
+    <table class="cheat">
+      <tr><th>Threshold</th><th>Value</th><th>Used for</th></tr>
+      <tr><td>Touch distance ε</td><td class="val">0.02</td><td>hamtouch</td></tr>
+      <tr><td>Close range</td><td class="val">0.02–0.05</td><td>hamclose</td></tr>
+      <tr><td>Movement dead-zone</td><td class="val">0.02</td><td>ignore Movement-1 jitter</td></tr>
+      <tr><td>Brushing motion</td><td class="val">&gt;0.01</td><td>hambrushing</td></tr>
+      <tr><td>Behind (depth)</td><td class="val">&gt;0.03</td><td>hambehind</td></tr>
+      <tr><td>Slow / fast speed</td><td class="val">&lt;0.01 / &gt;0.03</td><td>hamslow / hamfast</td></tr>
+      <tr><td>Small / large size</td><td class="val">&lt;0.02 / &gt;0.08</td><td>hamsmallmod / hamlargemod</td></tr>
+      <tr><td>Shoulder / elbow / wrist proximity</td><td class="val">0.25 / 0.20 / 0.10</td><td>upper body zones</td></tr>
+      <tr><td>Torso split</td><td class="val">0.35 / 0.70</td><td>chest / stomach / below</td></tr>
+      <tr><td>Double-bent elbow</td><td class="val">θ&lt;120°</td><td>hamdoublebent</td></tr>
+      <tr><td>Extended arm</td><td class="val">θ&gt;160°, R&gt;0.95</td><td>hamarmextended</td></tr>
+      <tr><td>Body midline / beside</td><td class="val">0.04 / 0.10</td><td>hamlrat / hamlrbeside</td></tr>
+      <tr><td>Neutral signing space</td><td class="val">zoffset&gt;0.05</td><td>hamneutralspace</td></tr>
+      <tr><td>Hand-frame thirds</td><td class="val">0.33 / 0.66</td><td>left/center/right, up/down</td></tr>
+      <tr><td>Face vertical zones</td><td class="val">0.10 → 0.888</td><td>headtop → chin</td></tr>
+      <tr><td>Orientation octants</td><td class="val">45° ± 22.5°</td><td>8 finger directions</td></tr>
+      <tr><td>Handshape dataset</td><td class="val">149 × 21 ≈ 3,000+</td><td>training images</td></tr>
+    </table>
+  </section>
+
+  <!-- VIVA PREP -->
+  <section id="viva" style="border-bottom:none;">
+    <div class="section-head"><span class="num">PREP</span><h2>Viva-Ready Q&amp;A</h2></div>
+    <p class="section-sub">The questions most likely to come up, answered short. (Full 12-question set is in the companion study guide.)</p>
+
+    <details>
+      <summary>Why is handshape ML but orientation/location/movement geometry?</summary>
+      <div class="a">No public dataset links sign video to HamNoSys labels. A controlled image dataset was feasible for handshape; frame-by-frame video annotation for the other three wasn't. Geometry needs zero training data.</div>
+    </details>
+    <details>
+      <summary>Why hierarchical handshape classification instead of one flat model?</summary>
+      <div class="a">Smaller, easier-to-separate classes per node reduce confusion between similar hand shapes, mirror HamNoSys's own compositional structure, and guarantee only structurally valid symbol paths are produced.</div>
+    </details>
+    <details>
+      <summary>Why normalize coordinates everywhere?</summary>
+      <div class="a">So thresholds work regardless of camera distance, resolution, or the signer's body size — every distance is expressed as a fraction of a body reference (face height, shoulder width, torso height) instead of raw pixels.</div>
+    </details>
+    <details>
+      <summary>Why cosine similarity for avatar verification?</summary>
+      <div class="a">It compares the direction/pattern of two feature vectors rather than raw magnitude, so it stays meaningful even though the avatar's proportions differ from the real hand's.</div>
+    </details>
+    <details>
+      <summary>Difference between Movement-1 and Movement-2?</summary>
+      <div class="a">Movement-1 = instantaneous frame-to-frame stats (direction, speed, repetition, size). Movement-2 = the shape of the whole trajectory (curvature, circularity, rotation direction, oscillation) via displacement-vs-path-length and turning angles.</div>
+    </details>
+    <details>
+      <summary>What's the ground truth, since no labeled HamNoSys dataset exists?</summary>
+      <div class="a">A self-built CSV mapping table linking gesture combinations to valid HamNoSys symbols + hex codes — used to train the handshape classifiers and as the legality check (lexicon) after prediction.</div>
+    </details>
+    <details>
+      <summary>What are the honest limitations of this project?</summary>
+      <div class="a">Only handshape has a trained, dataset-backed model; the geometric thresholds elsewhere aren't validated against a large labeled test set. No aggregate accuracy numbers are reported for orientation/location/movement — evidence is qualitative plus one avatar similarity example. Continuous/connected signing is still an open problem, not fully solved here.</div>
+    </details>
+  </section>
+</div>
+
+<footer>
+  <span class="lm"></span>built from the project report — Automatic HamNoSys Generation from Sign Language Images with Avatar-Based Verification
+</footer>
+
+</body>
+</html>
