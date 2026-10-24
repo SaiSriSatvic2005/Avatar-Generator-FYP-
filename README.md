@@ -1,12 +1,13 @@
 # Universal Sign Language to 3D Avatar System (ISL & DGS)
 ### 3D Hand Mesh Estimation (HaMeR), Hybrid Neural Sequence Modeling & HamNoSys/SiGML Synthesis for Sign Language Animation
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10+-orange.svg)](https://developers.google.com/mediapipe)
 [![HaMeR](https://img.shields.io/badge/HaMeR-3D%20Mesh-purple.svg)](https://github.com/geopavlakos/hamer)
 [![CWASA](https://img.shields.io/badge/CWASA-3D%20WebGL%20Avatar-green.svg)](http://vhg.cmp.uea.ac.uk/tech/jas/cwasa/)
-[![Status](https://img.shields.io/badge/Status-FYP%20Final%20Submission-brightgreen.svg)]()
+[![Release](https://img.shields.io/badge/Release-v8.0.0-brightgreen.svg)](https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-/releases/tag/v8.0.0)
 
 ---
 
@@ -14,20 +15,9 @@
 
 Sign language is the primary medium of communication for over 70 million deaf and hard-of-hearing individuals worldwide. However, automated translation between spoken/written language and sign language has historically suffered from 2D depth ambiguities, finger self-occlusion, and poor spatial reproducibility.
 
-This **Final Year Project (Group 14)** presents an end-to-end, multi-stage sign language translation and 3D avatar animation platform. Our system takes continuous sign language video streams in **Indian Sign Language (ISL)** and **German Sign Language (DGS)**, reconstructs robust **3D MANO hand meshes using HaMeR (Hand Mesh Recovery)** alongside **MediaPipe 177-dimensional skeletal landmarks**, and feeds these spatial representations into a **Hybrid Deep Neural Network (BiGRU + 1D-CNN + Self-Attention)**.
+This project presents an end-to-end, multi-stage sign language translation and 3D avatar animation platform. Our system takes continuous sign language video streams in **Indian Sign Language (ISL)** and **German Sign Language (DGS)**, reconstructs robust **3D MANO hand meshes using HaMeR (Hand Mesh Recovery)** alongside **MediaPipe 177-dimensional skeletal landmarks**, and feeds these spatial representations into a **Hybrid Deep Neural Network (BiGRU + 1D-CNN + Self-Attention)**.
 
 The network predicts six discrete phonetic sign components, which are parsed through a validated **Context-Free Grammar (CFG)** compiler into **Hamburg Notation System (HamNoSys)** and **Signing Gesture Markup Language (SiGML)**. The resulting XML instructions drive a real-time **JASigning CWASA 3D WebGL Avatar**, producing seamless, anatomically accurate sign language synthesis at 60 FPS in any standard web browser.
-
----
-
-## 👥 Project Team & Contribution Matrix (Group 14)
-
-| Member | Academic & System Role | Core Technical Ownership | Primary Deliverables |
-| :--- | :--- | :--- | :--- |
-| **Vivin Rakul** (`@vivin888`) | **Co-Lead: Deep Learning Systems, Model Generation & Pipeline Integration** | • 3D Hand Mesh integration (HaMeR & MANO 778-vertex surface extraction)<br>• Self-Attention mechanism & Conv1D temporal feature extractor<br>• End-to-end pipeline integration (`local_hamer_pipeline.py`)<br>• Benchmark validation & multi-version accuracy evaluation | • 44 Commits<br>• Equal Technical Weightage<br>• Core Pipeline & Model Generation |
-| **Sai Sri Satvic** (`@SaiSriSatvic2005`) | **Co-Lead: Sequence Modeling, Cloud Architecture & SiGML Synthesis** | • Bidirectional GRU (BiGRU) temporal sequence architecture<br>• Context-Free Grammar (CFG) phonetic compiler<br>• SiGML XML synthesis engine & CWASA WebGL player integration<br>• Flask REST API backend & cloud containerization | • 44 Commits<br>• Equal Technical Weightage<br>• Architecture & Sequence Engine |
-| **Snigdha** (`@snigdhasirivalli`) | **Lead: 3D Spatial Geometry, Multi-Task Loss & Avatar Rendering** | • Multi-task cross-entropy loss balancing across 6 classification heads<br>• 3D finger direction & palm normal vector orientation modeling<br>• WebGL avatar viewport integration & motion replay dynamics<br>• Subsystem token precision validation suite (`tests/`) | • 34 Commits<br>• Geometry & Loss Specialist<br>• Precision Suite & 3D Orientation |
-| **Vijay Saravana Pandi** (`@VijaySaravanaPandi`) | **Lead: Video Ingestion, Feature Engineering & Spatial Datasets** | • 177-D wrist-centered, scale-invariant landmark engineering<br>• Anatomical body & facial anchor detection (Da Vinci facial third ratios)<br>• Dataset ingestion & ground-truth alignment for ISL and DGS<br>• Multi-threaded frame preprocessing & video ingestion pipeline | • 34 Commits<br>• Ingestion & Feature Specialist<br>• Dataset Manifest & Face/Body |
 
 ---
 
@@ -83,7 +73,7 @@ The network predicts six discrete phonetic sign components, which are parsed thr
 
 ```
 Avatar-Generator-FYP/
-├── webapp/                                 # Full-Stack Web Application
+├── webapp/                                 # Full-Stack Web Application Platform
 │   ├── app.py                              # Flask REST API Server & Video Processing Endpoint
 │   ├── static/                             # Frontend Static Assets (CSS, JS, CWASA Avatars)
 │   │   ├── css/styles.css                  # Modern UI Stylesheet & Responsive Layouts
@@ -114,11 +104,12 @@ Avatar-Generator-FYP/
 │
 ├── README.md                               # Primary Project Documentation
 ├── INSTALLATION.md                         # Detailed Setup & Installation Guide
-├── PROJECT_CONTRIBUTIONS.md                # 4-Person Contribution & Responsibility Matrix
+├── PROJECT_CONTRIBUTIONS.md                # Detailed Academic Contribution & Role Matrix
 ├── PROJECT_ORGANIZATION.md                 # Detailed Codebase Architecture & Directory Map
 ├── CURRENT_PIPELINE_EXPLANATION.md         # Comprehensive Theoretical & Algorithmic Guide
 ├── V8_BENCHMARK_AND_ENHANCEMENT_REPORT.md  # Final Benchmark, Accuracy & F1 Evaluation Report
 │
+├── LICENSE                                 # MIT Permissive Open Source License
 ├── requirements.txt                        # Production Python Package Dependencies
 └── Dockerfile                              # Production Docker Container Specification
 ```
@@ -200,7 +191,7 @@ Our system has undergone rigorous quantitative evaluation across 30 multi-dialec
 
 Detailed engineering specifications, research methodologies, and study guides are documented in the following files:
 * **[INSTALLATION.md](INSTALLATION.md)**: Exhaustive setup guide for Windows, Linux, CUDA, and Docker.
-* **[PROJECT_CONTRIBUTIONS.md](PROJECT_CONTRIBUTIONS.md)**: Official 4-person academic role and subsystem ownership matrix.
+* **[PROJECT_CONTRIBUTIONS.md](PROJECT_CONTRIBUTIONS.md)**: Detailed project contribution breakdown and role matrix.
 * **[PROJECT_ORGANIZATION.md](PROJECT_ORGANIZATION.md)**: Comprehensive architectural module documentation.
 * **[CURRENT_PIPELINE_EXPLANATION.md](CURRENT_PIPELINE_EXPLANATION.md)**: In-depth mathematical formulation of feature extraction, neural classifiers, and HamNoSys mapping.
 * **[V8_BENCHMARK_AND_ENHANCEMENT_REPORT.md](V8_BENCHMARK_AND_ENHANCEMENT_REPORT.md)**: Full quantitative benchmark tables, ablation experiments, and latency profiling.
@@ -210,16 +201,18 @@ Detailed engineering specifications, research methodologies, and study guides ar
 
 ## 📜 Version History & Development Milestones
 
-The project was developed sequentially from **June 2026 to October 2026** across **156 version-controlled commits**:
+The project was developed sequentially from **June 2026 to October 2026** across **157 version-controlled commits**:
 * **Phase 1 (June – July 2026)**: Baseline architecture, dataset collection, MediaPipe landmark ingestion, and CFG compiler initialization.
 * **Phase 2 (August – September 2026)**: V6 and V7 hybrid neural network implementation, self-attention layer integration, and multi-task loss balancing.
 * **Phase 3 (October 2026)**: V8 HaMeR 3D MANO mesh integration, full 30-video accuracy benchmarking, WebGL CWASA avatar optimization, and production hardening.
 
 ---
 
-## ⚖️ License & Acknowledgements
+## ⚖️ License & Permissions
 
-This project is developed as an academic **Final Year Project (Group 14)**.
+This project is licensed under the **[MIT License](LICENSE)** — a permissive open-source license that grants anyone the freedom to use, modify, adapt, distribute, and sublicense the code for academic, personal, or commercial purposes.
+
+### Acknowledgements
 - 3D Avatar Rendering powered by **JASigning / CWASA** (University of East Anglia).
 - 3D Hand Mesh Estimation powered by **HaMeR** (University of California, Berkeley).
 - Skeletal tracking powered by **Google MediaPipe**.
