@@ -1,0 +1,202 @@
+[
+  {
+    "index": 1,
+    "video_file": "1000_WAAGE1A.mp4",
+    "stem": "1000_WAAGE1A",
+    "handshape": "hamflathand",
+    "movement": "hammoveu",
+    "hamnosys": "hamsymmlr hamflathand hamthumboutmod hamfingerbendmod hamextfingeruo hampalmul hamshoulders hammoveu",
+    "sigml_file": "1000_WAAGE1A_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 2,
+    "video_file": "1001_GEWICHT1.mp4",
+    "stem": "1001_GEWICHT1",
+    "handshape": "hamfist",
+    "movement": "hammoveu",
+    "hamnosys": "hamsymmlr hamfist hamextfingeruo hampalmdr hamshoulders hammoveu",
+    "sigml_file": "1001_GEWICHT1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 3,
+    "video_file": "1002__SPEZIAL-MERKW_RDIG1.mp4",
+    "stem": "1002__SPEZIAL-MERKW_RDIG1",
+    "handshape": "hampinchall",
+    "movement": "hammoveu",
+    "hamnosys": "hamsymmlr hampinchall hamextfingerol hampalmd hamshoulders hammoveu",
+    "sigml_file": "1002__SPEZIAL-MERKW_RDIG1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 4,
+    "video_file": "1003_BEGR_SSEN1.mp4",
+    "stem": "1003_BEGR_SSEN1",
+    "handshape": "hamceeall",
+    "movement": "hammoved",
+    "hamnosys": "hamsymmlr hamceeall hamthumboutmod hamextfingerol hampalmr hamshoulders hammoved",
+    "sigml_file": "1003_BEGR_SSEN1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 5,
+    "video_file": "1004_WESTEN1.mp4",
+    "stem": "1004_WESTEN1",
+    "handshape": "hamflathand",
+    "movement": "hammovel",
+    "hamnosys": "hamflathand hamextfingeru hampalmu hamchest hammovel hamreplace hamextfingerdo",
+    "sigml_file": "1004_WESTEN1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 6,
+    "video_file": "1005_NASS1A.mp4",
+    "stem": "1005_NASS1A",
+    "handshape": "hamceeall",
+    "movement": "hamnomotion",
+    "hamnosys": "hamsymmlr hamceeall hamfingerstraightmod hamextfingerul hampalmul hamshoulders",
+    "sigml_file": "1005_NASS1A_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 7,
+    "video_file": "1006_WAS2.mp4",
+    "stem": "1006_WAS2",
+    "handshape": "hamfinger2345",
+    "movement": "hammoved",
+    "hamnosys": "hamsymmlr hamfinger2345 hamthumboutmod hamfingerstraightmod hamextfingero hampalmul hamshoulders hammoved",
+    "sigml_file": "1006_WAS2_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 8,
+    "video_file": "1007_RAD1B.mp4",
+    "stem": "1007_RAD1B",
+    "handshape": "hamfinger2",
+    "movement": "hamnomotion",
+    "hamnosys": "hamfinger2 hamextfingerol hampalmu hamshoulders",
+    "sigml_file": "1007_RAD1B_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 9,
+    "video_file": "1008_WANN1.mp4",
+    "stem": "1008_WANN1",
+    "handshape": "hamceeall",
+    "movement": "hamnomotion",
+    "hamnosys": "hamceeall hamfingerstraightmod hamextfingerdo hampalmu hamshoulders",
+    "sigml_file": "1008_WANN1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 10,
+    "video_file": "1009_WO1A.mp4",
+    "stem": "1009_WO1A",
+    "handshape": "hamfinger2345",
+    "movement": "hammover",
+    "hamnosys": "hamsymmlr hamfinger2345 hamextfingerol hampalmur hamshoulders hammover",
+    "sigml_file": "1009_WO1A_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 11,
+    "video_file": "100_JUNGE2.mp4",
+    "stem": "100_JUNGE2",
+    "handshape": "hampinchall",
+    "movement": "hamnomotion",
+    "hamnosys": "hampinchall hamthumboutmod hamextfingerul hampalml hamcheek",
+    "sigml_file": "100_JUNGE2_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 12,
+    "video_file": "1010_OB1.mp4",
+    "stem": "1010_OB1",
+    "handshape": "hamfinger2",
+    "movement": "hammovedl",
+    "hamnosys": "hamfinger2 hamextfingeru hampalml hamshoulders hamtouch hammovedl",
+    "sigml_file": "1010_OB1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 13,
+    "video_file": "1011_PARALLEL1A.mp4",
+    "stem": "1011_PARALLEL1A",
+    "handshape": "hampinchall",
+    "movement": "hammoveo",
+    "hamnosys": "hamsymmlr hampinchall hamfingerbendmod hamextfingerdo hampalmu hamshoulders hammoveo",
+    "sigml_file": "1011_PARALLEL1A_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 14,
+    "video_file": "1012_WEISS1A.mp4",
+    "stem": "1012_WEISS1A",
+    "handshape": "hamfinger2",
+    "movement": "hammover",
+    "hamnosys": "hamfinger2 hamextfingerol hampalmul hamshoulders hammover hamreplace hamextfingerul",
+    "sigml_file": "1012_WEISS1A_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 15,
+    "video_file": "1013_WER1.mp4",
+    "stem": "1013_WER1",
+    "handshape": "hamfinger23",
+    "movement": "hamnomotion",
+    "hamnosys": "hamfinger23 hamextfingeru hampalml hamchest",
+    "sigml_file": "1013_WER1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 16,
+    "video_file": "1014_GANZ1.mp4",
+    "stem": "1014_GANZ1",
+    "handshape": "hamfinger2345",
+    "movement": "hammoved",
+    "hamnosys": "hamsymmlr hamfinger2345 hamfingerstraightmod hamextfingeru hampalml hamchest hammoved",
+    "sigml_file": "1014_GANZ1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 17,
+    "video_file": "1015_WARUM1.mp4",
+    "stem": "1015_WARUM1",
+    "handshape": "hamfist",
+    "movement": "hammovel",
+    "hamnosys": "hamfist hamthumbacrossmod hamextfingeru hampalmu hamchest hammovel",
+    "sigml_file": "1015_WARUM1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 18,
+    "video_file": "1016_BREIT1.mp4",
+    "stem": "1016_BREIT1",
+    "handshape": "hamflathand",
+    "movement": "hammover",
+    "hamnosys": "hamsymmlr hamflathand hamthumboutmod hamfingerbendmod hamextfingeruo hampalmur hamshoulders hammover",
+    "sigml_file": "1016_BREIT1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 19,
+    "video_file": "1017_WILD1.mp4",
+    "stem": "1017_WILD1",
+    "handshape": "hamfist",
+    "movement": "hamnomotion",
+    "hamnosys": "hamsymmlr hamfist hamthumbacrossmod hamextfingeruo hampalmul hamchest",
+    "sigml_file": "1017_WILD1_hamer_output.sigml",
+    "is_valid_xml": true
+  },
+  {
+    "index": 20,
+    "video_file": "1018_BEREIT1.mp4",
+    "stem": "1018_BEREIT1",
+    "handshape": "hampinchall",
+    "movement": "hammover",
+    "hamnosys": "hamsymmlr hampinchall hamextfingerol hampalmdr hamshoulders hammover hamreplace hamextfingerdo",
+    "sigml_file": "1018_BEREIT1_hamer_output.sigml",
+    "is_valid_xml": true
+  }
+]
