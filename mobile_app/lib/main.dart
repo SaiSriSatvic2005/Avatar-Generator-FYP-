@@ -45,10 +45,10 @@ class AvatarSynthesizerHomeScreen extends StatefulWidget {
 
 class _AvatarSynthesizerHomeScreenState
     extends State<AvatarSynthesizerHomeScreen> {
-  // Configurable Server URL (Default to ngrok or local network IP)
-  String serverUrl = "http://10.0.2.2:5000"; // 10.0.2.2 for Android Emulator, replace with ngrok on phone
+  // Default Cloud Server URL (Hugging Face Spaces 24/7 backend)
+  String serverUrl = "https://nonchok005-sign-avatar-backend.hf.space";
   final TextEditingController _serverController =
-      TextEditingController(text: "http://10.0.2.2:5000");
+      TextEditingController(text: "https://nonchok005-sign-avatar-backend.hf.space");
 
   final ImagePicker _picker = ImagePicker();
   File? _selectedVideoFile;
