@@ -1,0 +1,15 @@
+.git
+.github
+mobile_app
+FYP-DataSet
+WLASL_Videos
+*.pdf
+*.pptx
+*.tex
+*.bak
+local_hamer_pipeline.py.bak
+__pycache__
+*/__pycache__
+*/*/__pycache__
+.gradle
+*/.gradle
