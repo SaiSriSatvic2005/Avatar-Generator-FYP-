@@ -1,3 +1,8 @@
+# --- Windows DLL Conflict Fix: MediaPipe must be imported before PyTorch & OpenCV ---
+import mediapipe as mp
+from mediapipe.tasks import python as mp_python
+from mediapipe.tasks.python import vision as mp_vision
+# ------------------------------------------------------------------------------------
 #!/usr/bin/env python3
 """
 Upgraded Local HaMeR 3D Hybrid Sign Language Recognition Pipeline (V6 Complete)
@@ -304,10 +309,7 @@ class LocalHaMeRPipeline:
             self.model_b.eval()
             print(f"[HaMeRPipeline] Loaded V5 Models.")
 
-        # 4. Load MediaPipe Hand Detector
-        import mediapipe as mp
-        from mediapipe.tasks import python as mp_python
-        from mediapipe.tasks.python import vision as mp_vision
+        # 4. Load MediaPipe Hand Detector (Using top-level imports)
         
         mp_task_path = os.path.join(HAMER_DIR, "hand_landmarker.task")
         base_options = mp_python.BaseOptions(model_asset_path=mp_task_path)
@@ -600,7 +602,6 @@ class LocalHaMeRPipeline:
         """Full end-to-end processing with expanded phonetic slots and valid SiGML generator."""
         from hamer.utils import recursive_to
         from hamer.datasets.vitdet_dataset import ViTDetDataset
-        import mediapipe as mp
         
         cap = cv2.VideoCapture(video_path)
         if not cap.isOpened():
@@ -669,7 +670,12 @@ class LocalHaMeRPipeline:
                 else:
                     left_hand_wrist_trajs.append(hd["wrist_2d"])
 
-            dominant_hand = max(hands_data, key=lambda d: d["area"])
+            # Maintain consistent dominant hand across frames (prefer Right hand in signing, then largest area)
+            right_hands = [h for h in hands_data if h["is_right"]]
+            if right_hands:
+                dominant_hand = max(right_hands, key=lambda d: d["area"])
+            else:
+                dominant_hand = max(hands_data, key=lambda d: d["area"])
             
             # HaMeR Inference
             boxes = np.array([dominant_hand["box"]], dtype=np.float32)
@@ -796,18 +802,39 @@ class LocalHaMeRPipeline:
                 is_two_handed = True
                 symmetry_type = "hamsymmlr"
 
-        # 7. Movement & Curvature
+        # 7. Movement & Curvature (Fused 2D Camera Space + HaMeR Depth & BiGRU)
         traj_arr = np.array(raw_wrist_trajectories)
+        wrist_2d_arr = np.array(raw_wrist_2d)
         max_displacement = np.max([np.linalg.norm(pt - traj_arr[0]) for pt in traj_arr]) if len(traj_arr) > 0 else 0.0
         
+        # Calculate full-frame 2D camera-space displacement metrics
+        if len(wrist_2d_arr) >= 4:
+            s_idx = max(0, int(len(wrist_2d_arr) * 0.05))
+            e_idx = min(len(wrist_2d_arr), int(len(wrist_2d_arr) * 0.90))
+            active_2d = wrist_2d_arr[s_idx:e_idx]
+            dx_2d = float(active_2d[-1, 0] - active_2d[0, 0])
+            dy_2d = float(active_2d[-1, 1] - active_2d[0, 1]) # Note: In screen coords, dy < 0 is upward
+            dist_2d = float(np.linalg.norm([dx_2d, dy_2d]))
+            total_path_2d = float(np.sum(np.linalg.norm(np.diff(active_2d, axis=0), axis=1)))
+            peak_up_2d = float(np.min(active_2d[:, 1]) - active_2d[0, 1])
+            peak_down_2d = float(np.max(active_2d[:, 1]) - active_2d[0, 1])
+        else:
+            dx_2d, dy_2d, dist_2d, total_path_2d, peak_up_2d, peak_down_2d = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
         pred_mv = None
         arc_token = None
 
         # Execute Model B (AttentionBiGRU) directly for all sequences with sufficient frames
         if len(raw_wrist_trajectories) >= 4:
-            if getattr(self, "version", "v5") in ["v6", "v7", "v8"] and len(frame_tips_3d) == len(traj_arr):
+            # Fuse camera-space 2D coordinates into trajectory translation to eliminate bbox crop drift
+            fused_traj = traj_arr.copy()
+            if len(wrist_2d_arr) == len(traj_arr):
+                fused_traj[:, 0] = wrist_2d_arr[:, 0]
+                fused_traj[:, 1] = wrist_2d_arr[:, 1]
+
+            if getattr(self, "version", "v5") in ["v6", "v7", "v8"] and len(frame_tips_3d) == len(fused_traj):
                 tips_arr = np.array(frame_tips_3d).reshape(T, 15)
-                traj_18 = np.concatenate([traj_arr, tips_arr], axis=1) # (T, 18)
+                traj_18 = np.concatenate([fused_traj, tips_arr], axis=1) # (T, 18)
                 orig_indices = np.linspace(0, 1, T)
                 target_indices = np.linspace(0, 1, 32)
                 interp_18 = np.zeros((32, 18), dtype=np.float32)
@@ -822,13 +849,18 @@ class LocalHaMeRPipeline:
                     x_mv = torch.FloatTensor(interp_18).transpose(0, 1).unsqueeze(0).to(DEVICE) # (1, 18, 32)
                     logits_mv = self.model_b(x_mv)
                     probs_mv = torch.softmax(logits_mv, dim=1).cpu().numpy()[0]
+                    
+                    # Movement confidence temperature tuning: penalize spurious hamnomotion if clear motion exists
+                    if total_path_2d > 0.40 and "hamnomotion" in self.mv_classes:
+                        no_idx = self.mv_classes.index("hamnomotion")
+                        probs_mv[no_idx] *= 0.15 # heavily discount stationary prior
                     pred_mv = self.mv_classes[int(np.argmax(probs_mv))]
             else:
-                orig_indices = np.linspace(0, 1, len(traj_arr))
+                orig_indices = np.linspace(0, 1, len(fused_traj))
                 target_indices = np.linspace(0, 1, 32)
                 norm_traj = np.zeros((32, 3), dtype=np.float32)
                 for dim in range(3):
-                    norm_traj[:, dim] = np.interp(target_indices, orig_indices, traj_arr[:, dim])
+                    norm_traj[:, dim] = np.interp(target_indices, orig_indices, fused_traj[:, dim])
 
                 norm_traj = norm_traj - norm_traj[0]
                 norm_traj = norm_traj / (np.max(np.abs(norm_traj)) + 1e-6)
@@ -837,14 +869,28 @@ class LocalHaMeRPipeline:
                     x_mv = torch.FloatTensor(norm_traj).unsqueeze(0).to(DEVICE)
                     logits_mv = self.model_b(x_mv)
                     probs_mv = torch.softmax(logits_mv, dim=1).cpu().numpy()[0]
+                    if total_path_2d > 0.40 and "hamnomotion" in self.mv_classes:
+                        no_idx = self.mv_classes.index("hamnomotion")
+                        probs_mv[no_idx] *= 0.15
                     pred_mv = self.mv_classes[int(np.argmax(probs_mv))]
 
-            # Rectify vertical direction if physical displacement is clearly vertical
-            delta_y = traj_arr[-1][1] - traj_arr[0][1]
-            if delta_y < -0.05 and pred_mv == "hammoved":
-                pred_mv = "hammoveu"
-            elif delta_y > 0.05 and pred_mv == "hammoveu":
-                pred_mv = "hammoved"
+            # Kinematic Vector Displacement Heuristic Layer
+            # Overrides model ambiguities with direct physical trajectory vectors
+            if total_path_2d > 0.40:
+                # Upward stroke check (in 2D screen coords, y decreases as hand rises)
+                if peak_up_2d < -0.15 and dy_2d < -0.06 and abs(dx_2d) < 0.10:
+                    pred_mv = "hammoveu"
+                # Downward stroke check
+                elif peak_down_2d > 0.15 and dy_2d > 0.08 and abs(dx_2d) < 0.12:
+                    pred_mv = "hammoved"
+                # Pure lateral movement checks
+                elif dx_2d > 0.15 and abs(dy_2d) < 0.08:
+                    pred_mv = "hammover"
+                elif dx_2d < -0.15 and abs(dy_2d) < 0.08:
+                    pred_mv = "hammovel"
+            elif total_path_2d < 0.30 and dist_2d < 0.04:
+                # Stationary gesture
+                pred_mv = "hamnomotion"
 
             # Arc curvature check
             arc_token = self.detect_trajectory_curvature(raw_wrist_trajectories)

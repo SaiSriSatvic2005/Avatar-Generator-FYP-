@@ -130,4 +130,10 @@ ehthumbs.db
 _DATA
 _DATA/
 hamer/
+FYP-DataSet/
 
+
+.gradle/
+*/.gradle/
+build/
+*/build/

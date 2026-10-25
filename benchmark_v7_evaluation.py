@@ -1,3 +1,6 @@
+# --- Fix Windows DLL conflict: MediaPipe must be first ---
+import mediapipe as mp
+# ---------------------------------------------------------
 #!/usr/bin/env python3
 """
 Benchmark Evaluation Script for V7 Hybrid Artifacts on DGS Test Videos.
