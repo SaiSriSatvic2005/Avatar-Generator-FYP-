@@ -3,9 +3,6 @@ name: Build Flutter Release APK
 on:
   push:
     branches: [ "V8", "main", "master" ]
-    paths:
-      - 'mobile_app/**'
-      - '.github/workflows/build_apk.yml'
   workflow_dispatch: # Allows manual one-click trigger in GitHub Actions tab
 
 jobs:
@@ -22,7 +19,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
 
       - name: Set up Flutter SDK
         uses: subosito/flutter-action@v2
@@ -31,18 +27,46 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Verify Flutter Installation
-        run: flutter --version
+      - name: Generate Official Android Platform Scaffold
+        working-directory: mobile_app
+        run: |
+          # Clean any incomplete android files and generate official scaffold
+          rm -rf android
+          flutter create . --platforms=android --org=com.example --project-name=universal_sign_avatar
+          
+          # Inject Camera, Internet & Media permissions into AndroidManifest.xml
+          python3 -c "
+          p = 'android/app/src/main/AndroidManifest.xml'
+          with open(p, 'r') as f:
+              c = f.read()
+          perms = '''
+              <uses-permission android:name=\"android.permission.INTERNET\"/>
+              <uses-permission android:name=\"android.permission.CAMERA\"/>
+              <uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>
+              <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" android:maxSdkVersion=\"32\"/>
+              <uses-permission android:name=\"android.permission.READ_MEDIA_VIDEO\"/>
+          '''
+          c = c.replace('<application', perms + '\n    <application android:usesCleartextTraffic=\"true\"')
+          with open(p, 'w') as f:
+              f.write(c)
+          "
+          
+          # Set minSdkVersion to 21 (required by webview_flutter & video_player)
+          python3 -c "
+          bg = 'android/app/build.gradle'
+          with open(bg, 'r') as f:
+              txt = f.read()
+          txt = txt.replace('minSdkVersion flutter.minSdkVersion', 'minSdkVersion 21')
+          txt = txt.replace('minSdk = flutter.minSdkVersion', 'minSdk = 21')
+          with open(bg, 'w') as f:
+              f.write(txt)
+          "
 
-      - name: Install Dependencies
+      - name: Install Flutter Dependencies
         working-directory: mobile_app
         run: flutter pub get
 
-      - name: Build Standalone Release APK
-        working-directory: mobile_app
-        run: flutter build apk --release --split-per-abi
-
-      - name: Build Universal Fat APK
+      - name: Build Release APK
         working-directory: mobile_app
         run: flutter build apk --release
 
@@ -50,5 +74,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: UniversalSignAvatar-Release-APK
-          path: mobile_app/build/app/outputs/flutter-apk/*.apk
+          path: mobile_app/build/app/outputs/flutter-apk/app-release.apk
           retention-days: 14
