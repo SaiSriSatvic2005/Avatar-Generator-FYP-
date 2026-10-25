@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0f172a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="480" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Grid Header -->
+  <text x="600" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#09090b" text-anchor="middle" letter-spacing="0.3">
+    END-TO-END 3D SIGN LANGUAGE RECOGNITION &amp; AVATAR SYNTHESIS PIPELINE
+  </text>
+  <text x="600" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+    Dual-Stream 3D Vision (HaMeR + MediaPipe) • Hybrid Neural Sequence Classifier • CFG Compiler • CWASA WebGL
+  </text>
+
+  <!-- STAGE 1: INPUT VIDEO -->
+  <g transform="translate(40, 105)" filter="url(#shadow)">
+    <rect width="180" height="315" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="180" height="38" rx="8" fill="#0f172a"/>
+    <text x="90" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">1. INPUT SIGN VIDEO</text>
+    <circle cx="90" cy="105" r="28" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <polygon points="86,92 102,105 86,118" fill="#0f172a"/>
+    <text x="90" y="160" font-family="sans-serif" font-size="12" font-weight="700" fill="#09090b" text-anchor="middle">ISL &amp; DGS Corpora</text>
+    <text x="90" y="185" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="middle">• RGB Video Stream</text>
+    <text x="90" y="205" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="middle">• 30 / 60 FPS Frame Rate</text>
+    <text x="90" y="225" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="middle">• Dynamic Lighting</text>
+    <text x="90" y="245" font-family="sans-serif" font-size="11" fill="#475569" text-anchor="middle">• Rapid Hand Motions</text>
+    <rect x="25" y="275" width="130" height="26" rx="4" fill="#e2e8f0"/>
+    <text x="90" y="292" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Raw Visual Feed</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="225" y1="262" x2="265" y2="262" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STAGE 2: 3D MESH & SKELETAL EXTRACTION -->
+  <g transform="translate(270, 105)" filter="url(#shadow)">
+    <rect width="200" height="315" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="200" height="38" rx="8" fill="#0f172a"/>
+    <text x="100" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">2. DUAL-STREAM 3D VISION</text>
+    
+    <rect x="15" y="55" width="170" height="90" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="100" y="78" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">HaMeR 3D Mesh</text>
+    <text x="100" y="98" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• MANO 778-Vertex Model</text>
+    <text x="100" y="116" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• 21 Joint 3D Rotations</text>
+    <text x="100" y="134" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• True Depth Palm Vectors</text>
+
+    <rect x="15" y="160" width="170" height="90" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="100" y="183" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">MediaPipe Holistic</text>
+    <text x="100" y="203" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• 177-D Landmark Tensors</text>
+    <text x="100" y="221" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Da Vinci Face Ratios</text>
+    <text x="100" y="239" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Upper-Body Anchor Points</text>
+
+    <rect x="25" y="275" width="150" height="26" rx="4" fill="#e2e8f0"/>
+    <text x="100" y="292" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Mesh Accuracy: 88.6%</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="475" y1="262" x2="515" y2="262" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STAGE 3: HYBRID NEURAL NETWORK -->
+  <g transform="translate(520, 105)" filter="url(#shadow)">
+    <rect width="210" height="315" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="210" height="38" rx="8" fill="#0f172a"/>
+    <text x="105" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">3. HYBRID NEURAL NET</text>
+    
+    <rect x="15" y="55" width="180" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="105" y="74" font-family="sans-serif" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">1D Temporal Convolutions (CNN)</text>
+
+    <rect x="15" y="95" width="180" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="105" y="114" font-family="sans-serif" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">Multi-Head Self-Attention Layer</text>
+
+    <rect x="15" y="135" width="180" height="30" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="105" y="154" font-family="sans-serif" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">Bidirectional GRU (BiGRU)</text>
+
+    <text x="105" y="195" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">6 Multi-Task Classification Heads:</text>
+    <text x="105" y="215" font-family="sans-serif" font-size="9" fill="#475569" text-anchor="middle">Handshape • ExtFinger • PalmOri</text>
+    <text x="105" y="233" font-family="sans-serif" font-size="9" fill="#475569" text-anchor="middle">Body Location • Trajectory • Symmetry</text>
+
+    <rect x="25" y="275" width="160" height="26" rx="4" fill="#e2e8f0"/>
+    <text x="105" y="292" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Token Precision: 85.5%</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="735" y1="262" x2="775" y2="262" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STAGE 4: CFG COMPILER & HAMNOSYS -->
+  <g transform="translate(780, 105)" filter="url(#shadow)">
+    <rect width="180" height="315" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="180" height="38" rx="8" fill="#0f172a"/>
+    <text x="90" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">4. CFG &amp; HAMNOSYS</text>
+    
+    <rect x="15" y="65" width="150" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="90" y="90" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">CFG Grammar Rules</text>
+    <text x="90" y="112" font-family="sans-serif" font-size="9" fill="#475569" text-anchor="middle">Strict Sign Phonology</text>
+
+    <rect x="15" y="150" width="150" height="70" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="90" y="175" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">HamNoSys Tokens</text>
+    <text x="90" y="197" font-family="sans-serif" font-size="9" fill="#475569" text-anchor="middle">&lt;hamceeall/&gt; &lt;hamchest/&gt;</text>
+
+    <rect x="20" y="275" width="140" height="26" rx="4" fill="#e2e8f0"/>
+    <text x="90" y="292" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">99.4% Syntactic Validity</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="965" y1="262" x2="1005" y2="262" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STAGE 5: CWASA 3D AVATAR -->
+  <g transform="translate(1010, 105)" filter="url(#shadow)">
+    <rect width="150" height="315" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <rect width="150" height="38" rx="8" fill="#0f172a"/>
+    <text x="75" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">5. 3D WEBGL AVATAR</text>
+    
+    <circle cx="75" cy="95" r="26" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    <circle cx="75" cy="85" r="9" fill="#0f172a"/>
+    <path d="M 62 110 Q 75 98 88 110" fill="#0f172a"/>
+
+    <text x="75" y="150" font-family="sans-serif" font-size="11" font-weight="700" fill="#09090b" text-anchor="middle">JASigning CWASA</text>
+    <text x="75" y="175" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Multi-Character</text>
+    <text x="75" y="195" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• 60 FPS Bone Rig</text>
+    <text x="75" y="215" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• 360° Orbit / Zoom</text>
+    <text x="75" y="235" font-family="sans-serif" font-size="10" fill="#475569" text-anchor="middle">• Zero Plugin WebGL</text>
+
+    <rect x="15" y="275" width="120" height="26" rx="4" fill="#e2e8f0"/>
+    <text x="75" y="292" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">88.1% Similarity</text>
+  </g>
+</svg>

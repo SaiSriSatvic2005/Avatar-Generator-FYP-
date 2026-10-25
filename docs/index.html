@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Sign Language to 3D Avatar System | Group 31 FYP</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="AI-driven universal translation framework bridging Sign Language videos to 3D WebGL Avatar animations using HaMeR 3D Hand Mesh Estimation, Hybrid Neural Sequence Modeling, and SiGML/CWASA synthesis.">
+  <meta name="keywords" content="Sign Language, HaMeR, 3D Hand Mesh, CWASA, SiGML, HamNoSys, ISL, DGS, Deep Learning, WebGL Avatar">
+  <meta name="author" content="Group 31 - Vivin Rakul, Sai Sri Satvic, Snigdha, Vijay Saravana Pandi">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- JASigning CWASA Core CSS -->
+  <link rel="stylesheet" href="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/cwasa.css">
+  
+  <!-- Portal Custom Stylesheet -->
+  <link rel="stylesheet" href="css/portal.css">
+  
+  <!-- JASigning CWASA Core Library -->
+  <script type="text/javascript" src="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/allcsa.js"></script>
+</head>
+<body onload="CWASA.init({
+    'avsbsl' : ['luna', 'siggi', 'anna', 'marc', 'francoise'],
+    'avSettings' : { 'avList': 'avsbsl', 'initAv': 'anna' }
+  });">
+
+  <!-- Header & Sticky Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-badge">GROUP 31</span>
+        <span class="brand-title">Sign2Avatar<span class="brand-ver">V8</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#datasets">Datasets</a></li>
+        <li><a href="#methodology">Architecture</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#progress">Milestones</a></li>
+        <li><a href="#benchmarks">Benchmarks</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <div class="nav-action-buttons">
+        <a href="https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-" target="_blank" class="nav-btn-github" title="View Source Code on GitHub">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          Project Code
+        </a>
+        <a href="https://github.com/SaiSriSatvic2005/FYP-DataSet" target="_blank" class="nav-btn-github" title="Access Dataset on GitHub">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          FYP-DataSet
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="badge">Final Year Project &bull; Group 31 &bull; 2026</span>
+      <h1 class="hero-title">
+        Universal Sign Language to <span>3D Avatar Synthesis</span>
+      </h1>
+      <p class="hero-subtitle">
+        An AI-powered computer vision and deep learning framework mapping isolated sign language video streams into verified Hamburg Notation System (HamNoSys) tokens and real-time 60 FPS WebGL 3D avatar animations via HaMeR 3D Hand Mesh Recovery.
+      </p>
+      <div class="hero-actions">
+        <a href="#demo" class="btn btn-primary">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Launch Interactive Player
+        </a>
+        <a href="https://github.com/SaiSriSatvic2005/FYP-DataSet" target="_blank" class="btn btn-github">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          Access FYP-DataSet
+        </a>
+        <a href="#limitations" class="btn btn-secondary">
+          Scope &amp; Limitations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Problem Statement & Objectives -->
+  <section class="section" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Motivation</span>
+        <h2 class="section-title">Problem Statement &amp; Project Objectives</h2>
+        <p class="section-subtitle">Bridging communication barriers for deaf communities through robust 3D spatial vision and automated avatar synthesis.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">Communication Barrier &amp; 2D Vision Failure</h3>
+          <p style="color: var(--text-muted); margin-bottom: 14px;">
+            Over 70 million deaf individuals worldwide rely on sign language as their primary mode of communication. 
+            Traditional sign language translation systems suffer from two fatal weaknesses:
+          </p>
+          <ul style="color: var(--text-muted); line-height: 1.7; padding-left: 20px; margin-bottom: 14px; font-size: 1.15rem;">
+            <li><strong>Severe Interpreter Shortage:</strong> Limited accessibility in healthcare, legal, and public emergency services.</li>
+            <li><strong>2D Landmark Tracking Collapse:</strong> Conventional pipelines (e.g., standard MediaPipe 2D) fail catastrophically during fast signing when hands cross each other or self-occlude against the body torso.</li>
+          </ul>
+          <p style="color: var(--text-muted);">
+            Without full 3D spatial geometry (depth, palm normal vectors, finger curl), grammatical meaning in sign language is lost.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">Our Proposed Solution &amp; Engineering Goals</h3>
+          <p style="color: var(--text-muted); margin-bottom: 14px;">
+            We engineer an end-to-end multi-stage pipeline utilizing UC Berkeley's state-of-the-art HaMeR (Hand Mesh Recovery) transformer model to extract complete 3D MANO hand surface meshes:
+          </p>
+          <ul style="color: var(--text-muted); line-height: 1.7; padding-left: 20px; font-size: 1.15rem;">
+            <li><strong>3D Mesh Reconstruction:</strong> Predict 778 vertices and 21 3D joints per hand with full depth resilience.</li>
+            <li><strong>Hybrid Temporal Sequence Classifier:</strong> BiGRU with Multi-Head Self-Attention capturing dynamic gesture phonology.</li>
+            <li><strong>Context-Free Grammar (CFG) Validation:</strong> Enforce strict phonological constraints filtering out anatomically impossible postures.</li>
+            <li><strong>Real-Time WebGL Avatar:</strong> Drive 60 FPS 3D avatar animations directly in standard web browsers using SiGML XML payloads.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Demonstration Videos & Avatar Synthesis -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Live Demonstration</span>
+        <h2 class="section-title">Demonstration Videos &amp; Avatar Synthesis</h2>
+        <p class="section-subtitle">
+          Interactive evaluation displaying human performer sign video alongside the synchronized 3D CWASA avatar synthesis.
+        </p>
+      </div>
+
+      <!-- Interactive Side-by-Side Card -->
+      <div class="demo-showcase-card">
+        
+        <!-- Sign Selection List Dropdown Menu -->
+        <div class="sign-dropdown-card">
+          <div class="dropdown-header">
+            <span class="dropdown-label">Select Evaluated Sign Video:</span>
+            
+          </div>
+          <div class="dropdown-control-row">
+            <select id="sign-select" class="sign-dropdown-select">
+              <option value="zero" selected>0 or Zero &bull; Indian Sign Language (ISL) &bull; Single-Hand Digit</option>
+              <option value="one">1 or One &bull; Indian Sign Language (ISL) &bull; Single-Hand Digit</option>
+              <option value="two">2 or Two &bull; Indian Sign Language (ISL) &bull; Single-Hand Digit</option>
+            </select>
+          </div>
+          <div id="sign-meta-bar" class="sign-meta-bar">
+            <span id="meta-dataset-badge" class="slide-dataset-badge isl-badge">ISL &bull; Digit</span>
+            <span id="meta-desc" class="meta-desc-text">Single-hand circular O-contour at chest level</span>
+            <a id="meta-file-link" href="https://github.com/SaiSriSatvic2005/FYP-DataSet/blob/main/ISL/videos/0%20or%20Zero.mp4" target="_blank" rel="noopener noreferrer" class="meta-link-badge" title="Navigate to exact .mp4 file destination on GitHub"><svg class="icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg> <span>Path: FYP-DataSet/ISL/videos/0 or Zero.mp4</span> &nearr;</a>
+            <span class="slide-sigml-tag">&check; SiGML Synthesized</span>
+          </div>
+        </div>
+
+        <!-- Synchronized Viewport Split -->
+        <div class="viewport-split">
+          
+          <!-- Left: Input Video Player -->
+          <div class="viewport-pane">
+            <div class="pane-header">
+              <span>Input Sign Video (Human Performer)</span>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <a id="btn-open-video-tab" href="assets/videos/zero_sign.mp4" target="_blank" class="pane-action-link" title="Open this sign video in a new browser tab">
+                  <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span id="open-video-text">GitHub .mp4 File ↗</span>
+                </a>
+                <span id="demo-gloss" class="badge">ZERO</span>
+              </div>
+            </div>
+            <div class="pane-content">
+              <video id="demo-video" preload="auto" src="assets/videos/zero_sign.mp4" playsinline controls loop muted></video>
+            </div>
+          </div>
+
+          <!-- Right: CWASA 3D WebGL Avatar Viewport -->
+          <div class="viewport-pane">
+            <div class="pane-header">
+              <span>CWASA 3D WebGL Avatar (SiGML Synthesizer)</span>
+              <span class="badge">60 FPS WebGL</span>
+            </div>
+            <div class="pane-content">
+              <!-- JASigning CWASA Avatar Canvas Injected Here -->
+              <div class="CWASAAvatar av0"></div>
+              
+              <!-- Hidden Native JASigning DOM Elements Required for Control -->
+              <div style="display: none;">
+                <span class="CWASAAvMenu av0"></span>
+                <span class="CWASAAmbBox av0"></span>
+                <input class="txtLogSpeed av0" value="+1.0" type="text" />
+                <input type="button" value="-" class="bttnSpeedDown av0" />
+                <input type="button" value="+" class="bttnSpeedUp av0" />
+                <input type="button" value="Reset" class="bttnSpeedReset av0" />
+                <input class="txtSiGMLURL av0" value="" type="text" />
+                <textarea class="txtaSiGMLText av0" rows="10"></textarea>
+                <input type="button" value="Play SiGML URL" class="bttnPlaySiGMLURL av0" />
+                <input type="button" value="Play SiGML Text" class="bttnPlaySiGMLText av0" />
+                <input type="button" value="Stop" class="bttnStop av0" />
+                <input value="Suspend" class="bttnSuspend av0" type="button">
+                <input value="Resume" class="bttnResume av0" type="button">
+                <input value="+1" class="bttnNextF av0" type="button">
+                <input value="-1" class="bttnPrevF av0" type="button">
+                <input class="txtSF av0" value="0/0" type="text">
+                <input class="txtGloss av0" value="[none]" type="text">
+                <input class="txtFPS av0" value="00.00" type="text" />
+                <input type="text" class="statusExtra av0" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls & Metrics Bar -->
+        <div class="viewport-controls">
+          <div class="control-group">
+            <button id="btn-play-sync" class="btn btn-primary" style="padding: 14px 24px;">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              Play Synchronously
+            </button>
+            <div style="margin-left: 10px;">
+              <span class="control-label" style="font-size: 1.15rem;">Speed:</span>
+              <select id="speed-select" class="dropdown" style="font-size: 1.1rem; padding: 10px 14px;">
+                <option value="0.5">0.5x (Slow-Motion)</option>
+                <option value="1.0" selected>1.0x (Normal 60 FPS)</option>
+                <option value="1.5">1.5x (Fast Synthesis)</option>
+              </select>
+            </div>
+            <!-- Avatar: Locked to default Anna with NO option to change -->
+            <div style="margin-left: 10px; display: flex; align-items: center; gap: 8px;">
+              <span class="control-label" style="font-size: 1.15rem;">Avatar:</span>
+              <span class="avatar-fixed-badge" style="font-size: 1.1rem; padding: 8px 16px;">Anna (Default)</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <span style="font-size: 0.95rem; background: #ffffff; color: #334155; padding: 8px 14px; border-radius: 6px; border: 1.5px solid var(--border-dark);">
+              Left-Click: Orbit 360&deg; | Right-Click: Pan | Scroll: Zoom
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Static Freeze-Frame Comparison Verification -->
+      <div class="comparison-banner-box">
+        <h3 style="margin-bottom: 12px; font-size: 1.35rem;">Synchronized Freeze-Frame Verification (ISL 'Zero' Sign)</h3>
+        <img src="assets/images/side_by_side_demo_zero.jpg" alt="Synchronized Freeze-Frame comparison between human video and CWASA avatar">
+        <p class="image-caption" style="font-size: 1.1rem;">
+          Figure 1: High-resolution side-by-side verification at kinetic apex. Left: Indian Sign Language human performer executing the isolated "Zero" gesture. Right: CWASA 3D WebGL Avatar rendering the identical joint rotations and palm orientation.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: Dataset Corpus -->
+  <section class="section" id="datasets">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Dataset &amp; Vision</span>
+        <h2 class="section-title">Multi-Dialect Dataset Corpus</h2>
+        <p class="section-subtitle">
+          Large-scale video ingestion across Indian Sign Language (ISL) and German Sign Language (DGS) studio recordings.
+        </p>
+      </div>
+
+      <!-- Prominent FYP-DataSet Callout -->
+      <div class="dataset-repo-callout">
+        <div class="dataset-repo-info">
+          <div class="dataset-repo-icon-wrap">
+            <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.45rem; margin-bottom: 6px; color: #0f172a;">Official Project Dataset Repository (FYP-DataSet)</h3>
+            <p style="font-size: 1.12rem; color: var(--text-muted); margin: 0;">
+              Access raw video corpora, extracted 3D HaMeR landmark tensors, train/test manifests, and verified HamNoSys ground truth on GitHub.
+            </p>
+          </div>
+        </div>
+        <a href="https://github.com/SaiSriSatvic2005/FYP-DataSet" target="_blank" class="btn btn-github">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View FYP-DataSet on GitHub
+        </a>
+      </div>
+
+      <div class="grid-2">
+        
+        <!-- Dataset Card 1: ISL -->
+        <div class="dataset-image-card">
+          <img src="assets/images/isl_dataset_grid.png" alt="Indian Sign Language Dataset Grid">
+          <h4>Indian Sign Language (ISL) Studio Corpus</h4>
+          <p>
+            Standardized green-screen isolated sign vocabulary corpus covering numbers (0&ndash;9) and foundational everyday communication tokens recorded under uniform studio lighting and static frontal framing.
+          </p>
+        </div>
+
+        <!-- Dataset Card 2: DGS -->
+        <div class="dataset-image-card">
+          <img src="assets/images/dgs_dataset_grid.png" alt="German Sign Language DGS Dataset Grid">
+          <h4>German Sign Language (DGS) Vocabulary Corpus</h4>
+          <p>
+            Comprehensive blue-screen DGS lexicon dataset capturing multi-signer executions across thousands of distinct lexical items with verified HamNoSys ground truth.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Methodology & Technical Architecture -->
+  <section class="section" id="methodology">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Architecture</span>
+        <h2 class="section-title">Methodology &amp; System Architecture</h2>
+        <p class="section-subtitle">
+          An end-to-end computational pipeline translating raw sign video streams into validated 3D avatar animations.
+        </p>
+      </div>
+
+      <!-- Primary Architecture Flowchart SVG -->
+      <div class="figure-card">
+        <img src="assets/images/pipeline_architecture.svg" alt="End-to-End System Pipeline Architecture">
+        <p class="image-caption" style="font-size: 1.1rem;">
+          Figure 2: Multi-stage system pipeline: dual-stream 3D spatial feature extraction (HaMeR 3D MANO Mesh + MediaPipe 177-D Landmarks), temporal hybrid neural sequence classification (BiGRU + 1D-CNN + Self-Attention), CFG grammar compiler, and CWASA WebGL avatar synthesis.
+        </p>
+      </div>
+
+      <!-- 4 Stages Grid -->
+      <div class="grid-2">
+        
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span class="badge">Stage 1</span>
+            <h3>Dual-Stream 3D Vision &amp; Mesh Recovery</h3>
+          </div>
+          <p style="color: var(--text-muted);">
+            Addresses 2D tracking failures during self-occlusion. Utilizes HaMeR (Hand Mesh Recovery) 
+            to reconstruct a dense 778-vertex 3D MANO hand mesh with 21 joint 3D rotations, paired with 
+            MediaPipe Holistic providing 177-dimensional scale-invariant bodily anchors and Da Vinci facial third ratios.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span class="badge">Stage 2</span>
+            <h3>Hybrid Neural Sequence Classifier</h3>
+          </div>
+          <p style="color: var(--text-muted);">
+            Combines 1D Temporal Convolutions for local kinetic stroke extraction, a Multi-Head Self-Attention 
+            mechanism to highlight phonetic inflection frames, and a Bidirectional GRU (BiGRU) tracking forward 
+            and backward temporal transitions across continuous frames. Six discrete classification heads simultaneously 
+            predict sign phonology components.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span class="badge">Stage 3</span>
+            <h3>Context-Free Grammar (CFG) Compiler</h3>
+          </div>
+          <p style="color: var(--text-muted);">
+            Raw predictions are validated through a strict Context-Free Grammar (CFG) compiler enforcing universal 
+            sign language phonological rules. The compiler filters impossible token combinations, achieving 
+            99.4% syntactic validity before generating standard Hamburg Notation System (HamNoSys) representations.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+            <span class="badge">Stage 4</span>
+            <h3>SiGML Synthesis &amp; WebGL 3D Avatar</h3>
+          </div>
+          <p style="color: var(--text-muted);">
+            Validated HamNoSys sequences are compiled into Signing Gesture Markup Language (SiGML) XML payloads. 
+            The JASigning CWASA 3D WebGL Avatar Engine renders hardware-accelerated bone kinematics and smooth 
+            transitions at 60 FPS across all modern browsers without external plugins.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: Scope & Limitations -->
+  <section class="section" id="limitations">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Scope &amp; Boundaries</span>
+        <h2 class="section-title">System Limitations &amp; Research Boundaries</h2>
+        <p class="section-subtitle">
+          Empirical boundary analysis of the Phase 1 isolated-sign architecture and open technical challenges for future research.
+        </p>
+      </div>
+
+      <!-- 4 Detailed Limitations Grid -->
+      <div class="grid-2">
+        
+        <div class="limitation-card">
+          <h4>&times; 1. Continuous Sign Sentences &amp; Co-Articulation (Movement Epenthesis)</h4>
+          <p>
+            The current pipeline is specifically trained and evaluated on isolated lexical sign gestures with distinct stationary onset and apex hold phases. Fluent conversation features continuous co-articulation where the trailing motion of one sign directly blends into the next without inter-word pauses. Continuous translation requires temporal sequence segmentation and transition epenthesis modeling outside the current scope.
+          </p>
+        </div>
+
+        <div class="limitation-card">
+          <h4>&times; 2. Non-Manual Grammatical Signals (Facial Syntax &amp; Prosody)</h4>
+          <p>
+            Natural sign languages convey over 30% of their grammatical meaning (interrogative question markers, conditional clauses, negation, adverbs) through non-manual features: eyebrow raises, mouth morphemes, eye gaze direction, and head nods. HaMeR focuses strictly on 3D hand mesh reconstruction, resulting in default neutral avatar facial expressions.
+          </p>
+        </div>
+
+        <div class="limitation-card">
+          <h4>&times; 3. Standard 30 FPS Motion Blur in High-Speed Sweeps</h4>
+          <p>
+            Standard RGB video cameras recorded at 30 FPS exhibit significant kinetic motion blur during high-speed transitions or rapid wrist flick gestures. This temporal blur can occasionally cause momentary drops in finger joint confidence before the kinetic apex is stabilized.
+          </p>
+        </div>
+
+        <div class="limitation-card">
+          <h4>&times; 4. Severe Hand-Over-Hand Self-Occlusion at Torso Level</h4>
+          <p>
+            While HaMeR substantially improves over 2D tracking by estimating 3D MANO meshes, severe self-occlusions where both hands cross directly over the chest can still introduce depth ambiguity in z-ordering prior to rule-based smoothing.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: Project Progress & Interactive Timeline -->
+  <section class="section" id="progress">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Milestones</span>
+        <h2 class="section-title">Project Progress &amp; Version History</h2>
+        <p class="section-subtitle">Development milestones and technical progression from June 2026 to October 2026.</p>
+      </div>
+
+      <!-- Interactive Timeline -->
+      <div class="timeline-wrapper">
+        
+        <!-- Milestone 1 -->
+        <div class="timeline-step">
+          <div class="timeline-axis">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge">Version 1 &ndash; 3</span>
+              <span class="timeline-date">Jun &ndash; Jul 2026</span>
+              <span class="timeline-status-badge">Completed</span>
+            </div>
+            <h3 class="timeline-heading">Heuristic 2D Landmark Baseline</h3>
+            <p class="timeline-description">
+              Extracted MediaPipe 2D coordinates with a rule-based heuristic classification pipeline. Provided foundational proof-of-concept but suffered from 41% tracking failure during hand-crossings, wrist occlusions, and lack of depth estimation.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-pill">MediaPipe 2D Holistic</span>
+              <span class="timeline-pill">Geometric Heuristics</span>
+              <span class="timeline-pill">54.2% Baseline Accuracy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-step">
+          <div class="timeline-axis">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge">Version 4 &ndash; 5</span>
+              <span class="timeline-date">Aug 2026</span>
+              <span class="timeline-status-badge">Completed</span>
+            </div>
+            <h3 class="timeline-heading">BiGRU Sequence Modeling &amp; Ingestion</h3>
+            <p class="timeline-description">
+              Implemented Bidirectional GRU sequence neural network over 177-dimensional scale-invariant spatial tensors. Automated HamNoSys token compilation with discrete multi-task classification heads, achieving 71.8% accuracy.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-pill">BiGRU Recurrent Net</span>
+              <span class="timeline-pill">177-D Landmark Tensors</span>
+              <span class="timeline-pill">HamNoSys Tokens</span>
+              <span class="timeline-pill">71.8% Accuracy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-step">
+          <div class="timeline-axis">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge">Version 6 &ndash; 7</span>
+              <span class="timeline-date">Sep 2026</span>
+              <span class="timeline-status-badge">Completed</span>
+            </div>
+            <h3 class="timeline-heading">Multi-Head Self-Attention &amp; CWASA WebGL</h3>
+            <p class="timeline-description">
+              Introduced temporal Multi-Head Self-Attention layers highlighting phonetic apex frames, rigid Context-Free Grammar (CFG) validation filtering impossible finger combinations, and direct client-side integration of the JASigning CWASA 3D avatar engine.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-pill">Self-Attention Mechanism</span>
+              <span class="timeline-pill">CFG Compiler (99.4% Valid)</span>
+              <span class="timeline-pill">CWASA 3D WebGL</span>
+              <span class="timeline-pill">79.4% Accuracy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 4 (Current) -->
+        <div class="timeline-step current-step">
+          <div class="timeline-axis">
+            <div class="timeline-dot active-dot">4</div>
+          </div>
+          <div class="timeline-card active-card">
+            <div class="timeline-meta">
+              <span class="timeline-badge active-badge">Version 8 (Current SOTA)</span>
+              <span class="timeline-date">Oct 2026</span>
+              <span class="timeline-status-badge active-status">&check; Production Ready</span>
+            </div>
+            <h3 class="timeline-heading">HaMeR 3D MANO Mesh Recovery &amp; SOTA Architecture</h3>
+            <p class="timeline-description">
+              Integrated UC Berkeley's HaMeR ViT-based transformer for full 778-vertex 3D MANO surface mesh estimation and true 3D palm normal recovery. Resolved severe self-occlusions and boosted hand mesh accuracy to 88.6% across multi-dialect ISL and DGS benchmarks.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-pill active-pill">HaMeR 3D MANO Mesh</span>
+              <span class="timeline-pill active-pill">Hybrid Attention BiGRU</span>
+              <span class="timeline-pill active-pill">88.6% Mesh Precision</span>
+              <span class="timeline-pill active-pill">60 FPS WebGL Engine</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Benchmarks & Documentation Portal -->
+  <section class="section" id="benchmarks">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Results &amp; Docs</span>
+        <h2 class="section-title">Benchmarks &amp; Documentation Portal</h2>
+        <p class="section-subtitle">Empirical performance metrics across pipeline iterations and technical documentation resources.</p>
+      </div>
+
+      <!-- Benchmark Table -->
+      <div class="card" style="margin-bottom: 32px; overflow-x: auto;">
+        <h3 style="margin-bottom: 14px; font-size: 1.35rem;">Quantitative Performance Evolution Across 30 Benchmark Videos</h3>
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Pipeline Iteration</th>
+              <th>Hand Mesh Accuracy</th>
+              <th>Token Precision</th>
+              <th>Sequence F1</th>
+              <th>CFG Syntactic Validity</th>
+              <th>Avatar Cosine Sim.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Version 1 (Baseline Heuristic)</strong></td>
+              <td>54.2%</td>
+              <td>58.1%</td>
+              <td>0.56</td>
+              <td>74.2%</td>
+              <td>0.6210</td>
+            </tr>
+            <tr>
+              <td><strong>Version 6 (MediaPipe + BiGRU)</strong></td>
+              <td>71.8%</td>
+              <td>76.4%</td>
+              <td>0.74</td>
+              <td>91.5%</td>
+              <td>0.7840</td>
+            </tr>
+            <tr>
+              <td><strong>Version 7 (Self-Attention Hybrid)</strong></td>
+              <td>79.4%</td>
+              <td>81.9%</td>
+              <td>0.80</td>
+              <td>97.2%</td>
+              <td>0.8415</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Version 8 (HaMeR 3D MANO + Hybrid)</strong></td>
+              <td><strong>88.6%</strong></td>
+              <td><strong>85.5%</strong></td>
+              <td><strong>0.84</strong></td>
+              <td><strong>99.4%</strong></td>
+              <td><strong>0.8812</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">
+          *Quantitative evaluation against manual phonetic ground-truth annotations across 30 multi-dialect sign video streams (ISL &amp; DGS).
+        </p>
+      </div>
+
+      <!-- Documentation Portal Download Cards -->
+      <div class="grid-4">
+        
+        <div class="card">
+          <h4 style="margin-bottom: 8px;">Installation Guide</h4>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px;">
+            Step-by-step setup manual for Windows, Linux, CUDA configuration, HaMeR asset download, and Docker execution.
+          </p>
+          <a href="https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-/blob/main/INSTALLATION.md" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            View INSTALLATION.md
+          </a>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-bottom: 8px;">Pipeline Specifications</h4>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px;">
+            Mathematical formulation of 3D cross-product normals, spherical coordinate projections, and attention weight matrices.
+          </p>
+          <a href="https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-/blob/main/CURRENT_PIPELINE_EXPLANATION.md" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            View PIPELINE_SPECS.md
+          </a>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-bottom: 8px;">Benchmark Report</h4>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px;">
+            Comprehensive confusion matrices, per-head precision/recall metrics, and latency profiling across hardware setups.
+          </p>
+          <a href="https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-/blob/main/V8_BENCHMARK_AND_ENHANCEMENT_REPORT.md" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+            View BENCHMARK_REPORT.md
+          </a>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-bottom: 8px;">FYP-DataSet Repo</h4>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px;">
+            Access raw video corpora, ground-truth HamNoSys annotations, and extracted landmark tensor manifests.
+          </p>
+          <a href="https://github.com/SaiSriSatvic2005/FYP-DataSet" target="_blank" class="btn btn-github" style="width: 100%; justify-content: center;">
+            <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            FYP-DataSet
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Project Team Details -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Team Details</span>
+        <h2 class="section-title">Project Team (Group 31)</h2>
+        <p class="section-subtitle">Four-person engineering collaboration with specialized subsystem ownership.</p>
+      </div>
+
+      <div class="grid-4">
+        
+        <!-- Member 1: Vivin -->
+        <div class="card team-card">
+          <div class="team-avatar">VR</div>
+          <h4 class="team-name">Vivin Rakul</h4>
+          <div class="team-role">Deep Learning Systems &amp; Pipeline Integration</div>
+          <p class="team-desc">
+            Engineered HaMeR 3D MANO mesh surface extraction, self-attention temporal layers, end-to-end pipeline integration, and multi-version accuracy evaluation.
+          </p>
+          <span class="team-badge">HaMeR &amp; MANO Mesh Integration</span>
+        </div>
+
+        <!-- Member 2: Satvic -->
+        <div class="card team-card">
+          <div class="team-avatar">SL</div>
+          <h4 class="team-name">Sai Sri Satvic</h4>
+          <div class="team-role">Sequence Modeling &amp; Cloud Architecture</div>
+          <p class="team-desc">
+            Architected the Bidirectional GRU (BiGRU) sequence model, Context-Free Grammar (CFG) phonetic compiler, SiGML XML synthesis, and Flask REST API backend.
+          </p>
+          <span class="team-badge">BiGRU &amp; SiGML Synthesis</span>
+        </div>
+
+        <!-- Member 3: Snigdha -->
+        <div class="card team-card">
+          <div class="team-avatar">S</div>
+          <h4 class="team-name">Snigdha</h4>
+          <div class="team-role">3D Spatial Geometry &amp; Avatar Rendering</div>
+          <p class="team-desc">
+            Calibrated multi-task cross-entropy loss balancing across 6 classification heads, 3D palm normal vector math, CWASA WebGL avatar viewport, and precision testing suite.
+          </p>
+          <span class="team-badge">Spatial Geometry &amp; WebGL</span>
+        </div>
+
+        <!-- Member 4: Vijay -->
+        <div class="card team-card">
+          <div class="team-avatar">VP</div>
+          <h4 class="team-name">Vijay Saravana Pandi</h4>
+          <div class="team-role">Video Ingestion &amp; Feature Engineering</div>
+          <p class="team-desc">
+            Engineered 177-dimensional landmark tensors, Da Vinci facial third ratio calculators, upper body anchor points, and ground-truth dataset manifest alignment.
+          </p>
+          <span class="team-badge">Landmark Tensors &amp; Dataset Ops</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <h3 style="margin-bottom: 10px; color: #fff; font-size: 1.45rem;">Universal Sign Language to 3D Avatar System</h3>
+      <p style="font-size: 1.15rem; margin-bottom: 8px;">Final Year Project (FYP) &bull; Group 31 &bull; Academic Year 2026</p>
+      <p style="margin-bottom: 22px; font-size: 0.98rem; color: var(--text-dim);">
+        Licensed under the <strong>MIT Open Source License</strong>. 
+        Built with HaMeR (UC Berkeley), Google MediaPipe, and JASigning / CWASA (University of East Anglia).
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; font-size: 1rem; flex-wrap: wrap;">
+        <a href="https://github.com/SaiSriSatvic2005/Avatar-Generator-FYP-" target="_blank" style="color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          Project Repository
+        </a>
+        <span style="color: #475569;">&bull;</span>
+        <a href="https://github.com/SaiSriSatvic2005/FYP-DataSet" target="_blank" style="color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          FYP-DataSet
+        </a>
+        <span style="color: #475569;">&bull;</span>
+        <a href="#demo" style="color: #94a3b8; text-decoration: none;">Interactive Player</a>
+        <span style="color: #475569;">&bull;</span>
+        <a href="#datasets" style="color: #94a3b8; text-decoration: none;">Datasets</a>
+        <span style="color: #475569;">&bull;</span>
+        <a href="#limitations" style="color: #94a3b8; text-decoration: none;">Limitations</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Logic -->
+  <script src="js/portal.js"></script>
+</body>
+</html>
