@@ -263,15 +263,6 @@ def upload_video():
         if not os.path.exists(video_path):
             return jsonify({"error": f"Video file not found at {video_path}"}), 404
             
-        # ======================================================================
-        # Run Active V8 Complete Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)
-        # ======================================================================
-        pipeline = get_pipeline()
-        pipeline_result = pipeline.process_video(video_path)
-        
-        hamnosys_tags = pipeline_result.get('hamnosys', '')
-        sigml_output = pipeline_result.get('sigml_xml', '')
-        
         # Derive gloss and sign meaning first
         base_name = os.path.splitext(display_filename.lower())[0]
         matched_info = None
@@ -280,10 +271,18 @@ def upload_video():
                 matched_info = info
                 break
         
+        pipeline_result = {}
         if matched_info and "override_tags" in matched_info:
             hamnosys_tags = matched_info["override_tags"]
-            if "sigml" in matched_info:
-                sigml_output = matched_info["sigml"]
+            sigml_output = matched_info.get("sigml", "")
+        else:
+            # ======================================================================
+            # Run Active V8 Complete Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)
+            # ======================================================================
+            pipeline = get_pipeline()
+            pipeline_result = pipeline.process_video(video_path)
+            hamnosys_tags = pipeline_result.get('hamnosys', '')
+            sigml_output = pipeline_result.get('sigml_xml', '')
 
         # Load unicode mapping for rendering custom HamNoSys font
         mapping = load_reverse_mapping(SPREADSHEET_PATH)
