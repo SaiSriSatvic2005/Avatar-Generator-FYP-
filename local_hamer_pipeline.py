@@ -322,20 +322,11 @@ class LocalHaMeRPipeline:
         self.detector = mp_vision.HandLandmarker.create_from_options(options)
 
         # 5. Load HaMeR ViT Mesh Model
-        self.hamer_model = None
-        self.hamer_cfg = None
+        from hamer.models import load_hamer
         hamer_ckpt = os.path.join(HAMER_DIR, "_DATA", "hamer_ckpts", "checkpoints", "hamer.ckpt")
-        if os.path.exists(hamer_ckpt):
-            try:
-                from hamer.models import load_hamer
-                self.hamer_model, self.hamer_cfg = load_hamer(hamer_ckpt)
-                self.hamer_model = self.hamer_model.to(DEVICE)
-                self.hamer_model.eval()
-                print("[HaMeRPipeline] HaMeR ViT Model Loaded & Ready.")
-            except Exception as e:
-                print(f"[HaMeRPipeline] Warning: Could not load HaMeR ViT model: {e}")
-        else:
-            print(f"[HaMeRPipeline] Notice: {hamer_ckpt} not present. Running with high-precision 3D MediaPipe skeletal tracking.")
+        self.hamer_model, self.hamer_cfg = load_hamer(hamer_ckpt)
+        self.hamer_model = self.hamer_model.to(DEVICE)
+        self.hamer_model.eval()
         print("[HaMeRPipeline] Engine Ready.")
 
     def classify_vector(self, vec, target_dict):
@@ -670,8 +661,7 @@ class LocalHaMeRPipeline:
 
                 hands_data.append({
                     "box": box, "area": area, "is_right": is_right,
-                    "wrist_2d": wrist_norm_2d, "center_2d": center_norm_2d,
-                    "lms": lms
+                    "wrist_2d": wrist_norm_2d, "center_2d": center_norm_2d
                 })
 
             for hd in hands_data:
@@ -687,23 +677,18 @@ class LocalHaMeRPipeline:
             else:
                 dominant_hand = max(hands_data, key=lambda d: d["area"])
             
-            # 3D Pose and Mesh Extraction
-            if self.hamer_model is not None:
-                boxes = np.array([dominant_hand["box"]], dtype=np.float32)
-                dataset = ViTDetDataset(self.hamer_cfg, rgb, boxes, np.array([1 if dominant_hand["is_right"] else 0]), rescale_factor=2.0)
-                dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False)
+            # HaMeR Inference
+            boxes = np.array([dominant_hand["box"]], dtype=np.float32)
+            dataset = ViTDetDataset(self.hamer_cfg, rgb, boxes, np.array([1 if dominant_hand["is_right"] else 0]), rescale_factor=2.0)
+            dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False)
 
-                for batch in dataloader:
-                    batch = recursive_to(batch, DEVICE)
-                    with torch.no_grad():
-                        out = self.hamer_model(batch)
+            for batch in dataloader:
+                batch = recursive_to(batch, DEVICE)
+                with torch.no_grad():
+                    out = self.hamer_model(batch)
 
-                    kps_3d = out['pred_keypoints_3d'][0].detach().cpu().numpy()
-                    hand_pose = out['pred_mano_params']['hand_pose'][0].detach().cpu().numpy()
-            else:
-                dom_lms = dominant_hand.get("lms", detection_result.hand_landmarks[0])
-                kps_3d = np.array([[p.x, p.y, p.z] for p in dom_lms], dtype=np.float32)
-                hand_pose = np.zeros((16, 3, 3), dtype=np.float32)
+                kps_3d = out['pred_keypoints_3d'][0].detach().cpu().numpy()
+                hand_pose = out['pred_mano_params']['hand_pose'][0].detach().cpu().numpy()
 
                 wrist_3d = kps_3d[0].copy()
                 centered_3d = kps_3d - wrist_3d

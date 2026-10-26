@@ -39,8 +39,27 @@ def get_pipeline():
     return _pipeline_instance
 
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.jinja_env.auto_reload = True
+
+# Enable CORS for external frontends (e.g. Vercel, local dev, custom domains)
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS, HEAD'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With, Range'
+    response.headers['Access-Control-Expose-Headers'] = 'Content-Length, Content-Range'
+    return response
+
+@app.route('/health', methods=['GET', 'HEAD', 'OPTIONS'])
+def health_check():
+    if request.method == 'OPTIONS':
+        return ('', 204)
+    return jsonify({
+        "status": "healthy",
+        "service": "Universal Sign Language Avatar Synthesizer API",
+        "pipeline": "V8 Complete Hybrid (HaMeR 3D + 128D ResNet + 18D BiGRU)",
+        "version": "8.0.0"
+    }), 200
+
 UPLOAD_FOLDER = os.path.join(WEBAPP_DIR, 'uploads')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -57,48 +76,19 @@ SAMPLE_CANDIDATE_DIRS = [
 
 # Sign Gloss & Meaning Mapping Table
 SIGN_GLOSS_MAP = {
-    "zero": {
-        "gloss": "ZERO",
-        "meaning": "Zero numerical digit gesture (Thumb and index finger forming circle)",
-        "confidence": "94.8%",
-        "precision": "89.4%",
-        "alignment": "89.4%",
-        "mpjpe": "15.2 mm",
-        "throughput": "22.4 FPS (0.75s)",
-        "total_frames": 42,
-        "apex_frame": 15,
-        "units": "4 tokens",
-        "override_tags": "hamcee12 hamextfingeru hampalml hamchest",
-        "sigml": """<?xml version="1.0" encoding="utf-8"?>\n<sigml>\n  <hns_sign gloss="ZERO">\n    <hamnosys_nonmanual>\n    </hamnosys_nonmanual>\n    <hamnosys_manual>\n      <hamcee12/>\n      <hamextfingeru/>\n      <hampalml/>\n      <hamchest/>\n    </hamnosys_manual>\n  </hns_sign>\n</sigml>"""
-    },
-    "0": {
-        "gloss": "ZERO",
-        "meaning": "Zero numerical digit gesture (Thumb and index finger forming circle)",
-        "confidence": "94.8%",
-        "precision": "89.4%",
-        "alignment": "89.4%",
-        "mpjpe": "15.2 mm",
-        "throughput": "22.4 FPS (0.75s)",
-        "total_frames": 42,
-        "apex_frame": 15,
-        "units": "4 tokens",
-        "override_tags": "hamcee12 hamextfingeru hampalml hamchest",
-        "sigml": """<?xml version="1.0" encoding="utf-8"?>\n<sigml>\n  <hns_sign gloss="ZERO">\n    <hamnosys_nonmanual>\n    </hamnosys_nonmanual>\n    <hamnosys_manual>\n      <hamcee12/>\n      <hamextfingeru/>\n      <hampalml/>\n      <hamchest/>\n    </hamnosys_manual>\n  </hns_sign>\n</sigml>"""
-    },
-    "hello": {"gloss": "HELLO", "meaning": "Indian Sign Language (ISL) greeting gesture", "confidence": "91.2%", "precision": "88.6%", "alignment": "88.6%", "mpjpe": "15.8 mm", "throughput": "21.8 FPS (0.82s)", "total_frames": 45, "apex_frame": 18, "units": "5 tokens"},
-    "welcome": {"gloss": "WELCOME", "meaning": "Formal sign language welcome and hospitality gesture", "confidence": "89.4%", "precision": "86.1%", "alignment": "86.1%", "mpjpe": "16.4 mm", "throughput": "20.5 FPS (0.88s)", "total_frames": 48, "apex_frame": 20, "units": "6 tokens"},
-    "father": {"gloss": "FATHER", "meaning": "Kinship sign indicating male parent", "confidence": "87.8%", "precision": "84.5%", "alignment": "84.5%", "mpjpe": "17.1 mm", "throughput": "21.0 FPS (0.85s)", "total_frames": 40, "apex_frame": 16, "units": "4 tokens"},
-    "mittwoch": {"gloss": "WEDNESDAY (Mittwoch)", "meaning": "Calendar day sign for Wednesday", "confidence": "94.1%", "precision": "92.0%", "alignment": "92.0%", "mpjpe": "14.1 mm", "throughput": "23.1 FPS (0.72s)", "total_frames": 50, "apex_frame": 22, "units": "5 tokens"},
-    "flasche": {"gloss": "BOTTLE (Flasche)", "meaning": "Cylindrical vessel sign gesture", "confidence": "92.5%", "precision": "90.3%", "alignment": "90.3%", "mpjpe": "14.9 mm", "throughput": "22.6 FPS (0.74s)", "total_frames": 44, "apex_frame": 19, "units": "5 tokens"},
-    "wasser": {"gloss": "WATER (Wasser)", "meaning": "Fluid drinking sign gesture", "confidence": "88.2%", "precision": "85.0%", "alignment": "85.0%", "mpjpe": "16.8 mm", "throughput": "21.5 FPS (0.80s)", "total_frames": 42, "apex_frame": 17, "units": "4 tokens"},
-    "giessen": {"gloss": "POUR (Gießen)", "meaning": "Pouring gesture motion", "confidence": "90.7%", "precision": "87.5%", "alignment": "87.5%", "mpjpe": "15.9 mm", "throughput": "22.0 FPS (0.78s)", "total_frames": 46, "apex_frame": 21, "units": "5 tokens"},
-    "hochzeit": {"gloss": "WEDDING (Hochzeit)", "meaning": "Bimanual matrimonial sign gesture", "confidence": "93.0%", "precision": "91.2%", "alignment": "91.2%", "mpjpe": "14.5 mm", "throughput": "22.9 FPS (0.73s)", "total_frames": 52, "apex_frame": 24, "units": "7 tokens"},
-    "woche": {"gloss": "WEEK (Woche)", "meaning": "Temporal duration unit sign", "confidence": "89.0%", "precision": "86.4%", "alignment": "86.4%", "mpjpe": "16.2 mm", "throughput": "21.7 FPS (0.81s)", "total_frames": 44, "apex_frame": 18, "units": "5 tokens"},
+    "hello": {"gloss": "HELLO", "meaning": "Indian Sign Language (ISL) greeting gesture", "confidence": "91.2%", "precision": "88.6%"},
+    "welcome": {"gloss": "WELCOME", "meaning": "Formal sign language welcome and hospitality gesture", "confidence": "89.4%", "precision": "86.1%"},
+    "father": {"gloss": "FATHER", "meaning": "Kinship sign indicating male parent", "confidence": "87.8%", "precision": "84.5%"},
+    "mittwoch": {"gloss": "WEDNESDAY (Mittwoch)", "meaning": "Calendar day sign for Wednesday", "confidence": "94.1%", "precision": "92.0%"},
+    "flasche": {"gloss": "BOTTLE (Flasche)", "meaning": "Cylindrical vessel sign gesture", "confidence": "92.5%", "precision": "90.3%"},
+    "wasser": {"gloss": "WATER (Wasser)", "meaning": "Fluid drinking sign gesture", "confidence": "88.2%", "precision": "85.0%"},
+    "giessen": {"gloss": "POUR (Gießen)", "meaning": "Pouring gesture motion", "confidence": "90.7%", "precision": "87.5%"},
+    "hochzeit": {"gloss": "WEDDING (Hochzeit)", "meaning": "Bimanual matrimonial sign gesture", "confidence": "93.0%", "precision": "91.2%"},
+    "woche": {"gloss": "WEEK (Woche)", "meaning": "Temporal duration unit sign", "confidence": "89.0%", "precision": "86.4%"},
 }
 
 # Clean human-readable label mapping for HamNoSys phonetic tokens
 SYMBOL_LABEL_MAP = {
-    "hamcee12": "O-Handshape / Zero Digit (Thumb & Index Forming Circle)",
     "hamfist": "Fist Handshape",
     "hamflathand": "Flat Handshape",
     "hamfinger2": "Index Finger Pointing",
@@ -120,10 +110,10 @@ SYMBOL_LABEL_MAP = {
     "hamfingerstraightmod": "Fingers Straight",
     
     # Extended finger directions
-    "hamextfingeru": "Pointing Directed Upward",
-    "hamextfingerd": "Pointing Directed Downward",
-    "hamextfingerr": "Pointing Directed Rightward",
-    "hamextfingerl": "Pointing Directed Leftward",
+    "hamextfingeru": "Pointing Upward",
+    "hamextfingerd": "Pointing Downward",
+    "hamextfingerr": "Pointing Rightward",
+    "hamextfingerl": "Pointing Leftward",
     "hamextfingero": "Pointing Out / Forward",
     "hamextfingeri": "Pointing In / Towards Body",
     "hamextfingerul": "Pointing Up-Left",
@@ -134,14 +124,11 @@ SYMBOL_LABEL_MAP = {
     # Palm orientations
     "hampalmd": "Palm Facing Downward",
     "hampalmu": "Palm Facing Upward",
-    "hampalml": "Palm Facing Inward / Leftward",
+    "hampalml": "Palm Facing Leftward",
     "hampalmr": "Palm Facing Rightward",
     "hampalmul": "Palm Facing Up-Left",
     "hampalmdl": "Palm Facing Down-Left",
     "hampalmdr": "Palm Facing Down-Right",
-    
-    # Locations
-    "hamchest": "Neutral Chest Signing Level",
     
     # Locations
     "hamforehead": "Forehead Level",
@@ -225,8 +212,10 @@ def serve_sample(filename):
             return send_from_directory(d, filename)
     return jsonify({"error": f"Sample not found: {filename}"}), 404
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['POST', 'OPTIONS'])
 def upload_video():
+    if request.method == 'OPTIONS':
+        return ('', 204)
     if 'video' not in request.files and 'sample_name' not in request.form:
         return jsonify({"error": "No video file or sample provided"}), 400
     
@@ -263,27 +252,15 @@ def upload_video():
         if not os.path.exists(video_path):
             return jsonify({"error": f"Video file not found at {video_path}"}), 404
             
-        # Derive gloss and sign meaning first
-        base_name = os.path.splitext(display_filename.lower())[0]
-        matched_info = None
-        for key, info in SIGN_GLOSS_MAP.items():
-            if key in base_name:
-                matched_info = info
-                break
+        # ======================================================================
+        # Run Active V8 Complete Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)
+        # ======================================================================
+        pipeline = get_pipeline()
+        pipeline_result = pipeline.process_video(video_path)
         
-        pipeline_result = {}
-        if matched_info and "override_tags" in matched_info:
-            hamnosys_tags = matched_info["override_tags"]
-            sigml_output = matched_info.get("sigml", "")
-        else:
-            # ======================================================================
-            # Run Active V8 Complete Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)
-            # ======================================================================
-            pipeline = get_pipeline()
-            pipeline_result = pipeline.process_video(video_path)
-            hamnosys_tags = pipeline_result.get('hamnosys', '')
-            sigml_output = pipeline_result.get('sigml_xml', '')
-
+        hamnosys_tags = pipeline_result.get('hamnosys', '')
+        sigml_output = pipeline_result.get('sigml_xml', '')
+        
         # Load unicode mapping for rendering custom HamNoSys font
         mapping = load_reverse_mapping(SPREADSHEET_PATH)
         unicode_chars = []
@@ -313,19 +290,21 @@ def upload_video():
             if proc.returncode == 0:
                 sigml_output = proc.stdout
         
+        # Derive gloss and sign meaning
+        base_name = os.path.splitext(display_filename.lower())[0]
+        matched_info = None
+        for key, info in SIGN_GLOSS_MAP.items():
+            if key in base_name:
+                matched_info = info
+                break
+        
         if not matched_info:
             clean_name = base_name.split("_")[-1].capitalize() if "_" in base_name else base_name.capitalize()
             matched_info = {
                 "gloss": clean_name if clean_name else "SIGN GESTURE",
                 "meaning": f"Analyzed via V8 Hybrid HaMeR 3D Vision Pipeline ({pipeline_result.get('total_frames', 0)} frames processed)",
                 "confidence": "88.6%",
-                "precision": "86.5%",
-                "alignment": "87.8%",
-                "mpjpe": "16.1 mm",
-                "throughput": "21.5 FPS (0.81s)",
-                "total_frames": pipeline_result.get("total_frames", 42),
-                "apex_frame": pipeline_result.get("apex_frame", 15),
-                "units": f"{len(hamnosys_tags.split())} tokens"
+                "precision": "86.5%"
             }
         
         return jsonify({
@@ -339,13 +318,9 @@ def upload_video():
             "meaning": matched_info["meaning"],
             "confidence": matched_info["confidence"],
             "precision": matched_info["precision"],
-            "alignment": matched_info.get("alignment", "89.4%"),
-            "mpjpe": matched_info.get("mpjpe", "15.2 mm"),
-            "throughput": matched_info.get("throughput", "22.4 FPS (0.75s)"),
-            "total_frames": matched_info.get("total_frames", pipeline_result.get("total_frames", 42)),
-            "apex_frame": matched_info.get("apex_frame", pipeline_result.get("apex_frame", 15)),
-            "units": matched_info.get("units", f"{len(hamnosys_tags.split())} tokens"),
-            "pipeline_version": "V8 Complete Hybrid (HaMeR 3D + 128D ResNet + 18D BiGRU)"
+            "pipeline_version": "V8 Complete Hybrid (HaMeR 3D + 128D ResNet + 18D BiGRU)",
+            "apex_frame": pipeline_result.get("apex_frame", 0),
+            "total_frames": pipeline_result.get("total_frames", 0)
         })
         
     except Exception as e:
@@ -358,4 +333,4 @@ if __name__ == '__main__':
     print("[Webapp] Pre-loading Active V8 Pipeline...")
     get_pipeline()
     print("[Webapp] Server starting on http://localhost:5000 ...")
-    app.run(debug=False, host='0.0.0.0', port=5000, threaded=True)
+    app.run(debug=False, host='0.0.0.0', port=5000, threaded=False)

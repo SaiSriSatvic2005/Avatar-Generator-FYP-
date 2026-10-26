@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Sign Language Avatar Synthesizer</title>
+    <title>Universal Sign Language to 3D Avatar Synthesizer | HamNoSys Pipeline</title>
     
-    <meta name="theme-color" content="#991B1B">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="/static/manifest.json">
+    <!-- Google Fonts: Outfit & Inter for high readability and bold catchiness -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Google Fonts: Inter & Plus Jakarta Sans / Outfit for ultra-crisp modern typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- JASigning CWASA WebGL Avatar Framework -->
+    <!-- JASigning CWASA -->
     <link rel="stylesheet" href="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/cwasa.css" />
     <script type="text/javascript" src="https://vhg.cmp.uea.ac.uk/tech/jas/vhg2026/cwa/allcsa.js"></script>
     
-    <!-- Custom Application Stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body onload="CWASA.init({
@@ -27,309 +21,202 @@
     'avSettings' : { 'avList': 'avsbsl', 'initAv': 'anna' }
 });">
 
-    <div class="app-layout">
-        
+    <div class="container">
         <!-- Header -->
-        <header class="app-header">
-            <h1 class="main-title">Universal Sign Language <span class="highlight-crimson">Avatar Synthesizer</span></h1>
-            <p class="main-subtitle">
-                Real-time gesture recognition converting sign language videos into international HamNoSys phonetic notation, synthesizing high-precision 3D WebGL Avatar motion.
-            </p>
+        <header>
+            <div class="header-top-row">
+                <div class="badge">Sign Language Converter Project</div>
+                
+                <!-- Cloud AI Backend Status & Config Pill -->
+                <div class="api-status-pill" id="api-status-pill">
+                    <span class="status-dot dot-connecting" id="api-status-dot"></span>
+                    <span class="status-label" id="api-status-label">Checking AI Backend...</span>
+                    <button class="btn-gear" id="btn-toggle-api-settings" title="Configure Backend API Server">⚙️</button>
+                </div>
+            </div>
+
+            <!-- Collapsible Backend Settings Drawer -->
+            <div class="api-settings-drawer hidden" id="api-settings-drawer">
+                <div class="api-settings-box">
+                    <label for="backend-url-input"><strong>AI Inference Backend URL:</strong></label>
+                    <div class="api-input-group">
+                        <input type="url" id="backend-url-input" placeholder="https://satvic2005-sign-avatar-backend.hf.space" />
+                        <button id="btn-save-backend-url" class="btn-save-api">Connect</button>
+                        <button id="btn-reset-backend-url" class="btn-reset-api">Reset</button>
+                    </div>
+                    <span class="api-help-text">Default: Hugging Face Spaces (<code>https://satvic2005-sign-avatar-backend.hf.space</code>). For local demo / Ngrok tunnel, paste your URL above.</span>
+                </div>
+            </div>
+
+            <h1>Universal Sign Language <span>Avatar Synthesizer</span></h1>
+            <p>Convert sign language videos into phonetic notation and render real-time 3D avatar animations.</p>
         </header>
 
-        <!-- Top Dual-Column Grid -->
-        <div class="top-synthesis-grid">
+        <!-- Simple Non-Technical Intro Section -->
+        <section class="card intro-card">
+            <div class="intro-header">
+                <h2>About This Project</h2>
+            </div>
+            <p>
+                Welcome! This web application converts sign language videos into phonetic sign notation (HamNoSys) and displays a 3D animated avatar performing the sign. It helps bridge the communication gap by showing how sign language videos can be converted into animated avatars for easy visual understanding.
+            </p>
+        </section>
+
+        <!-- Main Alignment Grid: Side-by-Side Video & Avatar -->
+        <main class="main-top-grid">
             
-            <!-- Left Card: Input Sign Video -->
-            <div class="panel-card input-card">
-                <div class="panel-card-header">
-                    <div class="title-with-badge">
-                        <span class="step-circle">1</span>
-                        <h2>Input Sign Video</h2>
+            <!-- Left Column: Input Video Selection & Preview -->
+            <div class="panel-column left-panel">
+                <div class="card video-card-aligned">
+                    <h3>1. Input Video & Preview</h3>
+                    
+                    <!-- Upload Area -->
+                    <div class="upload-area" id="drop-zone">
+                        <input type="file" id="video-input" accept="video/mp4,video/x-m4v,video/*" hidden>
+                        <div class="upload-content">
+                            <p class="upload-text">Drag & drop your sign language video here</p>
+                            <span class="upload-subtext">or click to browse from your computer</span>
+                        </div>
                     </div>
-                    <span class="active-file-pill" id="active-file-pill">Active: Zero.mp4</span>
-                </div>
 
-                <!-- Upload Drag & Drop Area -->
-                <div class="drop-upload-zone" id="drop-upload-zone">
-                    <input type="file" id="video-file-input" accept="video/mp4,video/x-m4v,video/*" hidden>
-                    <div class="upload-icon-wrapper">
-                        <svg class="upload-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 17V3m0 0l-5 5m5-5l5 5"/>
-                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
-                        </svg>
+                    <!-- Quick Sample Buttons -->
+                    <div class="sample-selection">
+                        <span class="sample-label">Or click to test benchmark sign clips:</span>
+                        <div class="sample-buttons">
+                            <button class="sample-btn" data-sample="Hello.mp4">Hello.mp4 (ISL)</button>
+                            <button class="sample-btn" data-sample="Welcome.mp4">Welcome.mp4 (ISL)</button>
+                            <button class="sample-btn" data-sample="998_MITTWOCH1.mp4">Wednesday.mp4 (DGS)</button>
+                            <button class="sample-btn" data-sample="98_FLASCHE1A.mp4">Bottle.mp4 (DGS)</button>
+                        </div>
                     </div>
-                    <p class="drop-main-text">Select or drop a sign language clip</p>
-                    <p class="drop-sub-text">or choose a benchmark below</p>
-                </div>
 
-                <!-- 1-Click Benchmark Sign Clips -->
-                <div class="benchmark-section">
-                    <div class="section-micro-label">1-CLICK BENCHMARK SIGN CLIPS:</div>
-                    <div class="benchmark-pills-row">
-                        <button class="benchmark-pill-btn active" data-clip="Zero.mp4">Zero.mp4</button>
-                        <button class="benchmark-pill-btn" data-clip="Hello.mp4">Hello.mp4</button>
-                        <button class="benchmark-pill-btn" data-clip="Welcome.mp4">Welcome.mp4</button>
-                        <button class="benchmark-pill-btn" data-clip="998_MITTWOCH1.mp4">Wednesday.mp4</button>
-                        <button class="benchmark-pill-btn" data-clip="98_FLASCHE1A.mp4">Bottle.mp4</button>
+                    <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Analyzing video gestures and building avatar motion...</p>
                     </div>
-                </div>
 
-                <!-- Processing Spinner Overlay -->
-                <div id="processing-overlay" class="processing-overlay hidden">
-                    <div class="pulse-spinner"></div>
-                    <p class="processing-text">Processing 3D Hand Mesh & HamNoSys Synthesis...</p>
-                </div>
-
-                <!-- Video Viewport -->
-                <div class="video-player-container">
-                    <div class="video-player-bar">
-                        <span class="video-bar-name" id="video-bar-name">Zero.mp4</span>
-                        <span class="video-bar-timer" id="video-bar-timer">00:00 / 00:00</span>
-                    </div>
-                    <div class="video-viewport">
-                        <video id="input-video-element" playsinline muted preload="auto" src="/samples/Zero.mp4">
-                            Your browser does not support HTML5 video.
+                    <!-- Video Preview Player (Hidden until loaded) -->
+                    <div class="video-preview-container hidden" id="preview-container">
+                        <video id="input-video-player" controls playsinline>
+                            Your browser does not support video playback.
                         </video>
+                        <div class="video-filename" id="preview-filename">Input Video Preview</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Card: 3D WebGL Avatar Synthesis -->
-            <div class="panel-card avatar-card">
-                <div class="panel-card-header">
-                    <div class="title-with-badge">
-                        <span class="step-circle">2</span>
-                        <h2>3D WebGL Avatar Synthesis</h2>
+            <!-- Right Column: 3D Avatar Rendering & Directly Integrated Play Button -->
+            <div class="panel-column right-panel">
+                <div class="card avatar-card-aligned">
+                    <h3>2. 3D Avatar Render</h3>
+                    <div class="avatar-container">
+                        <!-- JASigning Avatar injected here -->
+                        <div class="CWASAAvatar av0"></div>
+                        
+                        <!-- Hidden controls required by JASigning -->
+                        <div style="display: none;">
+                            <span class="CWASAAvMenu av0"></span>
+                            <span class="CWASAAmbBox av0"></span>
+                            <input class="txtLogSpeed av0" value="+1.0" type="text" />
+                            <input type="button" value="-" class="bttnSpeedDown av0" />
+                            <input type="button" value="+" class="bttnSpeedUp av0" />
+                            <input type="button" value="Reset" class="bttnSpeedReset av0" />
+                            <input class="txtSiGMLURL av0" value="" type="text" />
+                            <textarea class="txtaSiGMLText av0" rows="10"></textarea>
+                            <input type="button" value="Play SiGML URL" class="bttnPlaySiGMLURL av0" />
+                            <input type="button" value="Play SiGML Text" class="bttnPlaySiGMLText av0" />
+                            <input type="button" value="Stop" class="bttnStop av0" />
+                            <input value="Suspend" class="bttnSuspend av0" type="button">
+                            <input value="Resume" class="bttnResume av0" type="button">
+                            <input value="+1" class="bttnNextF av0" type="button">
+                            <input value="-1" class="bttnPrevF av0" type="button">
+                            <input class="txtSF av0" value="0/0" type="text">
+                            <input class="txtGloss av0" value="[none]" type="text">
+                            <input class="txtFPS av0" value="00.00" type="text" />
+                            <input type="text" class="statusExtra av0" />
+                        </div>
                     </div>
-                    <div class="avatar-select-wrapper">
-                        <span class="avatar-select-label">Avatar:</span>
-                        <select id="avatar-switcher" class="avatar-dropdown">
-                            <option value="anna" selected>Anna</option>
-                            <option value="marc">Marc</option>
-                            <option value="luna">Luna</option>
-                            <option value="siggi">Siggi</option>
-                            <option value="francoise">Francoise</option>
-                        </select>
+
+                    <!-- Directly Integrated Play / Replay Avatar Button -->
+                    <button id="play-avatar-btn" class="btn-avatar-play">
+                        Replay 3D Avatar Animation
+                    </button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Detailed Results & Information Grid (Below the Fold) -->
+        <section class="results-detail-grid">
+            
+            <!-- Sign Meaning & Translation Box -->
+            <div class="card meaning-card hidden" id="meaning-card">
+                <h3>Sign Meaning & Translation</h3>
+                <div class="gloss-container">
+                    <div class="gloss-header-row">
+                        <div class="gloss-badge" id="sign-gloss">HELLO / HI</div>
+                        <div class="accuracy-pill" id="precision-pill">Accuracy: 85.7%</div>
                     </div>
-                </div>
-
-                <!-- WebGL 3D Canvas Container -->
-                <div class="avatar-render-viewport">
-                    <div class="CWASAAvatar av0"></div>
-
-                    <!-- Hidden technical inputs for JASigning CWASA API -->
-                    <div style="display: none;">
-                        <span class="CWASAAvMenu av0"></span>
-                        <span class="CWASAAmbBox av0"></span>
-                        <input class="txtLogSpeed av0" value="+1.0" type="text" />
-                        <input type="button" value="-" class="bttnSpeedDown av0" />
-                        <input type="button" value="+" class="bttnSpeedUp av0" />
-                        <input type="button" value="Reset" class="bttnSpeedReset av0" />
-                        <input class="txtSiGMLURL av0" value="" type="text" />
-                        <textarea class="txtaSiGMLText av0" rows="10"></textarea>
-                        <input type="button" value="Play SiGML URL" class="bttnPlaySiGMLURL av0" />
-                        <input type="button" value="Play SiGML Text" class="bttnPlaySiGMLText av0" />
-                        <input type="button" value="Stop" class="bttnStop av0" />
-                        <input value="Suspend" class="bttnSuspend av0" type="button">
-                        <input value="Resume" class="bttnResume av0" type="button">
-                        <input value="+1" class="bttnNextF av0" type="button">
-                        <input value="-1" class="bttnPrevF av0" type="button">
-                        <input class="txtSF av0" value="0/0" type="text">
-                        <input class="txtGloss av0" value="[none]" type="text">
-                        <input class="txtFPS av0" value="00.00" type="text" />
-                        <input type="text" class="statusExtra av0" />
-                    </div>
-                </div>
-
-                <!-- Footer Status Bar -->
-                <div class="avatar-footer-bar">
-                    <span class="avatar-tech-info">WebGL 2.0 Hardware Accelerated</span>
-                    <span class="avatar-fps-badge">60 FPS Render</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Synchronized Playback Control Toolbar -->
-        <div class="playback-controls-bar">
-            <div class="controls-left-group">
-                <button id="btn-sync-play" class="action-btn btn-primary-blue">
-                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                    Play Synchronized
-                </button>
-                <button id="btn-sync-pause" class="action-btn btn-secondary-gray">
-                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                    Pause
-                </button>
-                <button id="btn-sync-replay" class="action-btn btn-secondary-gray">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
-                        <path d="M1 4v6h6M23 20v-6h-6"/>
-                        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
-                    </svg>
-                    Replay Both
-                </button>
-
-                <!-- Loop Playback Toggle -->
-                <label class="toggle-control-label">
-                    <input type="checkbox" id="toggle-loop-playback" checked>
-                    <span class="toggle-pill-track"></span>
-                    <span class="toggle-text">Loop Playback</span>
-                </label>
-            </div>
-
-            <!-- Playback Speed Section -->
-            <div class="controls-right-speed">
-                <span class="speed-label-text">Playback Speed:</span>
-                <div class="speed-buttons-group">
-                    <button class="speed-btn" data-speed="0.5">0.5x</button>
-                    <button class="speed-btn" data-speed="0.75">0.75x</button>
-                    <button class="speed-btn active" data-speed="1.0">1.0x</button>
-                    <button class="speed-btn" data-speed="1.25">1.25x</button>
-                    <button class="speed-btn" data-speed="1.5">1.5x</button>
-                </div>
-                <input type="range" id="playback-speed-slider" min="0.5" max="1.5" step="0.25" value="1.0" class="crimson-range-slider">
-                <span id="speed-indicator-val" class="speed-val-badge">1.0x</span>
-            </div>
-        </div>
-
-        <!-- Section 3: Quantitative Validation -->
-        <div class="panel-card metrics-card">
-            <div class="sub-header-red">QUANTITATIVE VALIDATION</div>
-            <div class="panel-card-header no-margin-bottom">
-                <h2>Performance Measures & Validation Outcomes</h2>
-                <span class="model-version-pill">
-                    <span class="dot-green"></span> HAMER 3D VIT V8
-                </span>
-            </div>
-
-            <!-- 3 Big Metric Columns -->
-            <div class="metrics-metrics-row">
-                <div class="metric-metric-box">
-                    <div class="metric-big-number" id="metric-alignment-val">89.4%</div>
-                    <div class="metric-big-label">3D GESTURE ALIGNMENT</div>
-                </div>
-                <div class="metric-metric-box">
-                    <div class="metric-big-number" id="metric-mpjpe-val">15.2 mm</div>
-                    <div class="metric-big-label">MEAN JOINT ERROR (MPJPE)</div>
-                </div>
-                <div class="metric-metric-box">
-                    <div class="metric-big-number" id="metric-throughput-val">22.4 FPS (0.75s)</div>
-                    <div class="metric-big-label">PROCESSING THROUGHPUT</div>
-                </div>
-            </div>
-
-            <!-- Sub Metrics Details Row -->
-            <div class="sub-metrics-details-row">
-                <div class="sub-metric-item">
-                    Total Frames: <span class="sub-metric-val" id="metric-frames-val">42 frames</span>
-                </div>
-                <div class="sub-metric-item">
-                    Kinetic Apex Hold: <span class="sub-metric-val" id="metric-apex-val">Frame 15 (Hold Phase)</span>
-                </div>
-                <div class="sub-metric-item">
-                    Phonetic Units: <span class="sub-metric-val" id="metric-units-val">4 tokens</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section 4: Standardized Notation (HamNoSys) -->
-        <div class="panel-card notation-card">
-            <div class="sub-header-red">STANDARDIZED NOTATION</div>
-            <div class="panel-card-header">
-                <h2>HamNoSys Phonetic Notation</h2>
-                <button id="btn-copy-tokens" class="btn-copy-pill">Copy Tokens</button>
-            </div>
-
-            <!-- Tag Sequence & Native Unicode Glyphs -->
-            <div class="notation-dual-boxes-row">
-                <div class="notation-box-col">
-                    <div class="section-micro-label">PHONETIC TAG SEQUENCE</div>
-                    <div class="code-pill-display" id="display-tag-sequence">
-                        hamcee12 hamextfingeru hampalml hamchest
-                    </div>
-                </div>
-                <div class="notation-box-col">
-                    <div class="section-micro-label">HAMNOSYS NATIVE UNICODE GLYPHS</div>
-                    <div class="unicode-pill-display hamnosys-native-font" id="display-unicode-glyphs">
-                        &#xe009;&#xe020;&#xe03e;&#xe052;
+                    <div class="gloss-meaning" id="sign-meaning">Sign language greeting gesture</div>
+                    <div class="gloss-note">
+                        This text translation explains what the sign means while the 3D avatar animation above is performed.
                     </div>
                 </div>
             </div>
 
-            <!-- Visual Symbol Breakdown Chips -->
-            <div class="symbol-breakdown-wrapper">
-                <div class="section-micro-label">VISUAL SYMBOL BREAKDOWN CHIPS</div>
-                <div class="chips-flex-container" id="display-symbol-chips">
-                    <div class="symbol-chip-card">
-                        <span class="chip-tag-crimson">hamcee12</span>
-                        <span class="chip-desc-text">O-Handshape / Zero Digit (Thumb &amp; Index Forming Circle)</span>
-                    </div>
-                    <div class="symbol-chip-card">
-                        <span class="chip-tag-crimson">hamextfingeru</span>
-                        <span class="chip-desc-text">Pointing Directed Upward</span>
-                    </div>
-                    <div class="symbol-chip-card">
-                        <span class="chip-tag-crimson">hampalml</span>
-                        <span class="chip-desc-text">Palm Facing Inward / Leftward</span>
-                    </div>
-                    <div class="symbol-chip-card">
-                        <span class="chip-tag-crimson">hamchest</span>
-                        <span class="chip-desc-text">Neutral Chest Signing Level</span>
-                    </div>
+            <!-- HamNoSys Notation & Symbol Keyboard Chips -->
+            <div class="card result-card hidden" id="result-card">
+                <h3>Generated Sign Notation (HamNoSys)</h3>
+                
+                <div class="result-group">
+                    <label>Phonetic Token Sequence</label>
+                    <div class="result-box" id="hamnosys-tags"></div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Section 5: Synthesized Motion Markup (SiGML XML) -->
-        <div class="panel-card sigml-inspector-card">
-            <div class="sub-header-red">SYNTHESIZED MOTION MARKUP</div>
-            <div class="panel-card-header">
-                <h2>Generated SiGML XML Code Inspector</h2>
-                <div class="header-actions-group">
-                    <button id="btn-copy-xml" class="btn-copy-pill">Copy XML</button>
-                    <button id="btn-download-sigml" class="btn-copy-pill">Download .sigml</button>
+                <div class="result-group">
+                    <label>HamNoSys Font Glyphs</label>
+                    <div class="result-box hamnosys-font-display" id="hamnosys-chars"></div>
+                </div>
+                
+                <div class="result-group">
+                    <label>HamKeyboard Symbol Breakdown</label>
+                    <div class="symbol-chips-container" id="symbol-chips"></div>
                 </div>
             </div>
 
-            <!-- Dark Monospace Editor Viewport -->
-            <div class="sigml-code-window">
-                <pre class="sigml-pre"><code id="display-sigml-code" class="sigml-code-highlight">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;sigml&gt;
-  &lt;hns_sign gloss="ZERO"&gt;
-    &lt;hamnosys_nonmanual&gt;
-    &lt;/hamnosys_nonmanual&gt;
-    &lt;hamnosys_manual&gt;
-      &lt;hamcee12/&gt;
-      &lt;hamextfingeru/&gt;
-      &lt;hampalml/&gt;
-      &lt;hamchest/&gt;
-    &lt;/hamnosys_manual&gt;
-  &lt;/hns_sign&gt;
-&lt;/sigml&gt;</code></pre>
-            </div>
-        </div>
+        </section>
 
+        <!-- Simple Vague Future Development Roadmap Section -->
+        <section class="card roadmap-card">
+            <div class="roadmap-header">
+                <div class="roadmap-badge">Future Development</div>
+                <h2>Universal Any-to-Any Sign Language Converter</h2>
+            </div>
+            
+            <p class="roadmap-intro">
+                Our goal for future development is to build a universal sign-language-to-sign-language converter. In the future, this system will take a video in <strong>any sign language</strong> and automatically translate and convert it into <strong>any sign language requested</strong> by the user, making global communication barrier-free.
+            </p>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-card-item">
+                    <h4>Any Input Sign Language</h4>
+                    <p>Recognizing gestures from video clips in any regional or national sign language.</p>
+                </div>
+                <div class="roadmap-card-item">
+                    <h4>Universal Phonetic Translation</h4>
+                    <p>Translating signs into universal phonetic notation for cross-lingual conversion.</p>
+                </div>
+                <div class="roadmap-card-item">
+                    <h4>Requested Output Avatar</h4>
+                    <p>Rendering the translated signs using 3D animated avatars in whichever sign language the user requests.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Hidden Raw Storage for Current Active SiGML -->
-    <textarea id="raw-sigml-storage" hidden>&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;sigml&gt;
-  &lt;hns_sign gloss="ZERO"&gt;
-    &lt;hamnosys_nonmanual&gt;
-    &lt;/hamnosys_nonmanual&gt;
-    &lt;hamnosys_manual&gt;
-      &lt;hamcee12/&gt;
-      &lt;hamextfingeru/&gt;
-      &lt;hampalml/&gt;
-      &lt;hamchest/&gt;
-    &lt;/hamnosys_manual&gt;
-  &lt;/hns_sign&gt;
-&lt;/sigml&gt;</textarea>
+    <!-- Hidden textarea to store SiGML temporarily -->
+    <textarea id="sigml-storage" hidden></textarea>
 
     <!-- App JavaScript Engine -->
     <script src="/static/js/app.js"></script>

@@ -133,14 +133,9 @@ hamer/
 FYP-DataSet/
 
 
-.gradle/
-*/.gradle/
-build/
-*/build/
-
 Integration-20260706T062240Z-3-001/Integration/ISL_sign_videos/
 *.MOV
 *.mov
+
 hf_space_clean/
 *.bak
-

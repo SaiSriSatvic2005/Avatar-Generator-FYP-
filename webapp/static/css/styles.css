@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Universal Sign Language Avatar Synthesizer - Exact Screen Design System
-   ========================================================================== */
-
 /* HamNoSys Font Face */
 @font-face {
     font-family: "HamNoSys";
@@ -11,28 +7,16 @@
 }
 
 :root {
-    --bg-page: #FBF9F5;              /* Cream / Warm off-white */
-    --card-bg: #FFFFFF;              /* Crisp White */
-    --card-border: #E8E5DF;          /* Warm Subtle Border */
-    --text-primary: #111827;         /* Deep Slate / Black */
-    --text-secondary: #4B5563;       /* Muted Charcoal */
-    --text-muted: #6B7280;           /* Subtle Gray */
-    --crimson: #991B1B;              /* Brand Crimson / Dark Red */
-    --crimson-hover: #7F1D1D;
-    --crimson-light: rgba(153, 27, 27, 0.08);
-    --blue-primary: #2563EB;         /* Vibrant Sync Play Blue */
-    --blue-hover: #1D4ED8;
-    --gray-btn-bg: #F3F4F6;
-    --gray-btn-border: #E5E7EB;
-    --gray-btn-hover: #E5E7EB;
-    --green-badge: #059669;
-    --green-badge-bg: #ECFDF5;
-    --green-badge-border: #A7F3D0;
-    --avatar-canvas-bg: #98AEC4;     /* Soft Slate Blue Avatar Background */
-    --code-bg: #151F2E;              /* Deep Navy Code Editor */
-    --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+    --bg-color: #FAF7F2;          /* Cream White Background (Easy on the eyes) */
+    --card-bg: #FFFFFF;           /* Off-White Card Container */
+    --card-border: #E5E0D8;       /* Warm subtle card border */
+    --text-main: #111827;         /* Deep dark charcoal / black text */
+    --text-muted: #4B5563;        /* Dark slate muted text */
+    --primary: #991B1B;           /* Rich Maroon accent */
+    --primary-btn: #1D4ED8;       /* Primary button blue */
+    --primary-hover: #1E40AF;     /* Primary button hover blue */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', 'Outfit', sans-serif;
 }
 
 * {
@@ -42,713 +26,641 @@
 }
 
 body {
-    background-color: var(--bg-page);
-    color: var(--text-primary);
     font-family: var(--font-body);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     min-height: 100vh;
-    padding: 2.5rem 1.5rem 5rem 1.5rem;
-    line-height: 1.5;
-}
-
-.app-layout {
-    max-width: 1240px;
-    margin: 0 auto;
-}
-
-/* ==========================================================================
-   Header Section
-   ========================================================================== */
-.app-header {
-    text-align: center;
-    margin-bottom: 2.25rem;
-}
-
-.main-title {
-    font-family: var(--font-heading);
-    font-size: 2.85rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    line-height: 1.2;
-    margin-bottom: 0.6rem;
-}
-
-.highlight-crimson {
-    color: var(--crimson);
-}
-
-.main-subtitle {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    max-width: 760px;
-    margin: 0 auto;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* ==========================================================================
-   Card System
-   ========================================================================== */
-.panel-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    padding: 1.75rem 2rem;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
-    margin-bottom: 1.75rem;
+    overflow-x: hidden;
     position: relative;
+    padding-bottom: 5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;            /* Increased overall base font size */
 }
 
-.panel-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
+/* Container & Layout */
+.container {
+    max-width: 1320px;            /* Wider spacious container */
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
 }
 
-.panel-card-header.no-margin-bottom {
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.45rem 1.25rem;
+    background: rgba(153, 27, 27, 0.08);
+    border: 1px solid rgba(153, 27, 27, 0.25);
+    color: var(--primary);
+    border-radius: 9999px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
-.title-with-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.step-circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    background-color: var(--crimson);
-    color: #FFFFFF;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-radius: 50%;
-}
-
-.panel-card-header h2 {
+header h1 {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
+    font-size: 3.4rem;            /* Prominent catchy header */
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
 }
 
-.sub-header-red {
-    font-size: 0.75rem;
+header h1 span {
+    color: var(--primary);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.25rem;           /* Increased readability size */
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+}
+
+/* Card Styling */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.04);
+    margin-bottom: 2rem;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;            /* Larger card titles */
     font-weight: 800;
-    letter-spacing: 0.08em;
-    color: var(--crimson);
-    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+/* Simple Intro Card */
+.intro-card {
+    border-left: 5px solid var(--primary);
+}
+
+.intro-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+}
+
+.intro-card p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Main Top Grid (Side-by-Side Video & Avatar Alignment) */
+.main-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 2.5rem;
+}
+
+.panel-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card-aligned, .avatar-card-aligned {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed #9CA3AF;
+    border-radius: 14px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #FAFAFA;
+}
+
+.upload-area:hover, .upload-area.dragover {
+    border-color: var(--primary-btn);
+    background: #EFF6FF;
+}
+
+.upload-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
     margin-bottom: 0.35rem;
 }
 
-.section-micro-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-
-.active-file-pill {
-    background: #F3F4F6;
-    border: 1px solid #E5E7EB;
-    color: var(--text-secondary);
-    padding: 0.25rem 0.85rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   Top Grid: Input Video & 3D WebGL Avatar
-   ========================================================================== */
-.top-synthesis-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem;
-    margin-bottom: 1.75rem;
-}
-
-@media (max-width: 960px) {
-    .top-synthesis-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Drop Upload Zone */
-.drop-upload-zone {
-    border: 2px dashed #D6D3CC;
-    background: #FAF9F6;
-    border-radius: 14px;
-    padding: 1.75rem 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-bottom: 1.25rem;
-}
-
-.drop-upload-zone:hover,
-.drop-upload-zone.dragover {
-    border-color: var(--crimson);
-    background: #FFF5F5;
-}
-
-.upload-icon-wrapper {
-    color: var(--crimson);
-    margin-bottom: 0.5rem;
-}
-
-.upload-arrow-svg {
-    width: 28px;
-    height: 28px;
-    stroke: var(--crimson);
-}
-
-.drop-main-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-}
-
-.drop-sub-text {
-    font-size: 0.8rem;
+.upload-subtext {
     color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
-/* 1-Click Benchmark Section */
-.benchmark-section {
-    margin-bottom: 1.25rem;
+/* Sample Buttons */
+.sample-selection {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--card-border);
 }
 
-.benchmark-pills-row {
+.sample-label {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+    font-weight: 600;
+}
+
+.sample-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
 }
 
-.benchmark-pill-btn {
+.sample-btn {
     background: #F3F4F6;
-    border: 1px solid #E5E7EB;
-    color: var(--text-primary);
-    padding: 0.35rem 0.85rem;
+    border: 1px solid #D1D5DB;
+    color: var(--text-main);
+    padding: 0.45rem 1rem;
     border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
-.benchmark-pill-btn:hover {
-    background: #E5E7EB;
-    border-color: #D1D5DB;
+.sample-btn:hover {
+    background: var(--primary-btn);
+    border-color: var(--primary-btn);
+    color: white;
 }
 
-.benchmark-pill-btn.active {
-    background: #F3F4F6;
-    border-color: #CBD5E1;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* Video Player Viewport */
-.video-player-container {
-    background: #0F172A;
-    border-radius: 12px;
+/* Video Preview Container */
+.video-preview-container {
+    margin-top: 1.25rem;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #000;
+    border: 1px solid var(--card-border);
 }
 
-.video-player-bar {
-    background: #1E293B;
-    padding: 0.45rem 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    font-family: var(--font-mono);
-}
-
-.video-bar-name {
-    color: #60A5FA;
-    font-weight: 600;
-}
-
-.video-bar-timer {
-    color: #94A3B8;
-}
-
-.video-viewport {
+#input-video-player {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #000000;
+    max-height: 320px;
+    display: block;
+}
+
+.video-filename {
+    padding: 0.65rem 1rem;
+    background: #111827;
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    font-family: monospace;
+    text-align: center;
+}
+
+/* Avatar Container & Integrated Play Button */
+.avatar-container {
+    width: 100%;
+    height: 420px;
+    background: #EBF3FA;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #D1E5F7;
+    flex-grow: 1;
+}
+
+.CWASAAvatar {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    display: block !important;
+}
+
+.CWASAAvatar canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}
+
+/* Integrated Avatar Play Button */
+.btn-avatar-play {
+    width: 100%;
+    margin-top: 1.25rem;
+    background: var(--primary-btn);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
 }
 
-.video-viewport video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.btn-avatar-play:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
-/* Avatar Card Viewport */
-.avatar-select-wrapper {
+/* Results Details Grid */
+.results-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Sign Meaning Card */
+.gloss-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gloss-header-row {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: space-between;
 }
 
-.avatar-select-label {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+.gloss-badge {
+    padding: 0.45rem 1.1rem;
+    background: var(--primary);
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+}
+
+.accuracy-pill {
+    padding: 0.4rem 1rem;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #047857;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-radius: 9999px;
+}
+
+.gloss-meaning {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.gloss-note {
+    padding: 0.85rem 1rem;
+    background: #FEF3C7;
+    border: 1px solid #FDE68A;
+    border-radius: 10px;
+    color: #92400E;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Results Box & Font Display */
+.result-group {
+    margin-bottom: 1.25rem;
+}
+
+.result-group label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.result-box {
+    background: #F9FAFB;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: monospace;
+    word-break: break-all;
+    font-size: 1.15rem;            /* Increased result font size */
+    color: #111827;
+    font-weight: 600;
+}
+
+/* HamNoSys Font Display */
+.hamnosys-font-display {
+    font-family: "HamNoSys", monospace !important;
+    font-size: 2.5rem;             /* Large HamNoSys glyph display */
+    letter-spacing: 6px;
+    color: var(--primary);
+    line-height: 1.4;
+    min-height: 60px;
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+/* Clean HamKeyboard Symbol Breakdown Chips (No Emoji Icons) */
+.symbol-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.ham-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: #F3F4F6;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.ham-chip-tag {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-btn);
+}
+
+.ham-chip-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
-.avatar-dropdown {
-    background: #FFFFFF;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    cursor: pointer;
+/* Roadmap Section */
+.roadmap-card {
+    margin-top: 2.5rem;
 }
 
-.avatar-render-viewport {
-    width: 100%;
-    aspect-ratio: 16 / 12.5;
-    background-color: var(--avatar-canvas-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.08);
+.roadmap-header {
+    margin-bottom: 1rem;
 }
 
-.avatar-render-viewport .CWASAAvatar {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.avatar-footer-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.85rem;
-    font-size: 0.75rem;
-}
-
-.avatar-tech-info {
-    color: var(--text-muted);
-}
-
-.avatar-fps-badge {
-    color: var(--green-badge);
+.roadmap-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(153, 27, 27, 0.08);
+    color: var(--primary);
+    border-radius: 9999px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
     font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
-/* Processing Overlay */
-.processing-overlay {
-    background: rgba(255, 255, 255, 0.94);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    text-align: center;
-    border: 1px solid #E5E7EB;
+.roadmap-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--text-main);
 }
 
-.processing-overlay.hidden {
-    display: none;
+.roadmap-intro {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
 }
 
-.pulse-spinner {
-    width: 32px;
-    height: 32px;
-    border: 3px solid #E5E7EB;
-    border-top: 3px solid var(--crimson);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 0.6rem auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.processing-text {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--crimson);
-}
-
-/* ==========================================================================
-   Playback Controls Toolbar
-   ========================================================================== */
-.playback-controls-bar {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    padding: 1.25rem 2rem;
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
-    margin-bottom: 1.75rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-.controls-left-group {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+.roadmap-card-item {
+    background: #F9FAFB;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 1.5rem;
 }
 
-.action-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 10px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    border: none;
+.roadmap-card-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
 }
 
-.btn-icon {
-    width: 16px;
-    height: 16px;
+.roadmap-card-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.btn-primary-blue {
-    background-color: var(--blue-primary);
-    color: #FFFFFF;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+/* Loading & Helpers */
+.hidden {
+    display: none !important;
 }
 
-.btn-primary-blue:hover {
-    background-color: var(--blue-hover);
+#loading-indicator {
+    text-align: center;
+    padding: 1.75rem 0;
 }
 
-.btn-secondary-gray {
-    background-color: var(--gray-btn-bg);
-    border: 1px solid var(--gray-btn-border);
-    color: var(--text-primary);
-}
-
-.btn-secondary-gray:hover {
-    background-color: #E5E7EB;
-}
-
-/* Toggle Switch: Loop Playback */
-.toggle-control-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-.toggle-control-label input {
-    display: none;
-}
-
-.toggle-pill-track {
-    width: 36px;
-    height: 20px;
-    background-color: #D1D5DB;
-    border-radius: 9999px;
-    position: relative;
-    transition: background-color 0.2s ease;
-}
-
-.toggle-pill-track::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-    background-color: #FFFFFF;
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #E5E7EB;
+    border-left-color: var(--primary-btn);
     border-radius: 50%;
-    transition: transform 0.2s ease;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 0.85rem auto;
 }
 
-.toggle-control-label input:checked + .toggle-pill-track {
-    background-color: var(--crimson);
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
-.toggle-control-label input:checked + .toggle-pill-track::after {
-    transform: translateX(16px);
-}
-
-.toggle-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-/* Speed Controls */
-.controls-right-speed {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-}
-
-.speed-label-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-}
-
-.speed-buttons-group {
-    display: flex;
-    background: #F3F4F6;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 2px;
-}
-
-.speed-btn {
-    background: transparent;
-    border: none;
-    padding: 0.25rem 0.55rem;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-
-.speed-btn.active {
-    background: var(--crimson);
-    color: #FFFFFF;
-}
-
-.crimson-range-slider {
-    width: 80px;
-    accent-color: var(--crimson);
-    cursor: pointer;
-}
-
-.speed-val-badge {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--crimson);
-    min-width: 32px;
-}
-
-/* ==========================================================================
-   Section 3: Quantitative Validation
-   ========================================================================== */
-.model-version-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--green-badge-bg);
-    border: 1px solid var(--green-badge-border);
-    color: var(--green-badge);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-.dot-green {
-    width: 7px;
-    height: 7px;
-    background-color: var(--green-badge);
-    border-radius: 50%;
-}
-
-.metrics-metrics-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    margin: 1.25rem 0;
-}
-
-@media (max-width: 768px) {
-    .metrics-metrics-row {
+/* Responsive */
+@media (max-width: 960px) {
+    .main-top-grid, .results-detail-grid, .roadmap-grid {
         grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .header-top-row {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
 
-.metric-metric-box {
-    background: #FAF9F6;
-    border: 1px solid #ECE8DF;
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-}
-
-.metric-big-number {
-    font-family: var(--font-heading);
-    font-size: 2.15rem;
-    font-weight: 800;
-    color: var(--crimson);
-    line-height: 1.15;
-    margin-bottom: 0.25rem;
-}
-
-.metric-big-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.sub-metrics-details-row {
+/* API Status Pill & Settings Drawer */
+.header-top-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    border-top: 1px solid #F0ECE4;
-    padding-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
 }
 
-.sub-metric-val {
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-/* ==========================================================================
-   Section 4: Standardized Notation (HamNoSys)
-   ========================================================================== */
-.btn-copy-pill {
+.api-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     background: #FFFFFF;
     border: 1px solid #D1D5DB;
-    color: var(--text-primary);
-    padding: 0.35rem 0.9rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-online {
+    background-color: #10B981;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.dot-connecting {
+    background-color: #F59E0B;
+    animation: pulse 1.5s infinite;
+}
+
+.dot-offline {
+    background-color: #EF4444;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.status-label {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.btn-gear {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: all 0.15s ease;
+    font-size: 0.95rem;
+    line-height: 1;
+    padding: 2px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
 }
 
-.btn-copy-pill:hover {
-    background: #F9FAFB;
-    border-color: #9CA3AF;
+.btn-gear:hover {
+    opacity: 1;
 }
 
-.notation-dual-boxes-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
+.api-settings-drawer {
+    max-width: 680px;
+    margin: 0 auto 1.5rem auto;
+    animation: fadeIn 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .notation-dual-boxes-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-.code-pill-display,
-.unicode-pill-display {
+.api-settings-box {
     background: #FFFFFF;
     border: 1px solid #E5E7EB;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1rem 1.25rem;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    text-align: left;
+    font-size: 0.9rem;
 }
 
-.code-pill-display {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.unicode-pill-display.hamnosys-native-font {
-    font-family: 'HamNoSys', sans-serif;
-    font-size: 2.1rem;
-    color: var(--text-primary);
-    letter-spacing: 0.15em;
-}
-
-/* Symbol Breakdown Chips */
-.symbol-breakdown-wrapper {
-    margin-top: 1rem;
-}
-
-.chips-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-}
-
-.symbol-chip-card {
-    background: #FAF9F6;
-    border: 1px solid #ECE8DF;
-    border-radius: 8px;
-    padding: 0.45rem 0.85rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.82rem;
-}
-
-.chip-tag-crimson {
-    color: var(--crimson);
-    font-family: var(--font-mono);
-    font-weight: 700;
-}
-
-.chip-desc-text {
-    color: var(--text-secondary);
-}
-
-/* ==========================================================================
-   Section 5: Synthesized Motion Markup (SiGML XML)
-   ========================================================================== */
-.header-actions-group {
+.api-input-group {
     display: flex;
     gap: 0.5rem;
+    margin: 0.5rem 0;
 }
 
-.sigml-code-window {
-    background: var(--code-bg);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    overflow-x: auto;
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.sigml-pre {
-    margin: 0;
-    font-family: var(--font-mono);
+.api-input-group input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
     font-size: 0.88rem;
-    line-height: 1.6;
-    color: #E2E8F0;
+    font-family: monospace;
 }
 
-.sigml-code-highlight {
-    color: #93C5FD;
+.api-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-btn);
 }
+
+.btn-save-api {
+    background: var(--primary-btn);
+    color: #FFFFFF;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.btn-save-api:hover {
+    background: var(--primary-hover);
+}
+
+.btn-reset-api {
+    background: #F3F4F6;
+    color: #4B5563;
+    border: 1px solid #D1D5DB;
+    padding: 0.5rem 0.85rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-reset-api:hover {
+    background: #E5E7EB;
+}
+
+.api-help-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
