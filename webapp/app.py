@@ -200,12 +200,16 @@ def load_reverse_mapping(spreadsheet_path):
 def index():
     return render_template('index.html')
 
-@app.route('/uploads/<path:filename>')
+@app.route('/uploads/<path:filename>', methods=['GET', 'HEAD', 'OPTIONS'])
 def serve_upload(filename):
+    if request.method == 'OPTIONS':
+        return ('', 204)
     return send_from_directory(UPLOAD_FOLDER, filename)
 
-@app.route('/samples/<path:filename>')
+@app.route('/samples/<path:filename>', methods=['GET', 'HEAD', 'OPTIONS'])
 def serve_sample(filename):
+    if request.method == 'OPTIONS':
+        return ('', 204)
     for d in SAMPLE_CANDIDATE_DIRS:
         target = os.path.join(d, filename)
         if os.path.exists(target):
@@ -216,15 +220,20 @@ def serve_sample(filename):
 def upload_video():
     if request.method == 'OPTIONS':
         return ('', 204)
-    if 'video' not in request.files and 'sample_name' not in request.form:
+    sample_name = None
+    if request.is_json:
+        req_json = request.get_json(silent=True) or {}
+        sample_name = req_json.get('sample_name')
+    else:
+        sample_name = request.form.get('sample_name')
+    if 'video' not in request.files and not sample_name:
         return jsonify({"error": "No video file or sample provided"}), 400
     
     video_path = None
     display_filename = ""
     video_url = ""
     
-    if 'sample_name' in request.form:
-        sample_name = request.form['sample_name']
+    if sample_name:
         display_filename = sample_name
         video_url = f"/samples/{sample_name}"
         

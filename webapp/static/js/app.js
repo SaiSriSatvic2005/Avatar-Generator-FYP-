@@ -2,8 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     // Backend API Server Configuration & Health Monitoring
     // -------------------------------------------------------------------------
-    const DEFAULT_BACKEND_URL = "https://satvic2005-sign-avatar-backend.hf.space";
-    let backendUrl = (localStorage.getItem('avatar_backend_url') || DEFAULT_BACKEND_URL).trim();
+    const DEFAULT_BACKEND_URL = "https://saisrisatvic2005--sign-avatar-backend-flask-app.us-east.modal.run";
+    const OLD_BACKEND_URLS = [
+        "https://satvic2005-sign-avatar-backend.hf.space",
+        "https://nonchok005-sign-avatar-backend.hf.space"
+    ];
+    let storedBackendUrl = localStorage.getItem('avatar_backend_url');
+    if (storedBackendUrl && OLD_BACKEND_URLS.some(old => storedBackendUrl.includes(old))) {
+        localStorage.removeItem('avatar_backend_url');
+        storedBackendUrl = null;
+    }
+    let backendUrl = (storedBackendUrl || DEFAULT_BACKEND_URL).trim();
 
     const apiStatusDot = document.getElementById('api-status-dot');
     const apiStatusLabel = document.getElementById('api-status-label');
@@ -59,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const healthUrl = getApiUrl('/health');
         const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Connection timed out')), 8000)
+            setTimeout(() => reject(new Error('Connection timed out')), 15000)
         );
 
         Promise.race([
