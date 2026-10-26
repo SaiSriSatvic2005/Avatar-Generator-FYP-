@@ -123,6 +123,7 @@ image = (
     gpu="T4",                 # Fast NVIDIA T4 GPU
     cpu=4.0,                  # 4 Dedicated vCPUs for video decoding and MediaPipe tracking
     memory=8192,              # 8 GB RAM (prevent OOM termination during heavy 3D ViT inference)
+    max_containers=2,         # Limit active GPU containers
     scaledown_window=600,     # Keep warm for 10 minutes after last request
     timeout=600               # Max 10 min per request (video processing can be slow)
 )

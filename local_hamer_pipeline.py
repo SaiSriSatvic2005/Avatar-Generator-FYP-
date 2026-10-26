@@ -281,8 +281,10 @@ class VideoFramesDataset(torch.utils.data.Dataset):
         flip = not is_right
         cvimg = rgb.copy()
         downsampling_factor = ((bbox_size * 1.0) / self.img_size) / 2.0
-        if downsampling_factor > 1.1:
-            cvimg = self.gaussian(cvimg, sigma=(downsampling_factor - 1) / 2, channel_axis=2, preserve_range=True)
+        if downsampling_factor > 1.2:
+            sigma = (downsampling_factor - 1) / 2
+            ksize = int(2 * round(3 * sigma) + 1) | 1
+            cvimg = cv2.GaussianBlur(cvimg, (ksize, ksize), sigma)
 
         img_patch_cv, _ = self.generate_image_patch_cv2(
             cvimg, center[0], center[1],
@@ -753,6 +755,13 @@ class LocalHaMeRPipeline:
         if not frame_items:
             sigml_xml, _ = self.validate_and_build_sigml(["hamflathand", "hamextfingero", "hampalmd", "hamneutralspace"])
             return {"hamnosys": "hamflathand hamextfingero hampalmd hamneutralspace", "sigml_xml": sigml_xml}
+
+        # Cap to at most 32 uniformly spaced frames for fast, guaranteed sub-5s 3D inference
+        if len(frame_items) > 32:
+            indices = np.linspace(0, len(frame_items) - 1, 32, dtype=int)
+            frame_items = [frame_items[i] for i in indices]
+
+        print(f"[Pipeline] Running 3D ViT inference on {len(frame_items)} key hand frames...", flush=True)
 
         # ---------------------------------------------------------------------
         # High-Speed Batched 3D Mesh / Keypoint Inference (10x - 20x faster)

@@ -153,9 +153,14 @@ async def upload_video(
 
     # Run ML Pipeline under thread lock in worker thread pool so ASGI event loop stays unblocked
     def _run_pipeline(v_path):
-        with _pipeline_lock:
+        acquired = _pipeline_lock.acquire(timeout=45.0)
+        if not acquired:
+            raise RuntimeError("The inference GPU is currently busy processing another video. Please retry in a few moments.")
+        try:
             pipeline = get_pipeline()
             return pipeline.process_video(v_path)
+        finally:
+            _pipeline_lock.release()
 
     try:
         pipeline_result = await asyncio.to_thread(_run_pipeline, video_path)

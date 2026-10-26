@@ -203,11 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const uploadUrl = getApiUrl('/upload');
 
-        // Set an explicit 120s timeout on inference so the spinner never hangs indefinitely
+        // Set an explicit 180s timeout on inference so the spinner never hangs indefinitely
         const controller = new AbortController();
         const timeoutTimer = setTimeout(() => {
             controller.abort();
-        }, 120000);
+        }, 180000);
 
         fetch(uploadUrl, {
             method: 'POST',
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearTimeout(timeoutTimer);
             console.error('Error:', error);
             const errorMsg = error.name === 'AbortError'
-                ? 'Processing timed out after 120 seconds. Please try a shorter video clip.'
+                ? 'Processing timed out after 180 seconds. Please try a shorter video clip.'
                 : error.message;
             alert(`Inference failed from ${uploadUrl}:\n\n${errorMsg}\n\nTip: Click the ⚙️ icon in the header to check or change the backend server URL.`);
             loadingIndicator.classList.add('hidden');
