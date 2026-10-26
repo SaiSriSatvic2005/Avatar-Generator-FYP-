@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     // Backend API Server Configuration & Health Monitoring
     // -------------------------------------------------------------------------
-    const DEFAULT_BACKEND_URL = "https://satvic2005-sign-avatar-backend.hf.space";
+    const DEFAULT_BACKEND_URL = "https://saisrisatvic2005--sign-avatar-backend-flask-app.us-east.modal.run";
     let backendUrl = (localStorage.getItem('avatar_backend_url') || DEFAULT_BACKEND_URL).trim();
 
     const apiStatusDot = document.getElementById('api-status-dot');

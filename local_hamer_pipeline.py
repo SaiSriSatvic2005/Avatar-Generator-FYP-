@@ -624,12 +624,16 @@ class LocalHaMeRPipeline:
 
         frame_idx = 0
 
+        total_video_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        print(f"[Pipeline] Processing video: {os.path.basename(video_path)} ({total_video_frames} total frames)...", flush=True)
+
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret or frame is None:
                 break
             frame_idx += 1
-            # Process every frame to capture full hand dynamics in short 1-second clips
+            if frame_idx % 5 == 0 or frame_idx == 1:
+                print(f"[Pipeline] Processing frame {frame_idx}/{total_video_frames}...", flush=True)
                 
             h, w, _ = frame.shape
             rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
