@@ -3,7 +3,11 @@ import sys
 import uuid
 import json
 import subprocess
+import threading
 from flask import Flask, request, jsonify, render_template, send_from_directory
+
+# Thread lock to guarantee single-tenant GPU inference across concurrent WSGI requests
+_pipeline_lock = threading.Lock()
 
 # Suppress noisy logs
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
@@ -220,13 +224,17 @@ def serve_sample(filename):
 def upload_video():
     if request.method == 'OPTIONS':
         return ('', 204)
+    print(f"[Upload Request] Content-Type: {request.content_type}, Content-Length: {request.content_length}")
     sample_name = None
     if request.is_json:
         req_json = request.get_json(silent=True) or {}
         sample_name = req_json.get('sample_name')
     else:
         sample_name = request.form.get('sample_name')
+
+    print(f"[Upload Request] Files keys: {list(request.files.keys()) if request.files else []}, sample_name: {sample_name}")
     if 'video' not in request.files and not sample_name:
+        print("[Upload Request] REJECTED: Neither 'video' in request.files nor sample_name provided!")
         return jsonify({"error": "No video file or sample provided"}), 400
     
     video_path = None
@@ -248,14 +256,38 @@ def upload_video():
             return jsonify({"error": f"Sample video '{sample_name}' not found on server."}), 404
     else:
         file = request.files['video']
-        if file.filename == '':
+        if not file or file.filename == '':
             return jsonify({"error": "Empty filename"}), 400
             
-        filename = str(uuid.uuid4())[:8] + "_" + file.filename
+        safe_name = "".join(c for c in file.filename if c.isalnum() or c in "._- ")
+        if not safe_name:
+            safe_name = "upload.mp4"
+        filename = f"{uuid.uuid4().hex[:8]}_{safe_name}"
         video_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(video_path)
         display_filename = file.filename
         video_url = f"/uploads/{filename}"
+
+        # Standardize video to 720p 30fps H.264 using ultrafast ffmpeg
+        # Ensures cross-platform compatibility (iPhone .mov, Android .webm/mp4, 4K/60fps)
+        normalized_filename = f"norm_{filename}.mp4"
+        normalized_path = os.path.join(UPLOAD_FOLDER, normalized_filename)
+        try:
+            cmd = [
+                "ffmpeg", "-y", "-i", video_path,
+                "-vf", "scale='min(720,iw)':-2",
+                "-r", "30",
+                "-c:v", "libx264", "-preset", "ultrafast", "-crf", "26",
+                "-pix_fmt", "yuv420p",
+                "-movflags", "+faststart",
+                normalized_path
+            ]
+            ff_res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=15)
+            if ff_res.returncode == 0 and os.path.exists(normalized_path):
+                video_path = normalized_path
+                video_url = f"/uploads/{normalized_filename}"
+        except Exception as ff_err:
+            print(f"[Warning] FFmpeg normalization skipped: {ff_err}")
     
     try:
         if not os.path.exists(video_path):
@@ -264,8 +296,9 @@ def upload_video():
         # ======================================================================
         # Run Active V8 Complete Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)
         # ======================================================================
-        pipeline = get_pipeline()
-        pipeline_result = pipeline.process_video(video_path)
+        with _pipeline_lock:
+            pipeline = get_pipeline()
+            pipeline_result = pipeline.process_video(video_path)
         
         hamnosys_tags = pipeline_result.get('hamnosys', '')
         sigml_output = pipeline_result.get('sigml_xml', '')

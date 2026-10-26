@@ -159,18 +159,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function handleFileUpload(file) {
-        if (!file.type.startsWith('video/')) {
-            alert('Please upload a valid video file.');
+        if (!file) return;
+        const isVideo = (file.type && file.type.startsWith('video/')) || 
+            /\.(mp4|mov|avi|webm|mkv|m4v)$/i.test(file.name);
+            
+        if (!isVideo) {
+            alert('Please upload a valid sign language video file (.mp4, .mov, .webm, etc.).');
             return;
         }
 
         // Preview local file in video player
-        const objectUrl = URL.createObjectURL(file);
-        videoPlayer.src = objectUrl;
+        try {
+            const objectUrl = URL.createObjectURL(file);
+            videoPlayer.src = objectUrl;
+        } catch (_) {}
         previewFilename.textContent = file.name;
 
         startProcessing(formData => {
-            formData.append('video', file);
+            formData.append('video', file, file.name);
             return formData;
         });
     }
@@ -197,14 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const uploadUrl = getApiUrl('/upload');
 
+        // Set an explicit 120s timeout on inference so the spinner never hangs indefinitely
+        const controller = new AbortController();
+        const timeoutTimer = setTimeout(() => {
+            controller.abort();
+        }, 120000);
+
         fetch(uploadUrl, {
             method: 'POST',
             mode: 'cors',
-            body: formData
+            body: formData,
+            signal: controller.signal
         })
         .then(response => {
+            clearTimeout(timeoutTimer);
             if (!response.ok) {
-                return response.json().then(err => { throw new Error(err.error || `Server responded with ${response.status}`); });
+                return response.json().then(err => { throw new Error(err.error || err.detail || `Server responded with ${response.status}`); });
             }
             return response.json();
         })
@@ -249,8 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
             playAnimation();
         })
         .catch(error => {
+            clearTimeout(timeoutTimer);
             console.error('Error:', error);
-            alert(`Inference failed from ${uploadUrl}:\n\n${error.message}\n\nTip: Click the ⚙️ icon in the header to check or change the backend server URL.`);
+            const errorMsg = error.name === 'AbortError'
+                ? 'Processing timed out after 120 seconds. Please try a shorter video clip.'
+                : error.message;
+            alert(`Inference failed from ${uploadUrl}:\n\n${errorMsg}\n\nTip: Click the ⚙️ icon in the header to check or change the backend server URL.`);
             loadingIndicator.classList.add('hidden');
         });
     }

@@ -51,7 +51,8 @@ image = (
         "libxext6",
         "libxrender-dev",
         "git",
-        "wget"
+        "wget",
+        "ffmpeg"
     )
     .pip_install(
         "torch",
@@ -65,6 +66,8 @@ image = (
         "scipy",
         "pandas",
         "Flask>=3.0.0",
+        "fastapi",
+        "python-multipart",
         "timm",
         "einops",
         "smplx==0.1.28",
@@ -113,7 +116,7 @@ image = (
     .run_function(download_model_checkpoints)
 )
 # -----------------------------------------------------------------------------
-# 3. Expose Flask Web Application with NVIDIA T4 GPU Acceleration
+# 3. Expose Native ASGI Web Application with NVIDIA T4 GPU Acceleration
 # -----------------------------------------------------------------------------
 @app.function(
     image=image,
@@ -123,21 +126,21 @@ image = (
     scaledown_window=600,     # Keep warm for 10 minutes after last request
     timeout=600               # Max 10 min per request (video processing can be slow)
 )
-@modal.wsgi_app()
+@modal.asgi_app()
 def flask_app():
     sys.path.insert(0, "/root")
     sys.path.insert(0, "/root/hamer")
     sys.path.insert(0, "/root/Integration-20260706T062240Z-3-001/Integration")
     
-    from webapp.app import app as web_app, get_pipeline
+    from webapp.app import get_pipeline
+    from webapp.asgi_app import app as asgi_web_app
 
     # Preload all ML models into GPU VRAM at container boot time.
     # This runs ONCE when the container starts, NOT on every request.
-    # Without this, the first /upload request would spend 2-3 min loading models
-    # before even starting inference, causing browser timeout/cancellation.
     print("[Modal Boot] Preloading V8 Hybrid Pipeline (HaMeR 3D + ResNet + BiGRU)...")
     get_pipeline()
     print("[Modal Boot] All models loaded into GPU VRAM. Ready for fast inference!")
 
-    return web_app
+    return asgi_web_app
+
 
