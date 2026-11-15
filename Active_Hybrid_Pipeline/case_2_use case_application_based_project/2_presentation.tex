@@ -1,0 +1,365 @@
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% --- Packages & Setup ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault} % Times New Roman font for text and math
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\graphicspath{{../}{./}}
+
+% --- Branding Colors ---
+\definecolor{amritaMaroon}{HTML}{A4123F}
+
+% --- Theme Setup ---
+\usetheme{Madrid}
+\usecolortheme[named=amritaMaroon]{structure}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+% =========================================================================
+% TITLE SLIDE (Application-Based Project)
+% =========================================================================
+\begin{frame}
+    % Corner Box Indicator
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[fill=amritaMaroon, text=white, font=\bfseries\footnotesize, anchor=north east, rounded corners=2pt, inner sep=5pt]
+        at ($(current page.north east) + (-0.2cm,-0.2cm)$)
+        {Type 2: Application Project};
+    \end{tikzpicture}
+
+    \centering
+    \includegraphics[width=2.8cm]{logo.png}
+    \vspace{0.1cm}
+
+    {\large \textbf{\textcolor{amritaMaroon}{[APPLICATION PROJECT TITLE]}}} \\
+    \vspace{0.05cm}
+    {\footnotesize \textbf{23CSE498 -- Project Phase II (External Review)} \quad | \quad \textbf{Team Number: [GXXX]}} \\
+    \vspace{0.15cm}
+
+    % Student Table
+    \begin{table}
+        \centering
+        \footnotesize
+        \renewcommand{\arraystretch}{1.05}
+        \begin{tabular}{|c|c|l|}
+            \hline
+            \textbf{S.No} & \textbf{Register Number} & \textbf{Student Name} \\
+            \hline
+            1 & [CB.SC.U4CSE23XXX] & [Student Name 1] \\
+            \hline
+            2 & [CB.SC.U4CSE23XXX] & [Student Name 2] \\
+            \hline
+            3 & [CB.SC.U4CSE23XXX] & [Student Name 3] \\
+            \hline
+            4 & [CB.SC.U4CSE23XXX] & [Student Name 4] \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \vspace{0.1cm}
+
+    {\footnotesize Guide: \textbf{[Guide Name]}, [Designation], Department of CSE} \\
+    \vspace{0.1cm}
+    {\scriptsize \today}
+\end{frame}
+
+% =========================================================================
+% SECTION 1: PROBLEM DEFINITION, REQUIREMENT ANALYSIS & SOLUTION DESIGN
+% =========================================================================
+% =========================================================================
+% SLIDE 2: GUIDE APPROVAL EMAIL CONFIRMATION (Mandatory)
+% =========================================================================
+\begin{frame}{Guide Review \& Submission Approval}
+    \framesubtitle{Confirmation of Project Review and Approval from Guide}
+    \centering
+    \fbox{\begin{minipage}[c][5.4cm]{0.94\textwidth}
+        \centering
+        \textbf{[Insert Screenshot of Guide Approval Email Here]} \\[0.3cm]
+        {\footnotesize [Mandatory: Attach a clear, readable screenshot of the email received from your project guide approving this presentation and final review submission]}
+    \end{minipage}}
+\end{frame}
+
+\section{Requirements \& Solution Design}
+
+% --- SLIDE 1: PROBLEM DEFINITION & REQUIREMENT ANALYSIS ---
+\begin{frame}{1. Problem Definition \& Requirement Analysis}
+    \framesubtitle{Target Problem, User Needs \& Functional / Non-Functional Requirements}
+    \begin{block}{Problem Statement \& Target Stakeholders}
+        \begin{itemize}
+            \item \textbf{Real-World Problem:} {[Define the practical problem or operational gap being solved]}
+            \item \textbf{Target Users \& Use Context:} {[Identify primary end-users and application domain]}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Functional Requirements}
+        \begin{itemize}
+            \item \textbf{[FR-1]:} {[Specify primary user-facing functional requirement 1]}
+            \item \textbf{[FR-2]:} {[Specify primary user-facing functional requirement 2]}
+            \item \textbf{[FR-3]:} {[Specify primary user-facing functional requirement 3]}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Non-Functional Requirements \& Constraints}
+        \begin{itemize}
+            \item \textbf{[NFR-1]:} {[Specify responsiveness, usability, or reliability requirement]}
+            \item \textbf{[NFR-2]:} {[Specify hardware, environmental, or operational constraint]}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% --- SLIDE 2: END-TO-END APPLICATION ARCHITECTURE (FULL-SLIDE DIAGRAM) ---
+% Note to students: Duplicate this frame if multiple architecture/workflow diagrams are required.
+\begin{frame}{2. End-to-End Application Architecture}
+    \framesubtitle{System Architecture \& User-to-Backend Workflow Diagram}
+    \centering
+    \fbox{\begin{minipage}[c][5.2cm]{0.94\textwidth}
+        \centering
+        \textbf{[Insert Full-Width Application Architecture / End-to-End Workflow Diagram]} \\[0.3cm]
+        {\footnotesize [Placeholder: Illustrate User / Input Interface $\leftrightarrow$ Core Processing Modules $\leftrightarrow$ Data / Hardware / Output Interfaces]}
+    \end{minipage}}
+    \vspace{0.2cm}
+
+    \begin{block}{Architecture Summary}
+        \footnotesize {[Provide a concise 1--2 line walkthrough of how requests/inputs flow across the application components.]}
+    \end{block}
+\end{frame}
+
+% --- SLIDE 3: ARCHITECTURAL COMPONENTS & INTERFACE DESIGN ---
+% Note to students: Duplicate this frame if additional slides are needed to explain application sub-components.
+\begin{frame}{3. Architectural Components \& Interface Design}
+    \framesubtitle{Component Breakdown, Data Flow \& Technology Specifications}
+    \begin{columns}[T]
+        \column{0.50\textwidth}
+        \begin{block}{Core Application Components}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{[Component 1]:} {[Responsibility and functional scope]}
+                \item \textbf{[Component 2]:} {[Responsibility and functional scope]}
+                \item \textbf{[Component 3]:} {[Responsibility and functional scope]}
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{User Interaction \& Workflow Design}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{Primary User Journey:} {[Outline step-by-step user interaction flow]}
+                \item \textbf{Interface Design:} {[Describe key user views or control interfaces]}
+            \end{itemize}
+        \end{block}
+
+        \column{0.46\textwidth}
+        \begin{block}{Data Management \& External Interfaces}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{Data Storage:} {[Structure of stored records / state management]}
+                \item \textbf{External Interfaces:} {[Hardware, sensors, or external service interfaces]}
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{Platform \& Deployment Specifications}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{Development Stack:} {[Selected tools and frameworks]}
+                \item \textbf{Deployment Target:} {[Target execution platform]}
+            \end{itemize}
+        \end{block}
+    \end{columns}
+\end{frame}
+
+% =========================================================================
+% SECTION 2: IMPLEMENTATION COMPLETION (100%)
+% =========================================================================
+\section{Implementation Details}
+
+% --- SLIDE 4: IMPLEMENTATION COMPLETION (100%) - OVERVIEW ---
+\begin{frame}{4. Implementation Details -- Overview}
+    \framesubtitle{End-to-End Application Module \& Integration Status}
+    \begin{table}
+        \centering
+        \footnotesize
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular}{p{3.6cm} p{6.2cm} c}
+            \toprule
+            \textbf{Application Module} & \textbf{Implemented Features \& Integration Scope} & \textbf{Status} \\
+            \midrule
+            {[Module 1: User Interface]} & {[Summary of completed user views, forms, and interactive controls]} & 100\% (Integrated) \\
+            {[Module 2: Core Domain Logic]} & {[Summary of implemented application workflows and processing logic]} & 100\% (Integrated) \\
+            {[Module 3: Data \& Persistence]} & {[Summary of implemented storage, retrieval, and state handling]} & 100\% (Integrated) \\
+            {[Module 4: External Integration]} & {[Summary of integrated external services, devices, or notifications]} & 100\% (Functional) \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{block}{Prototype Environment \& Repository}
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Execution Platform:} {[Specify target runtime environment where the complete application is deployed/executed]}
+            \item \textbf{Source Repository:} {[Insert repository URL / commit reference for the integrated application codebase]}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% --- SLIDE 5: FUNCTIONAL MODULE IMPLEMENTATION DETAILS ---
+% Note to students: Duplicate this frame if needed to explain additional implemented application modules.
+\begin{frame}{5. Functional Module Implementation Details}
+    \framesubtitle{Key Feature Implementation \& Inter-Module Integration}
+    \begin{columns}[T]
+        \column{0.50\textwidth}
+        \begin{block}{[Functional Module A Name]}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{Implemented Workflow:} {[Explain how this feature works end-to-end]}
+                \item \textbf{Inputs \& Outputs:} {[Specify user/system inputs and generated outputs]}
+                \item \textbf{Validation \& Controls:} {[Describe input checks and state updates]}
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{[Functional Module B Name]}
+            \footnotesize
+            \begin{itemize}
+                \item \textbf{Implemented Workflow:} {[Explain how this feature works end-to-end]}
+                \item \textbf{Inter-Module Integration:} {[Describe how it connects with other modules]}
+            \end{itemize}
+        \end{block}
+
+        \column{0.46\textwidth}
+        \centering
+        \vspace{0.2cm}
+        \fbox{\begin{minipage}[c][5.0cm]{0.94\textwidth}
+            \centering
+            \textbf{[Insert Module Integration Flow / Feature Implementation Snapshot]} \\[0.2cm]
+            {\scriptsize [Placeholder: Show connected module execution or key functional view]}
+        \end{minipage}}
+    \end{columns}
+\end{frame}
+
+% =========================================================================
+% SECTION 3: FUNCTIONAL TESTING & DEMONSTRATION
+% =========================================================================
+\section{Functional Testing \& Demonstration}
+
+% --- SLIDE 6: FUNCTIONAL TESTING & VERIFICATION RESULTS ---
+\begin{frame}{6. Functional Testing \& Verification Results}
+    \framesubtitle{End-to-End Feature Verification \& Test Case Summary}
+    \begin{table}
+        \centering
+        \footnotesize
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular}{p{3.4cm} p{3.2cm} p{3.6cm} c}
+            \toprule
+            \textbf{Test Case / Feature} & \textbf{Test Input / Action} & \textbf{Verified Outcome} & \textbf{Status} \\
+            \midrule
+            {[TC-01: Primary Workflow]} & {[Input / User Action]} & {[Expected output verified]} & {[Pass]} \\
+            {[TC-02: Secondary Workflow]} & {[Input / User Action]} & {[Expected output verified]} & {[Pass]} \\
+            {[TC-03: Data / Device Sync]} & {[Input / User Action]} & {[Expected output verified]} & {[Pass]} \\
+            {[TC-04: Boundary / Error Case]} & {[Invalid / Edge Input]} & {[Graceful handling verified]} & {[Pass]} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{block}{Application Verification Summary}
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Functional Verification:} {[Summarize end-to-end feature verification across target use cases]}
+            \item \textbf{Responsiveness \& Operational Metrics:} {[Summarize latency, accuracy, or user testing observations]}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% --- SLIDE 7: WORKING PROTOTYPE DEMONSTRATION ---
+% Note to students: Use a single full-width box or two side-by-side boxes as appropriate for your prototype screenshots.
+\begin{frame}{7. Working Prototype Demonstration}
+    \framesubtitle{End-to-End Application Walkthrough \& Visual Evidence}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+        \centering
+        \fbox{\begin{minipage}[c][4.8cm]{0.94\textwidth}
+            \centering
+            \textbf{[Insert Working Prototype Screenshot 1: Input / Control / Setup View]} \\[0.2cm]
+            {\scriptsize [Placeholder: Primary user interface or hardware prototype setup]}
+        \end{minipage}}
+
+        \column{0.48\textwidth}
+        \centering
+        \fbox{\begin{minipage}[c][4.8cm]{0.94\textwidth}
+            \centering
+            \textbf{[Insert Working Prototype Screenshot 2: Processed Output / Action View]} \\[0.2cm]
+            {\scriptsize [Placeholder: End-to-end result screen or physical output demonstration]}
+        \end{minipage}}
+    \end{columns}
+    \vspace{0.2cm}
+
+    \begin{block}{Live Demonstration Scenario}
+        \footnotesize {[Briefly describe the end-to-end user scenario demonstrated live during the review.]}
+    \end{block}
+\end{frame}
+
+% =========================================================================
+% SECTION 4: TECHNICAL KNOWLEDGE & VIVA VOCE
+% =========================================================================
+\section{Technical Knowledge}
+
+% --- SLIDE 8: TECHNICAL JUSTIFICATION & ARCHITECTURAL DECISIONS ---
+\begin{frame}{8. Technical Justification \& Architectural Decisions}
+    \framesubtitle{Platform Rationale, Engineering Trade-offs \& Operational Considerations}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+        \begin{block}{1. Platform \& Technology Justification}
+            \footnotesize
+            \begin{itemize}
+                \item {[Explain why the chosen tools, frameworks, or hardware components best suit the application requirements]}
+                \item {[Compare with alternative choices considered]}
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{2. Architecture \& Integration Trade-offs}
+            \footnotesize
+            \begin{itemize}
+                \item {[Discuss design choices balancing responsiveness, resource usage, and modularity]}
+                \item {[Explain inter-module communication reliability]}
+            \end{itemize}
+        \end{block}
+
+        \column{0.48\textwidth}
+        \begin{block}{3. Usability, Security \& Safety Measures}
+            \footnotesize
+            \begin{itemize}
+                \item {[Detail user data protection, access control, and input validation mechanisms]}
+                \item {[Describe error recovery and fallback handling]}
+            \end{itemize}
+        \end{block}
+
+        \begin{block}{4. Operational Constraints \& Future Scope}
+            \footnotesize
+            \begin{itemize}
+                \item {[State practical operating boundaries of the current prototype]}
+                \item {[Outline planned enhancements for deployment scale]}
+            \end{itemize}
+        \end{block}
+    \end{columns}
+\end{frame}
+
+% =========================================================================
+% REFERENCES & THANK YOU
+% =========================================================================
+\section{References}
+\nocite{*}
+\begin{frame}[allowframebreaks]{References}
+    \bibliographystyle{ieeetr}
+    \bibliography{ref}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{amritaMaroon}{Thank You}}} \\[0.4cm]
+    {\large \textbf{[Questions \& Viva Voce]}}
+\end{frame}
+
+\end{document}

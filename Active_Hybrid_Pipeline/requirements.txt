@@ -1,0 +1,32 @@
+# ==============================================================================
+# Active Hybrid Pipeline (V8 Standalone) - Core Dependencies
+# Compatible with Python 3.10, 3.11, and 3.12
+# ==============================================================================
+
+# Core Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# 3D Hand Detection & Landmarks
+mediapipe>=0.10.9,<0.11.0
+
+# Computer Vision & Image Processing
+opencv-python-headless>=4.8.0
+numpy>=1.23.0,<2.0.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+pandas>=2.0.0
+
+# Web Application & Avatar Interface
+Flask>=3.0.0
+gunicorn>=21.2.0
+
+# HaMeR 3D Mesh Engine Prerequisites
+pytorch-lightning>=2.0.0
+yacs>=0.1.8
+timm>=0.9.0
+einops>=0.6.0
+smplx>=0.1.28
+rich>=13.0.0
+trimesh>=3.20.0
