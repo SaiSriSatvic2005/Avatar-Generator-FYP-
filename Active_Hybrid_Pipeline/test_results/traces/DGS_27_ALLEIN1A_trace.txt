@@ -1,0 +1,92 @@
+Video: 27_ALLEIN1A.mp4 (DGS) | Processing Time: 318.73s
+
+=========================================================================================================
+                    PART 1: FRAME-BY-FRAME SKELETAL & MODULAR DIAGNOSTICS
+=========================================================================================================
+ Frame  | Elevation | Velocity |  Score  |     Handshape      |    Ext Finger    |  Palm Normal  |    Location    |  State  
+---------------------------------------------------------------------------------------------------------
+     01/32  |   0.215   |  0.000   |  0.215  | hamfinger23spread  | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     02/32  |   0.216   |  0.430   | -0.300  | hamfinger23spread  | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     03/32  |   0.216   |  0.108   |  0.086  | hamfinger23spread  | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     04/32  |   0.216   |  0.043   |  0.165  | hamfinger23spread  | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     05/32  |   0.218   |  0.122   |  0.072  | hamfinger23spread  | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     06/32  |   0.225   |  0.510   | -0.387  | hamfinger2345      | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     07/32  |   0.195   |  0.421   | -0.310  | hamceeall          | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     08/32  |   0.321   |  0.093   |  0.209  | hamfist            | hamextfingerl    | hampalmdl     | hamneutralspace |         
+     09/32  |   0.373   |  0.093   |  0.261  | hamfist            | hamextfingerul   | hampalmul     | hamneutralspace |         
+     10/32  |   0.445   |  0.998   | -0.753  | hamfinger2         | hamextfingeruo   | hampalmul     | hamneutralspace |         
+     11/32  |   0.466   |  0.382   |  0.007  | hamfinger2         | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     12/32  |   0.470   |  0.456   | -0.077  | hamfinger2         | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     13/32  |   0.469   |  0.209   |  0.218  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+>>> 14/32  |   0.467   |  0.038   |  0.421  | hamfist            | hamextfingeru    | hampalmu      | hamneutralspace |  [APEX] <<< [SELECTED STROKE HOLD]
+     15/32  |   0.469   |  0.049   |  0.410  | hamfinger2345      | hamextfingeru    | hampalmu      | hamneutralspace |         
+     16/32  |   0.479   |  0.746   | -0.416  | hamfinger2         | hamextfingeru    | hampalmu      | hamneutralspace |         
+     17/32  |   0.485   |  0.463   | -0.071  | hamfinger2         | hamextfingeru    | hampalmu      | hamchest       |         
+     18/32  |   0.474   |  0.506   | -0.132  | hamfinger2         | hamextfingeruo   | hampalmd      | hamneutralspace |         
+     19/32  |   0.464   |  0.815   | -0.514  | hamfinger2         | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     20/32  |   0.458   |  0.239   |  0.171  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     21/32  |   0.447   |  0.063   |  0.372  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     22/32  |   0.455   |  0.093   |  0.343  | hamfinger2345      | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     23/32  |   0.466   |  0.256   |  0.158  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     24/32  |   0.471   |  0.626   | -0.280  | hamfinger2         | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     25/32  |   0.468   |  0.376   |  0.017  | hamfinger2         | hamextfingeru    | hampalmdr     | hamneutralspace |         
+     26/32  |   0.466   |  0.146   |  0.291  | hamfinger2         | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     27/32  |   0.457   |  0.199   |  0.217  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     28/32  |   0.447   |  0.025   |  0.417  | hamfinger2345      | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     29/32  |   0.432   |  0.316   |  0.053  | hamfist            | hamextfingeruo   | hampalmu      | hamneutralspace |         
+     30/32  |   0.405   |  0.051   |  0.344  | hamfist            | hamextfingerol   | hampalml      | hamneutralspace |         
+     31/32  |   0.194   |  0.734   | -0.687  | hamceeall          | hamextfingerdo   | hampalmu      | hamneutralspace |         
+     32/32  |   0.191   |  0.164   | -0.006  | hamceeall          | hamextfingerdo   | hampalmu      | hamneutralspace |         
+=========================================================================================================
+
+=========================================================================================================
+             PART 2: NEURO-SYMBOLIC EXPLAINABILITY & DECISION JUSTIFICATION TRACE
+=========================================================================================================
+
+[STAGE 1: Kinetic Stroke Apex Isolation (temporal_utils.py)]
+  Principle: Finds stroke hold-phase where hand pauses at maximum semantic elevation.
+  Formula:   Score(t) = Elevation(t) - 1.2 * NormalizedVelocity(t)
+  Selection: Frame 14 of 32 achieved peak score (Elevation = 0.467, Velocity = 0.038).
+  Gaussian Neighborhood Window: Applied continuous weight sigma=3.0 frames around Frame 14.
+
+[STAGE 2: Model A Handshape Neural Classification (SkeletalHandResNet_V7)]
+  Principle: 128-D rotation-invariant skeletal geometry in local hand basis (Gram-Schmidt plane).
+  Neural Softmax Probabilities at Apex Keyframe:
+    1. hamfinger2           :  40.5%  <-- [WINNER]
+    2. hamfist              :  20.1%
+    3. hamfinger2345        :  18.9%
+  Decision: Selected 'hamfinger2' with confidence margin +20.4%.
+
+[STAGE 3: Finger & Thumb Modifiers (heuristics/finger_location.py)]
+  Principle: Deterministic kinematic angle measurement on 3D MANO joints.
+  Active Modifiers Detected: hamfingerbendmod
+
+[STAGE 4: 3D Metric Vector Orientation (heuristics/orientation_model.py)]
+  Principle: True 3D Cross-Product normal and longitudinal pointing vector free of 2D foreshortening.
+  - 3D Palm Normal Vector (n): [-0.1, -0.575, 0.797] -> Cosine match: 'hampalmu'
+  - Longitudinal Pointing (v): [0.26, -0.891, -0.36] -> Cosine match: 'hamextfingeru'
+
+[STAGE 5: Anatomical Zoning & Torso Clearance (heuristics/upper_body_location.py)]
+  Principle: 3D coordinate bounding intervals relative to nose and shoulder joints.
+  - Anatomical Region: 'hamneutralspace' (Y-elevation inside standard anatomical band)
+  - Contact State: 'none' (Enforced positive 3D torso clearance to prevent avatar mesh-clipping).
+
+[STAGE 6: Dynamic Movement Trajectory & Arcs (Model B BiGRU + movement_model1 & 2)]
+  Principle: 18-D Spatiotemporal kinematics across 32 frames + polynomial trajectory curvature.
+  Model B (Attention-BiGRU) Direction Probabilities:
+    1. hamnomotion          :  14.8%  <-- [WINNER]
+    2. hammoveo             :   0.9%
+    3. hammoved             :   0.1%
+  - 2D/3D Displacement Path: Total Path = 0.96, Delta = [0.104, -0.231]
+  - Curvature & Arcs (movement_model1.py): Arc = None (Linear stroke)
+  - Posture Replacement (movement_model2.py): Replacement = False
+
+[STAGE 7: Dual-Hand Symmetry & Arm Posture (heuristics/arm_space_position.py)]
+  - Execution Type: 'single' (Dominant single-hand signing)
+
+[STAGE 8: SiGML Grammar Linter & XML Verification (heuristics/sigml_grammar_linter.py)]
+  - Canonical Token Order: [Symmetry] + [Handshape] + [Modifier] + [ExtFinger] + [PalmOri] + [Location] + [Movement]
+  - Rectified HamNoSys String: hamfinger2 hamfingerbendmod hamextfingeru hampalmu hamshoulders
+  - XML Schema Validation: Passed (100% CWASA compliant)
+=========================================================================================================
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="sign">
+    <hamnosys_nonmanual>
+    </hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamfinger23spread/>
+      <hamextfingeruo/>
+      <hampalml/>
+      <hamchest/>
+      <hammoveo/>
+      <hamreplace/>
+      <hamextfingerol/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
