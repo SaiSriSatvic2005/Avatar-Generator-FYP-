@@ -44,7 +44,9 @@ enc_*.pkl
 !weights/hand_landmarker.task
 !weights/MANO_RIGHT.pkl
 !hamer_3d_engine/_DATA/data/mano/MANO_RIGHT.pkl
+!hamer_3d_engine/_DATA/data/mano_mean_params.npz
 !hamer_3d_engine/hand_landmarker.task
+!evaluation/sample_videos/*.mp4
 !*.pptx
 
 # ==============================================================================
