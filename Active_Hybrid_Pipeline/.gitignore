@@ -1,0 +1,73 @@
+# ==============================================================================
+# Python & Bytecode
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==============================================================================
+# Virtual Environments
+# ==============================================================================
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ==============================================================================
+# Heavy 2.56 GB Checkpoints (Download via README instructions)
+# ==============================================================================
+*.ckpt
+*.ckpt.tmp
+hamer.ckpt
+
+# ==============================================================================
+# Unnecessary Legacy Machine Learning Models & Pickles (> 700 MB)
+# ==============================================================================
+heuristics/*.pkl
+heuristics/*.joblib
+clf_*.pkl
+enc_*.pkl
+*.pickle
+
+# ==============================================================================
+# KEEP Required Lightweight Models & Checkpoints (< 8 MB each)
+# ==============================================================================
+!weights/v7_dgs_handshape_resnet.pth
+!weights/v7_dgs_movement_attention_bigru.pth
+!weights/v7_encoders.json
+!weights/cwasa_token_map.json
+!weights/hand_landmarker.task
+!weights/MANO_RIGHT.pkl
+!hamer_3d_engine/_DATA/data/mano/MANO_RIGHT.pkl
+!hamer_3d_engine/hand_landmarker.task
+!*.pptx
+
+# ==============================================================================
+# Large External Dataset Repository (Tracked at https://github.com/SaiSriSatvic2005/FYP-DataSet.git)
+# ==============================================================================
+FYP-DataSet/
+FYP-DataSet/**
+
+# ==============================================================================
+# Webapp Temporary Uploads & Local Caches
+# ==============================================================================
+webapp/uploads/*
+!webapp/uploads/.gitkeep
+webapp/static/output/*
+!webapp/static/output/.gitkeep
+
+# ==============================================================================
+# Operating System & IDE Files
+# ==============================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
